@@ -23,19 +23,10 @@ export function normalizedByGps(
 ): TE.TaskEither<Error, NormalizedByGps> {
   // Run these tasks parallely
   const tasks = [
-    pipe(
-      aqicnByGps(gps, options.aqicn),
-      TE.map(aqicnNormalizeByGps)
-    ),
-    pipe(
-      waqiByGps(gps),
-      TE.map(waqiNormalizeByGps)
-    )
+    pipe(aqicnByGps(gps, options.aqicn), TE.map(aqicnNormalizeByGps)),
+    pipe(waqiByGps(gps), TE.map(waqiNormalizeByGps))
   ];
 
   // Return a race behavior between the tasks
-  return pipe(
-    tasks,
-    M.fold(T.getRaceMonoid())
-  );
+  return pipe(tasks, M.fold(T.getRaceMonoid()));
 }

@@ -14,8 +14,3 @@ node_modules
 
 # Logs
 *.log
-
-
-# Secrets
-.env
-.env.prod

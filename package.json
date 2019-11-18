@@ -1,10 +1,10 @@
 {
-  "name": "@shootismoke/backend",
+  "name": "@shootismoke/common",
   "author": "Amaury Martiny <amaury.martiny@protonmail.com>",
-  "description": "Backend for Sh**t! I Smoke",
+  "description": "Shared packages between Sh**t! I Smoke projects",
   "license": "GPL-3.0",
   "private": true,
-  "repository": "https://github.com/shootismoke/backend",
+  "repository": "https://github.com/shootismoke/common",
   "scripts": {
     "prebuild": "yarn clean",
     "build": "tsc --build packages/aqi packages/dataproviders packages/graphql",
@@ -12,7 +12,6 @@
     "predeploy": "yarn build",
     "deploy": "lerna version --conventional-commits && lerna publish from-git",
     "lint": "tsc --noEmit && eslint --ext ts .",
-    "start": "now dev",
     "test": "jest"
   },
   "workspaces": [
@@ -23,7 +22,6 @@
     "@types/jest": "^24.0.21",
     "jest": "^24.9.0",
     "lerna": "^3.18.3",
-    "now": "^16.5.2",
     "ts-jest": "^24.1.0",
     "typescript": "^3.7.2"
   }

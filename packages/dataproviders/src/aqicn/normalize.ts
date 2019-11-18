@@ -17,30 +17,27 @@ import { AqicnStation } from './validation';
 function computePollutants(
   iaqi: AqicnStation['iaqi'] = {}
 ): Partial<Record<Pollutant, PollutantValue>> {
-  return POLLUTANTS.reduce(
-    (result, pollutant) => {
-      const value = iaqi[pollutant];
-      if (!value) {
-        return result;
-      }
-
-      const aqiUS = value.v;
-      const raw = aqiToRaw('pm25', aqiUS, 'US');
-      const aqiCN = rawToAqi('pm25', raw, 'CN');
-
-      result[pollutant] = {
-        // FIXME aqiCN, raw, and unit values are Wrong!!!
-        // https://github.com/shootismoke/backend/issues/28
-        aqiCN: pollutant === 'pm25' ? aqiCN : aqiUS,
-        aqiUS,
-        raw: pollutant === 'pm25' ? raw : aqiUS,
-        unit: getUnit('pm25')
-      };
-
+  return POLLUTANTS.reduce((result, pollutant) => {
+    const value = iaqi[pollutant];
+    if (!value) {
       return result;
-    },
-    {} as Partial<Record<Pollutant, PollutantValue>>
-  );
+    }
+
+    const aqiUS = value.v;
+    const raw = aqiToRaw('pm25', aqiUS, 'US');
+    const aqiCN = rawToAqi('pm25', raw, 'CN');
+
+    result[pollutant] = {
+      // FIXME aqiCN, raw, and unit values are Wrong!!!
+      // https://github.com/shootismoke/backend/issues/28
+      aqiCN: pollutant === 'pm25' ? aqiCN : aqiUS,
+      aqiUS,
+      raw: pollutant === 'pm25' ? raw : aqiUS,
+      unit: getUnit('pm25')
+    };
+
+    return result;
+  }, {} as Partial<Record<Pollutant, PollutantValue>>);
 }
 
 /**
