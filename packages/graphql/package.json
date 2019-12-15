@@ -13,8 +13,6 @@
   },
   "repository": "https://github.com/shootismoke/common",
   "scripts": {
-    "prebuild": "rimraf lib",
-    "build": "tsc",
     "generate": "graphql-codegen"
   },
   "devDependencies": {
