@@ -10,7 +10,6 @@ jobs:
       - name: Yarn lint
         run: |
           yarn install
-          yarn build
           yarn lint
   test:
     runs-on: ubuntu-latest
@@ -21,5 +20,4 @@ jobs:
           WAQI_TOKEN: ${{ secrets.WAQI_TOKEN }}
         run: |
           yarn install
-          yarn build
           yarn test
