@@ -6,9 +6,7 @@
   "private": true,
   "repository": "https://github.com/shootismoke/common",
   "scripts": {
-    "prebuild": "yarn clean",
     "build": "lerna run build --stream",
-    "clean": "rimraf packages/**/lib packages/**/tsconfig.tsbuildinfo",
     "predeploy": "yarn build",
     "deploy": "lerna version --conventional-commits && lerna publish from-git",
     "lint": "tsc --noEmit && eslint --ext ts .",

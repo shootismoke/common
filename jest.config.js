@@ -10,6 +10,10 @@ module.exports = {
     '!**/index.ts', // index.ts only re-exports stuff
     '!**/testUtil.ts' // These files are used in tests
   ],
+  moduleNameMapper: {
+    '@shootismoke/aqi$': '<rootDir>/packages/aqi/src/index.ts',
+    '@shootismoke/graphql$': '<rootDir>/packages/graphql/src/index.ts'
+  },
   setupFiles: ['./packages/dataproviders/test/util/setup.ts'],
   testMatch: ['**/*.spec.ts']
 };
