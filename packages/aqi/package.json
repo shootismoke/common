@@ -11,5 +11,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "repository": "https://github.com/shootismoke/common"
+  "repository": "https://github.com/shootismoke/common",
+  "scripts": {
+    "prebuild": "rimraf lib",
+    "build": "tsc"
+  }
 }

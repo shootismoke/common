@@ -12,6 +12,10 @@
     "access": "public"
   },
   "repository": "https://github.com/shootismoke/common",
+  "scripts": {
+    "prebuild": "rimraf lib",
+    "build": "tsc"
+  },
   "dependencies": {
     "@shootismoke/aqi": "^0.1.15",
     "@shootismoke/graphql": "^0.1.15",
