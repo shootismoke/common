@@ -1,5 +1,5 @@
 [![npm (scoped)](https://img.shields.io/npm/v/@shootismoke/aqi.svg)](https://www.npmjs.com/package/@shootismoke/aqi)
-[![dependencies Status](https://david-dm.org/shootismoke/backend/status.svg?path=packages/aqi)](https://david-dm.org/shootismoke/backend?path=packages/aqi)
+[![dependencies Status](https://david-dm.org/shootismoke/common/status.svg?path=packages/aqi)](https://david-dm.org/shootismoke/common?path=packages/aqi)
 
 # `@shootismoke/aqi`
 

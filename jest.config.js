@@ -10,5 +10,6 @@ module.exports = {
     '!**/index.ts', // index.ts only re-exports stuff
     '!**/testUtil.ts' // These files are used in tests
   ],
+  setupFiles: ['./packages/dataproviders/test/util/setup.ts'],
   testMatch: ['**/*.spec.ts']
 };
