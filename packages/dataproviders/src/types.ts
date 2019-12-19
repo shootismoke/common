@@ -1,4 +1,4 @@
-import { Pollutant, Unit } from '@shootismoke/aqi';
+import { Pollutant, Unit } from '@shootismoke/convert';
 import { Provider } from '@shootismoke/graphql';
 
 /**

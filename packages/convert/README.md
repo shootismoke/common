@@ -1,7 +1,7 @@
-[![npm (scoped)](https://img.shields.io/npm/v/@shootismoke/aqi.svg)](https://www.npmjs.com/package/@shootismoke/aqi)
-[![dependencies Status](https://david-dm.org/shootismoke/common/status.svg?path=packages/aqi)](https://david-dm.org/shootismoke/common?path=packages/aqi)
+[![npm (scoped)](https://img.shields.io/npm/v/@shootismoke/convert.svg)](https://www.npmjs.com/package/@shootismoke/convert)
+[![dependencies Status](https://david-dm.org/shootismoke/common/status.svg?path=packages/convert)](https://david-dm.org/shootismoke/common?path=packages/convert)
 
-# `@shootismoke/aqi`
+# `@shootismoke/convert`
 
 A library to convert between AQI (US or CN) value and pollutant concentration (µg/m³ or ppm) using the following standards:
 
@@ -13,7 +13,7 @@ A library to convert between AQI (US or CN) value and pollutant concentration (�
 Install the package
 
 ```bash
-yarn install @shootismoke/aqi
+yarn install @shootismoke/convert
 ```
 
 ### `aqiToRaw(pollutant: Pollutant, aqi: number, aqiType: AqiType = 'US'): number`
@@ -27,7 +27,7 @@ Arguments:
 - `aqiType: AqiType`: One of `'US' | 'CN'`
 
 ```typescript
-import { aqiToRaw } from '@shootismoke/aqi';
+import { aqiToRaw } from '@shootismoke/convert';
 
 const raw = aqiToRaw('pm25', 57, 'US');
 console.log(raw); // 15
@@ -44,7 +44,7 @@ Arguments:
 - `aqiType: AqiType`: One of `'US' | 'CN'`
 
 ```typescript
-import { rawToAqi } from '@shootismoke/aqi';
+import { rawToAqi } from '@shootismoke/convert';
 
 const aqi = aqiToRaw('pm25', 15, 'US');
 console.log(aqi); // 57
@@ -59,7 +59,7 @@ Arguments:
 - `pollutant: Pollutant`: One of `'co' | 'h' | 'no2' | 'o3' | 'p' | 'pm10' | 'pm25' | 'so2' | 't' | 'w'`
 
 ```typescript
-import { getUnit } from '@shootismoke/aqi';
+import { getUnit } from '@shootismoke/convert';
 
 const unit = getUnit('pm25');
 console.log(unit); // 'µg/m³'
