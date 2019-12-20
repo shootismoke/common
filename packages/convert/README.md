@@ -5,7 +5,7 @@
 
 A library to convert between various Air Quality Indexes (US, CN...) and their equivalent in pollutant concentration (µg/m³, ppm, ppb).
 
-Supported AQIs are listed in the below table.
+## Supported Air Quality Indexes
 
 | AQI      | AQI Code<sup>1</sup> | Pollutants                   | Resources                                                                                                                     |
 | -------- | -------------------- | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
@@ -64,7 +64,7 @@ See the API reference documentation (TODO [#14](https://github.com/shootismoke/c
 3. Make sure `yarn lint` and `yarn test` pass
 4. Create a Pull Request on this repo
 
-## :microscope: Tests
+## Tests
 
 Look out for `*.spec.ts` in the codebase. Run:
 
