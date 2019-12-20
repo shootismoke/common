@@ -18,7 +18,8 @@ The following packages are designed to be used by other people, there's a bigger
 
 The following packages are used internally in Sh\*\*t! I Smoke packages, but if you're interested in them, feel free to use them.
 
-| Packages | NPM | Description |
+| Packages                                     | NPM                                                                                                                          | Description                                                                              |
+| -------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
 | [`@shootismoke/graphql`](./packages/graphql) | [![npm (scoped)](https://img.shields.io/npm/v/@shootismoke/graphql.svg)](https://www.npmjs.com/package/@shootismoke/graphql) | (Internal) TypeScript types for GraphQL schemas in Sh\*\*t! I Smoke backend and frontend |
 
 ## FAQ
