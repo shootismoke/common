@@ -22,7 +22,7 @@ export type Breakpoints = [
  * @param breakpoints - The breakpoints to calculate the range from
  */
 export function getRange(breakpoints: Breakpoints): [number, number] {
-  return [breakpoints[0][0][0], breakpoints[breakpoints.length - 2][0][1]];
+  return [breakpoints[0][0][0], breakpoints[breakpoints.length - 1][0][1]];
 }
 
 /**

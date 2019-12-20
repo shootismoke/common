@@ -1,3 +1,9 @@
 export * from './convert';
 export * from './types';
-export { getUnit, isPollutant, POLLUTANTS, Pollutant, Unit } from './util';
+export {
+  AllPollutants,
+  getMetadata,
+  isPollutant,
+  Pollutant,
+  Unit
+} from './util';

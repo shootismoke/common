@@ -1,4 +1,6 @@
+import { convert } from '../convert';
 import { testConvert } from '../util/testUtil';
+import { usaEpa } from './usaEpa';
 
 describe('Convert pm25', () => {
   testConvert('usaEpa', 'pm25', 25, 6);
@@ -12,4 +14,18 @@ describe('Convert pm25', () => {
   testConvert('usaEpa', 'pm25', 350, 299.9);
   testConvert('usaEpa', 'pm25', 450, 424.5);
   testConvert('usaEpa', 'pm25', 550, 550);
+
+  it('should convert AQI (US) to AQI (CN)', () => {
+    expect(convert('pm25', 'usaEpa', 'chnMep', 24)).toBe(8.3);
+  });
+
+  it('should throw an error on unknown pollutant', () => {
+    expect(convert('nmhc', 'usaEpa', 'raw', 23)).toThrowError(
+      'AQI (US) does not apply to pollutant nmhc'
+    );
+  });
+
+  it('should return the correct range', () => {
+    expect(usaEpa.range('pm25')).toEqual([0, 500]);
+  });
 });

@@ -1,4 +1,9 @@
-import { convert, getUnit, Pollutant, POLLUTANTS } from '@shootismoke/convert';
+import {
+  AllPollutants,
+  convert,
+  getMetadata,
+  Pollutant
+} from '@shootismoke/convert';
 
 import { pm25ToCigarettes } from '../secretSauce';
 import { NormalizedByGps, PollutantValue } from '../types';
@@ -11,8 +16,8 @@ import { AqicnStation } from './validation';
 function computePollutants(
   iaqi: AqicnStation['iaqi'] = {}
 ): Partial<Record<Pollutant, PollutantValue>> {
-  return POLLUTANTS.reduce((result, pollutant) => {
-    const value = iaqi[pollutant];
+  return Object.keys(AllPollutants).reduce((result, pollutant) => {
+    const value = iaqi[pollutant as keyof typeof iaqi];
     if (!value) {
       return result;
     }
@@ -21,13 +26,13 @@ function computePollutants(
     const raw = convert('pm25', 'usaEpa', 'raw', aqiUS);
     const aqiCN = convert('pm25', 'raw', 'chnMep', raw);
 
-    result[pollutant] = {
+    result[pollutant as Pollutant] = {
       // FIXME aqiCN, raw, and unit values are Wrong!!!
       // https://github.com/shootismoke/backend/issues/28
       aqiCN: pollutant === 'pm25' ? aqiCN : aqiUS,
       aqiUS,
       raw: pollutant === 'pm25' ? raw : aqiUS,
-      unit: getUnit('pm25')
+      unit: getMetadata(pollutant as Pollutant).unit
     };
 
     return result;

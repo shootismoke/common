@@ -1,4 +1,4 @@
-import { convert, getUnit, isPollutant } from '@shootismoke/convert';
+import { convert, getMetadata, isPollutant } from '@shootismoke/convert';
 
 import { pm25ToCigarettes } from '../secretSauce';
 import { NormalizedByGps } from '../types';
@@ -37,7 +37,7 @@ export function waqiNormalizeByGps({
     pollutants: {
       // FIXME aqiCN, raw, and unit values are Wrong!!!
       // https://github.com/shootismoke/backend/issues/28
-      [data.pol]: { aqiCN, aqiUS, raw, unit: getUnit(data.pol) }
+      [data.pol]: { aqiCN, aqiUS, raw, unit: getMetadata(data.pol).unit }
     },
     updatedAt: data.t
   };
