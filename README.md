@@ -9,11 +9,18 @@ Shared packages between Sh\*\*t! I Smoke projects.
 
 ## Packages
 
-| Packages                                                 | NPM                                                                                                                                      | Description                                                                                 |
-| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| [`@shootismoke/aqi`](./packages/aqi)                     | [![npm (scoped)](https://img.shields.io/npm/v/@shootismoke/aqi.svg)](https://www.npmjs.com/package/@shootismoke/aqi)                     | A library to convert between AQI (US & CN) value and pollutant concentration (µg/m³ or ppm) |
-| [`@shootismoke/dataproviders`](./packages/dataproviders) | [![npm (scoped)](https://img.shields.io/npm/v/@shootismoke/dataproviders.svg)](https://www.npmjs.com/package/@shootismoke/dataproviders) | Fetch & normalize data from various air quality data providers (WAQI, AQICN)                |
-| [`@shootismoke/graphql`](./packages/graphql)             | [![npm (scoped)](https://img.shields.io/npm/v/@shootismoke/graphql.svg)](https://www.npmjs.com/package/@shootismoke/graphql)             | (Internal) TypeScript types for GraphQL schemas in Sh\*\*t! I Smoke backend and frontend    |
+The following packages are designed to be used by other people, there's a bigger chance you might be interested in those.
+
+| Packages                                                 | NPM                                                                                                                                      | Description                                                                  |
+| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| [`@shootismoke/convert`](./packages/convert)             | [![npm (scoped)](https://img.shields.io/npm/v/@shootismoke/convert.svg)](https://www.npmjs.com/package/@shootismoke/convert)             | Easily convert between AQIs (US, CN...) and raw values (ug/m3, ppm)          |
+| [`@shootismoke/dataproviders`](./packages/dataproviders) | [![npm (scoped)](https://img.shields.io/npm/v/@shootismoke/dataproviders.svg)](https://www.npmjs.com/package/@shootismoke/dataproviders) | Fetch & normalize data from various air quality data providers (WAQI, AQICN) |
+
+The following packages are used internally in Sh\*\*t! I Smoke packages, but if you're interested in them, feel free to use them.
+
+| Packages                                     | NPM                                                                                                                          | Description                                                                              |
+| -------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| [`@shootismoke/graphql`](./packages/graphql) | [![npm (scoped)](https://img.shields.io/npm/v/@shootismoke/graphql.svg)](https://www.npmjs.com/package/@shootismoke/graphql) | (Internal) TypeScript types for GraphQL schemas in Sh\*\*t! I Smoke backend and frontend |
 
 ## FAQ
 

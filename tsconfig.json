@@ -3,7 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@shootismoke/aqi": ["./packages/aqi/src/index.ts"],
+      "@shootismoke/convert": ["./packages/convert/src/index.ts"],
       "@shootismoke/graphql": ["./packages/graphql/src/index.ts"]
     }
   }

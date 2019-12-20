@@ -1,8 +1,8 @@
 {
-  "name": "@shootismoke/aqi",
+  "name": "@shootismoke/convert",
   "version": "0.1.15",
   "author": "Amaury Martiny <amaury.martiny@protonmail.com>",
-  "description": "Easily convert between US AQI, CN AQI and raw concentrations in ug/m3",
+  "description": "Easily convert between AQIs (US, CN...) and raw values (ug/m3, ppm)",
   "files": [
     "lib/"
   ],
