@@ -36,7 +36,7 @@ The function can convert, for any pollutant:
 
 Arguments:
 
-- `pollutant: Pollutant`: One of the supported pollutants,
+- `pollutant: Pollutant`: One of the supported pollutants, [see them](#supported-pollutants).
 - `from: AqiCode | 'raw'`: An AQI code (see table above) or the `'raw'` string
 - `to: AqiCode | 'raw'`: An AQI code (see table above) or the `'raw'` string
 - `value: number`: The value to convert
