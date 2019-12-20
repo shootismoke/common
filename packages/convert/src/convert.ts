@@ -6,15 +6,15 @@ import { Pollutant } from './util';
  * For any pollutant, convert an AQI to its raw concentration, or vice versa,
  * or convert an AQI to another AQI
  *
+ * @param pollutant - The pollutant to convert
  * @param from - The type to convert from (either raw, or an AQI)
  * @param to - The type to convert to (either raw, or an AQI)
- * @param pollutant - The pollutant to convert
  * @param value - The value to convert
  */
 export function convert<
   From extends AqiCode | 'raw',
   To extends AqiCode | 'raw'
->(from: From, to: To, pollutant: Pollutant, value: number): number {
+>(pollutant: Pollutant, from: From, to: To, value: number): number {
   if (from === 'raw' && to === 'raw') {
     return value;
   }

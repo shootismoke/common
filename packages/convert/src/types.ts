@@ -1,14 +1,15 @@
 import * as aqiCodes from './aqi';
+import { Pollutant } from './util';
 
 /**
  * An interface to represent an AQI
  */
-export interface Aqi<P> {
+export interface Aqi {
   displayName: string;
-  fromRaw(raw: number, pollutant: P): number;
-  pollutants: P[];
-  range(pollutant: P): [number, number];
-  toRaw(value: number, pollutant: P): number;
+  fromRaw(raw: number, pollutant: Pollutant): number;
+  pollutants: Pollutant[];
+  range(pollutant: Pollutant): [number, number];
+  toRaw(value: number, pollutant: Pollutant): number;
 }
 
 /**

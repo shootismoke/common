@@ -16,10 +16,10 @@ export function testConvert(
     // Sometimes, because of rounding, the values are not exact. We just want
     // them to be exact at +/-0.2
     expect(
-      Math.abs(convert(aqiCode, 'raw', pollutant, aqi) - raw)
+      Math.abs(convert(pollutant, aqiCode, 'raw', aqi) - raw)
     ).toBeLessThanOrEqual(0.2);
     expect(
-      Math.abs(convert('raw', aqiCode, pollutant, raw) - aqi)
+      Math.abs(convert(pollutant, 'raw', aqiCode, raw) - aqi)
     ).toBeLessThanOrEqual(0.2);
   });
 }

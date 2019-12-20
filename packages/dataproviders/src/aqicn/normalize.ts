@@ -1,10 +1,4 @@
-import {
-  aqiToRaw,
-  getUnit,
-  Pollutant,
-  POLLUTANTS,
-  rawToAqi
-} from '@shootismoke/convert';
+import { convert, getUnit, Pollutant, POLLUTANTS } from '@shootismoke/convert';
 
 import { pm25ToCigarettes } from '../secretSauce';
 import { NormalizedByGps, PollutantValue } from '../types';
@@ -24,8 +18,8 @@ function computePollutants(
     }
 
     const aqiUS = value.v;
-    const raw = aqiToRaw('pm25', aqiUS, 'US');
-    const aqiCN = rawToAqi('pm25', raw, 'CN');
+    const raw = convert('pm25', 'usaEpa', 'raw', aqiUS);
+    const aqiCN = convert('pm25', 'raw', 'chnMep', raw);
 
     result[pollutant] = {
       // FIXME aqiCN, raw, and unit values are Wrong!!!
@@ -56,7 +50,7 @@ export function aqicnNormalizeByGps(data: AqicnStation): NormalizedByGps {
 
   // Calculate pm25 raw value to get cigarettes value
   const pm25AqiUS = data.iaqi && data.iaqi.pm25 && data.iaqi.pm25.v;
-  const pm25Raw = pm25AqiUS && aqiToRaw('pm25', pm25AqiUS, 'US');
+  const pm25Raw = pm25AqiUS && convert('pm25', 'usaEpa', 'raw', pm25AqiUS);
 
   return {
     closestStation: {

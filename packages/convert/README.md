@@ -3,90 +3,74 @@
 
 # `@shootismoke/convert`
 
-A library to convert between AQI (US or CN) value and pollutant concentration (µg/m³ or ppm) using the following standards:
+A library to convert between various Air Quality Indexes (US, CN...) and their equivalent in pollutant concentration (µg/m³, ppm, ppb).
 
-- US AQI: United States Environmental Protection Agency (EPA)
-- CN AQI: China Ministry of Environmental Protection (MEP)
+Supported AQIs are listed in the below table.
+
+| AQI      | AQI Code<sup>1</sup> | Pollutants                   | Resources                                                                                                                   |
+| -------- | -------------------- | ---------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| AQI (US) | `usaEpa`             | co, no2, o3, pm10, pm25, so2 | US Environmental Protection Agency (EPA) [link](https://www3.epa.gov/airnow/aqi-technical-assistance-document-sept2018.pdf) |
+| AQI (CN) | `chnMep`             | co, no2, o3, pm10, pm25, so2 | China Ministry of Environmental Protection (MEP) [link](http://www.zzemc.cn/em_aw/Content/HJ633-2012.pdf)                   |
+
+<small><sup>1</sup>: We use the same AQI code as [Breezometer](https://docs.breezometer.com/api-documentation/air-quality-api/v2/#supported-air-quality-indexes), the only difference is that the code is camelCase, because JavaScript likes camelCase.</small>
+
+We also plan to support other AQIs in the future, see [issue #15](https://github.com/shootismoke/common/issues/15) if you want to help.
 
 ## ⚡ Get Started
 
-Install the package
+Install the package:
 
 ```bash
 yarn install @shootismoke/convert
 ```
 
-### `aqiToRaw(pollutant: Pollutant, aqi: number, aqiType: AqiType = 'US'): number`
+The package mainly exports the `convert` function.
 
-Converts an AQI value to raw concentration (µg/m³ or ppm).
+### `convert(pollutant, from, to, value)`
+
+The function can convert, for any pollutant:
+
+- from a raw concentration to a supported AQI
+- from a supported AQI to a raw concentration
+- from a supported AQI to another AQI
 
 Arguments:
 
-- `pollutant: Pollutant`: One of `'co' | 'h' | 'no2' | 'o3' | 'p' | 'pm10' | 'pm25' | 'so2' | 't' | 'w'`
-- `aqi: number`: The AQI value
-- `aqiType: AqiType`: One of `'US' | 'CN'`
+- `pollutant: Pollutant`: One of `'co' | 'no2' | 'o3' | 'pm10' | 'pm25' | 'so2'`
+- `from: AqiCode | 'raw'`: An AQI code (see table above) or the `'raw'` string
+- `to: AqiCode | 'raw'`: An AQI code (see table above) or the `'raw'` string
+- `value: number`: The value to convert
 
 ```typescript
-import { aqiToRaw } from '@shootismoke/convert';
+import { convert } from '@shootismoke/convert';
 
-const raw = aqiToRaw('pm25', 57, 'US');
+// Convert PM2.5 from usaEpa AQI to raw concentration
+const raw = convert('pm25', 'usaEpa', 'raw', 57);
 console.log(raw); // 15
-```
 
-### `aqiToRaw(pollutant: Pollutant, raw: number, aqiType: AqiType = 'US'): number`
-
-Converts a raw concentration (µg/m³ or ppm) to AQI value.
-
-Arguments:
-
-- `pollutant: Pollutant`: One of `'co' | 'h' | 'no2' | 'o3' | 'p' | 'pm10' | 'pm25' | 'so2' | 't' | 'w'`
-- `raw: number`: The raw concentration
-- `aqiType: AqiType`: One of `'US' | 'CN'`
-
-```typescript
-import { rawToAqi } from '@shootismoke/convert';
-
-const aqi = aqiToRaw('pm25', 15, 'US');
+// Convert PM2.5 from raw concentration to usaEPA AQI
+const aqi = convert('pm25', 'raw', 'usaEpa', 15);
 console.log(aqi); // 57
 ```
 
-### `getUnit(pollutant: Pollutant): Unit`
+### Full Documentation
 
-Gets the unit of a pollutant (µg/m³ or ppm).
-
-Arguments:
-
-- `pollutant: Pollutant`: One of `'co' | 'h' | 'no2' | 'o3' | 'p' | 'pm10' | 'pm25' | 'so2' | 't' | 'w'`
-
-```typescript
-import { getUnit } from '@shootismoke/convert';
-
-const unit = getUnit('pm25');
-console.log(unit); // 'µg/m³'
-```
+See the API reference documentation (TODO [#14](https://github.com/shootismoke/common/issues/14)).
 
 ## :raising_hand: Contribute
 
 1. Fork the repo
 2. Make your changes in your own fork
-3. Create a Pull Request on this repo
+3. Make sure `yarn lint` and `yarn test` pass
+4. Create a Pull Request on this repo
 
 ## :microscope: Tests
 
-Look out for `*.spec.ts` in the codebase.
+Look out for `*.spec.ts` in the codebase. Run:
 
 ```bash
 yarn test
 ```
-
-## :books: Resources
-
-- EPA AQI: Technical Assistance Document for the Reporting of Daily Air
-  Quality – the Air Quality Index (AQI) December 2013) found at http://www.epa.gov/airnow/aqi-technical-assistance-document-dec2013.pdf
-- National Ambient Air Quality Standards for Particulate Matter found at http://www.gpo.gov/fdsys/pkg/FR-2013-01-15/pdf/2012-30946.pdf
-- MEP AQI:
-  - GB3095—2012 (2012/02/29) found at http://www.mep.gov.cn/gkml/hbb/bwj/201203/t20120302_224147.htm
-  - HJ633-2012 (2012/02/29) found at http://www.zzemc.cn/em_aw/Content/HJ633-2012.pdf
 
 ## :newspaper: License
 

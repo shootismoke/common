@@ -10,7 +10,10 @@ export function roundTo1Decimal(n: number): number {
 /**
  * Breakpoints that define an AQI
  */
-export type Breakpoints = [[number, number], [number, number]][];
+export type Breakpoints = [
+  [number, number] /* [aqiLow, aqiHigh] */,
+  [number, number] /* [rawLow, rawHigh] */
+][];
 
 /**
  * From the breakpoints, we can derive the range (i.e. [min,max]) values of the
