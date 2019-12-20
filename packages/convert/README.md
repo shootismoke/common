@@ -7,14 +7,14 @@ A library to convert between various Air Quality Indexes (US, CN...) and their e
 
 Supported AQIs are listed in the below table.
 
-| AQI      | AQI Code<sup>1</sup> | Pollutants                   | Resources                                                                                                                   |
-| -------- | -------------------- | ---------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| AQI (US) | `usaEpa`             | co, no2, o3, pm10, pm25, so2 | US Environmental Protection Agency (EPA) [link](https://www3.epa.gov/airnow/aqi-technical-assistance-document-sept2018.pdf) |
-| AQI (CN) | `chnMep`             | co, no2, o3, pm10, pm25, so2 | China Ministry of Environmental Protection (MEP) [link](http://www.zzemc.cn/em_aw/Content/HJ633-2012.pdf)                   |
+| AQI      | AQI Code<sup>1</sup> | Pollutants                   | Resources                                                                                                                     |
+| -------- | -------------------- | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| AQI (US) | `usaEpa`             | co, no2, o3, pm10, pm25, so2 | US Environmental Protection Agency (EPA) [[link]](https://www3.epa.gov/airnow/aqi-technical-assistance-document-sept2018.pdf) |
+| AQI (CN) | `chnMep`             | co, no2, o3, pm10, pm25, so2 | China Ministry of Environmental Protection (MEP) [[link]](http://www.zzemc.cn/em_aw/Content/HJ633-2012.pdf)                   |
 
 We also plan to support other AQIs in the future, see [issue #15](https://github.com/shootismoke/common/issues/15) if you want to help.
 
-<p style="font-size: 8px;"><sup>1</sup>: We use the same AQI code as [Breezometer](https://docs.breezometer.com/api-documentation/air-quality-api/v2/#supported-air-quality-indexes), the only difference is that the code is camelCase, because JavaScript likes camelCase.</p>
+<sub><sup>1</sup>: We use the same AQI code as [Breezometer](https://docs.breezometer.com/api-documentation/air-quality-api/v2/#supported-air-quality-indexes), the only difference is that the code is camelCase, because JavaScript likes camelCase.</sub>
 
 ## ⚡ Get Started
 
