@@ -14,7 +14,7 @@ A library to convert between various Air Quality Indexes (US, CN...) and their e
 
 We also plan to support other AQIs in the future, see [issue #15](https://github.com/shootismoke/common/issues/15) if you want to help.
 
-<sub><sup>1</sup>: We use the same AQI code as [Breezometer](https://docs.breezometer.com/api-documentation/air-quality-api/v2/#supported-air-quality-indexes), the only difference is that the code is camelCase, because JavaScript likes camelCase.</sub>
+<sub><sup>1</sup>: We use the same AQI code as [Breezometer](https://docs.breezometer.com/api-documentation/air-quality-api/v2/#supported-air-quality-indexes), the only difference is that the code here is camelCase, because JavaScript likes camelCase.</sub>
 
 ## ⚡ Get Started
 
@@ -36,7 +36,7 @@ The function can convert, for any pollutant:
 
 Arguments:
 
-- `pollutant: Pollutant`: One of `'co' | 'no2' | 'o3' | 'pm10' | 'pm25' | 'so2'`
+- `pollutant: Pollutant`: One of the supported pollutants,
 - `from: AqiCode | 'raw'`: An AQI code (see table above) or the `'raw'` string
 - `to: AqiCode | 'raw'`: An AQI code (see table above) or the `'raw'` string
 - `value: number`: The value to convert
@@ -52,6 +52,10 @@ console.log(raw); // 15
 const aqi = convert('pm25', 'raw', 'usaEpa', 15);
 console.log(aqi); // 57
 ```
+
+### Supported Pollutants
+
+The pollutants the AQIs apply to are: `'co' | 'c6h6' | 'ox' | 'nh3' | 'nmhc' | 'no' | 'nox' | 'no2' | 'o3' | 'pm10' | 'pm25' | 'so2' | 'trs'`. Check [this file](./src/util/pollutant.ts) to see the metadata for each pollutant (full name, unit...).
 
 ### Full Documentation
 
