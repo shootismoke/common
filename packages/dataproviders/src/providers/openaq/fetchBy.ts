@@ -7,6 +7,7 @@ import { ACCURATE_RADIUS, decodeWith, promiseToTE } from '../../util';
 import { Measurements, MeasurementsCodec } from './validation';
 
 const RESULT_LIMIT = 10;
+const BASE_URL = `https://api.openaq.org/v1/measurements?include_fields=attribution,averagingPeriod,mobile,sourceName,sourceType&limit=${RESULT_LIMIT}`;
 
 /**
  * Fetch the closest station to the user's current position
@@ -20,7 +21,7 @@ export function fetchByGps(gps: LatLng): TE.TaskEither<Error, Measurements> {
     promiseToTE(() =>
       axios
         .get(
-          `https://api.openaq.org/v1/measurements?coordinates=${latitude},${longitude}&radius=${ACCURATE_RADIUS}&include_fields=attribution,averagingPeriod,sourceName&limit=${RESULT_LIMIT}`
+          `${BASE_URL}&coordinates=${latitude},${longitude}&radius=${ACCURATE_RADIUS}`
         )
         .then(({ data }) => data)
     ),
@@ -38,11 +39,7 @@ export function fetchByStation(
 ): TE.TaskEither<Error, Measurements> {
   return pipe(
     promiseToTE(() =>
-      axios
-        .get(
-          `https://api.openaq.org/v1/measurements?location=${stationId}&include_fields=attribution,averagingPeriod,sourceName&limit=${RESULT_LIMIT}`
-        )
-        .then(({ data }) => data)
+      axios.get(`${BASE_URL}&location=${stationId}`).then(({ data }) => data)
     ),
     TE.chain(decodeWith(MeasurementsCodec))
   );

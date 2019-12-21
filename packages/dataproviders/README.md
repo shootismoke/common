@@ -56,7 +56,7 @@ pipe(
     },
     // Do on success:
     results => {
-      const normalized = results[0];
+      const normalized = results[0]; // `results` is an array of normalized OpenAQ objects
       console.log(`${normalized.value} ${normalized.unit}`); // Logs "34.5 µg/m³"
 
       // ...snip...
@@ -77,7 +77,7 @@ async function main() {
   const data = await aqicn.fetchByStation(1045);
   console.log(data.dominentpol); // Logs "pm25"
 
-  const results = aqicn.normalize(data);
+  const results = aqicn.normalize(data); // `results` is an array of normalized OpenAQ objects
   const normalized = results[0];
   console.log(`${normalized.value} ${normalized.unit}`); // Logs "34.5 µg/m³"
 }
@@ -92,14 +92,19 @@ If you use the `.normalizeByGps` or `.normalizeByStation` functions, the output 
  * The OpenAQ data format. One such object represents one air quality _measurement_
  */
 interface OpenAQ {
+  /**
+   * City (or regional approximation) containing location
+   */
+  city: string;
+  /**
+   * Country containing location in two letter ISO format
+   */
+  country: string;
+  /**
+   * Time of measurement including both local time and UTC time.
+   */
   date: {
-    /**
-     * ISO date string representing the local time
-     */
     local: string;
-    /**
-     * ISO date string representing the UTC time
-     */
     utc: string;
   };
   /**

@@ -44,12 +44,17 @@ export const sourceTypeCodec = t.union([
 
 // Required fields for OpenAQ data format
 const required = t.type({
+  city: t.string,
+  country: t.string,
   date: t.type({
     local: t.string,
     utc: t.string
   }),
   location: t.string,
+  mobile: t.boolean,
   parameter: pollutantCodec,
+  sourceName: t.string,
+  sourceType: sourceTypeCodec,
   value: t.number,
   unit: unitCodec
 });
@@ -61,14 +66,7 @@ const optional = t.partial({
     unit: t.string,
     value: t.number
   }),
-  city: t.string,
-  coordinates: latLngCodec,
-  country: t.string,
-
-  mobile: t.boolean,
-
-  sourceName: t.string,
-  sourceType: sourceTypeCodec
+  coordinates: latLngCodec
 });
 
 /**
