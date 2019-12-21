@@ -21,6 +21,11 @@ Install the package:
 yarn install @shootismoke/dataproviders
 ```
 
+The package mainly exposes a couple of data providers (see list above), and for each data provider, there are two main functions:
+
+- `fetchByGps({ latitude, longitude }, options?)` - Fetch air quality data by GPS coordinates
+- `fetchByStation(stationId, options?)` - Fetch air quality data by station ID
+
 ### Usage with `fp-ts`
 
 The codebase uses [`io-ts`](https://github.com/gcanti/io-ts) to perform runtime data validation, the results are functional programming datatypes (`Either<E,A>`, `Task<E,A>`). It's recommended to use [`fp-ts`](https://github.com/gcanti/fp-ts) to manipulate the results.
@@ -76,6 +81,48 @@ async function main() {
   console.log(`${normalized.value} ${normalized.unit}`); // Logs "34.5 µg/m³"
 }
 ```
+
+### Normalized Data Format
+
+If you use the `.normalizeByGps` or `.normalizeByStation`, the output of the function will be the following normalized data format: `Array<OpenAQ>`, where `OpenAQ` is an object following the `openaq-data-format`, representing one _measurement_. `OpenAQ` has the following **required** fields:
+
+```typescript
+interface OpenAQ {
+  date: {
+    /**
+     * ISO date string representing the local time
+     */
+    local: string;
+    /**
+     * ISO date string representing the UTC time
+     */
+    utc: string;
+  };
+  /**
+   * A unique ID representing the location of a measurement (can be a station ID, a place...)
+   */
+  location: string;
+  /**
+   * The pollutant id (pm25, pm10, o3...)
+   */
+  parameter: Pollutant;
+  /**
+   * The pollutant id (pm25, pm10, o3...)
+   */
+  value: number;
+  /**
+   * The pollutant id (pm25, pm10, o3...)
+   */
+  unit: Unit;
+}
+
+/**
+ * The normalized type is an array of OpenAQ measurements
+ */
+type Normalized = OpenAQ[];
+```
+
+See [`openaq-data-format`](https://github.com/openaq/openaq-data-format) for more information.
 
 ### Full Documentation
 
