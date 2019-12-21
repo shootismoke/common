@@ -3,20 +3,22 @@
 [![David](https://img.shields.io/david/shootismoke/common.svg)](https://david-dm.org/shootismoke/common)
 [![Maintainability](https://api.codeclimate.com/v1/badges/dfeff2fb9de150607af9/maintainability)](https://codeclimate.com/github/shootismoke/common/maintainability)
 
-# `@shootismoke/common`
+# `@shootismoke/common`<sup>1</sup>
 
-Shared packages between [Sh\*\*t! I Smoke](https://shootismoke.github.io) projects.
+Useful packages for manipulating air quality data.
+
+<sub><sup>1</sup>Shared packages between [Sh\*\*t! I Smoke](https://shootismoke.github.io) projects.</sub>
 
 ## Packages
 
-The following packages are designed to be used by other people, there's a bigger chance you might be interested in those.
+The following packages are designed to be used by other people, there's a bigger chance you might be interested in these.
 
-| Packages                                                 | NPM                                                                                                                                      | Description                                                                  |
-| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| [`@shootismoke/convert`](./packages/convert)             | [![npm (scoped)](https://img.shields.io/npm/v/@shootismoke/convert.svg)](https://www.npmjs.com/package/@shootismoke/convert)             | Easily convert between AQIs (US, CN...) and raw values (ug/m3, ppm)          |
-| [`@shootismoke/dataproviders`](./packages/dataproviders) | [![npm (scoped)](https://img.shields.io/npm/v/@shootismoke/dataproviders.svg)](https://www.npmjs.com/package/@shootismoke/dataproviders) | Fetch & normalize data from various air quality data providers (WAQI, AQICN) |
+| Packages                                                 | NPM                                                                                                                                      | Description                                                                                                                                                                   |
+| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`@shootismoke/convert`](./packages/convert)             | [![npm (scoped)](https://img.shields.io/npm/v/@shootismoke/convert.svg)](https://www.npmjs.com/package/@shootismoke/convert)             | Easily convert between AQIs (US, CN...) and raw concentration values (ug/m3, ppm)                                                                                             |
+| [`@shootismoke/dataproviders`](./packages/dataproviders) | [![npm (scoped)](https://img.shields.io/npm/v/@shootismoke/dataproviders.svg)](https://www.npmjs.com/package/@shootismoke/dataproviders) | A library to fetch air quality data from various providers (AqiCN, OpenAQ...) and normalizing data into one common format: the [openaq-data-format](#normalized-data-format). |
 
-The following packages are used internally in Sh\*\*t! I Smoke packages, but if you're interested in them, feel free to use them.
+The following packages are used internally in Sh\*\*t! I Smoke projects, but if you're interested in them, feel free to use them.
 
 | Packages                                     | NPM                                                                                                                          | Description                                                                              |
 | -------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |

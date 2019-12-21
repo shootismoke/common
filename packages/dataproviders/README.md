@@ -4,9 +4,9 @@
 
 # `@shootismoke/dataproviders`
 
-A library to fetch air quality data from various providers (AqiCN, OpenAQ...), as well as normalizing data into one common format: the [openaq-data-format](#normalized-data-format).
+A library to fetch air quality data from various providers (AqiCN, OpenAQ...) and normalizing data into one common format: the [openaq-data-format](#normalized-data-format).
 
-## Supported Air Quality Indexes
+## Supported Air Quality Providers
 
 | Provider | Provider Code | Website            | Notes                                                                   |
 | -------- | ------------- | ------------------ | ----------------------------------------------------------------------- |
@@ -72,7 +72,7 @@ If you don't want to use `fp-ts`, the package also exports the data providers as
 
 ```typescript
 // Retrieve the providers by provider code
-import { aqicn } from '@shootismoke/dataproviders/promise'; // ! Note the `promise` here
+import { aqicn } from '@shootismoke/dataproviders/promise'; // Note the `promise` here!
 
 async function main() {
   const data = await aqicn.fetchByStation(1045);
@@ -86,7 +86,7 @@ async function main() {
 
 ### Normalized Data Format
 
-If you use the `.normalizeByGps` or `.normalizeByStation` functions, the output of the function will be normalized. We follow the [`openaq-data-format`](https://github.com/openaq/openaq-data-format), below are its **required** fields:
+If you use the `.normalizeByGps` or `.normalizeByStation` functions, the output will be normalized. We follow the [`openaq-data-format`](https://github.com/openaq/openaq-data-format), below are its **required** fields:
 
 ```typescript
 /**
@@ -117,11 +117,11 @@ interface OpenAQ {
    */
   parameter: Pollutant;
   /**
-   * The pollutant id (pm25, pm10, o3...)
+   * The value of the measurement
    */
   value: number;
   /**
-   * The pollutant id (pm25, pm10, o3...)
+   * The unit the value is measured in (µg/m³, ppm)
    */
   unit: Unit;
 }

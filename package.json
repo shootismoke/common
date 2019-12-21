@@ -1,7 +1,7 @@
 {
   "name": "@shootismoke/common",
   "author": "Amaury Martiny <amaury.martiny@protonmail.com>",
-  "description": "Shared packages between Sh**t! I Smoke projects",
+  "description": "Useful packages for manipulating air quality data.",
   "license": "GPL-3.0",
   "private": true,
   "repository": "https://github.com/shootismoke/common",
