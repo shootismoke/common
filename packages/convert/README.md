@@ -1,5 +1,6 @@
 [![npm (scoped)](https://img.shields.io/npm/v/@shootismoke/convert.svg)](https://www.npmjs.com/package/@shootismoke/convert)
 [![dependencies Status](https://david-dm.org/shootismoke/common/status.svg?path=packages/convert)](https://david-dm.org/shootismoke/common?path=packages/convert)
+[![Maintainability](https://api.codeclimate.com/v1/badges/2d517984b9b528fcd3cd/maintainability)](https://codeclimate.com/github/shootismoke/common/maintainability)
 
 # `@shootismoke/convert`
 
@@ -37,16 +38,18 @@ The function can convert, for any pollutant:
 Arguments:
 
 - `pollutant: Pollutant`: One of the supported pollutants, [see them](#supported-pollutants).
-- `from: AqiCode | 'raw'`: An AQI code (see table above) or the `'raw'` string
-- `to: AqiCode | 'raw'`: An AQI code (see table above) or the `'raw'` string
+- `from: AqiCode | 'raw'`: An AQI code or the `'raw'` string
+- `to: AqiCode | 'raw'`: An AQI code or the `'raw'` string
 - `value: number`: The value to convert
 
 ```typescript
-import { convert } from '@shootismoke/convert';
+import { convert, getMetadata } from '@shootismoke/convert';
 
 // Convert PM2.5 from usaEpa AQI to raw concentration
 const raw = convert('pm25', 'usaEpa', 'raw', 57);
 console.log(raw); // 15
+
+console.log(getMetadata('pm25').preferredUnit); // "µg/m³", which is the unit of the value 15 above
 
 // Convert PM2.5 from raw concentration to usaEPA AQI
 const aqi = convert('pm25', 'raw', 'usaEpa', 15);

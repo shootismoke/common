@@ -4,6 +4,11 @@ import * as TE from 'fp-ts/lib/TaskEither';
 import { Type } from 'io-ts';
 import { failure } from 'io-ts/lib/PathReporter';
 
+/**
+ * Decode, and return an Error on failure
+ *
+ * @param codec - Codec used to decode
+ */
 export function decodeWith<A, O, I>(
   codec: Type<A, O, I>
 ): (response: I) => TE.TaskEither<Error, A> {

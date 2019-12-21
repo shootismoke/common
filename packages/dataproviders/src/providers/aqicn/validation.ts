@@ -1,5 +1,7 @@
 import * as t from 'io-ts';
 
+import { attributionsCodec } from '../../util';
+
 // Example response
 // Object {
 //   "data": Object {
@@ -60,26 +62,12 @@ const pollutantValue = t.type({
   v: t.number
 });
 
-const pollutants = t.partial({
-  co: pollutantValue,
-  h: pollutantValue,
-  no2: pollutantValue,
-  o3: pollutantValue,
-  p: pollutantValue,
-  pm10: pollutantValue,
-  pm25: pollutantValue,
-  so2: pollutantValue,
-  t: pollutantValue,
-  w: pollutantValue
-});
+// Ideally, we should have a list of all pollutants tracked by AqiCN, but I
+// didn't finy any. Putting string for now.
+const pollutants = t.record(t.string, pollutantValue);
 
 const AqicnStationCodecData = t.type({
-  attributions: t.array(
-    t.type({
-      name: t.string,
-      url: t.union([t.string, t.undefined])
-    })
-  ),
+  attributions: attributionsCodec,
   city: t.type({
     geo: t.union([
       t.tuple([
@@ -95,16 +83,21 @@ const AqicnStationCodecData = t.type({
   }),
   // Should be `t.keyof(pollutants.props)`, but sometimes we do get "" or undefined
   dominentpol: t.union([t.string, t.undefined]),
+  // All pollutants
   iaqi: t.union([pollutants, t.undefined]),
+  // Station ID
   idx: t.number,
   time: t.type({
+    // As string
     s: t.union([t.string, t.undefined]),
+    // Timezone
     tz: t.union([t.string, t.undefined]),
+    // As timestamp
     v: t.number
   })
 });
 
-export const AqicnStationCodec = t.type({
+export const ByStationCodec = t.type({
   status: t.keyof({
     ok: null,
     error: null,
@@ -114,4 +107,4 @@ export const AqicnStationCodec = t.type({
   msg: t.union([t.string, t.undefined])
 });
 
-export type AqicnStation = t.TypeOf<typeof AqicnStationCodecData>;
+export type ByStation = t.TypeOf<typeof AqicnStationCodecData>;

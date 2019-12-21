@@ -30,10 +30,10 @@ export type Unit = typeof ppb | typeof ppm | typeof ugm3;
  * Metadata for each pollutant
  */
 export interface PollutantMeta {
-  code: Pollutant;
-  displayName: string;
-  fullName: string;
-  unit: Unit;
+  id: Pollutant;
+  name: string;
+  description: string;
+  preferredUnit: Unit;
 }
 
 /**
@@ -41,82 +41,82 @@ export interface PollutantMeta {
  */
 export const AllPollutants: Record<Pollutant, PollutantMeta> = {
   co: {
-    code: 'co',
-    displayName: 'CO',
-    fullName: 'Carbon monoxide',
-    unit: ppb
+    id: 'co',
+    name: 'CO',
+    description: 'Carbon monoxide',
+    preferredUnit: ppb
   },
   c6h6: {
-    code: 'c6h6',
-    displayName: 'C6H6',
-    fullName: 'Benzene',
-    unit: ugm3
+    id: 'c6h6',
+    name: 'C6H6',
+    description: 'Benzene',
+    preferredUnit: ugm3
   },
   ox: {
-    code: 'ox',
-    displayName: 'Ox',
-    fullName: 'Photochemical oxidants',
-    unit: ppb
+    id: 'ox',
+    name: 'Ox',
+    description: 'Photochemical oxidants',
+    preferredUnit: ppb
   },
   o3: {
-    code: 'o3',
-    displayName: 'O3',
-    fullName: 'Ozone',
-    unit: ppb
+    id: 'o3',
+    name: 'O3',
+    description: 'Ozone',
+    preferredUnit: ppb
   },
   nh3: {
-    code: 'nh3',
-    displayName: 'NH3',
-    fullName: 'Ammonia',
-    unit: ppb
+    id: 'nh3',
+    name: 'NH3',
+    description: 'Ammonia',
+    preferredUnit: ppb
   },
   nmhc: {
-    code: 'nmhc',
-    displayName: 'NMHC',
-    fullName: 'Non-methane hydrocarbons',
-    unit: ppb
+    id: 'nmhc',
+    name: 'NMHC',
+    description: 'Non-methane hydrocarbons',
+    preferredUnit: ppb
   },
   no: {
-    code: 'no',
-    displayName: 'NO',
-    fullName: 'Nitrogen monoxide',
-    unit: ppb
+    id: 'no',
+    name: 'NO',
+    description: 'Nitrogen monoxide',
+    preferredUnit: ppb
   },
   nox: {
-    code: 'nox',
-    displayName: 'NOx',
-    fullName: 'Nitrogen oxides',
-    unit: ppb
+    id: 'nox',
+    name: 'NOx',
+    description: 'Nitrogen oxides',
+    preferredUnit: ppb
   },
   no2: {
-    code: 'no2',
-    displayName: 'NO2',
-    fullName: 'Nitrogen dioxide',
-    unit: ppb
+    id: 'no2',
+    name: 'NO2',
+    description: 'Nitrogen dioxide',
+    preferredUnit: ppb
   },
   pm25: {
-    code: 'pm25',
-    displayName: 'PM25',
-    fullName: 'Fine particulate matter (<2.5µm)',
-    unit: ugm3
+    id: 'pm25',
+    name: 'PM25',
+    description: 'Fine particulate matter (<2.5µm)',
+    preferredUnit: ugm3
   },
   pm10: {
-    code: 'pm10',
-    displayName: 'PM10',
-    fullName: 'Inhalable particulate matter (<10µm)',
-    unit: ugm3
+    id: 'pm10',
+    name: 'PM10',
+    description: 'Inhalable particulate matter (<10µm)',
+    preferredUnit: ugm3
   },
   so2: {
-    code: 'so2',
-    displayName: 'SO2',
-    fullName: 'Sulfur dioxide',
-    unit: ppb
+    id: 'so2',
+    name: 'SO2',
+    description: 'Sulfur dioxide',
+    preferredUnit: ppb
   },
   trs: {
-    code: 'trs',
-    displayName: 'TRS',
-    fullName: 'Total reduced sulfur',
-    unit: ugm3
+    id: 'trs',
+    name: 'TRS',
+    description: 'Total reduced sulfur',
+    preferredUnit: ugm3
   }
 };
 

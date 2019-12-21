@@ -14,11 +14,10 @@
   "repository": "https://github.com/shootismoke/common",
   "scripts": {
     "prebuild": "rimraf lib",
-    "build": "tsc"
+    "build": "tsc -p tsconfig.settings.json"
   },
   "dependencies": {
     "@shootismoke/convert": "^0.1.15",
-    "@shootismoke/graphql": "^0.1.15",
     "axios": "^0.19.0",
     "fp-ts": "^2.1.1",
     "io-ts": "^2.0.1"

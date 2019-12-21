@@ -22,7 +22,7 @@ import * as t from 'io-ts';
 //   "g": null,
 // }
 
-export const WaqiStationCodec = t.type({
+export const ByStationCodec = t.type({
   d: t.array(
     t.type({
       d: t.number,
@@ -40,4 +40,4 @@ export const WaqiStationCodec = t.type({
   g: t.any
 });
 
-export type WaqiStation = t.TypeOf<typeof WaqiStationCodec>;
+export type ByStation = t.TypeOf<typeof ByStationCodec>;
