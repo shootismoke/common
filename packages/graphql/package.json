@@ -14,7 +14,7 @@
   "repository": "https://github.com/shootismoke/common",
   "scripts": {
     "prebuild": "rimraf lib",
-    "build": "tsc",
+    "build": "tsc -p tsconfig.settings.json",
     "generate": "graphql-codegen"
   },
   "devDependencies": {

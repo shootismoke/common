@@ -28,6 +28,6 @@ The following packages are used internally in Sh\*\*t! I Smoke projects, but if 
 
 ### Why is there a `tsconfig.json` and a `tsconfig.settings.json`?
 
-Inside each package in the `packages/` folder, there is a `tsconfig.json`. This is the canonical `tsconfig.json` for each package. If you inspect it, it extends `tsconfig.settings.json`. So `tsconfig.settings.json` serves as a base template.
+Inside each package in the `packages/` folder, there is a `tsconfig.settings.json`. This is the canonical config file for each package, used by `tsc`, because we use `-p tsconfig.settings.json`. If you inspect it, it extends `<rootDir>/tsconfig.settings.json`. So `<rootDir>/tsconfig.settings.json` serves as a base template.
 
-The root `tsconfig.json` is not used while building packages, it's only there for VSCode, so that jumping between packages is done smoothly.
+The various `tsconfig.json` are not used while building packages, they are only there for VSCode, so that jumping between packages is done smoothly, because we defined TypeScript paths.
