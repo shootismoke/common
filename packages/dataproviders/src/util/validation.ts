@@ -41,3 +41,42 @@ export const sourceTypeCodec = t.union([
   t.literal('research'),
   t.literal('other')
 ]);
+
+// Required fields for OpenAQ data format
+const required = t.type({
+  date: t.type({
+    local: t.string,
+    utc: t.string
+  }),
+  location: t.string,
+  parameter: pollutantCodec,
+  value: t.number,
+  unit: unitCodec
+});
+
+// Optional fields for OpenAQ data format
+const optional = t.partial({
+  attribution: attributionsCodec,
+  averagingPeriod: t.type({
+    unit: t.string,
+    value: t.number
+  }),
+  city: t.string,
+  coordinates: latLngCodec,
+  country: t.string,
+
+  mobile: t.boolean,
+
+  sourceName: t.string,
+  sourceType: sourceTypeCodec
+});
+
+/**
+ * @see https://github.com/openaq/openaq-data-format
+ */
+export const OpenAQCodec = t.intersection([required, optional]);
+
+/**
+ * @see https://github.com/openaq/openaq-data-format
+ */
+export type OpenAQ = t.TypeOf<typeof OpenAQCodec>;

@@ -1,6 +1,6 @@
 import * as TE from 'fp-ts/lib/TaskEither';
 
-import { OpenAQ } from './normalized';
+import { OpenAQ } from './util';
 
 /**
  * Latitude and longitude object

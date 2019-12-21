@@ -1,6 +1,6 @@
 import { Provider } from '../../types';
 import { fetchByGps } from './fetchBy';
-import { normalizeByGps } from './normalize';
+import { normalize } from './normalize';
 import { ByStation } from './validation';
 
 /**
@@ -13,7 +13,7 @@ export const waqi: Provider<ByStation, ByStation, {}> = {
   },
   id: 'waqi',
   name: 'WAQI',
-  normalizeByGps,
+  normalizeByGps: normalize,
   normalizeByStation: () => {
     throw new Error('Unimplemented.');
   }

@@ -8,7 +8,7 @@ import { ByStation } from './validation';
  *
  * @param data - The data to normalize
  */
-export function normalizeByGps({ d: [data] }: ByStation): Normalized {
+export function normalize({ d: [data] }: ByStation): Normalized {
   const universalId = `waqi|${data.x}`;
 
   if (!isPollutant(data.pol)) {
