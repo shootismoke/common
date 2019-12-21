@@ -1,6 +1,5 @@
 [![Actions Status](https://github.com/shootismoke/common/workflows/pr/badge.svg)](https://github.com/shootismoke/common/actions)
 ![GitHub](https://img.shields.io/github/license/shootismoke/common.svg)
-[![David](https://img.shields.io/david/shootismoke/common.svg)](https://david-dm.org/shootismoke/common)
 [![Maintainability](https://api.codeclimate.com/v1/badges/dfeff2fb9de150607af9/maintainability)](https://codeclimate.com/github/shootismoke/common/maintainability)
 
 # `@shootismoke/common`
