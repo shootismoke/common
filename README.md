@@ -3,11 +3,9 @@
 [![David](https://img.shields.io/david/shootismoke/common.svg)](https://david-dm.org/shootismoke/common)
 [![Maintainability](https://api.codeclimate.com/v1/badges/dfeff2fb9de150607af9/maintainability)](https://codeclimate.com/github/shootismoke/common/maintainability)
 
-# `@shootismoke/common`<sup>1</sup>
+# `@shootismoke/common`
 
-Useful packages for manipulating air quality data.
-
-<sub><sup>1</sup>Shared packages between [Sh\*\*t! I Smoke](https://shootismoke.github.io) projects.</sub>
+Useful packages for manipulating air quality data. Shared between [Sh\*\*t! I Smoke](https://shootismoke.github.io) projects.
 
 ## Packages
 
