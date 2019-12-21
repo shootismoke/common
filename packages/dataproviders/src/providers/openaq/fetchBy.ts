@@ -16,10 +16,6 @@ const RESULT_LIMIT = 10;
 export function fetchByGps(gps: LatLng): TE.TaskEither<Error, Measurements> {
   const { latitude, longitude } = gps;
 
-  console.log(
-    `https://api.openaq.org/v1/measurements?coordinates=${latitude},${longitude}&radius=${ACCURATE_RADIUS}&include_fields=attribution,averagingPeriod,sourceName&limit=${RESULT_LIMIT}`
-  );
-
   return pipe(
     promiseToTE(() =>
       axios
@@ -44,7 +40,7 @@ export function fetchByStation(
     promiseToTE(() =>
       axios
         .get(
-          `https://api.openaq.org/v1/measurements?location=${stationId}&include_fields[]=attribution&include_fields[]=averagingPeriod&include_fields[]=sourceName`
+          `https://api.openaq.org/v1/measurements?location=${stationId}&include_fields=attribution,averagingPeriod,sourceName&limit=${RESULT_LIMIT}`
         )
         .then(({ data }) => data)
     ),

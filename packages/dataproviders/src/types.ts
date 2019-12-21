@@ -15,7 +15,10 @@ export interface LatLng {
  */
 export type Normalized = OpenAQ[];
 
-export interface Provider<DataByGps, DataByStation, Options = {}> {
+/**
+ * An interface representing an air quality data provider (fp-ts version)
+ */
+export interface Provider<DataByGps, DataByStation, Options> {
   fetchByGps(gps: LatLng, options?: Options): TE.TaskEither<Error, DataByGps>;
   fetchByStation(
     stationId: string,
@@ -27,20 +30,14 @@ export interface Provider<DataByGps, DataByStation, Options = {}> {
   normalizeByStation(d: DataByStation): Normalized;
 }
 
-// /**
-//  * The concentration of a pollutant, in
-//  */
-// export interface PollutantValue {
-//   aqiCN: number;
-//   aqiUS: number;
-//   raw: number;
-//   unit: Unit;
-// }
-
-// // FIXME Use: import { Station } from '@shootismoke/graphql';
-// interface Station {
-//   gps: LatLng;
-//   name: string;
-//   provider: Provider;
-//   universalId: string;
-// }
+/**
+ * An interface representing an air quality data provider (Promise version)
+ */
+export interface ProviderPromise<DataByGps, DataByStation, Options> {
+  fetchByGps(gps: LatLng, options?: Options): Promise<DataByGps>;
+  fetchByStation(stationId: string, options?: Options): Promise<DataByStation>;
+  id: string;
+  name: string;
+  normalizeByGps(d: DataByGps): Normalized;
+  normalizeByStation(d: DataByStation): Normalized;
+}

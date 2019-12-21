@@ -9,12 +9,12 @@ import { ByStation } from './validation';
 export const waqi: Provider<ByStation, ByStation, {}> = {
   fetchByGps,
   fetchByStation: () => {
-    throw new Error('Unimplemented.');
+    throw new Error('Unimplemented');
   },
   id: 'waqi',
   name: 'WAQI',
   normalizeByGps: normalize,
   normalizeByStation: () => {
-    throw new Error('Unimplemented.');
+    throw new Error('Unimplemented');
   }
 };

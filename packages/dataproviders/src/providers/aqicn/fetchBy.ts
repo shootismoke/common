@@ -30,6 +30,18 @@ export interface AqicnOptions {
 }
 
 /**
+ * Check that a token has been correctly passed
+ *
+ * @param options - Options to pass to aqicn
+ */
+function checkToken(options?: AqicnOptions): TE.TaskEither<Error, undefined> {
+  if (!options || !options.token) {
+    return TE.left(new Error('AqiCN requires a token'));
+  }
+  return TE.right(undefined);
+}
+
+/**
  * Fetch the closest station to the user's current position
  *
  * @param gps - Latitude and longitude of the user's current position
@@ -41,12 +53,15 @@ export function fetchByGps(
   const { latitude, longitude } = gps;
 
   return pipe(
-    promiseToTE(() =>
-      axios
-        .get(
-          `http://api.waqi.info/feed/geo:${latitude};${longitude}/?token=${options.token}`
-        )
-        .then(({ data }) => data)
+    checkToken(options),
+    TE.chain(() =>
+      promiseToTE(() =>
+        axios
+          .get(
+            `http://api.waqi.info/feed/geo:${latitude};${longitude}/?token=${options.token}`
+          )
+          .then(({ data }) => data)
+      )
     ),
     TE.chain(decodeWith(ByStationCodec)),
     TE.chain(checkError)
@@ -63,10 +78,15 @@ export function fetchByStation(
   options: AqicnOptions
 ): TE.TaskEither<Error, ByStation> {
   return pipe(
-    promiseToTE(() =>
-      axios
-        .get(`https://api.waqi.info/feed/@${stationId}/?token=${options.token}`)
-        .then(({ data }) => data)
+    checkToken(options),
+    TE.chain(() =>
+      promiseToTE(() =>
+        axios
+          .get(
+            `https://api.waqi.info/feed/@${stationId}/?token=${options.token}`
+          )
+          .then(({ data }) => data)
+      )
     ),
     TE.chain(decodeWith(ByStationCodec)),
     TE.chain(checkError)

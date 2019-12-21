@@ -20,6 +20,21 @@ function generateRandomStationId(): string {
   return `${Math.floor(Math.random() * 1000) + 1}`;
 }
 
+/**
+ * Test that normalized data is correct
+ *
+ * @param normalized - The normalized data to test
+ */
+export function testNormalized(normalized: Normalized): void {
+  normalized.forEach(data => {
+    expect(data.date).toBeDefined();
+    expect(data.location).toBeDefined();
+    expect(data.parameter).toBeDefined();
+    expect(data.value).toBeDefined();
+    expect(data.unit).toBeDefined();
+  });
+}
+
 function testTE<T>(
   te: TE.TaskEither<Error, T>,
   normalize: (data: T) => Normalized,
@@ -47,9 +62,7 @@ function testTE<T>(
         expect(response).toBeDefined();
 
         const normalized = normalize(response);
-        normalized.forEach(data => {
-          expect(data.value).toBeDefined();
-        });
+        testNormalized(normalized);
 
         done();
 
@@ -66,33 +79,29 @@ export function testProvider<DataByGps, DataByStation, Options = {}>(
   provider: Provider<DataByGps, DataByStation, Options>,
   { options, skip = [] }: TestProviderOptions<Options>
 ): void {
-  describe(`${provider.id}`, () => {
-    if (!skip.includes('fetchByGps')) {
-      describe('fetchByGps', () => {
-        [...Array(2)].map(generateRandomLatLng).forEach(gps => {
-          it(`should fetch ${provider.id} by gps: ${JSON.stringify(
-            gps
-          )}`, done =>
-            testTE(
-              provider.fetchByGps(gps, options),
-              d => provider.normalizeByGps(d),
-              done
-            ));
-        });
+  if (!skip.includes('fetchByGps')) {
+    describe('fetchByGps', () => {
+      [...Array(2)].map(generateRandomLatLng).forEach(gps => {
+        it(`should fetch ${provider.id} by gps: ${JSON.stringify(gps)}`, done =>
+          testTE(
+            provider.fetchByGps(gps, options),
+            d => provider.normalizeByGps(d),
+            done
+          ));
       });
-    }
+    });
+  }
 
-    if (!skip.includes('fetchByStation')) {
-      describe('fetchByStation', () => {
-        [...Array(2)].map(generateRandomStationId).forEach(stationId => {
-          it(`should fetch ${provider.id} by station: ${stationId}`, done =>
-            testTE(
-              provider.fetchByStation(stationId, options),
-              d => provider.normalizeByStation(d),
-              done
-            ));
-        });
+  if (!skip.includes('fetchByStation')) {
+    describe('fetchByStation', () => {
+      [...Array(2)].map(generateRandomStationId).forEach(stationId => {
+        it(`should fetch ${provider.id} by station: ${stationId}`, done =>
+          testTE(
+            provider.fetchByStation(stationId, options),
+            d => provider.normalizeByStation(d),
+            done
+          ));
       });
-    }
-  });
+    });
+  }
 }
