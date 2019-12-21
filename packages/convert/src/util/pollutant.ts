@@ -138,20 +138,3 @@ export function getMetadata(pollutant: Pollutant): PollutantMeta {
 export function isPollutant(pollutant: string): pollutant is Pollutant {
   return Object.keys(AllPollutants).includes(pollutant as Pollutant);
 }
-
-/**
- * Assert that the AQI does indeed track the pollutant
- *
- * @param pollutant
- * @param aqiCode
- */
-export function assertTracked<T extends Pollutant>(
-  pollutant: Pollutant,
-  aqiCode: AqiCode
-): asserts pollutant is T {
-  if (!aqiCodes[aqiCode].pollutants.includes(pollutant)) {
-    throw new Error(
-      `${aqiCodes[aqiCode].displayName} does not apply to pollutant ${pollutant}`
-    );
-  }
-}

@@ -1,5 +1,5 @@
-import { convert } from '../convert';
-import { testConvert } from '../util/testUtil';
+import { convert } from '../../convert';
+import { testConvert } from '../../util/testUtil';
 import { usaEpa } from './usaEpa';
 
 describe('Convert pm25', () => {
