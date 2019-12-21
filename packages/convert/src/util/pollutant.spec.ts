@@ -13,10 +13,10 @@ describe('isPollutant', () => {
 describe('getMetadata', () => {
   it('should return correct metadata', () => {
     expect(getMetadata('pm25')).toEqual({
-      code: 'pm25',
-      displayName: 'PM25',
-      fullName: 'Fine particulate matter (<2.5µm)',
-      unit: ugm3
+      id: 'pm25',
+      name: 'PM25',
+      description: 'Fine particulate matter (<2.5µm)',
+      preferredUnit: ugm3
     });
   });
 });

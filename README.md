@@ -3,7 +3,7 @@
 [![David](https://img.shields.io/david/shootismoke/common.svg)](https://david-dm.org/shootismoke/common)
 [![Maintainability](https://api.codeclimate.com/v1/badges/dfeff2fb9de150607af9/maintainability)](https://codeclimate.com/github/shootismoke/common/maintainability)
 
-# @shootismoke/common
+# `@shootismoke/common`
 
 Shared packages between Sh\*\*t! I Smoke projects.
 
