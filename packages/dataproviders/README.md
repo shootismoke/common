@@ -1,5 +1,6 @@
 [![npm (scoped)](https://img.shields.io/npm/v/@shootismoke/dataproviders.svg)](https://www.npmjs.com/package/@shootismoke/dataproviders)
 [![dependencies Status](https://david-dm.org/shootismoke/common/status.svg?path=packages/dataproviders)](https://david-dm.org/shootismoke/common?path=packages/dataproviders)
+[![Maintainability](https://api.codeclimate.com/v1/badges/2d517984b9b528fcd3cd/maintainability)](https://codeclimate.com/github/shootismoke/common/maintainability)
 
 # `@shootismoke/dataproviders`
 
@@ -21,7 +22,7 @@ Install the package:
 yarn install @shootismoke/dataproviders
 ```
 
-The package mainly exposes a couple of data providers (see list above), and for each data provider, there are two main functions:
+The package exposes a couple of data providers (see list above), and for each data provider, there are two main functions:
 
 - `fetchByGps({ latitude, longitude }, options?)` - Fetch air quality data by GPS coordinates
 - `fetchByStation(stationId, options?)` - Fetch air quality data by station ID
@@ -71,13 +72,13 @@ If you don't want to use `fp-ts`, the package also exports the data providers as
 
 ```typescript
 // Retrieve the providers by provider code
-import { aqicn } from '@shootismoke/dataproviders/promise';
+import { aqicn } from '@shootismoke/dataproviders/promise'; // ! Note the `promise` here
 
 async function main() {
   const data = await aqicn.fetchByStation(1045);
   console.log(data.dominentpol); // Logs "pm25"
 
-  const results = aqicn.normalize(data); // `results` is an array of normalized OpenAQ objects
+  const results = aqicn.normalizeByStation(data); // `results` is an array of normalized OpenAQ objects
   const normalized = results[0];
   console.log(`${normalized.value} ${normalized.unit}`); // Logs "34.5 µg/m³"
 }
@@ -85,7 +86,7 @@ async function main() {
 
 ### Normalized Data Format
 
-If you use the `.normalizeByGps` or `.normalizeByStation` functions, the output of the function will be normalized. We follow the `openaq-data-format`, below are its **required** fields:
+If you use the `.normalizeByGps` or `.normalizeByStation` functions, the output of the function will be normalized. We follow the [`openaq-data-format`](https://github.com/openaq/openaq-data-format), below are its **required** fields:
 
 ```typescript
 /**
