@@ -11,7 +11,7 @@ describe('openaq', () => {
   });
 
   describe('by station', () => {
-    it('should fetch station Coyhaique', async done => {
+    it('should fetch station Coyhaique', done => {
       pipe(
         openaq.fetchByStation('Coyhaique'),
         TE.fold(

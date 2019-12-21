@@ -5,7 +5,7 @@
 
 # `@shootismoke/common`
 
-Shared packages between Sh\*\*t! I Smoke projects.
+Shared packages between [Sh\*\*t! I Smoke](https://shootismoke.github.io) projects.
 
 ## Packages
 

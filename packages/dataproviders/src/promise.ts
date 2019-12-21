@@ -11,10 +11,13 @@ function promisifyProvider<DataByGps, DataByStation, Options>(
 ): ProviderPromise<DataByGps, DataByStation, Options> {
   return {
     ...provider,
-    fetchByGps(gps: LatLng, options?: Options) {
+    fetchByGps(gps: LatLng, options?: Options): Promise<DataByGps> {
       return teToPromise(provider.fetchByGps(gps, options));
     },
-    fetchByStation(stationId: string, options?: Options) {
+    fetchByStation(
+      stationId: string,
+      options?: Options
+    ): Promise<DataByStation> {
       return teToPromise(provider.fetchByStation(stationId, options));
     }
   };

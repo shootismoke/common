@@ -3,7 +3,7 @@
 
 # `@shootismoke/dataproviders`
 
-A library to fetch air quality data from various providers (AqiCN, OpenAQ...), as well as normalizing data into one common format: the [openaq-data-format](https://github.com/openaq/openaq-data-format).
+A library to fetch air quality data from various providers (AqiCN, OpenAQ...), as well as normalizing data into one common format: the [openaq-data-format](#normalized-data-format).
 
 ## Supported Air Quality Indexes
 
@@ -76,6 +76,7 @@ import { aqicn } from '@shootismoke/dataproviders/promise';
 async function main() {
   const data = await aqicn.fetchByStation(1045);
   console.log(data.dominentpol); // Logs "pm25"
+
   const results = aqicn.normalize(data);
   const normalized = results[0];
   console.log(`${normalized.value} ${normalized.unit}`); // Logs "34.5 µg/m³"
@@ -84,9 +85,12 @@ async function main() {
 
 ### Normalized Data Format
 
-If you use the `.normalizeByGps` or `.normalizeByStation`, the output of the function will be the following normalized data format: `Array<OpenAQ>`, where `OpenAQ` is an object following the `openaq-data-format`, representing one _measurement_. `OpenAQ` has the following **required** fields:
+If you use the `.normalizeByGps` or `.normalizeByStation` functions, the output of the function will be normalized. We follow the `openaq-data-format`, below are its **required** fields:
 
 ```typescript
+/**
+ * The OpenAQ data format. One such object represents one air quality _measurement_
+ */
 interface OpenAQ {
   date: {
     /**
@@ -117,7 +121,7 @@ interface OpenAQ {
 }
 
 /**
- * The normalized type is an array of OpenAQ measurements
+ * The normalized data is an array of OpenAQ measurements
  */
 type Normalized = OpenAQ[];
 ```
