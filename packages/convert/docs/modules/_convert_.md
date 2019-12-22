@@ -14,7 +14,7 @@
 
 ▸ **convert**<**From**, **To**>(`pollutant`: [Pollutant](_util_pollutant_.md#pollutant), `from`: From, `to`: To, `value`: number): *number*
 
-*Defined in [convert.ts:14](https://github.com/shootismoke/common/blob/0be10ae/packages/convert/src/convert.ts#L14)*
+*Defined in [convert.ts:14](https://github.com/shootismoke/common/blob/092361a/packages/convert/src/convert.ts#L14)*
 
 For any pollutant, convert an AQI to its raw concentration, or vice versa,
 or convert an AQI to another AQI

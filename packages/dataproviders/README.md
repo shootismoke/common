@@ -136,7 +136,7 @@ See [`openaq-data-format`](https://github.com/openaq/openaq-data-format) for mor
 
 ### Full Documentation
 
-See the API reference documentation (TODO [#14](https://github.com/shootismoke/common/issues/14)).
+See the API reference [documentation](./docs/globals.md).
 
 ## :raising_hand: Contribute
 

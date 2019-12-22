@@ -66,7 +66,7 @@ The pollutants the AQIs apply to are: `'co' | 'c6h6' | 'ox' | 'nh3' | 'nmhc' | '
 
 ### Full Documentation
 
-See the API reference documentation (TODO [#14](https://github.com/shootismoke/common/issues/14)).
+See the API reference [documentation](./docs/globals.md).
 
 ## :raising_hand: Contribute
 

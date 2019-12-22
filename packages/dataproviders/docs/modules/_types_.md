@@ -20,6 +20,6 @@
 
 Ƭ **Normalized**: *[OpenAQ](_util_openaq_.md#openaq)[]*
 
-*Defined in [types.ts:16](https://github.com/shootismoke/common/blob/0be10ae/packages/dataproviders/src/types.ts#L16)*
+*Defined in [types.ts:16](https://github.com/shootismoke/common/blob/092361a/packages/dataproviders/src/types.ts#L16)*
 
 Normalized response from all data providers
