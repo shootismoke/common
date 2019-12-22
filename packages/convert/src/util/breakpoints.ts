@@ -1,3 +1,7 @@
+/**
+ * @ignore
+ */ /** */
+
 import { Aqi } from '../types';
 import { Pollutant } from './pollutant';
 
@@ -114,6 +118,12 @@ function assertTracked<P extends Pollutant>(
   }
 }
 
+/**
+ * Create an AQI from its breakpoints
+ *
+ * @param aqiCode - The code of the AQI
+ * @param breakpoints - The breakpoints defining the AQI
+ */
 export function createAqiFromBreakpoints(
   aqiCode: string,
   breakpoints: Breakpoints

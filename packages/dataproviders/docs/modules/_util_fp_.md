@@ -15,7 +15,7 @@
 
 ▸ **promiseToTE**<**A**>(`fn`: Lazy‹Promise‹A››): *TaskEither‹Error, A›*
 
-*Defined in [util/fp.ts:11](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/util/fp.ts#L11)*
+*Defined in [util/fp.ts:11](https://github.com/shootismoke/common/blob/eaab9f5/packages/dataproviders/src/util/fp.ts#L11)*
 
 Convert a Promise<A> into a TaskEither<Error, A>
 
@@ -37,7 +37,7 @@ ___
 
 ▸ **teToPromise**<**A**>(`te`: TaskEither‹Error, A›): *Promise‹A›*
 
-*Defined in [util/fp.ts:24](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/util/fp.ts#L24)*
+*Defined in [util/fp.ts:24](https://github.com/shootismoke/common/blob/eaab9f5/packages/dataproviders/src/util/fp.ts#L24)*
 
 Convert a TaskEither<Error, A> into a Promise<A>
 

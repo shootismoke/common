@@ -9,7 +9,4 @@
 * ["aqi/chnMep/chnMep"](modules/_aqi_chnmep_chnmep_.md)
 * ["aqi/usaEpa/usaEpa"](modules/_aqi_usaepa_usaepa_.md)
 * ["convert"](modules/_convert_.md)
-* ["types"](modules/_types_.md)
-* ["util/breakpoints"](modules/_util_breakpoints_.md)
 * ["util/pollutant"](modules/_util_pollutant_.md)
-* ["util/testUtil"](modules/_util_testutil_.md)

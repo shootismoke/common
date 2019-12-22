@@ -23,7 +23,7 @@
 
 Ƭ **OpenAQ**: *t.TypeOf‹IntersectionC›*
 
-*Defined in [util/openaq.ts:80](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/util/openaq.ts#L80)*
+*Defined in [util/openaq.ts:80](https://github.com/shootismoke/common/blob/eaab9f5/packages/dataproviders/src/util/openaq.ts#L80)*
 
 **`see`** https://github.com/openaq/openaq-data-format
 
@@ -33,7 +33,7 @@
 
 • **OpenAQCodec**: *IntersectionC‹[TypeC‹object›, PartialC‹object›]›* =  t.intersection([required, optional])
 
-*Defined in [util/openaq.ts:75](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/util/openaq.ts#L75)*
+*Defined in [util/openaq.ts:75](https://github.com/shootismoke/common/blob/eaab9f5/packages/dataproviders/src/util/openaq.ts#L75)*
 
 **`see`** https://github.com/openaq/openaq-data-format
 
@@ -48,7 +48,7 @@ ___
   })
 )
 
-*Defined in [util/openaq.ts:3](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/util/openaq.ts#L3)*
+*Defined in [util/openaq.ts:3](https://github.com/shootismoke/common/blob/eaab9f5/packages/dataproviders/src/util/openaq.ts#L3)*
 
 ___
 
@@ -59,7 +59,7 @@ ___
   longitude: t.number
 })
 
-*Defined in [util/openaq.ts:10](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/util/openaq.ts#L10)*
+*Defined in [util/openaq.ts:10](https://github.com/shootismoke/common/blob/eaab9f5/packages/dataproviders/src/util/openaq.ts#L10)*
 
 ___
 
@@ -83,7 +83,7 @@ ___
   t.literal('trs')
 ])
 
-*Defined in [util/openaq.ts:15](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/util/openaq.ts#L15)*
+*Defined in [util/openaq.ts:15](https://github.com/shootismoke/common/blob/eaab9f5/packages/dataproviders/src/util/openaq.ts#L15)*
 
 ___
 
@@ -95,7 +95,7 @@ ___
   t.literal('other')
 ])
 
-*Defined in [util/openaq.ts:39](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/util/openaq.ts#L39)*
+*Defined in [util/openaq.ts:39](https://github.com/shootismoke/common/blob/eaab9f5/packages/dataproviders/src/util/openaq.ts#L39)*
 
 ___
 
@@ -107,4 +107,4 @@ ___
   t.literal('µg/m³')
 ])
 
-*Defined in [util/openaq.ts:33](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/util/openaq.ts#L33)*
+*Defined in [util/openaq.ts:33](https://github.com/shootismoke/common/blob/eaab9f5/packages/dataproviders/src/util/openaq.ts#L33)*

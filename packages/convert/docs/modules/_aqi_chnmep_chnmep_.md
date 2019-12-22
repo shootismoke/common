@@ -14,7 +14,7 @@
 
 ### ▪ **chnMep**: *object*
 
-*Defined in [aqi/chnMep/chnMep.ts:9](https://github.com/shootismoke/common/blob/abfb8ac/packages/convert/src/aqi/chnMep/chnMep.ts#L9)*
+*Defined in [aqi/chnMep/chnMep.ts:9](https://github.com/shootismoke/common/blob/eaab9f5/packages/convert/src/aqi/chnMep/chnMep.ts#L9)*
 
 AQI (CN)
 
@@ -24,4 +24,4 @@ AQI (CN)
 
 • **displayName**: *string* = "AQI (CN)"
 
-*Defined in [aqi/chnMep/chnMep.ts:10](https://github.com/shootismoke/common/blob/abfb8ac/packages/convert/src/aqi/chnMep/chnMep.ts#L10)*
+*Defined in [aqi/chnMep/chnMep.ts:10](https://github.com/shootismoke/common/blob/eaab9f5/packages/convert/src/aqi/chnMep/chnMep.ts#L10)*

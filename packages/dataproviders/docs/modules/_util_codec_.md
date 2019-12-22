@@ -14,7 +14,7 @@
 
 ▸ **decodeWith**<**A**, **O**, **I**>(`codec`: Type‹A, O, I›): *function*
 
-*Defined in [util/codec.ts:12](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/util/codec.ts#L12)*
+*Defined in [util/codec.ts:12](https://github.com/shootismoke/common/blob/eaab9f5/packages/dataproviders/src/util/codec.ts#L12)*
 
 Decode, and return an Error on failure
 

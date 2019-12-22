@@ -18,7 +18,7 @@
 
 Ƭ **ByStation**: *t.TypeOf‹TypeC›*
 
-*Defined in [providers/aqicn/validation.ts:110](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/providers/aqicn/validation.ts#L110)*
+*Defined in [providers/aqicn/validation.ts:110](https://github.com/shootismoke/common/blob/eaab9f5/packages/dataproviders/src/providers/aqicn/validation.ts#L110)*
 
 ## Variables
 
@@ -34,4 +34,4 @@
   msg: t.union([t.string, t.undefined])
 })
 
-*Defined in [providers/aqicn/validation.ts:100](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/providers/aqicn/validation.ts#L100)*
+*Defined in [providers/aqicn/validation.ts:100](https://github.com/shootismoke/common/blob/eaab9f5/packages/dataproviders/src/providers/aqicn/validation.ts#L100)*

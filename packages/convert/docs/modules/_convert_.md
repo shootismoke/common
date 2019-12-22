@@ -14,16 +14,16 @@
 
 ▸ **convert**<**From**, **To**>(`pollutant`: [Pollutant](_util_pollutant_.md#pollutant), `from`: From, `to`: To, `value`: number): *number*
 
-*Defined in [convert.ts:14](https://github.com/shootismoke/common/blob/abfb8ac/packages/convert/src/convert.ts#L14)*
+*Defined in [convert.ts:14](https://github.com/shootismoke/common/blob/eaab9f5/packages/convert/src/convert.ts#L14)*
 
 For any pollutant, convert an AQI to its raw concentration, or vice versa,
 or convert an AQI to another AQI
 
 **Type parameters:**
 
-▪ **From**: *[AqiCode](_types_.md#aqicode) | "raw"*
+▪ **From**: *AqiCode | "raw"*
 
-▪ **To**: *[AqiCode](_types_.md#aqicode) | "raw"*
+▪ **To**: *AqiCode | "raw"*
 
 **Parameters:**
 

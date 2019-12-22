@@ -17,8 +17,17 @@ export type Pollutant =
   | 'trs';
 
 // Pollutant concentration units
+/**
+ * @ignore
+ */
 export const ppb = 'ppb';
+/**
+ * @ignore
+ */
 export const ppm = 'ppm';
+/**
+ * @ignore
+ */
 export const ugm3 = 'µg/m³';
 
 export type Unit = typeof ppb | typeof ppm | typeof ugm3;

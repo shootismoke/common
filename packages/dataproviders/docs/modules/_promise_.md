@@ -14,22 +14,22 @@
 
 ### `Const` aqicn
 
-• **aqicn**: *[ProviderPromise](../interfaces/_types_.providerpromise.md)‹object, object, [AqicnOptions](../interfaces/_providers_aqicn_fetchby_.aqicnoptions.md)›* =  promisifyProvider(aqicnFp)
+• **aqicn**: *ProviderPromise‹object, object, [AqicnOptions](../interfaces/_providers_aqicn_fetchby_.aqicnoptions.md)›* =  promisifyProvider(aqicnFp)
 
-*Defined in [promise.ts:26](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/promise.ts#L26)*
+*Defined in [promise.ts:26](https://github.com/shootismoke/common/blob/eaab9f5/packages/dataproviders/src/promise.ts#L26)*
 
 ___
 
 ### `Const` openaq
 
-• **openaq**: *[ProviderPromise](../interfaces/_types_.providerpromise.md)‹object, object, __type›* =  promisifyProvider(openaqFp)
+• **openaq**: *ProviderPromise‹object, object, __type›* =  promisifyProvider(openaqFp)
 
-*Defined in [promise.ts:27](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/promise.ts#L27)*
+*Defined in [promise.ts:27](https://github.com/shootismoke/common/blob/eaab9f5/packages/dataproviders/src/promise.ts#L27)*
 
 ___
 
 ### `Const` waqi
 
-• **waqi**: *[ProviderPromise](../interfaces/_types_.providerpromise.md)‹object, object, __type›* =  promisifyProvider(waqiFp)
+• **waqi**: *ProviderPromise‹object, object, __type›* =  promisifyProvider(waqiFp)
 
-*Defined in [promise.ts:28](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/promise.ts#L28)*
+*Defined in [promise.ts:28](https://github.com/shootismoke/common/blob/eaab9f5/packages/dataproviders/src/promise.ts#L28)*
