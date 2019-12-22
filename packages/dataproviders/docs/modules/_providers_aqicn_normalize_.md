@@ -14,7 +14,7 @@
 
 ▸ **normalize**(`data`: [ByStation](_providers_aqicn_validation_.md#bystation)): *[Normalized](_types_.md#normalized)*
 
-*Defined in [providers/aqicn/normalize.ts:11](https://github.com/shootismoke/common/blob/5e67d25/packages/dataproviders/src/providers/aqicn/normalize.ts#L11)*
+*Defined in [providers/aqicn/normalize.ts:11](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/providers/aqicn/normalize.ts#L11)*
 
 Normalize aqicn byGps data
 

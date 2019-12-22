@@ -18,7 +18,7 @@
 
 Ƭ **Measurements**: *t.TypeOf‹TypeC›*
 
-*Defined in [providers/openaq/validation.ts:23](https://github.com/shootismoke/common/blob/5e67d25/packages/dataproviders/src/providers/openaq/validation.ts#L23)*
+*Defined in [providers/openaq/validation.ts:23](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/providers/openaq/validation.ts#L23)*
 
 **`see`** https://github.com/openaq/openaq-data-format
 
@@ -38,6 +38,6 @@
   results: t.array(OpenAQCodec)
 })
 
-*Defined in [providers/openaq/validation.ts:8](https://github.com/shootismoke/common/blob/5e67d25/packages/dataproviders/src/providers/openaq/validation.ts#L8)*
+*Defined in [providers/openaq/validation.ts:8](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/providers/openaq/validation.ts#L8)*
 
 **`see`** https://github.com/openaq/openaq-data-format

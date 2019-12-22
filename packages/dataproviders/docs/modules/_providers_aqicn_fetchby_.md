@@ -19,7 +19,7 @@
 
 ▸ **fetchByGps**(`gps`: [LatLng](../interfaces/_types_.latlng.md), `options`: [AqicnOptions](../interfaces/_providers_aqicn_fetchby_.aqicnoptions.md)): *TaskEither‹Error, [ByStation](_providers_aqicn_validation_.md#bystation)›*
 
-*Defined in [providers/aqicn/fetchBy.ts:49](https://github.com/shootismoke/common/blob/5e67d25/packages/dataproviders/src/providers/aqicn/fetchBy.ts#L49)*
+*Defined in [providers/aqicn/fetchBy.ts:49](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/providers/aqicn/fetchBy.ts#L49)*
 
 Fetch the closest station to the user's current position
 
@@ -38,7 +38,7 @@ ___
 
 ▸ **fetchByStation**(`stationId`: string, `options`: [AqicnOptions](../interfaces/_providers_aqicn_fetchby_.aqicnoptions.md)): *TaskEither‹Error, [ByStation](_providers_aqicn_validation_.md#bystation)›*
 
-*Defined in [providers/aqicn/fetchBy.ts:76](https://github.com/shootismoke/common/blob/5e67d25/packages/dataproviders/src/providers/aqicn/fetchBy.ts#L76)*
+*Defined in [providers/aqicn/fetchBy.ts:76](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/providers/aqicn/fetchBy.ts#L76)*
 
 Fetch data by station
 

@@ -19,7 +19,7 @@
 
 Ƭ **Breakpoints**: *Record‹"aqi", Piecewise› & Partial‹Record‹[Pollutant](_util_pollutant_.md#pollutant), Piecewise››*
 
-*Defined in [util/breakpoints.ts:19](https://github.com/shootismoke/common/blob/5e67d25/packages/convert/src/util/breakpoints.ts#L19)*
+*Defined in [util/breakpoints.ts:19](https://github.com/shootismoke/common/blob/abfb8ac/packages/convert/src/util/breakpoints.ts#L19)*
 
 Piecewise breakpoints that define an AQI
 
@@ -29,7 +29,7 @@ Piecewise breakpoints that define an AQI
 
 ▸ **createAqiFromBreakpoints**(`aqiCode`: string, `breakpoints`: [Breakpoints](_util_breakpoints_.md#breakpoints)): *Omit‹[Aqi](../interfaces/_types_.aqi.md), "displayName"›*
 
-*Defined in [util/breakpoints.ts:117](https://github.com/shootismoke/common/blob/5e67d25/packages/convert/src/util/breakpoints.ts#L117)*
+*Defined in [util/breakpoints.ts:117](https://github.com/shootismoke/common/blob/abfb8ac/packages/convert/src/util/breakpoints.ts#L117)*
 
 **Parameters:**
 
@@ -46,7 +46,7 @@ ___
 
 ▸ **round**(`n`: number, `decimals`: number): *number*
 
-*Defined in [util/breakpoints.ts:10](https://github.com/shootismoke/common/blob/5e67d25/packages/convert/src/util/breakpoints.ts#L10)*
+*Defined in [util/breakpoints.ts:10](https://github.com/shootismoke/common/blob/abfb8ac/packages/convert/src/util/breakpoints.ts#L10)*
 
 Round a number to closest 10^-{decimal}
 

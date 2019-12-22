@@ -14,7 +14,7 @@
 
 ▸ **normalize**(`__namedParameters`: object): *[Normalized](_types_.md#normalized)*
 
-*Defined in [providers/openaq/normalize.ts:9](https://github.com/shootismoke/common/blob/5e67d25/packages/dataproviders/src/providers/openaq/normalize.ts#L9)*
+*Defined in [providers/openaq/normalize.ts:9](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/providers/openaq/normalize.ts#L9)*
 
 Normalize aqicn byGps data
 

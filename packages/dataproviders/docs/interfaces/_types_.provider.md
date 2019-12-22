@@ -36,7 +36,7 @@ An interface representing an air quality data provider (fp-ts version)
 
 • **id**: *string*
 
-*Defined in [types.ts:27](https://github.com/shootismoke/common/blob/5e67d25/packages/dataproviders/src/types.ts#L27)*
+*Defined in [types.ts:27](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/types.ts#L27)*
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 • **name**: *string*
 
-*Defined in [types.ts:28](https://github.com/shootismoke/common/blob/5e67d25/packages/dataproviders/src/types.ts#L28)*
+*Defined in [types.ts:28](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/types.ts#L28)*
 
 ## Methods
 
@@ -52,7 +52,7 @@ ___
 
 ▸ **fetchByGps**(`gps`: [LatLng](_types_.latlng.md), `options?`: Options): *TaskEither‹Error, DataByGps›*
 
-*Defined in [types.ts:22](https://github.com/shootismoke/common/blob/5e67d25/packages/dataproviders/src/types.ts#L22)*
+*Defined in [types.ts:22](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/types.ts#L22)*
 
 **Parameters:**
 
@@ -69,7 +69,7 @@ ___
 
 ▸ **fetchByStation**(`stationId`: string, `options?`: Options): *TaskEither‹Error, DataByStation›*
 
-*Defined in [types.ts:23](https://github.com/shootismoke/common/blob/5e67d25/packages/dataproviders/src/types.ts#L23)*
+*Defined in [types.ts:23](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/types.ts#L23)*
 
 **Parameters:**
 
@@ -86,7 +86,7 @@ ___
 
 ▸ **normalizeByGps**(`d`: DataByGps): *[Normalized](../modules/_types_.md#normalized)*
 
-*Defined in [types.ts:29](https://github.com/shootismoke/common/blob/5e67d25/packages/dataproviders/src/types.ts#L29)*
+*Defined in [types.ts:29](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/types.ts#L29)*
 
 **Parameters:**
 
@@ -102,7 +102,7 @@ ___
 
 ▸ **normalizeByStation**(`d`: DataByStation): *[Normalized](../modules/_types_.md#normalized)*
 
-*Defined in [types.ts:30](https://github.com/shootismoke/common/blob/5e67d25/packages/dataproviders/src/types.ts#L30)*
+*Defined in [types.ts:30](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/types.ts#L30)*
 
 **Parameters:**
 

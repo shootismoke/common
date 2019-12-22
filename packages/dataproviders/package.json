@@ -15,7 +15,7 @@
   "scripts": {
     "prebuild": "rimraf lib",
     "build": "tsc -p tsconfig.settings.json",
-    "docs": "typedoc src"
+    "docs": "rimraf docs && typedoc src"
   },
   "dependencies": {
     "@shootismoke/convert": "^0.1.15",

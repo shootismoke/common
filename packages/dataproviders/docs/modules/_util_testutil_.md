@@ -19,7 +19,7 @@
 
 ▸ **testNormalized**(`normalized`: [Normalized](_types_.md#normalized)): *void*
 
-*Defined in [util/testUtil.ts:28](https://github.com/shootismoke/common/blob/5e67d25/packages/dataproviders/src/util/testUtil.ts#L28)*
+*Defined in [util/testUtil.ts:28](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/util/testUtil.ts#L28)*
 
 Test that normalized data is correct
 
@@ -37,7 +37,7 @@ ___
 
 ▸ **testProvider**<**DataByGps**, **DataByStation**, **Options**>(`provider`: [Provider](../interfaces/_types_.provider.md)‹DataByGps, DataByStation, Options›, `__namedParameters`: object): *void*
 
-*Defined in [util/testUtil.ts:78](https://github.com/shootismoke/common/blob/5e67d25/packages/dataproviders/src/util/testUtil.ts#L78)*
+*Defined in [util/testUtil.ts:78](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/util/testUtil.ts#L78)*
 
 Test helper to test a provider
 

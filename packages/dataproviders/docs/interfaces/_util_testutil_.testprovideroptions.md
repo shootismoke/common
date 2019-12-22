@@ -23,7 +23,7 @@
 
 • **options**? : *Options*
 
-*Defined in [util/testUtil.ts:8](https://github.com/shootismoke/common/blob/5e67d25/packages/dataproviders/src/util/testUtil.ts#L8)*
+*Defined in [util/testUtil.ts:8](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/util/testUtil.ts#L8)*
 
 ___
 
@@ -31,4 +31,4 @@ ___
 
 • **skip**? : *"fetchByGps" | "fetchByStation"[]*
 
-*Defined in [util/testUtil.ts:9](https://github.com/shootismoke/common/blob/5e67d25/packages/dataproviders/src/util/testUtil.ts#L9)*
+*Defined in [util/testUtil.ts:9](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/util/testUtil.ts#L9)*

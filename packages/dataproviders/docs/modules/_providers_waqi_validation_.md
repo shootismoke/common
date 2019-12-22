@@ -18,7 +18,7 @@
 
 Ƭ **ByStation**: *t.TypeOf‹TypeC›*
 
-*Defined in [providers/waqi/validation.ts:43](https://github.com/shootismoke/common/blob/5e67d25/packages/dataproviders/src/providers/waqi/validation.ts#L43)*
+*Defined in [providers/waqi/validation.ts:43](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/providers/waqi/validation.ts#L43)*
 
 ## Variables
 
@@ -42,4 +42,4 @@
   g: t.any
 })
 
-*Defined in [providers/waqi/validation.ts:25](https://github.com/shootismoke/common/blob/5e67d25/packages/dataproviders/src/providers/waqi/validation.ts#L25)*
+*Defined in [providers/waqi/validation.ts:25](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/providers/waqi/validation.ts#L25)*

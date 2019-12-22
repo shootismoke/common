@@ -15,6 +15,6 @@
   "scripts": {
     "prebuild": "rimraf lib",
     "build": "tsc -p tsconfig.settings.json",
-    "docs": "typedoc src"
+    "docs": "rimraf docs && typedoc src"
   }
 }

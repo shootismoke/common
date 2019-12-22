@@ -15,7 +15,7 @@
 
 ▸ **fetchByGps**(`gps`: [LatLng](../interfaces/_types_.latlng.md)): *TaskEither‹Error, [Measurements](_providers_openaq_validation_.md#measurements)›*
 
-*Defined in [providers/openaq/fetchBy.ts:17](https://github.com/shootismoke/common/blob/5e67d25/packages/dataproviders/src/providers/openaq/fetchBy.ts#L17)*
+*Defined in [providers/openaq/fetchBy.ts:17](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/providers/openaq/fetchBy.ts#L17)*
 
 Fetch the closest station to the user's current position
 
@@ -33,7 +33,7 @@ ___
 
 ▸ **fetchByStation**(`stationId`: string): *TaskEither‹Error, [Measurements](_providers_openaq_validation_.md#measurements)›*
 
-*Defined in [providers/openaq/fetchBy.ts:37](https://github.com/shootismoke/common/blob/5e67d25/packages/dataproviders/src/providers/openaq/fetchBy.ts#L37)*
+*Defined in [providers/openaq/fetchBy.ts:37](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/providers/openaq/fetchBy.ts#L37)*
 
 Fetch data by station
 

@@ -14,7 +14,7 @@
 
 ▸ **fetchByGps**(`gps`: [LatLng](../interfaces/_types_.latlng.md)): *TaskEither‹Error, [ByStation](_providers_aqicn_validation_.md#bystation)›*
 
-*Defined in [providers/waqi/fetchBy.ts:14](https://github.com/shootismoke/common/blob/5e67d25/packages/dataproviders/src/providers/waqi/fetchBy.ts#L14)*
+*Defined in [providers/waqi/fetchBy.ts:14](https://github.com/shootismoke/common/blob/abfb8ac/packages/dataproviders/src/providers/waqi/fetchBy.ts#L14)*
 
 Fetch the closest station to the user's current position.
 
