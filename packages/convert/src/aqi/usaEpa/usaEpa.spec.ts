@@ -26,6 +26,6 @@ describe('Convert pm25', () => {
   });
 
   it('should return the correct range', () => {
-    expect(usaEpa.range('pm25')).toEqual([0, 500]);
+    expect(usaEpa.range).toEqual([0, 500]);
   });
 });

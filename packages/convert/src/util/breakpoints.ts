@@ -15,7 +15,8 @@ type Piecewise = [number, number][];
 /**
  * Piecewise breakpoints that define an AQI
  */
-export type Breakpoints = Partial<Record<Pollutant | 'aqi', Piecewise>>;
+export type Breakpoints = Record<'aqi', Piecewise> &
+  Partial<Record<Pollutant, Piecewise>>;
 
 /**
  * From the breakpoints, we can derive the range (i.e. [min,max]) values of the
@@ -105,6 +106,7 @@ function assertTracked<P extends Pollutant>(
   if (!breakpoints.aqi) {
     throw new Error(`${aqiCode} does not have AQI breakpoints`);
   }
+
   if (!breakpoints[pollutant]) {
     throw new Error(`${aqiCode} does not apply to ${pollutant}`);
   }
@@ -121,11 +123,7 @@ export function createAqiFromBreakpoints(
 
       return fromRaw(breakpoints.aqi, breakpoints[pollutant], raw);
     },
-    range(pollutant: Pollutant): [number, number] {
-      assertTracked(aqiCode, pollutant, breakpoints);
-
-      return getRange(breakpoints[pollutant]);
-    },
+    range: getRange(breakpoints.aqi),
     toRaw(pollutant: Pollutant, value: number): number {
       assertTracked(aqiCode, pollutant, breakpoints);
 

@@ -1,6 +1,3 @@
-import * as aqiCodes from '../aqi';
-import { AqiCode } from '../types';
-
 /**
  * All the pollutants tracked by @shootismoke
  */

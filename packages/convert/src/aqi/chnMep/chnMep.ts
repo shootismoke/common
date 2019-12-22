@@ -1,6 +1,6 @@
 import { Aqi } from '../../types';
 import { Breakpoints, createAqiFromBreakpoints } from '../../util';
-import breakpointsJSON from './breakpoints.json';
+import breakpoints from './breakpoints.json';
 
 /**
  * AQI (CN)
@@ -8,5 +8,5 @@ import breakpointsJSON from './breakpoints.json';
  */
 export const chnMep: Aqi = {
   displayName: 'AQI (CN)',
-  ...createAqiFromBreakpoints('chnMep', breakpointsJSON as Breakpoints)
+  ...createAqiFromBreakpoints('chnMep', breakpoints as Breakpoints)
 };
