@@ -2,12 +2,13 @@ import { Aqi } from '../types';
 import { Pollutant } from './pollutant';
 
 /**
- * Round a number to closest 0.1
+ * Round a number to closest 10^-{decimal}
  *
  * @param n - The float number to round
+ * @param decimal - The number of decimals after the .
  */
-function roundTo1Decimal(n: number): number {
-  return Math.round(10 * n) / 10;
+export function round(n: number, decimals = 0): number {
+  return Math.round(10 ** decimals * n) / 10 ** decimals;
 }
 
 type Piecewise = [number, number][];
@@ -44,7 +45,7 @@ function toRaw(
     ([aqiLow, aqiHigh]) => aqiLow <= value && value <= aqiHigh
   );
 
-  if (!segment) {
+  if (segment === -1) {
     // For PM2.5 greater than 500, AQI is not officially defined, but since
     // such levels have been occurring throughout China in recent years, one of
     // two conventions is used. Either the AQI is defined as equal to PM2.5 (in
@@ -57,9 +58,10 @@ function toRaw(
   const [aqiLow, aqiHigh] = aqiPiecewise[segment];
   const [rawLow, rawHigh] = rawPiecewise[segment];
 
-  // Use 1 decimal place
-  return roundTo1Decimal(
-    ((value - aqiLow) / (aqiHigh - aqiLow)) * (rawHigh - rawLow) + rawLow
+  // Round to closest 0.1
+  return round(
+    ((value - aqiLow) / (aqiHigh - aqiLow)) * (rawHigh - rawLow) + rawLow,
+    1
   );
 }
 
@@ -79,7 +81,7 @@ function fromRaw(
     ([rawLow, rawHigh]) => rawLow <= raw && raw <= rawHigh
   );
 
-  if (typeof segment === 'undefined') {
+  if (segment === -1) {
     // For PM2.5 greater than 500, AQI is not officially defined, but since
     // such levels have been occurring throughout China in recent years, one of
     // two conventions is used. Either the AQI is defined as equal to PM2.5 (in
@@ -92,9 +94,9 @@ function fromRaw(
   const [aqiLow, aqiHigh] = aqiPiecewise[segment];
   const [rawLow, rawHigh] = rawPiecewise[segment];
 
-  // Use 1 decimal place
-  return roundTo1Decimal(
-    ((raw - rawLow) / (rawHigh - rawLow)) * (aqiHigh - aqiLow) + aqiLow
+  // Round to closest integer
+  return round(
+    ((aqiHigh - aqiLow) / (rawHigh - rawLow)) * (raw - rawLow) + aqiLow
   );
 }
 
@@ -108,7 +110,7 @@ function assertTracked<P extends Pollutant>(
   }
 
   if (!breakpoints[pollutant]) {
-    throw new Error(`${aqiCode} does not apply to ${pollutant}`);
+    throw new Error(`${aqiCode} does not apply to pollutant ${pollutant}`);
   }
 }
 

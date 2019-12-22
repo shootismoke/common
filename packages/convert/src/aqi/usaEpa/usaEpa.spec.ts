@@ -15,13 +15,27 @@ describe('Convert pm25', () => {
   testConvert('usaEpa', 'pm25', 450, 424.5);
   testConvert('usaEpa', 'pm25', 550, 550);
 
+  testConvert('usaEpa', 'co', 90, 8.4);
+  testConvert('usaEpa', 'o3', 122, 0.077);
+
+  // From https://github.com/hrbonz/python-aqi/blob/master/test/test_epa.py
+  testConvert('usaEpa', 'pm25', 39, 9.3);
+  testConvert('usaEpa', 'pm25', 57, 15);
+  testConvert('usaEpa', 'pm25', 135, 49.5);
+  testConvert('usaEpa', 'pm25', 285, 235.4);
+  testConvert('usaEpa', 'o3', 155, 0.08753333); // Note: different from https://github.com/hrbonz/python-aqi/blob/1de807365eb44ef6c4e3d80af500ff8f6c273d41/test/test_epa.py#L34-L45
+  // testConvert('usaEpa', 'o3', 147, 0.162); // FIXME Unfortunately We don't track hourly o3 now
+  testConvert('usaEpa', 'o3', 238, 0.141); // Note: different from https://github.com/hrbonz/python-aqi/blob/1de807365eb44ef6c4e3d80af500ff8f6c273d41/test/test_epa.py#L34-L45
+  testConvert('usaEpa', 'pm25', 102, 35.9);
+  testConvert('usaEpa', 'co', 90, 8.4);
+
   it('should convert AQI (US) to AQI (CN)', () => {
-    expect(convert('pm25', 'usaEpa', 'chnMep', 24)).toBe(8.3);
+    expect(convert('pm25', 'usaEpa', 'chnMep', 24)).toBe(8);
   });
 
   it('should throw an error on unknown pollutant', () => {
     expect(() => convert('nmhc', 'usaEpa', 'raw', 23)).toThrowError(
-      'AQI (US) does not apply to pollutant nmhc'
+      'usaEpa does not apply to pollutant nmhc'
     );
   });
 
