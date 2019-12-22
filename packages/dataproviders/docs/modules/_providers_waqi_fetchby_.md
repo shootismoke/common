@@ -12,9 +12,9 @@
 
 ###  fetchByGps
 
-▸ **fetchByGps**(`gps`: LatLng): *TaskEither‹Error, [ByStation](_providers_aqicn_validation_.md#bystation)›*
+▸ **fetchByGps**(`gps`: [LatLng](../interfaces/_types_.latlng.md)): *TaskEither‹Error, [ByStation](_providers_aqicn_validation_.md#bystation)›*
 
-*Defined in [providers/waqi/fetchBy.ts:14](https://github.com/shootismoke/common/blob/eaab9f5/packages/dataproviders/src/providers/waqi/fetchBy.ts#L14)*
+*Defined in [providers/waqi/fetchBy.ts:14](https://github.com/shootismoke/common/blob/0ff5619/packages/dataproviders/src/providers/waqi/fetchBy.ts#L14)*
 
 Fetch the closest station to the user's current position.
 
@@ -22,6 +22,6 @@ Fetch the closest station to the user's current position.
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`gps` | LatLng | Latitude and longitude of the user's current position  |
+`gps` | [LatLng](../interfaces/_types_.latlng.md) | Latitude and longitude of the user's current position  |
 
 **Returns:** *TaskEither‹Error, [ByStation](_providers_aqicn_validation_.md#bystation)›*

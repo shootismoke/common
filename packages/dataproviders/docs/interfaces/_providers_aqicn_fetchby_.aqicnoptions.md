@@ -18,7 +18,7 @@
 
 • **token**: *string*
 
-*Defined in [providers/aqicn/fetchBy.ts:29](https://github.com/shootismoke/common/blob/eaab9f5/packages/dataproviders/src/providers/aqicn/fetchBy.ts#L29)*
+*Defined in [providers/aqicn/fetchBy.ts:29](https://github.com/shootismoke/common/blob/0ff5619/packages/dataproviders/src/providers/aqicn/fetchBy.ts#L29)*
 
 Aqicn token
 

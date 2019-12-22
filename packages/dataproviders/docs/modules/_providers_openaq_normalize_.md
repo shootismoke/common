@@ -12,9 +12,9 @@
 
 ###  normalize
 
-▸ **normalize**(`__namedParameters`: object): *Normalized*
+▸ **normalize**(`__namedParameters`: object): *[Normalized](_types_.md#normalized)*
 
-*Defined in [providers/openaq/normalize.ts:9](https://github.com/shootismoke/common/blob/eaab9f5/packages/dataproviders/src/providers/openaq/normalize.ts#L9)*
+*Defined in [providers/openaq/normalize.ts:9](https://github.com/shootismoke/common/blob/0ff5619/packages/dataproviders/src/providers/openaq/normalize.ts#L9)*
 
 Normalize aqicn byGps data
 
@@ -24,4 +24,4 @@ Name | Type |
 ------ | ------ |
 `__namedParameters` | object |
 
-**Returns:** *Normalized*
+**Returns:** *[Normalized](_types_.md#normalized)*

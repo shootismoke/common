@@ -17,9 +17,9 @@
 
 ###  fetchByGps
 
-▸ **fetchByGps**(`gps`: LatLng, `options`: [AqicnOptions](../interfaces/_providers_aqicn_fetchby_.aqicnoptions.md)): *TaskEither‹Error, [ByStation](_providers_aqicn_validation_.md#bystation)›*
+▸ **fetchByGps**(`gps`: [LatLng](../interfaces/_types_.latlng.md), `options`: [AqicnOptions](../interfaces/_providers_aqicn_fetchby_.aqicnoptions.md)): *TaskEither‹Error, [ByStation](_providers_aqicn_validation_.md#bystation)›*
 
-*Defined in [providers/aqicn/fetchBy.ts:49](https://github.com/shootismoke/common/blob/eaab9f5/packages/dataproviders/src/providers/aqicn/fetchBy.ts#L49)*
+*Defined in [providers/aqicn/fetchBy.ts:49](https://github.com/shootismoke/common/blob/0ff5619/packages/dataproviders/src/providers/aqicn/fetchBy.ts#L49)*
 
 Fetch the closest station to the user's current position
 
@@ -27,7 +27,7 @@ Fetch the closest station to the user's current position
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`gps` | LatLng | Latitude and longitude of the user's current position  |
+`gps` | [LatLng](../interfaces/_types_.latlng.md) | Latitude and longitude of the user's current position  |
 `options` | [AqicnOptions](../interfaces/_providers_aqicn_fetchby_.aqicnoptions.md) | - |
 
 **Returns:** *TaskEither‹Error, [ByStation](_providers_aqicn_validation_.md#bystation)›*
@@ -38,7 +38,7 @@ ___
 
 ▸ **fetchByStation**(`stationId`: string, `options`: [AqicnOptions](../interfaces/_providers_aqicn_fetchby_.aqicnoptions.md)): *TaskEither‹Error, [ByStation](_providers_aqicn_validation_.md#bystation)›*
 
-*Defined in [providers/aqicn/fetchBy.ts:76](https://github.com/shootismoke/common/blob/eaab9f5/packages/dataproviders/src/providers/aqicn/fetchBy.ts#L76)*
+*Defined in [providers/aqicn/fetchBy.ts:76](https://github.com/shootismoke/common/blob/0ff5619/packages/dataproviders/src/providers/aqicn/fetchBy.ts#L76)*
 
 Fetch data by station
 
