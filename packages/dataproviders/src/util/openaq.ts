@@ -1,5 +1,8 @@
 import * as t from 'io-ts';
 
+/**
+ * @ignore
+ */
 export const attributionsCodec = t.array(
   t.type({
     name: t.string,
@@ -7,11 +10,17 @@ export const attributionsCodec = t.array(
   })
 );
 
+/**
+ * @ignore
+ */
 export const latLngCodec = t.type({
   latitude: t.number,
   longitude: t.number
 });
 
+/**
+ * @ignore
+ */
 export const pollutantCodec = t.union([
   // Instead of rewriting these, can we use the types and array defined in
   // import { AllPollutants, Pollutant } from '@shootismoke/convert';
@@ -30,12 +39,18 @@ export const pollutantCodec = t.union([
   t.literal('trs')
 ]);
 
+/**
+ * @ignore
+ */
 export const unitCodec = t.union([
   t.literal('ppb'),
   t.literal('ppm'),
   t.literal('µg/m³')
 ]);
 
+/**
+ * @ignore
+ */
 export const sourceTypeCodec = t.union([
   t.literal('government'),
   t.literal('research'),
@@ -70,6 +85,8 @@ const optional = t.partial({
 });
 
 /**
+ * An io-ts codec to validate the OpenAQ data format
+ *
  * @see https://github.com/openaq/openaq-data-format
  */
 export const OpenAQCodec = t.intersection([required, optional]);

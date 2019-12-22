@@ -14,7 +14,8 @@
   "repository": "https://github.com/shootismoke/common",
   "scripts": {
     "prebuild": "rimraf lib",
-    "build": "tsc -p tsconfig.settings.json"
+    "build": "tsc -p tsconfig.settings.json",
+    "docs": "rimraf docs && typedoc src"
   },
   "dependencies": {
     "@shootismoke/convert": "^0.1.15",
