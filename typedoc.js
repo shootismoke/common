@@ -1,5 +1,5 @@
 module.exports = {
-  exclude: ['**/*spec.ts', '**/index.ts', '**/types.ts', '**/testUtil.ts'],
+  exclude: ['**/*spec.ts', '**/index.ts', '**/testUtil.ts'],
   excludeExternals: true,
   excludeNotExported: true,
   excludePrivate: true,
