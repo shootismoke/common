@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/shootismoke/common/compare/v0.1.17...v0.2.0) (2019-12-22)
+
+
+### chore
+
+* Move all packages from backend to common ([734732e](https://github.com/shootismoke/common/commit/734732ee77a66017f5a51f010a1d17bcce547fbf))
+
+
+### Code Refactoring
+
+* **convert:** Move `aqi` to `convert` package ([#13](https://github.com/shootismoke/common/issues/13)) ([e6cbf0b](https://github.com/shootismoke/common/commit/e6cbf0bde8a551dc809448c8d8d292db81ce6e98))
+* **dataproviders:** Use Open AQ format ([#17](https://github.com/shootismoke/common/issues/17)) ([9363a95](https://github.com/shootismoke/common/commit/9363a954f26f9e013fd3222aac305c6f664208e5))
+
+
+### BREAKING CHANGES
+
+* **dataproviders:** All data provider fetches return normalized results using the [`openaq-data-format`](https://github.com/openaq/openaq-data-format)
+* **convert:** The `@shootismoke/aqi` package has been renamed to `@shootismoke/convert`
+* `@shootismoke/aqi`, `@shootismoke/dataproviders` and `@shootismoke/graphql` have been moved from https://github.com/shootismoke/backend to this repo
+
+
+
+
+
 ## [0.1.17](https://github.com/shootismoke/backend/compare/v0.1.16...v0.1.17) (2019-11-16)
 
 
