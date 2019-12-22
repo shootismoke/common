@@ -6,10 +6,10 @@ import { Pollutant } from './util';
  */
 export interface Aqi {
   displayName: string;
-  fromRaw(raw: number, pollutant: Pollutant): number;
+  fromRaw(pollutant: Pollutant, raw: number): number;
   pollutants: Pollutant[];
-  range(pollutant: Pollutant): [number, number];
-  toRaw(value: number, pollutant: Pollutant): number;
+  range: [number, number];
+  toRaw(pollutant: Pollutant, value: number): number;
 }
 
 /**

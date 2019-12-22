@@ -21,15 +21,15 @@ export function convert<
 
   // Convert raw to AQI
   if (from === 'raw') {
-    return aqiCodes[to as AqiCode].fromRaw(value, pollutant);
+    return aqiCodes[to as AqiCode].fromRaw(pollutant, value);
   }
 
   // Convert AQI to raw
   if (to === 'raw') {
-    return aqiCodes[from as AqiCode].toRaw(value, pollutant);
+    return aqiCodes[from as AqiCode].toRaw(pollutant, value);
   }
 
   // Convert AQI to AQI
-  const raw = aqiCodes[from as AqiCode].toRaw(value, pollutant);
-  return aqiCodes[to as AqiCode].fromRaw(raw, pollutant);
+  const raw = aqiCodes[from as AqiCode].toRaw(pollutant, value);
+  return aqiCodes[to as AqiCode].fromRaw(pollutant, raw);
 }
