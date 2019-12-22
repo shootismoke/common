@@ -28,7 +28,7 @@
 
 Ƭ **Pollutant**: *"co" | "c6h6" | "ox" | "nh3" | "nmhc" | "no" | "nox" | "no2" | "o3" | "pm10" | "pm25" | "so2" | "trs"*
 
-*Defined in [util/pollutant.ts:4](https://github.com/shootismoke/common/blob/0ff5619/packages/convert/src/util/pollutant.ts#L4)*
+*Defined in [util/pollutant.ts:4](https://github.com/shootismoke/common/blob/0be10ae/packages/convert/src/util/pollutant.ts#L4)*
 
 All the pollutants tracked by @shootismoke
 
@@ -38,7 +38,7 @@ ___
 
 Ƭ **Unit**: *"ppb" | "ppm" | "µg/m³"*
 
-*Defined in [util/pollutant.ts:33](https://github.com/shootismoke/common/blob/0ff5619/packages/convert/src/util/pollutant.ts#L33)*
+*Defined in [util/pollutant.ts:33](https://github.com/shootismoke/common/blob/0be10ae/packages/convert/src/util/pollutant.ts#L33)*
 
 ## Functions
 
@@ -46,7 +46,7 @@ ___
 
 ▸ **getMetadata**(`pollutant`: [Pollutant](_util_pollutant_.md#pollutant)): *[PollutantMeta](../interfaces/_util_pollutant_.pollutantmeta.md)*
 
-*Defined in [util/pollutant.ts:134](https://github.com/shootismoke/common/blob/0ff5619/packages/convert/src/util/pollutant.ts#L134)*
+*Defined in [util/pollutant.ts:134](https://github.com/shootismoke/common/blob/0be10ae/packages/convert/src/util/pollutant.ts#L134)*
 
 Get metadata (code, name, unit) for a pollutant
 
@@ -64,7 +64,7 @@ ___
 
 ▸ **isPollutant**(`pollutant`: string): *pollutant is Pollutant*
 
-*Defined in [util/pollutant.ts:144](https://github.com/shootismoke/common/blob/0ff5619/packages/convert/src/util/pollutant.ts#L144)*
+*Defined in [util/pollutant.ts:144](https://github.com/shootismoke/common/blob/0be10ae/packages/convert/src/util/pollutant.ts#L144)*
 
 Check if the input pollutant is a recognized pollutant which we can convert
 AQI to/from raw concentrations
@@ -83,13 +83,13 @@ Name | Type | Description |
 
 ### ▪ **AllPollutants**: *object*
 
-*Defined in [util/pollutant.ts:48](https://github.com/shootismoke/common/blob/0ff5619/packages/convert/src/util/pollutant.ts#L48)*
+*Defined in [util/pollutant.ts:48](https://github.com/shootismoke/common/blob/0be10ae/packages/convert/src/util/pollutant.ts#L48)*
 
 All the pollutants tracked by @shootismoke
 
 ▪ **c6h6**: *object*
 
-*Defined in [util/pollutant.ts:55](https://github.com/shootismoke/common/blob/0ff5619/packages/convert/src/util/pollutant.ts#L55)*
+*Defined in [util/pollutant.ts:55](https://github.com/shootismoke/common/blob/0be10ae/packages/convert/src/util/pollutant.ts#L55)*
 
 * **description**: *string* = "Benzene"
 
@@ -101,7 +101,7 @@ All the pollutants tracked by @shootismoke
 
 ▪ **co**: *object*
 
-*Defined in [util/pollutant.ts:49](https://github.com/shootismoke/common/blob/0ff5619/packages/convert/src/util/pollutant.ts#L49)*
+*Defined in [util/pollutant.ts:49](https://github.com/shootismoke/common/blob/0be10ae/packages/convert/src/util/pollutant.ts#L49)*
 
 * **description**: *string* = "Carbon monoxide"
 
@@ -113,7 +113,7 @@ All the pollutants tracked by @shootismoke
 
 ▪ **nh3**: *object*
 
-*Defined in [util/pollutant.ts:73](https://github.com/shootismoke/common/blob/0ff5619/packages/convert/src/util/pollutant.ts#L73)*
+*Defined in [util/pollutant.ts:73](https://github.com/shootismoke/common/blob/0be10ae/packages/convert/src/util/pollutant.ts#L73)*
 
 * **description**: *string* = "Ammonia"
 
@@ -125,7 +125,7 @@ All the pollutants tracked by @shootismoke
 
 ▪ **nmhc**: *object*
 
-*Defined in [util/pollutant.ts:79](https://github.com/shootismoke/common/blob/0ff5619/packages/convert/src/util/pollutant.ts#L79)*
+*Defined in [util/pollutant.ts:79](https://github.com/shootismoke/common/blob/0be10ae/packages/convert/src/util/pollutant.ts#L79)*
 
 * **description**: *string* = "Non-methane hydrocarbons"
 
@@ -137,7 +137,7 @@ All the pollutants tracked by @shootismoke
 
 ▪ **no**: *object*
 
-*Defined in [util/pollutant.ts:85](https://github.com/shootismoke/common/blob/0ff5619/packages/convert/src/util/pollutant.ts#L85)*
+*Defined in [util/pollutant.ts:85](https://github.com/shootismoke/common/blob/0be10ae/packages/convert/src/util/pollutant.ts#L85)*
 
 * **description**: *string* = "Nitrogen monoxide"
 
@@ -149,7 +149,7 @@ All the pollutants tracked by @shootismoke
 
 ▪ **no2**: *object*
 
-*Defined in [util/pollutant.ts:97](https://github.com/shootismoke/common/blob/0ff5619/packages/convert/src/util/pollutant.ts#L97)*
+*Defined in [util/pollutant.ts:97](https://github.com/shootismoke/common/blob/0be10ae/packages/convert/src/util/pollutant.ts#L97)*
 
 * **description**: *string* = "Nitrogen dioxide"
 
@@ -161,7 +161,7 @@ All the pollutants tracked by @shootismoke
 
 ▪ **nox**: *object*
 
-*Defined in [util/pollutant.ts:91](https://github.com/shootismoke/common/blob/0ff5619/packages/convert/src/util/pollutant.ts#L91)*
+*Defined in [util/pollutant.ts:91](https://github.com/shootismoke/common/blob/0be10ae/packages/convert/src/util/pollutant.ts#L91)*
 
 * **description**: *string* = "Nitrogen oxides"
 
@@ -173,7 +173,7 @@ All the pollutants tracked by @shootismoke
 
 ▪ **o3**: *object*
 
-*Defined in [util/pollutant.ts:67](https://github.com/shootismoke/common/blob/0ff5619/packages/convert/src/util/pollutant.ts#L67)*
+*Defined in [util/pollutant.ts:67](https://github.com/shootismoke/common/blob/0be10ae/packages/convert/src/util/pollutant.ts#L67)*
 
 * **description**: *string* = "Ozone"
 
@@ -185,7 +185,7 @@ All the pollutants tracked by @shootismoke
 
 ▪ **ox**: *object*
 
-*Defined in [util/pollutant.ts:61](https://github.com/shootismoke/common/blob/0ff5619/packages/convert/src/util/pollutant.ts#L61)*
+*Defined in [util/pollutant.ts:61](https://github.com/shootismoke/common/blob/0be10ae/packages/convert/src/util/pollutant.ts#L61)*
 
 * **description**: *string* = "Photochemical oxidants"
 
@@ -197,7 +197,7 @@ All the pollutants tracked by @shootismoke
 
 ▪ **pm10**: *object*
 
-*Defined in [util/pollutant.ts:109](https://github.com/shootismoke/common/blob/0ff5619/packages/convert/src/util/pollutant.ts#L109)*
+*Defined in [util/pollutant.ts:109](https://github.com/shootismoke/common/blob/0be10ae/packages/convert/src/util/pollutant.ts#L109)*
 
 * **description**: *string* = "Inhalable particulate matter (<10µm)"
 
@@ -209,7 +209,7 @@ All the pollutants tracked by @shootismoke
 
 ▪ **pm25**: *object*
 
-*Defined in [util/pollutant.ts:103](https://github.com/shootismoke/common/blob/0ff5619/packages/convert/src/util/pollutant.ts#L103)*
+*Defined in [util/pollutant.ts:103](https://github.com/shootismoke/common/blob/0be10ae/packages/convert/src/util/pollutant.ts#L103)*
 
 * **description**: *string* = "Fine particulate matter (<2.5µm)"
 
@@ -221,7 +221,7 @@ All the pollutants tracked by @shootismoke
 
 ▪ **so2**: *object*
 
-*Defined in [util/pollutant.ts:115](https://github.com/shootismoke/common/blob/0ff5619/packages/convert/src/util/pollutant.ts#L115)*
+*Defined in [util/pollutant.ts:115](https://github.com/shootismoke/common/blob/0be10ae/packages/convert/src/util/pollutant.ts#L115)*
 
 * **description**: *string* = "Sulfur dioxide"
 
@@ -233,7 +233,7 @@ All the pollutants tracked by @shootismoke
 
 ▪ **trs**: *object*
 
-*Defined in [util/pollutant.ts:121](https://github.com/shootismoke/common/blob/0ff5619/packages/convert/src/util/pollutant.ts#L121)*
+*Defined in [util/pollutant.ts:121](https://github.com/shootismoke/common/blob/0be10ae/packages/convert/src/util/pollutant.ts#L121)*
 
 * **description**: *string* = "Total reduced sulfur"
 

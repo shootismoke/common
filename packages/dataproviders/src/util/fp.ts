@@ -1,3 +1,7 @@
+/**
+ * @ignore
+ */ /** */
+
 import { Lazy } from 'fp-ts/lib/function';
 import { pipe } from 'fp-ts/lib/pipeable';
 import * as T from 'fp-ts/lib/Task';
