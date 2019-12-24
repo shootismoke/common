@@ -4,7 +4,7 @@ import {
   waqi as waqiFp
 } from './providers';
 import { LatLng, Normalized, Provider, ProviderPromise } from './types';
-import { teToPromise } from './util';
+import { eitherToFunction, teToPromise } from './util';
 
 function promisifyProvider<DataByGps, DataByStation, Options>(
   provider: Provider<DataByGps, DataByStation, Options>
@@ -20,11 +20,11 @@ function promisifyProvider<DataByGps, DataByStation, Options>(
     ): Promise<DataByStation> {
       return teToPromise(provider.fetchByStation(stationId, options));
     },
-    normalizeByGps(d: DataByGps): Promise<Normalized> {
-      return teToPromise(provider.normalizeByGps(d));
+    normalizeByGps(d: DataByGps): Normalized {
+      return eitherToFunction(provider.normalizeByGps(d));
     },
-    normalizeByStation(d: DataByStation): Promise<Normalized> {
-      return teToPromise(provider.normalizeByStation(d));
+    normalizeByStation(d: DataByStation): Normalized {
+      return eitherToFunction(provider.normalizeByStation(d));
     }
   };
 }

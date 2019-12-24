@@ -2,6 +2,7 @@
  * @ignore
  */ /** */
 
+import * as E from 'fp-ts/lib/Either';
 import { Lazy } from 'fp-ts/lib/function';
 import { pipe } from 'fp-ts/lib/pipeable';
 import * as T from 'fp-ts/lib/Task';
@@ -43,4 +44,19 @@ export function teToPromise<A>(te: TE.TaskEither<Error, A>): Promise<A> {
       )
     )();
   });
+}
+
+/**
+ * Convert an Either<Error, A> into a A, or throw if error
+ */
+export function eitherToFunction<A>(e: E.Either<Error, A>): A {
+  return pipe(
+    e,
+    E.fold(
+      error => {
+        throw error;
+      },
+      data => data
+    )
+  );
 }
