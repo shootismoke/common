@@ -5,7 +5,7 @@ import { OpenAQCodec } from '../../util';
 /**
  * @see https://github.com/openaq/openaq-data-format
  */
-export const MeasurementsCodec = t.type({
+export const OpenAQResponseCodec = t.type({
   meta: t.type({
     found: t.number,
     license: t.string,
@@ -20,4 +20,4 @@ export const MeasurementsCodec = t.type({
 /**
  * @see https://github.com/openaq/openaq-data-format
  */
-export type Measurements = t.TypeOf<typeof MeasurementsCodec>;
+export type OpenAQResponse = t.TypeOf<typeof OpenAQResponseCodec>;

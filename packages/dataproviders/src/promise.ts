@@ -3,7 +3,7 @@ import {
   openaq as openaqFp,
   waqi as waqiFp
 } from './providers';
-import { LatLng, Provider, ProviderPromise } from './types';
+import { LatLng, Normalized, Provider, ProviderPromise } from './types';
 import { teToPromise } from './util';
 
 function promisifyProvider<DataByGps, DataByStation, Options>(
@@ -19,6 +19,12 @@ function promisifyProvider<DataByGps, DataByStation, Options>(
       options?: Options
     ): Promise<DataByStation> {
       return teToPromise(provider.fetchByStation(stationId, options));
+    },
+    normalizeByGps(d: DataByGps): Promise<Normalized> {
+      return teToPromise(provider.normalizeByGps(d));
+    },
+    normalizeByStation(d: DataByStation): Promise<Normalized> {
+      return teToPromise(provider.normalizeByStation(d));
     }
   };
 }

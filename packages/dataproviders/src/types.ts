@@ -1,6 +1,7 @@
+import * as E from 'fp-ts/lib/Either';
 import * as TE from 'fp-ts/lib/TaskEither';
 
-import { OpenAQ } from './util';
+import { OpenAQFormat } from './util';
 
 /**
  * Latitude and longitude object
@@ -10,10 +11,15 @@ export interface LatLng {
   longitude: number;
 }
 
+interface ArrayOneOrMore<T> extends Array<T> {
+  0: T;
+}
+
 /**
- * Normalized response from all data providers
+ * Normalized response from all data providers. We guarantee that normalized
+ * results have at least one element, in the openaq-data-format
  */
-export type Normalized = OpenAQ[];
+export type Normalized = ArrayOneOrMore<OpenAQFormat>;
 
 /**
  * An interface representing an air quality data provider (fp-ts version)
@@ -26,8 +32,8 @@ export interface Provider<DataByGps, DataByStation, Options> {
   ): TE.TaskEither<Error, DataByStation>;
   id: string;
   name: string;
-  normalizeByGps(d: DataByGps): Normalized;
-  normalizeByStation(d: DataByStation): Normalized;
+  normalizeByGps(d: DataByGps): E.Either<Error, Normalized>;
+  normalizeByStation(d: DataByStation): E.Either<Error, Normalized>;
 }
 
 /**

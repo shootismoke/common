@@ -1,4 +1,5 @@
 import { convert, getMetadata, Pollutant, usaEpa } from '@shootismoke/convert';
+import * as E from 'fp-ts/lib/Either';
 
 import { Normalized } from '../../types';
 import { ByStation } from './validation';
@@ -8,51 +9,61 @@ import { ByStation } from './validation';
  *
  * @param data - The data to normalize
  */
-export function normalize(data: ByStation): Normalized {
-  const universalId = `waqi|${data.idx}`;
+export function normalize(data: ByStation): E.Either<Error, Normalized> {
+  const stationId = `waqi|${data.idx}`;
 
-  return (
-    Object.entries(data.iaqi || {})
-      // Since AqiCN uses useEpa as AQI for the pollutants, we can only
-      // normalize data for those pollutants
-      .filter(([pol]) => usaEpa.pollutants.includes(pol as Pollutant))
-      .map(([pol, { v }]) => {
-        const pollutant = pol as Pollutant;
+  // Sometimes we don't get geo
+  if (!data.city.geo) {
+    return E.left(
+      new Error(
+        `Cannot normalize station ${stationId}: ${JSON.stringify(data)}`
+      )
+    );
+  }
 
-        // Sometimes we don't get geo
-        if (!data.city.geo) {
-          throw new Error(
-            `Cannot normalize station ${universalId}: ${JSON.stringify(data)}`
-          );
-        }
+  // Since AqiCN uses useEpa as AQI for the pollutants, we can only
+  // normalize data for those pollutants
+  const pollutants = Object.entries(data.iaqi || {}).filter(([pol]) =>
+    usaEpa.pollutants.includes(pol as Pollutant)
+  );
+  if (!pollutants.length) {
+    return E.left(new Error(`No pollutants currently tracked by ${stationId}`));
+  }
 
-        return {
-          attribution: data.attributions,
-          averagingPeriod: {
-            unit: 'day',
-            value: 1
-          },
-          city:
-            data.city.name ||
-            'unknown (Please create a Github issue https://github.com/shootismoke/common/issues/new)', // FIXME
-          coordinates: {
-            latitude: +data.city.geo[0],
-            longitude: +data.city.geo[1]
-          },
-          country:
-            'unknown (TODO create github issue https://github.com/shootismoke/common/issues/new)', // FIXME
-          date: {
-            local: new Date(data.time.v).toISOString(),
-            utc: new Date(data.time.v).toUTCString() // Not 100% sure this is correct
-          },
-          location: universalId,
-          mobile: false,
-          parameter: data.dominentpol as Pollutant,
-          sourceName: 'aqicn',
-          sourceType: 'other',
-          value: convert(pollutant, 'usaEpa', 'raw', v),
-          unit: getMetadata(pollutant).preferredUnit
-        };
-      })
+  return E.right(
+    pollutants.map(([pol, { v }]) => {
+      const pollutant = pol as Pollutant;
+
+      if (!data.city.geo) {
+        throw new Error(
+          'We returned TE.left if data.city.geo was not defined. qed.'
+        );
+      }
+
+      return {
+        attribution: data.attributions,
+        averagingPeriod: {
+          unit: 'day',
+          value: 1
+        },
+        city: data.city.name || 'Unknown city', // FIXME Don't put "unknown" here
+        coordinates: {
+          latitude: +data.city.geo[0],
+          longitude: +data.city.geo[1]
+        },
+        country: 'Unknown country', // FIXME Don't put "unknown" here
+        date: {
+          local: new Date(data.time.v).toISOString(),
+          utc: new Date(data.time.v).toUTCString() // FIXME Not 100% sure this is correct
+        },
+        location: stationId,
+        mobile: false,
+        parameter: data.dominentpol as Pollutant,
+        sourceName: 'aqicn',
+        sourceType: 'other',
+        value: convert(pollutant, 'usaEpa', 'raw', v),
+        unit: getMetadata(pollutant).preferredUnit
+      };
+    }) as Normalized
   );
 }

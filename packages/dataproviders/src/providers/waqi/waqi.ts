@@ -1,3 +1,6 @@
+import * as E from 'fp-ts/lib/Either';
+import * as TE from 'fp-ts/lib/TaskEither';
+
 import { Provider } from '../../types';
 import { fetchByGps } from './fetchBy';
 import { normalize } from './normalize';
@@ -8,13 +11,9 @@ import { ByStation } from './validation';
  */
 export const waqi: Provider<ByStation, ByStation, {}> = {
   fetchByGps,
-  fetchByStation: () => {
-    throw new Error('Unimplemented');
-  },
+  fetchByStation: () => TE.left(new Error('Unimplemented')),
   id: 'waqi',
   name: 'WAQI',
   normalizeByGps: normalize,
-  normalizeByStation: () => {
-    throw new Error('Unimplemented');
-  }
+  normalizeByStation: () => E.left(new Error('Unimplemented'))
 };

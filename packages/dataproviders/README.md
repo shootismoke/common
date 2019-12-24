@@ -40,15 +40,15 @@ aqicn.fetchByGps({ latitude: 45, longitude: 23 }); // Returns a TaskEither<Error
 // Usage with fp-ts
 
 import { pipe } from 'fp-ts/lib/pipeable';
-import { fold, map } from 'fp-ts/lib/TaskEither';
+import * as TE from 'fp-ts/lib/TaskEither';
 
 pipe(
   // Fetch data from station 'Coyhaique' on the OpenAQ platform
   openaq.fetchByStation('Coyhaique'),
   // Normalize the data
-  map(openaq.normalizeByStation),
+  TE.chain(response => TE.fromEither(normalize(response))),
   // Depending on error/result case, do different stuff
-  fold(
+  TE.fold(
     // Do on error:
     error => {
       console.error(error);
@@ -92,7 +92,7 @@ If you use the `.normalizeByGps` or `.normalizeByStation` functions, the output 
 /**
  * The OpenAQ data format. One such object represents one air quality _measurement_
  */
-interface OpenAQ {
+interface OpenAQFormat {
   /**
    * City (or regional approximation) containing location
    */
@@ -127,7 +127,8 @@ interface OpenAQ {
 }
 
 /**
- * The normalized data is an array of OpenAQ measurements
+ * The normalized data is an array of OpenAQ measurements. We ensure there is
+ * always at least one element in the Normalized array
  */
 type Normalized = OpenAQ[];
 ```

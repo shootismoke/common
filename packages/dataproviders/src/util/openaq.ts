@@ -4,10 +4,14 @@ import * as t from 'io-ts';
  * @ignore
  */
 export const attributionsCodec = t.array(
-  t.type({
-    name: t.string,
-    url: t.union([t.string, t.undefined])
-  })
+  t.intersection([
+    t.type({
+      name: t.string
+    }),
+    t.partial({
+      url: t.string
+    })
+  ])
 );
 
 /**
@@ -60,6 +64,7 @@ export const sourceTypeCodec = t.union([
 // Required fields for OpenAQ data format
 const required = t.type({
   city: t.string,
+  coordinates: latLngCodec, // Note: this one is optional in https://github.com/openaq/openaq-data-format
   country: t.string,
   date: t.type({
     local: t.string,
@@ -80,8 +85,7 @@ const optional = t.partial({
   averagingPeriod: t.type({
     unit: t.string,
     value: t.number
-  }),
-  coordinates: latLngCodec
+  })
 });
 
 /**
@@ -94,4 +98,4 @@ export const OpenAQCodec = t.intersection([required, optional]);
 /**
  * @see https://github.com/openaq/openaq-data-format
  */
-export type OpenAQ = t.TypeOf<typeof OpenAQCodec>;
+export type OpenAQFormat = t.TypeOf<typeof OpenAQCodec>;

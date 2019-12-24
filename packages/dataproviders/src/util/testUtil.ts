@@ -1,13 +1,9 @@
+import * as E from 'fp-ts/lib/Either';
 import { pipe } from 'fp-ts/lib/pipeable';
 import * as T from 'fp-ts/lib/Task';
 import * as TE from 'fp-ts/lib/TaskEither';
 
 import { LatLng, Normalized, Provider } from '../types';
-
-export interface TestProviderOptions<Options> {
-  options?: Options;
-  skip?: ('fetchByGps' | 'fetchByStation')[];
-}
 
 function generateRandomLatLng(): LatLng {
   return {
@@ -37,11 +33,17 @@ export function testNormalized(normalized: Normalized): void {
 
 function testTE<T>(
   te: TE.TaskEither<Error, T>,
-  normalize: (data: T) => Normalized,
+  normalize: (data: T) => E.Either<Error, Normalized>,
   done: jest.DoneCallback
 ): void {
   pipe(
     te,
+    TE.map(response => {
+      expect(response).toBeDefined();
+
+      return response;
+    }),
+    TE.chain(response => TE.fromEither(normalize(response))),
     TE.fold(
       error => {
         if (
@@ -54,30 +56,29 @@ function testTE<T>(
 
           return T.of(void undefined);
         }
-        done.fail(error);
 
+        done.fail(error);
         return T.of(void undefined);
       },
-      response => {
-        expect(response).toBeDefined();
-
-        const normalized = normalize(response);
-        testNormalized(normalized);
-
+      () => {
         done();
-
         return T.of(void undefined);
       }
     )
   )();
 }
 
+interface TestProviderE2EOptions<Options> {
+  options?: Options;
+  skip?: ('fetchByGps' | 'fetchByStation')[];
+}
+
 /**
  * Test helper to test a provider
  */
-export function testProvider<DataByGps, DataByStation, Options = {}>(
+export function testProviderE2E<DataByGps, DataByStation, Options>(
   provider: Provider<DataByGps, DataByStation, Options>,
-  { options, skip = [] }: TestProviderOptions<Options>
+  { options, skip = [] }: TestProviderE2EOptions<Options>
 ): void {
   if (!skip.includes('fetchByGps')) {
     describe('fetchByGps', () => {

@@ -1,4 +1,5 @@
 import { convert, getMetadata, isPollutant } from '@shootismoke/convert';
+import * as E from 'fp-ts/lib/Either';
 
 import { Normalized } from '../../types';
 import { ByStation } from './validation';
@@ -8,12 +9,16 @@ import { ByStation } from './validation';
  *
  * @param data - The data to normalize
  */
-export function normalize({ d: [data] }: ByStation): Normalized {
-  const universalId = `waqi|${data.x}`;
+export function normalize({
+  d: [data]
+}: ByStation): E.Either<Error, Normalized> {
+  const stationId = `waqi|${data.x}`;
 
   if (!isPollutant(data.pol)) {
-    throw new Error(
-      `Cannot normalizeByGps station ${universalId}: ${JSON.stringify(data)}`
+    return E.left(
+      new Error(
+        `Cannot normalize station ${stationId}: ${JSON.stringify(data)}`
+      )
     );
   }
 
@@ -21,9 +26,9 @@ export function normalize({ d: [data] }: ByStation): Normalized {
   // Calculate pm25 raw value to get cigarettes value
   const raw = convert('pm25', 'usaEpa', 'raw', aqiUS);
 
-  return [
+  return E.right([
     {
-      attribution: undefined,
+      attribution: [{ name: data.nlo }],
       averagingPeriod: {
         unit: 'day',
         value: 1
@@ -46,5 +51,5 @@ export function normalize({ d: [data] }: ByStation): Normalized {
       unit: getMetadata(data.pol).preferredUnit,
       value: raw
     }
-  ];
+  ]);
 }
