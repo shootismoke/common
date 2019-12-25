@@ -61,8 +61,8 @@ export function normalize(data: ByStation): E.Either<Error, Normalized> {
         },
         country: 'Unknown country', // FIXME Don't put "unknown" here
         date: {
-          local: new Date(data.time.v * 1000).toISOString(),
-          utc: new Date(data.time.v * 1000).toUTCString() // FIXME Not 100% sure this is correct
+          local: new Date(+data.time.v * 1000).toISOString(),
+          utc: new Date(+data.time.v * 1000).toUTCString() // FIXME Not 100% sure this is correct
         },
         location: stationId,
         mobile: false,

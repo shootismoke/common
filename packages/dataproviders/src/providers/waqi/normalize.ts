@@ -42,8 +42,8 @@ export function normalize({
       country: data.u,
       city: data.nlo,
       date: {
-        local: new Date(data.t * 1000).toISOString(),
-        utc: new Date(data.t * 1000).toUTCString() // Not 100% sure this is correct
+        local: new Date(+data.t * 1000).toISOString(),
+        utc: new Date(+data.t * 1000).toUTCString() // Not 100% sure this is correct
       },
       location: `waqi|${data.x}`,
       mobile: false,
