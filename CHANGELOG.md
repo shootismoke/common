@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.3](https://github.com/shootismoke/common/compare/v0.2.2...v0.2.3) (2019-12-25)
+
+
+### Bug Fixes
+
+* **dataproviders:** Fix dates for aqicn and waqi ([#21](https://github.com/shootismoke/common/issues/21)) ([48f54d6](https://github.com/shootismoke/common/commit/48f54d69a94866818ec2c54efaa769dcd9128120))
+
+
+
+
+
 ## [0.2.2](https://github.com/shootismoke/common/compare/v0.2.1...v0.2.2) (2019-12-25)
 
 **Note:** Version bump only for package @shootismoke/common
