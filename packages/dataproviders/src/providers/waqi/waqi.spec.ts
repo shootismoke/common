@@ -1,18 +1,24 @@
-import { testProvider } from '../../util';
+import * as E from 'fp-ts/lib/Either';
+
+import { testProviderE2E } from '../../util';
 import { ByStation } from './validation';
 import { waqi } from './waqi';
 
 describe('waqi', () => {
-  testProvider(waqi, {
-    skip: ['fetchByStation']
+  describe('by station', () => {
+    it('should throw on fetchByStation', async () => {
+      expect(await waqi.fetchByStation('foo')()).toEqual(
+        E.left(new Error('Unimplemented'))
+      );
+      expect(waqi.normalizeByStation({} as ByStation)).toEqual(
+        E.left(new Error('Unimplemented'))
+      );
+    });
   });
 
-  describe('by station', () => {
-    it('should throw on fetchByStation', () => {
-      expect(() => waqi.fetchByStation('foo')).toThrowError('Unimplemented');
-      expect(() => waqi.normalizeByStation({} as ByStation)).toThrowError(
-        'Unimplemented'
-      );
+  describe('e2e', () => {
+    testProviderE2E(waqi, {
+      skip: ['fetchByStation']
     });
   });
 });

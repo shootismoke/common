@@ -1,6 +1,6 @@
 import * as E from 'fp-ts/lib/Either';
 
-import { testProvider } from '../../util';
+import { testProviderE2E } from '../../util';
 import { aqicn } from './aqicn';
 
 const options = {
@@ -8,8 +8,6 @@ const options = {
 };
 
 describe('aqicn', () => {
-  testProvider(aqicn, { options });
-
   it('should throw without token', async done => {
     expect(await aqicn.fetchByStation('foo')()).toEqual(
       E.left(new Error('AqiCN requires a token'))
@@ -18,11 +16,15 @@ describe('aqicn', () => {
     done();
   });
 
-  it('should return an error with an unknown station', async done => {
-    expect(await aqicn.fetchByStation('foo', options)()).toEqual(
-      E.left(new Error('Unknown station'))
-    );
+  describe('e2e', () => {
+    it('should return an error with an unknown station', async done => {
+      expect(await aqicn.fetchByStation('foo', options)()).toEqual(
+        E.left(new Error('Unknown station'))
+      );
 
-    done();
+      done();
+    });
+
+    testProviderE2E(aqicn, { options });
   });
 });
