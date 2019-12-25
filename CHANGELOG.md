@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/shootismoke/common/compare/v0.2.0...v0.2.1) (2019-12-25)
+
+
+### Features
+
+* **dataproviders:** Add `getStationName` and `dominantPol` functions ([#20](https://github.com/shootismoke/common/issues/20)) ([66c4ba2](https://github.com/shootismoke/common/commit/66c4ba2873598e039cc49adbc0eb23b1afbc7453))
+
+
+
+
+
 # [0.2.0](https://github.com/shootismoke/common/compare/v0.1.17...v0.2.0) (2019-12-22)
 
 
