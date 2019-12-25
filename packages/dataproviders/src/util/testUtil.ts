@@ -50,7 +50,11 @@ function testTE<T>(
           // Skip if the random stationId is an unknown station
           error.message.includes('Unknown ID') ||
           // Skip if we somehow couldn't connect
-          error.message.includes('can not connect')
+          error.message.includes('can not connect') ||
+          // Skip if openaq doesn't return results
+          error.message.startsWith('Cannot normalize openaq, no results') ||
+          // Skip if aqicn doesn't track pollutants that don't interest us
+          error.message.includes('no pollutants currently tracked')
         ) {
           done();
 

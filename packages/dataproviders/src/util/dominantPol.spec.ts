@@ -1,5 +1,5 @@
-import { dominantPol } from './dominantPol';
 import { Normalized } from '../types';
+import { dominantPol } from './dominantPol';
 import { OpenAQFormat } from './openaq';
 
 describe('dominantPol', () => {

@@ -17,7 +17,9 @@ export function normalize({
   if (!isPollutant(data.pol)) {
     return E.left(
       new Error(
-        `Cannot normalize station ${stationId}: ${JSON.stringify(data)}`
+        `Cannot normalize station ${stationId}, unrecognized pollutant ${
+          data.pol
+        }: ${JSON.stringify(data)}`
       )
     );
   }

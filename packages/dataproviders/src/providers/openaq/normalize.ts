@@ -13,7 +13,7 @@ export function normalize(data: OpenAQResponse): E.Either<Error, Normalized> {
 
   if (!results.length) {
     return E.left(
-      new Error(`Cannot normalize openaq: ${JSON.stringify(data)}`)
+      new Error(`Cannot normalize openaq, no results: ${JSON.stringify(data)}`)
     );
   }
 

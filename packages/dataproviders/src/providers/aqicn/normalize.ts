@@ -16,7 +16,9 @@ export function normalize(data: ByStation): E.Either<Error, Normalized> {
   if (!data.city.geo) {
     return E.left(
       new Error(
-        `Cannot normalize station ${stationId}: ${JSON.stringify(data)}`
+        `Cannot normalize station ${stationId}, no city: ${JSON.stringify(
+          data
+        )}`
       )
     );
   }
@@ -27,7 +29,13 @@ export function normalize(data: ByStation): E.Either<Error, Normalized> {
     usaEpa.pollutants.includes(pol as Pollutant)
   );
   if (!pollutants.length) {
-    return E.left(new Error(`No pollutants currently tracked by ${stationId}`));
+    return E.left(
+      new Error(
+        `Cannot normalize station ${stationId}, no pollutants currently tracked: ${JSON.stringify(
+          data
+        )}`
+      )
+    );
   }
 
   return E.right(
