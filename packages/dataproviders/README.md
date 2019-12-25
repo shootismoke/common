@@ -90,7 +90,8 @@ If you use the `.normalizeByGps` or `.normalizeByStation` functions, the output 
 
 ```typescript
 /**
- * The OpenAQ data format. One such object represents one air quality measurement
+ * The OpenAQ data format. One such object represents one air quality
+ * measurement
  */
 interface OpenAQFormat {
   /**
@@ -98,7 +99,9 @@ interface OpenAQFormat {
    */
   city: string;
   /**
-   * Coordinates where the measurement took place. Note that in the openaq-data-format, this field is optional. Using this library, this field will **always** be populated
+   * Coordinates where the measurement took place. Note that in the
+   * openaq-data-format, this field is optional. Using this library, this field
+   * will **always** be populated
    */
   coordinates: {
     latitude: number;
@@ -116,7 +119,8 @@ interface OpenAQFormat {
     utc: string;
   };
   /**
-   * A unique ID representing the location of a measurement (can be a station ID, a place...)
+   * A unique ID representing the location of a measurement (can be a station
+   * ID, a place...)
    */
   location: string;
   /**
@@ -140,7 +144,7 @@ interface OpenAQFormat {
 type Normalized = OpenAQ[];
 ```
 
-See [`openaq-data-format`](https://github.com/openaq/openaq-data-format) for more information.
+See [`openaq-data-format`](https://github.com/openaq/openaq-data-format) for more information. Note that in the above format, the `coordinates` field is always required, whereas it's optional in `openaq-data-format`.
 
 ### Full Documentation
 
