@@ -49,22 +49,25 @@ function testTE<T>(
     TE.chain(response => TE.fromEither(normalize(response))),
     TE.fold(
       error => {
-        if (
+        // We don't fail the test if one of the following errors occur
+        const skippedErrorMessages = [
           // Skip if the random stationId is an unknown station
-          error.message.includes('Unknown ID') ||
+          'Unknown ID',
           // Skip if we somehow couldn't connect
-          error.message.includes('can not connect') ||
+          'can not connect',
           // Skip if openaq doesn't return results
-          error.message.startsWith('[openaq] Cannot normalize, no results') ||
+          '[openaq] Cannot normalize, no results',
           // Skip if aqicn doesn't track pollutants that don't interest us
-          error.message.includes('no pollutants currently tracked') ||
+          'no pollutants currently tracked',
           // Skip if aqicn country name is not sanitized
-          error.message.startsWith('[aqicn] Cannot get code from country') ||
+          '[aqicn] Cannot get code from country',
           // Skip if aqicn doesn't expose city
-          error.message.includes('no city') ||
+          'no city',
           // Skip if cannot find country for waqi
-          error.message.startsWith('[waqi] Cannot get code from country')
-        ) {
+          '[waqi] Cannot get code from country'
+        ];
+
+        if (skippedErrorMessages.some(msg => error.message.includes(msg))) {
           done();
 
           return T.of(void undefined);
