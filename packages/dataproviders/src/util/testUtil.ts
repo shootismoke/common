@@ -1,3 +1,4 @@
+import { AllPollutants } from '@shootismoke/convert';
 import * as E from 'fp-ts/lib/Either';
 import { pipe } from 'fp-ts/lib/pipeable';
 import * as T from 'fp-ts/lib/Task';
@@ -23,9 +24,11 @@ function generateRandomStationId(): string {
  */
 export function testNormalized(normalized: Normalized): void {
   normalized.forEach(data => {
+    expect(data.country.length).toBe(2);
     expect(data.date).toBeDefined();
-    expect(data.location).toBeDefined();
-    expect(data.parameter).toBeDefined();
+    expect(data.location).toHaveProperty('latitude');
+    expect(data.location).toHaveProperty('longitude');
+    expect(Object.keys(AllPollutants).includes(data.parameter)).toBe(true);
     expect(data.value).toBeDefined();
     expect(data.unit).toBeDefined();
   });
