@@ -1,4 +1,4 @@
-[@shootismoke/convert](../README.md) › [Globals](../globals.md) › ["aqi/chnMep/chnMep"](_aqi_chnmep_chnmep_.md)
+[@shootismoke/convert - v0.2.0](../README.md) › [Globals](../globals.md) › ["aqi/chnMep/chnMep"](_aqi_chnmep_chnmep_.md)
 
 # External module: "aqi/chnMep/chnMep"
 
@@ -14,7 +14,7 @@
 
 ### ▪ **chnMep**: *object*
 
-*Defined in [aqi/chnMep/chnMep.ts:9](https://github.com/shootismoke/common/blob/092361a/packages/convert/src/aqi/chnMep/chnMep.ts#L9)*
+*Defined in [aqi/chnMep/chnMep.ts:9](https://github.com/shootismoke/common/blob/5b392da/packages/convert/src/aqi/chnMep/chnMep.ts#L9)*
 
 AQI (CN)
 
@@ -24,4 +24,4 @@ AQI (CN)
 
 • **displayName**: *string* = "AQI (CN)"
 
-*Defined in [aqi/chnMep/chnMep.ts:10](https://github.com/shootismoke/common/blob/092361a/packages/convert/src/aqi/chnMep/chnMep.ts#L10)*
+*Defined in [aqi/chnMep/chnMep.ts:10](https://github.com/shootismoke/common/blob/5b392da/packages/convert/src/aqi/chnMep/chnMep.ts#L10)*

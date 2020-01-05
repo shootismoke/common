@@ -1,4 +1,4 @@
-[@shootismoke/convert](../README.md) › [Globals](../globals.md) › ["types"](_types_.md)
+[@shootismoke/convert - v0.2.0](../README.md) › [Globals](../globals.md) › ["types"](_types_.md)
 
 # External module: "types"
 
@@ -18,6 +18,6 @@
 
 Ƭ **AqiCode**: *keyof "/Users/amaurymartiny/Workspaces/shootismoke/common/packages/convert/src/aqi/index"*
 
-*Defined in [types.ts:18](https://github.com/shootismoke/common/blob/092361a/packages/convert/src/types.ts#L18)*
+*Defined in [types.ts:18](https://github.com/shootismoke/common/blob/5b392da/packages/convert/src/types.ts#L18)*
 
 List of AQI codes

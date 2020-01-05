@@ -1,4 +1,4 @@
-[@shootismoke/dataproviders](../README.md) › [Globals](../globals.md) › ["types"](../modules/_types_.md) › [Provider](_types_.provider.md)
+[@shootismoke/dataproviders - v0.2.3](../README.md) › [Globals](../globals.md) › ["types"](../modules/_types_.md) › [Provider](_types_.provider.md)
 
 # Interface: Provider <**DataByGps, DataByStation, Options**>
 
@@ -36,7 +36,7 @@ An interface representing an air quality data provider (fp-ts version)
 
 • **id**: *string*
 
-*Defined in [types.ts:27](https://github.com/shootismoke/common/blob/092361a/packages/dataproviders/src/types.ts#L27)*
+*Defined in [types.ts:33](https://github.com/shootismoke/common/blob/5b392da/packages/dataproviders/src/types.ts#L33)*
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 • **name**: *string*
 
-*Defined in [types.ts:28](https://github.com/shootismoke/common/blob/092361a/packages/dataproviders/src/types.ts#L28)*
+*Defined in [types.ts:34](https://github.com/shootismoke/common/blob/5b392da/packages/dataproviders/src/types.ts#L34)*
 
 ## Methods
 
@@ -52,7 +52,7 @@ ___
 
 ▸ **fetchByGps**(`gps`: [LatLng](_types_.latlng.md), `options?`: Options): *TaskEither‹Error, DataByGps›*
 
-*Defined in [types.ts:22](https://github.com/shootismoke/common/blob/092361a/packages/dataproviders/src/types.ts#L22)*
+*Defined in [types.ts:28](https://github.com/shootismoke/common/blob/5b392da/packages/dataproviders/src/types.ts#L28)*
 
 **Parameters:**
 
@@ -69,7 +69,7 @@ ___
 
 ▸ **fetchByStation**(`stationId`: string, `options?`: Options): *TaskEither‹Error, DataByStation›*
 
-*Defined in [types.ts:23](https://github.com/shootismoke/common/blob/092361a/packages/dataproviders/src/types.ts#L23)*
+*Defined in [types.ts:29](https://github.com/shootismoke/common/blob/5b392da/packages/dataproviders/src/types.ts#L29)*
 
 **Parameters:**
 
@@ -84,9 +84,9 @@ ___
 
 ###  normalizeByGps
 
-▸ **normalizeByGps**(`d`: DataByGps): *[Normalized](../modules/_types_.md#normalized)*
+▸ **normalizeByGps**(`d`: DataByGps): *E.Either‹Error, [Normalized](../modules/_types_.md#normalized)›*
 
-*Defined in [types.ts:29](https://github.com/shootismoke/common/blob/092361a/packages/dataproviders/src/types.ts#L29)*
+*Defined in [types.ts:35](https://github.com/shootismoke/common/blob/5b392da/packages/dataproviders/src/types.ts#L35)*
 
 **Parameters:**
 
@@ -94,15 +94,15 @@ Name | Type |
 ------ | ------ |
 `d` | DataByGps |
 
-**Returns:** *[Normalized](../modules/_types_.md#normalized)*
+**Returns:** *E.Either‹Error, [Normalized](../modules/_types_.md#normalized)›*
 
 ___
 
 ###  normalizeByStation
 
-▸ **normalizeByStation**(`d`: DataByStation): *[Normalized](../modules/_types_.md#normalized)*
+▸ **normalizeByStation**(`d`: DataByStation): *E.Either‹Error, [Normalized](../modules/_types_.md#normalized)›*
 
-*Defined in [types.ts:30](https://github.com/shootismoke/common/blob/092361a/packages/dataproviders/src/types.ts#L30)*
+*Defined in [types.ts:36](https://github.com/shootismoke/common/blob/5b392da/packages/dataproviders/src/types.ts#L36)*
 
 **Parameters:**
 
@@ -110,4 +110,4 @@ Name | Type |
 ------ | ------ |
 `d` | DataByStation |
 
-**Returns:** *[Normalized](../modules/_types_.md#normalized)*
+**Returns:** *E.Either‹Error, [Normalized](../modules/_types_.md#normalized)›*
