@@ -18,6 +18,8 @@ A library to fetch air quality data from various providers (AqiCN, OpenAQ...) an
 | WAQI     | `waqi`        | https://waqi.info/ | Same institution as AqiCN                                                        |
 | OpenAQ   | `openaq`      | https://openaq.org |                                                                                  |
 
+We plan to support more air quality providers in the future see [issue #29](https://github.com/shootismoke/common/issues/29).
+
 ## ⚡ Get Started
 
 Install the package:

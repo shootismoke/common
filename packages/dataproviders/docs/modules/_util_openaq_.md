@@ -18,7 +18,7 @@
 
 Ƭ **OpenAQFormat**: *t.TypeOf‹IntersectionC›*
 
-*Defined in [util/openaq.ts:101](https://github.com/shootismoke/common/blob/b01485a/packages/dataproviders/src/util/openaq.ts#L101)*
+*Defined in [util/openaq.ts:101](https://github.com/shootismoke/common/blob/73ace9d/packages/dataproviders/src/util/openaq.ts#L101)*
 
 **`see`** https://github.com/openaq/openaq-data-format
 
@@ -28,7 +28,7 @@
 
 • **OpenAQCodec**: *IntersectionC‹[TypeC‹object›, PartialC‹object›]›* =  t.intersection([required, optional])
 
-*Defined in [util/openaq.ts:96](https://github.com/shootismoke/common/blob/b01485a/packages/dataproviders/src/util/openaq.ts#L96)*
+*Defined in [util/openaq.ts:96](https://github.com/shootismoke/common/blob/73ace9d/packages/dataproviders/src/util/openaq.ts#L96)*
 
 An io-ts codec to validate the OpenAQ data format
 
