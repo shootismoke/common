@@ -1,6 +1,7 @@
 export * from './codec';
 export * from './constants';
 export * from './dominantPol';
+export * from './errors';
 export * from './fp';
 export * from './getCountryCode';
 export * from './openaq';

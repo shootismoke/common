@@ -8,7 +8,7 @@ import * as E from 'fp-ts/lib/Either';
 import { pipe } from 'fp-ts/lib/pipeable';
 
 import { Normalized } from '../../types';
-import { getCountryCode } from '../../util';
+import { getCountryCode, providerError } from '../../util';
 import { ByStation } from './validation';
 
 /**
@@ -23,7 +23,8 @@ export function normalize({
 
   if (!isPollutant(data.pol)) {
     return E.left(
-      new Error(
+      providerError(
+        'waqi',
         `Cannot normalize station ${stationId}, unrecognized pollutant ${
         data.pol
         }: ${JSON.stringify(data)}`
@@ -37,14 +38,19 @@ export function normalize({
 
   if (!data.u.includes('/')) {
     return E.left(
-      new Error(`Got invalid country/city info: ${JSON.stringify(data.u)}`)
+      providerError(
+        'waqi',
+        `Got invalid country/city info: ${JSON.stringify(data.u)}`
+      )
     );
   }
   const [countryRaw, city] = data.u.split('/');
 
   return pipe(
     getCountryCode(countryRaw),
-    E.fromOption(() => new Error(`Cannot get code from country ${countryRaw}`)),
+    E.fromOption(() =>
+      providerError('waqi', `Cannot get code from country ${countryRaw}`)
+    ),
     E.map(country => [
       {
         attribution: [{ name: data.nlo }],

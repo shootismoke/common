@@ -3,28 +3,41 @@ import { pipe } from 'fp-ts/lib/pipeable';
 
 import countries from './countries.json';
 
+interface Country {
+  code: string;
+  name: string;
+  others: string[];
+}
+
+/**
+ * Sanitize a country name
+ */
+function sanitize(input: string): string {
+  return (
+    input
+      // Lowercase
+      .toLowerCase()
+      // Remove all spaces
+      .replace(/ /g, '')
+      // Remove all "-"
+      .replace(/-/g, '')
+  );
+}
+
 export function getCountryCode(input: string): O.Option<string> {
   return pipe(
     O.fromNullable(
-      countries.find(({ name }) => {
-        // Empirical tests to test that country matches name
-        if (name === input) {
-          return true;
-        }
+      (countries as Country[]).find(({ code, name, others }) => {
+        const sName = sanitize(name);
+        const sInput = sanitize(input);
 
-        const lName = name.toLowerCase();
-        const lInput = input.toLowerCase();
-        if (lName === lInput) {
-          return true;
-        }
-
-        const lnsName = lName.replace(/ /g, ''); // lns stands for "lower no space"
-        const lnsInput = lInput.replace(/ /g, '');
-        if (lnsName === lnsInput) {
-          return true;
-        }
-
-        return lnsName.includes(lnsInput) || lnsInput.includes(lnsName);
+        return (
+          sName === sInput ||
+          code === sInput ||
+          sName.includes(sInput) ||
+          sInput.includes(sName) ||
+          others.includes(sInput)
+        );
       })
     ),
     O.map(({ code }) => code)

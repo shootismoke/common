@@ -55,7 +55,7 @@ function testTE<T>(
           // Skip if we somehow couldn't connect
           error.message.includes('can not connect') ||
           // Skip if openaq doesn't return results
-          error.message.startsWith('Cannot normalize openaq, no results') ||
+          error.message.startsWith('[openaq] Cannot normalize, no results') ||
           // Skip if aqicn doesn't track pollutants that don't interest us
           error.message.includes('no pollutants currently tracked')
         ) {

@@ -1,6 +1,7 @@
 import * as E from 'fp-ts/lib/Either';
 
 import { Normalized } from '../../types';
+import { providerError } from '../../util';
 import { OpenAQResponse } from './validation';
 
 /**
@@ -13,7 +14,10 @@ export function normalize(data: OpenAQResponse): E.Either<Error, Normalized> {
 
   if (!results.length) {
     return E.left(
-      new Error(`Cannot normalize openaq, no results: ${JSON.stringify(data)}`)
+      providerError(
+        'openaq',
+        `Cannot normalize, no results: ${JSON.stringify(data)}`
+      )
     );
   }
 

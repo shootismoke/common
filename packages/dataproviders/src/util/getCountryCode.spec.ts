@@ -15,7 +15,12 @@ describe('getCountryCode', () => {
     expect(getCountryCode('united  states')).toEqual(O.some('US'));
   });
 
+  it('should match dashed', () => {
+    expect(getCountryCode('saudi-arabia')).toEqual(O.some('SA'));
+  });
+
   it('should match included string', () => {
     expect(getCountryCode('United States Of America')).toEqual(O.some('US'));
   });
+
 });
