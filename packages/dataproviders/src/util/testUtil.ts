@@ -1,3 +1,4 @@
+import { AllPollutants } from '@shootismoke/convert';
 import * as E from 'fp-ts/lib/Either';
 import { pipe } from 'fp-ts/lib/pipeable';
 import * as T from 'fp-ts/lib/Task';
@@ -23,9 +24,11 @@ function generateRandomStationId(): string {
  */
 export function testNormalized(normalized: Normalized): void {
   normalized.forEach(data => {
+    expect(data.country.length).toBe(2);
     expect(data.date).toBeDefined();
-    expect(data.location).toBeDefined();
-    expect(data.parameter).toBeDefined();
+    expect(data.location).toHaveProperty('latitude');
+    expect(data.location).toHaveProperty('longitude');
+    expect(Object.keys(AllPollutants).includes(data.parameter)).toBe(true);
     expect(data.value).toBeDefined();
     expect(data.unit).toBeDefined();
   });
@@ -46,16 +49,25 @@ function testTE<T>(
     TE.chain(response => TE.fromEither(normalize(response))),
     TE.fold(
       error => {
-        if (
+        // We don't fail the test if one of the following errors occur
+        const skippedErrorMessages = [
           // Skip if the random stationId is an unknown station
-          error.message.includes('Unknown ID') ||
+          'Unknown ID',
           // Skip if we somehow couldn't connect
-          error.message.includes('can not connect') ||
+          'can not connect',
           // Skip if openaq doesn't return results
-          error.message.startsWith('Cannot normalize openaq, no results') ||
+          '[openaq] Cannot normalize, no results',
           // Skip if aqicn doesn't track pollutants that don't interest us
-          error.message.includes('no pollutants currently tracked')
-        ) {
+          'no pollutants currently tracked',
+          // Skip if aqicn country name is not sanitized
+          '[aqicn] Cannot get code from country',
+          // Skip if aqicn doesn't expose city
+          'no city',
+          // Skip if cannot find country for waqi
+          '[waqi] Cannot get code from country'
+        ];
+
+        if (skippedErrorMessages.some(msg => error.message.includes(msg))) {
           done();
 
           return T.of(void undefined);

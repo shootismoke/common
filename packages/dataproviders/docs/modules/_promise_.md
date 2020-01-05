@@ -16,7 +16,7 @@
 
 • **aqicn**: *[ProviderPromise](../interfaces/_types_.providerpromise.md)‹object, object, AqicnOptions›* =  promisifyProvider(aqicnFp)
 
-*Defined in [promise.ts:32](https://github.com/shootismoke/common/blob/5b392da/packages/dataproviders/src/promise.ts#L32)*
+*Defined in [promise.ts:32](https://github.com/shootismoke/common/blob/73ace9d/packages/dataproviders/src/promise.ts#L32)*
 
 ___
 
@@ -24,7 +24,7 @@ ___
 
 • **openaq**: *[ProviderPromise](../interfaces/_types_.providerpromise.md)‹object, object, __type›* =  promisifyProvider(openaqFp)
 
-*Defined in [promise.ts:33](https://github.com/shootismoke/common/blob/5b392da/packages/dataproviders/src/promise.ts#L33)*
+*Defined in [promise.ts:33](https://github.com/shootismoke/common/blob/73ace9d/packages/dataproviders/src/promise.ts#L33)*
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 • **waqi**: *[ProviderPromise](../interfaces/_types_.providerpromise.md)‹object, object, __type›* =  promisifyProvider(waqiFp)
 
-*Defined in [promise.ts:34](https://github.com/shootismoke/common/blob/5b392da/packages/dataproviders/src/promise.ts#L34)*
+*Defined in [promise.ts:34](https://github.com/shootismoke/common/blob/73ace9d/packages/dataproviders/src/promise.ts#L34)*

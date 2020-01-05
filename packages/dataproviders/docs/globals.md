@@ -13,5 +13,6 @@
 * ["types"](modules/_types_.md)
 * ["util/constants"](modules/_util_constants_.md)
 * ["util/dominantPol"](modules/_util_dominantpol_.md)
+* ["util/getCountryCode"](modules/_util_getcountrycode_.md)
 * ["util/openaq"](modules/_util_openaq_.md)
 * ["util/stationName"](modules/_util_stationname_.md)
