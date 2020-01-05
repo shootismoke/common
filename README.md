@@ -15,9 +15,9 @@ Useful packages for manipulating air quality data. Shared between [Sh\*\*t! I Sm
 
 The below packages are used internally in [Sh\*\*t! I Smoke](https://shootismoke.github.io) projects, but if you're interested, feel free to use them.
 
-| Packages                                     | NPM                                                                                                                          | Description                                                                 |
-| -------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| [`@shootismoke/graphql`](./packages/graphql) | [![npm (scoped)](https://img.shields.io/npm/v/@shootismoke/graphql.svg)](https://www.npmjs.com/package/@shootismoke/graphql) | (Internal) TypeScript types for GraphQL schemas in Sh\*\*t! I Smoke backend |
+| Packages                                     | NPM                                                                                                                          | Description                                                                                                                                                                          |
+| -------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [`@shootismoke/graphql`](./packages/graphql) | [![npm (scoped)](https://img.shields.io/npm/v/@shootismoke/graphql.svg)](https://www.npmjs.com/package/@shootismoke/graphql) | (Internal) TypeScript types and GraphQL schemas for Sh\*\*t! I Smoke backend. The actual GraphQL backend is hosted at [@shootismoke/backend](https://github.com/shootismoke/backend) |
 
 ## FAQ
 
