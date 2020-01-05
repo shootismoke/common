@@ -1,6 +1,7 @@
 [![Actions Status](https://github.com/shootismoke/common/workflows/pr/badge.svg)](https://github.com/shootismoke/common/actions)
 ![GitHub](https://img.shields.io/github/license/shootismoke/common.svg)
 [![Maintainability](https://api.codeclimate.com/v1/badges/dfeff2fb9de150607af9/maintainability)](https://codeclimate.com/github/shootismoke/common/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/2d517984b9b528fcd3cd/test_coverage)](https://codeclimate.com/github/shootismoke/common/test_coverage)
 
 # `@shootismoke/common`
 
