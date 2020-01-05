@@ -71,8 +71,8 @@ pipe(
 If you don't want to use `fp-ts`, the package also exports the data providers as JavaScript `Promise`s.
 
 ```typescript
-// Retrieve the providers by provider code
-import { aqicn } from '@shootismoke/dataproviders/promise'; // Note the `promise` here!
+// Retrieve the providers by provider code, notice the `/lib/promise` subpath here!
+import { aqicn } from '@shootismoke/dataproviders/lib/promise';
 
 async function main() {
   const data = await aqicn.fetchByStation(1045);

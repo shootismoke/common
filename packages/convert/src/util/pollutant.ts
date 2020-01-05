@@ -30,6 +30,15 @@ export const ppm = 'ppm';
  */
 export const ugm3 = 'µg/m³';
 
+/**
+ * Pollutant concentration units
+ */
+export const AllUnits = {
+  ppb,
+  ppm,
+  ugm3
+};
+
 export type Unit = typeof ppb | typeof ppm | typeof ugm3;
 
 /**
