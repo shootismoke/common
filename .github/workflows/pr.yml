@@ -7,20 +7,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Yarn lint
-        run: |
-          yarn install
-          yarn lint
+      - run: yarn install
+      - run: yarn lint
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - run: yarn install
-      - name: Yarn test
+      - name: yarn test and send coverage
         uses: paambaati/codeclimate-action@v2.3.0
         env:
           AQICN_TOKEN: ${{ secrets.AQICN_TOKEN }}
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
           coverageCommand: yarn test --coverage
-          debug: true
