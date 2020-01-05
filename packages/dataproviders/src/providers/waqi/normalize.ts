@@ -46,6 +46,9 @@ export function normalize({
   }
   const [countryRaw, city] = data.u.split('/');
 
+  // Get UTC time
+  const utc = new Date(+data.t * 1000).toISOString();
+
   return pipe(
     getCountryCode(countryRaw),
     E.fromOption(() =>
@@ -65,8 +68,8 @@ export function normalize({
         country,
         city,
         date: {
-          local: new Date(+data.t * 1000).toISOString(),
-          utc: new Date(+data.t * 1000).toUTCString() // Not 100% sure this is correct
+          local: utc, // FIXME How should we get local time from UTC time?
+          utc
         },
         location: `waqi|${data.x}`,
         mobile: false,

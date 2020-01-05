@@ -1,4 +1,5 @@
 import { convert, getMetadata, Pollutant, usaEpa } from '@shootismoke/convert';
+import { format, utcToZonedTime } from 'date-fns-tz';
 import * as E from 'fp-ts/lib/Either';
 import { pipe } from 'fp-ts/lib/pipeable';
 
@@ -6,6 +7,24 @@ import { Normalized } from '../../types';
 import { getCountryCode, providerError } from '../../util';
 import sanitized from './sanitized.json';
 import { ByStation } from './validation';
+
+/**
+ * Sanitize the country we get here from aqicn. For example, for China, the
+ * string after 'https://aqicn.org/city/' is not 'china', but directly the
+ * Chinese privince, e.g. 'jiangsu'. In this case, we map directly to China.
+ * See sanitized.json for some other sanitazations, these are empirical, so
+ * we add them as we discover them.
+ */
+function sanitizeCountry(input: string): string {
+  if (sanitized[input.toLowerCase() as keyof typeof sanitized]) {
+    return sanitized[input.toLowerCase() as keyof typeof sanitized];
+  }
+
+  return input;
+
+  // FIXME The above castings seems hacky, should we just use an external
+  // service to get country from lat/lng?
+}
 
 /**
  * Normalize aqicn byGps data
@@ -45,8 +64,8 @@ export function normalize(data: ByStation): E.Either<Error, Normalized> {
   // We now need to get the country from AQICN response. The only place I found
   // is city.url...
   // Example: http://aqicn.org/city/france/lorraine/thionville-nord/garche/
-  const URL_START = 'https://aqicn.org/city/';
-  if (!data.city.url || !data.city.url.startsWith(URL_START)) {
+  const AQICN_DOMAIN = 'aqicn.org/city/';
+  if (!data.city.url || !data.city.url.includes(AQICN_DOMAIN)) {
     return E.left(
       providerError(
         'aqicn',
@@ -54,18 +73,16 @@ export function normalize(data: ByStation): E.Either<Error, Normalized> {
       )
     );
   }
-  let [countryRaw] = data.city.url.slice(URL_START.length).split('/');
-  // Sanitize the country we get here from aqicn. For example, for China, the
-  // string after 'https://aqicn.org/city/' is not 'china', but directly the
-  // Chinese privince, e.g. 'jiangsu'. In this case, we map directly to China.
-  // See sanitized.json for some other sanitazations, these are empirical, so
-  // we add them as we discover them
-  if (sanitized[countryRaw.toLowerCase() as keyof typeof sanitized]) {
-    countryRaw = sanitized[countryRaw.toLowerCase() as keyof typeof sanitized];
-  }
+  const countryRaw = sanitizeCountry(
+    data.city.url.split(AQICN_DOMAIN)[1].split('/')[0]
+  );
 
-  // FIXME The above castings seems hacky, should we just use an external
-  // service to get country from lat/lng?
+  // Get the timezoned date
+  const utc = new Date(+data.time.v * 1000).toISOString();
+  const local = format(
+    utcToZonedTime(+data.time.v * 1000, data.time.tz || 'Z'),
+    "yyyy-MM-dd'T'HH:mm:ss.SSSxxx"
+  );
 
   return pipe(
     getCountryCode(countryRaw),
@@ -95,10 +112,7 @@ export function normalize(data: ByStation): E.Either<Error, Normalized> {
               longitude: +data.city.geo[1]
             },
             country,
-            date: {
-              local: new Date(+data.time.v * 1000).toISOString(),
-              utc: new Date(+data.time.v * 1000).toUTCString() // FIXME Not 100% sure this is correct
-            },
+            date: { local, utc },
             location: stationId,
             mobile: false,
             parameter: data.dominentpol as Pollutant,

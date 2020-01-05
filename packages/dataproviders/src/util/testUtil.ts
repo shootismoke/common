@@ -57,7 +57,13 @@ function testTE<T>(
           // Skip if openaq doesn't return results
           error.message.startsWith('[openaq] Cannot normalize, no results') ||
           // Skip if aqicn doesn't track pollutants that don't interest us
-          error.message.includes('no pollutants currently tracked')
+          error.message.includes('no pollutants currently tracked') ||
+          // Skip if aqicn country name is not sanitized
+          error.message.startsWith('[aqicn] Cannot get code from country') ||
+          // Skip if aqicn doesn't expose city
+          error.message.includes('no city') ||
+          // Skip if cannot find country for waqi
+          error.message.startsWith('[waqi] Cannot get code from country')
         ) {
           done();
 
