@@ -60,8 +60,8 @@ export function normalize(data: ByStation): E.Either<Error, Normalized> {
   // Chinese privince, e.g. 'jiangsu'. In this case, we map directly to China.
   // See sanitized.json for some other sanitazations, these are empirical, so
   // we add them as we discover them
-  if (sanitized[countryRaw as keyof typeof sanitized]) {
-    countryRaw = sanitized[countryRaw as keyof typeof sanitized];
+  if (sanitized[countryRaw.toLowerCase() as keyof typeof sanitized]) {
+    countryRaw = sanitized[countryRaw.toLowerCase() as keyof typeof sanitized];
   }
 
   // FIXME The above castings seems hacky, should we just use an external
