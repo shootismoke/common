@@ -1,4 +1,4 @@
-[@shootismoke/dataproviders](../README.md) › [Globals](../globals.md) › ["providers/waqi/waqi"](_providers_waqi_waqi_.md)
+[@shootismoke/dataproviders - v0.2.3](../README.md) › [Globals](../globals.md) › ["providers/waqi/waqi"](_providers_waqi_waqi_.md)
 
 # External module: "providers/waqi/waqi"
 
@@ -14,7 +14,7 @@
 
 ### ▪ **waqi**: *object*
 
-*Defined in [providers/waqi/waqi.ts:9](https://github.com/shootismoke/common/blob/092361a/packages/dataproviders/src/providers/waqi/waqi.ts#L9)*
+*Defined in [providers/waqi/waqi.ts:12](https://github.com/shootismoke/common/blob/5b392da/packages/dataproviders/src/providers/waqi/waqi.ts#L12)*
 
 **`see`** https://wind.waqi.info/
 
@@ -22,38 +22,38 @@
 
 • **fetchByGps**: *fetchByGps*
 
-*Defined in [providers/waqi/waqi.ts:10](https://github.com/shootismoke/common/blob/092361a/packages/dataproviders/src/providers/waqi/waqi.ts#L10)*
+*Defined in [providers/waqi/waqi.ts:13](https://github.com/shootismoke/common/blob/5b392da/packages/dataproviders/src/providers/waqi/waqi.ts#L13)*
 
 ###  id
 
 • **id**: *string* = "waqi"
 
-*Defined in [providers/waqi/waqi.ts:14](https://github.com/shootismoke/common/blob/092361a/packages/dataproviders/src/providers/waqi/waqi.ts#L14)*
+*Defined in [providers/waqi/waqi.ts:15](https://github.com/shootismoke/common/blob/5b392da/packages/dataproviders/src/providers/waqi/waqi.ts#L15)*
 
 ###  name
 
 • **name**: *string* = "WAQI"
 
-*Defined in [providers/waqi/waqi.ts:15](https://github.com/shootismoke/common/blob/092361a/packages/dataproviders/src/providers/waqi/waqi.ts#L15)*
+*Defined in [providers/waqi/waqi.ts:16](https://github.com/shootismoke/common/blob/5b392da/packages/dataproviders/src/providers/waqi/waqi.ts#L16)*
 
 ###  normalizeByGps
 
 • **normalizeByGps**: *normalize* =  normalize
 
-*Defined in [providers/waqi/waqi.ts:16](https://github.com/shootismoke/common/blob/092361a/packages/dataproviders/src/providers/waqi/waqi.ts#L16)*
+*Defined in [providers/waqi/waqi.ts:17](https://github.com/shootismoke/common/blob/5b392da/packages/dataproviders/src/providers/waqi/waqi.ts#L17)*
 
 ###  fetchByStation
 
-▸ **fetchByStation**(): *never*
+▸ **fetchByStation**(): *TaskEither‹Error, object›*
 
-*Defined in [providers/waqi/waqi.ts:11](https://github.com/shootismoke/common/blob/092361a/packages/dataproviders/src/providers/waqi/waqi.ts#L11)*
+*Defined in [providers/waqi/waqi.ts:14](https://github.com/shootismoke/common/blob/5b392da/packages/dataproviders/src/providers/waqi/waqi.ts#L14)*
 
-**Returns:** *never*
+**Returns:** *TaskEither‹Error, object›*
 
 ###  normalizeByStation
 
-▸ **normalizeByStation**(): *never*
+▸ **normalizeByStation**(): *Left‹Error› | Right‹ArrayOneOrMore‹object & object››*
 
-*Defined in [providers/waqi/waqi.ts:17](https://github.com/shootismoke/common/blob/092361a/packages/dataproviders/src/providers/waqi/waqi.ts#L17)*
+*Defined in [providers/waqi/waqi.ts:18](https://github.com/shootismoke/common/blob/5b392da/packages/dataproviders/src/providers/waqi/waqi.ts#L18)*
 
-**Returns:** *never*
+**Returns:** *Left‹Error› | Right‹ArrayOneOrMore‹object & object››*

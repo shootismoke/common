@@ -1,4 +1,4 @@
-[@shootismoke/dataproviders](../README.md) › [Globals](../globals.md) › ["util/openaq"](_util_openaq_.md)
+[@shootismoke/dataproviders - v0.2.3](../README.md) › [Globals](../globals.md) › ["util/openaq"](_util_openaq_.md)
 
 # External module: "util/openaq"
 
@@ -6,7 +6,7 @@
 
 ### Type aliases
 
-* [OpenAQ](_util_openaq_.md#openaq)
+* [OpenAQFormat](_util_openaq_.md#openaqformat)
 
 ### Variables
 
@@ -14,11 +14,11 @@
 
 ## Type aliases
 
-###  OpenAQ
+###  OpenAQFormat
 
-Ƭ **OpenAQ**: *t.TypeOf‹IntersectionC›*
+Ƭ **OpenAQFormat**: *t.TypeOf‹IntersectionC›*
 
-*Defined in [util/openaq.ts:97](https://github.com/shootismoke/common/blob/092361a/packages/dataproviders/src/util/openaq.ts#L97)*
+*Defined in [util/openaq.ts:101](https://github.com/shootismoke/common/blob/5b392da/packages/dataproviders/src/util/openaq.ts#L101)*
 
 **`see`** https://github.com/openaq/openaq-data-format
 
@@ -28,7 +28,7 @@
 
 • **OpenAQCodec**: *IntersectionC‹[TypeC‹object›, PartialC‹object›]›* =  t.intersection([required, optional])
 
-*Defined in [util/openaq.ts:92](https://github.com/shootismoke/common/blob/092361a/packages/dataproviders/src/util/openaq.ts#L92)*
+*Defined in [util/openaq.ts:96](https://github.com/shootismoke/common/blob/5b392da/packages/dataproviders/src/util/openaq.ts#L96)*
 
 An io-ts codec to validate the OpenAQ data format
 

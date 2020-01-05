@@ -1,4 +1,4 @@
-[@shootismoke/convert](../README.md) › [Globals](../globals.md) › ["util/pollutant"](../modules/_util_pollutant_.md) › [PollutantMeta](_util_pollutant_.pollutantmeta.md)
+[@shootismoke/convert - v0.2.0](../README.md) › [Globals](../globals.md) › ["util/pollutant"](../modules/_util_pollutant_.md) › [PollutantMeta](_util_pollutant_.pollutantmeta.md)
 
 # Interface: PollutantMeta
 
@@ -23,7 +23,7 @@ Metadata for each pollutant
 
 • **description**: *string*
 
-*Defined in [util/pollutant.ts:41](https://github.com/shootismoke/common/blob/092361a/packages/convert/src/util/pollutant.ts#L41)*
+*Defined in [util/pollutant.ts:50](https://github.com/shootismoke/common/blob/5b392da/packages/convert/src/util/pollutant.ts#L50)*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 • **id**: *[Pollutant](../modules/_util_pollutant_.md#pollutant)*
 
-*Defined in [util/pollutant.ts:39](https://github.com/shootismoke/common/blob/092361a/packages/convert/src/util/pollutant.ts#L39)*
+*Defined in [util/pollutant.ts:48](https://github.com/shootismoke/common/blob/5b392da/packages/convert/src/util/pollutant.ts#L48)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **name**: *string*
 
-*Defined in [util/pollutant.ts:40](https://github.com/shootismoke/common/blob/092361a/packages/convert/src/util/pollutant.ts#L40)*
+*Defined in [util/pollutant.ts:49](https://github.com/shootismoke/common/blob/5b392da/packages/convert/src/util/pollutant.ts#L49)*
 
 ___
 
@@ -47,4 +47,4 @@ ___
 
 • **preferredUnit**: *[Unit](../modules/_util_pollutant_.md#unit)*
 
-*Defined in [util/pollutant.ts:42](https://github.com/shootismoke/common/blob/092361a/packages/convert/src/util/pollutant.ts#L42)*
+*Defined in [util/pollutant.ts:51](https://github.com/shootismoke/common/blob/5b392da/packages/convert/src/util/pollutant.ts#L51)*

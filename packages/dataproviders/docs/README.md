@@ -1,6 +1,6 @@
-[@shootismoke/dataproviders](README.md) › [Globals](globals.md)
+[@shootismoke/dataproviders - v0.2.3](README.md) › [Globals](globals.md)
 
-# @shootismoke/dataproviders
+# @shootismoke/dataproviders - v0.2.3
 
 [![npm (scoped)](https://img.shields.io/npm/v/@shootismoke/dataproviders.svg)](https://www.npmjs.com/package/@shootismoke/dataproviders)
 [![dependencies Status](https://david-dm.org/shootismoke/common/status.svg?path=packages/dataproviders)](https://david-dm.org/shootismoke/common?path=packages/dataproviders)
@@ -44,15 +44,15 @@ aqicn.fetchByGps({ latitude: 45, longitude: 23 }); // Returns a TaskEither<Error
 // Usage with fp-ts
 
 import { pipe } from 'fp-ts/lib/pipeable';
-import { fold, map } from 'fp-ts/lib/TaskEither';
+import * as TE from 'fp-ts/lib/TaskEither';
 
 pipe(
   // Fetch data from station 'Coyhaique' on the OpenAQ platform
   openaq.fetchByStation('Coyhaique'),
   // Normalize the data
-  map(openaq.normalizeByStation),
+  TE.chain(response => TE.fromEither(normalize(response))),
   // Depending on error/result case, do different stuff
-  fold(
+  TE.fold(
     // Do on error:
     error => {
       console.error(error);
@@ -75,8 +75,8 @@ pipe(
 If you don't want to use `fp-ts`, the package also exports the data providers as JavaScript `Promise`s.
 
 ```typescript
-// Retrieve the providers by provider code
-import { aqicn } from '@shootismoke/dataproviders/promise'; // Note the `promise` here!
+// Retrieve the providers by provider code, notice the `/lib/promise` subpath here!
+import { aqicn } from '@shootismoke/dataproviders/lib/promise';
 
 async function main() {
   const data = await aqicn.fetchByStation(1045);
@@ -94,13 +94,23 @@ If you use the `.normalizeByGps` or `.normalizeByStation` functions, the output 
 
 ```typescript
 /**
- * The OpenAQ data format. One such object represents one air quality _measurement_
+ * The OpenAQ data format. One such object represents one air quality
+ * measurement
  */
-interface OpenAQ {
+interface OpenAQFormat {
   /**
    * City (or regional approximation) containing location
    */
   city: string;
+  /**
+   * Coordinates where the measurement took place. Note that in the
+   * openaq-data-format, this field is optional. Using this library, this field
+   * will **always** be populated
+   */
+  coordinates: {
+    latitude: number;
+    longitude: number;
+  };
   /**
    * Country containing location in two letter ISO format
    */
@@ -113,7 +123,8 @@ interface OpenAQ {
     utc: string;
   };
   /**
-   * A unique ID representing the location of a measurement (can be a station ID, a place...)
+   * A unique ID representing the location of a measurement (can be a station
+   * ID, a place...)
    */
   location: string;
   /**
@@ -131,12 +142,13 @@ interface OpenAQ {
 }
 
 /**
- * The normalized data is an array of OpenAQ measurements
+ * The normalized data is an array of OpenAQ measurements. We ensure there is
+ * always at least one element in the Normalized array
  */
 type Normalized = OpenAQ[];
 ```
 
-See [`openaq-data-format`](https://github.com/openaq/openaq-data-format) for more information.
+See [`openaq-data-format`](https://github.com/openaq/openaq-data-format) for more information. Note that in the above format, the `coordinates` field is always required, whereas it's optional in `openaq-data-format`.
 
 ### Full Documentation
 

@@ -1,4 +1,4 @@
-[@shootismoke/dataproviders](../README.md) › [Globals](../globals.md) › ["types"](../modules/_types_.md) › [LatLng](_types_.latlng.md)
+[@shootismoke/dataproviders - v0.2.3](../README.md) › [Globals](../globals.md) › ["types"](../modules/_types_.md) › [LatLng](_types_.latlng.md)
 
 # Interface: LatLng
 
@@ -21,7 +21,7 @@ Latitude and longitude object
 
 • **latitude**: *number*
 
-*Defined in [types.ts:9](https://github.com/shootismoke/common/blob/092361a/packages/dataproviders/src/types.ts#L9)*
+*Defined in [types.ts:10](https://github.com/shootismoke/common/blob/5b392da/packages/dataproviders/src/types.ts#L10)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **longitude**: *number*
 
-*Defined in [types.ts:10](https://github.com/shootismoke/common/blob/092361a/packages/dataproviders/src/types.ts#L10)*
+*Defined in [types.ts:11](https://github.com/shootismoke/common/blob/5b392da/packages/dataproviders/src/types.ts#L11)*

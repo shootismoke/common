@@ -1,6 +1,6 @@
-[@shootismoke/dataproviders](README.md) › [Globals](globals.md)
+[@shootismoke/dataproviders - v0.2.3](README.md) › [Globals](globals.md)
 
-# @shootismoke/dataproviders
+# @shootismoke/dataproviders - v0.2.3
 
 ## Index
 
@@ -12,4 +12,6 @@
 * ["providers/waqi/waqi"](modules/_providers_waqi_waqi_.md)
 * ["types"](modules/_types_.md)
 * ["util/constants"](modules/_util_constants_.md)
+* ["util/dominantPol"](modules/_util_dominantpol_.md)
 * ["util/openaq"](modules/_util_openaq_.md)
+* ["util/stationName"](modules/_util_stationname_.md)
