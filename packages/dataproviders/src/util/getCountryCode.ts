@@ -3,7 +3,7 @@ import { pipe } from 'fp-ts/lib/pipeable';
 
 import countries from './countries.json';
 
-export function countryCode(input: string): O.Option<string> {
+export function getCountryCode(input: string): O.Option<string> {
   return pipe(
     O.fromNullable(
       countries.find(({ name }) => {
@@ -18,8 +18,8 @@ export function countryCode(input: string): O.Option<string> {
           return true;
         }
 
-        const lnsName = lName.replace(' ', ''); // lns stands for "lower no space"
-        const lnsInput = lInput.replace(' ', ''); // lns stands for "lower no space"
+        const lnsName = lName.replace(/ /g, ''); // lns stands for "lower no space"
+        const lnsInput = lInput.replace(/ /g, '');
         if (lnsName === lnsInput) {
           return true;
         }

@@ -8,7 +8,7 @@ import * as E from 'fp-ts/lib/Either';
 import { pipe } from 'fp-ts/lib/pipeable';
 
 import { Normalized } from '../../types';
-import { countryCode } from '../../util';
+import { getCountryCode } from '../../util';
 import { ByStation } from './validation';
 
 /**
@@ -25,7 +25,7 @@ export function normalize({
     return E.left(
       new Error(
         `Cannot normalize station ${stationId}, unrecognized pollutant ${
-          data.pol
+        data.pol
         }: ${JSON.stringify(data)}`
       )
     );
@@ -43,7 +43,7 @@ export function normalize({
   const [countryRaw, city] = data.u.split('/');
 
   return pipe(
-    countryCode(countryRaw),
+    getCountryCode(countryRaw),
     E.fromOption(() => new Error(`Cannot get code from country ${countryRaw}`)),
     E.map(country => [
       {
