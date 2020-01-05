@@ -22,5 +22,4 @@ describe('getCountryCode', () => {
   it('should match included string', () => {
     expect(getCountryCode('United States Of America')).toEqual(O.some('US'));
   });
-
 });

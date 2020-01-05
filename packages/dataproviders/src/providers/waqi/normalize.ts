@@ -26,7 +26,7 @@ export function normalize({
       providerError(
         'waqi',
         `Cannot normalize station ${stationId}, unrecognized pollutant ${
-        data.pol
+          data.pol
         }: ${JSON.stringify(data)}`
       )
     );
