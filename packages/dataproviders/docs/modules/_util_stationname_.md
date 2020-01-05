@@ -1,4 +1,4 @@
-[@shootismoke/dataproviders - v0.2.3](../README.md) › [Globals](../globals.md) › ["util/stationName"](_util_stationname_.md)
+[@shootismoke/dataproviders - v0.2.5](../README.md) › [Globals](../globals.md) › ["util/stationName"](_util_stationname_.md)
 
 # External module: "util/stationName"
 
@@ -14,7 +14,7 @@
 
 ▸ **stationName**(`data`: [OpenAQFormat](_util_openaq_.md#openaqformat)): *string*
 
-*Defined in [util/stationName.ts:9](https://github.com/shootismoke/common/blob/73ace9d/packages/dataproviders/src/util/stationName.ts#L9)*
+*Defined in [util/stationName.ts:9](https://github.com/shootismoke/common/blob/9e664ce/packages/dataproviders/src/util/stationName.ts#L9)*
 
 Get the name of where the measurement has been done, usually the name of the
 air quality station

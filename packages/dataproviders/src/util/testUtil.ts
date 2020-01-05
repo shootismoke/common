@@ -28,7 +28,7 @@ export function testNormalized(normalized: Normalized): void {
     expect(data.date).toBeDefined();
     expect(data.location).toHaveProperty('latitude');
     expect(data.location).toHaveProperty('longitude');
-    expect(Object.keys(AllPollutants).includes(data.parameter)).toBe(true);
+    expect(AllPollutants.includes(data.parameter)).toBe(true);
     expect(data.value).toBeDefined();
     expect(data.unit).toBeDefined();
   });

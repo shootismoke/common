@@ -1,6 +1,6 @@
 import {
   convert,
-  getMetadata,
+  getPollutantMeta,
   isPollutant,
   Pollutant
 } from '@shootismoke/convert';
@@ -76,7 +76,7 @@ export function normalize({
         parameter: data.pol as Pollutant,
         sourceName: 'waqi',
         sourceType: 'other',
-        unit: getMetadata(data.pol as Pollutant).preferredUnit,
+        unit: getPollutantMeta(data.pol as Pollutant).preferredUnit,
         value: raw
       }
     ])

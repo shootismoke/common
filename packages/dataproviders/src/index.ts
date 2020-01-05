@@ -1,8 +1,9 @@
 export * from './providers';
 export * from './types';
 export {
+  AllProviders,
   ACCURATE_RADIUS,
-  dominantPol,
+  getDominantPol,
   OpenAQFormat,
   stationName
 } from './util';

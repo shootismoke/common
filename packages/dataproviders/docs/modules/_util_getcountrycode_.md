@@ -1,4 +1,4 @@
-[@shootismoke/dataproviders - v0.2.3](../README.md) › [Globals](../globals.md) › ["util/getCountryCode"](_util_getcountrycode_.md)
+[@shootismoke/dataproviders - v0.2.5](../README.md) › [Globals](../globals.md) › ["util/getCountryCode"](_util_getcountrycode_.md)
 
 # External module: "util/getCountryCode"
 
@@ -14,7 +14,7 @@
 
 ▸ **getCountryCode**(`input`: string): *O.Option‹string›*
 
-*Defined in [util/getCountryCode.ts:38](https://github.com/shootismoke/common/blob/73ace9d/packages/dataproviders/src/util/getCountryCode.ts#L38)*
+*Defined in [util/getCountryCode.ts:38](https://github.com/shootismoke/common/blob/9e664ce/packages/dataproviders/src/util/getCountryCode.ts#L38)*
 
 Given a country name, gets the ISO 3166-1 Alpha-2 code of the country
 
