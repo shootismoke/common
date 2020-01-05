@@ -2,7 +2,7 @@ import * as aqiCodes from '../aqi';
 import { convert } from '../convert';
 import { AqiCode } from '../types';
 import { round } from './breakpoints';
-import { getMetadata, Pollutant } from './pollutant';
+import { getPollutantMeta, Pollutant } from './pollutant';
 
 /**
  * Small utility function to step AQI/raw conversions for a pollutant
@@ -15,7 +15,7 @@ export function testConvert(
 ): void {
   it(`should convert ${pollutant}: ${
     aqiCodes[aqiCode].displayName
-  } ${aqi} = ${raw}${getMetadata(pollutant).preferredUnit}`, () => {
+  } ${aqi} = ${raw}${getPollutantMeta(pollutant).preferredUnit}`, () => {
     // Sometimes, because of rounding, the values are not exact. We just want
     // them to be exact at +/-0.2
     expect(

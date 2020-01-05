@@ -8,6 +8,6 @@ import { Normalized } from '../types';
  *
  * @param normalized - The normalized data
  */
-export function dominantPol(normalized: Normalized): Pollutant {
+export function getDominantPol(normalized: Normalized): Pollutant {
   return normalized.slice(-1).sort((a, b) => a.value - b.value)[0].parameter;
 }

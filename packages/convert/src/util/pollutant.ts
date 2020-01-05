@@ -1,5 +1,28 @@
 /**
- * All the pollutants tracked by @shootismoke
+ * Parts per billion.
+ */
+export const ppb = 'ppb';
+/**
+ * Parts per million.
+ */
+export const ppm = 'ppm';
+/**
+ * Microgram per cubic meter.
+ */
+export const ugm3 = 'µg/m³';
+
+/**
+ * Array of pollutant concentration units.
+ */
+export const AllUnits = [ppb, ppm, ugm3];
+
+/**
+ * Pollutant concentration units.
+ */
+export type Unit = typeof ppb | typeof ppm | typeof ugm3;
+
+/**
+ * All the pollutants tracked by @shootismoke.
  */
 export type Pollutant =
   | 'co'
@@ -16,33 +39,8 @@ export type Pollutant =
   | 'so2'
   | 'trs';
 
-// Pollutant concentration units
 /**
- * @ignore
- */
-export const ppb = 'ppb';
-/**
- * @ignore
- */
-export const ppm = 'ppm';
-/**
- * @ignore
- */
-export const ugm3 = 'µg/m³';
-
-/**
- * Pollutant concentration units
- */
-export const AllUnits = {
-  ppb,
-  ppm,
-  ugm3
-};
-
-export type Unit = typeof ppb | typeof ppm | typeof ugm3;
-
-/**
- * Metadata for each pollutant
+ * Metadata for each pollutant.
  */
 export interface PollutantMeta {
   id: Pollutant;
@@ -52,9 +50,11 @@ export interface PollutantMeta {
 }
 
 /**
- * All the pollutants tracked by @shootismoke
+ * All the pollutants tracked by @shootismoke.
+ *
+ * @ignore
  */
-export const AllPollutants: Record<Pollutant, PollutantMeta> = {
+const Pollutants: Record<Pollutant, PollutantMeta> = {
   co: {
     id: 'co',
     name: 'CO',
@@ -136,20 +136,25 @@ export const AllPollutants: Record<Pollutant, PollutantMeta> = {
 };
 
 /**
- * Get metadata (code, name, unit) for a pollutant
- *
- * @param pollutant - The pollutant to get the metadata from
+ * Array of all pollutants tracked by @shootismoke.
  */
-export function getMetadata(pollutant: Pollutant): PollutantMeta {
-  return AllPollutants[pollutant];
+export const AllPollutants = Object.keys(Pollutants) as Pollutant[];
+
+/**
+ * Get metadata (code, name, description, unit) for a pollutant.
+ *
+ * @param pollutant - The pollutant to get the metadata from.
+ */
+export function getPollutantMeta(pollutant: Pollutant): PollutantMeta {
+  return Pollutants[pollutant];
 }
 
 /**
  * Check if the input pollutant is a recognized pollutant which we can convert
- * AQI to/from raw concentrations
+ * AQI to/from raw concentrations.
  *
- * @param pollutant - The pollutant to test
+ * @param pollutant - The pollutant to test.
  */
 export function isPollutant(pollutant: string): pollutant is Pollutant {
-  return Object.keys(AllPollutants).includes(pollutant as Pollutant);
+  return AllPollutants.includes(pollutant as Pollutant);
 }

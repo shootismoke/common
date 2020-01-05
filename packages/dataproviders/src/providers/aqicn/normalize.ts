@@ -1,4 +1,9 @@
-import { convert, getMetadata, Pollutant, usaEpa } from '@shootismoke/convert';
+import {
+  convert,
+  getPollutantMeta,
+  Pollutant,
+  usaEpa
+} from '@shootismoke/convert';
 import { format, utcToZonedTime } from 'date-fns-tz';
 import * as E from 'fp-ts/lib/Either';
 import { pipe } from 'fp-ts/lib/pipeable';
@@ -119,7 +124,7 @@ export function normalize(data: ByStation): E.Either<Error, Normalized> {
             sourceName: 'aqicn',
             sourceType: 'other',
             value: convert(pollutant, 'usaEpa', 'raw', v),
-            unit: getMetadata(pollutant).preferredUnit
+            unit: getPollutantMeta(pollutant).preferredUnit
           };
         }) as Normalized
     )

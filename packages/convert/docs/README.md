@@ -47,13 +47,13 @@ Arguments:
 - `value: number`: The value to convert
 
 ```typescript
-import { convert, getMetadata } from '@shootismoke/convert';
+import { convert, getPollutantMeta } from '@shootismoke/convert';
 
 // Convert PM2.5 from usaEpa AQI to raw concentration
 const raw = convert('pm25', 'usaEpa', 'raw', 57);
 console.log(raw); // 15
 
-console.log(getMetadata('pm25').preferredUnit); // "µg/m³", which is the unit of the value 15 above
+console.log(getPollutantMeta('pm25').preferredUnit); // "µg/m³", which is the unit of the value 15 above
 
 // Convert PM2.5 from raw concentration to usaEPA AQI
 const aqi = convert('pm25', 'raw', 'usaEpa', 15);
