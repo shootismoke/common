@@ -15,12 +15,14 @@
   "scripts": {
     "prebuild": "rimraf lib",
     "build": "tsc -p tsconfig.settings.json",
-    "generate": "graphql-codegen"
+    "generate": "graphql-codegen",
+    "copy-schema": "copyfiles -f ../../../backend/src/schema/* src/schema"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.8.2",
     "@graphql-codegen/typescript": "^1.8.2",
     "@graphql-codegen/typescript-resolvers": "^1.8.2",
+    "copyfiles": "^2.1.1",
     "graphql": "^14.5.8"
   },
   "peerDependencies": {
