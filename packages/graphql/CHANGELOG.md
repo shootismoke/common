@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.5](https://github.com/shootismoke/common/compare/v0.2.4...v0.2.5) (2020-01-05)
+
+
+### Bug Fixes
+
+* **graphql:** Add [@convert](https://github.com/convert) dependency ([#30](https://github.com/shootismoke/common/issues/30)) ([2575fa2](https://github.com/shootismoke/common/commit/2575fa2a4ce85d3338fceb57a0a295ef35d205f6))
+* **graphql:** Re-export graphql schemas as frontend need them ([#27](https://github.com/shootismoke/common/issues/27)) ([64dfd6c](https://github.com/shootismoke/common/commit/64dfd6ccb3b8221a9d0f3a947f40245900469fde))
+
+
+
+
+
 ## [0.2.4](https://github.com/shootismoke/common/compare/v0.2.3...v0.2.4) (2020-01-04)
 
 **Note:** Version bump only for package @shootismoke/graphql
