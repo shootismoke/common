@@ -14,7 +14,7 @@
 
 ▸ **stationName**(`data`: [OpenAQFormat](_util_openaq_.md#openaqformat)): *string*
 
-*Defined in [util/stationName.ts:9](https://github.com/shootismoke/common/blob/5b392da/packages/dataproviders/src/util/stationName.ts#L9)*
+*Defined in [util/stationName.ts:9](https://github.com/shootismoke/common/blob/b01485a/packages/dataproviders/src/util/stationName.ts#L9)*
 
 Get the name of where the measurement has been done, usually the name of the
 air quality station

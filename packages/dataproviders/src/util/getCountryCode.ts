@@ -11,6 +11,8 @@ interface Country {
 
 /**
  * Sanitize a country name
+ *
+ * @ignore
  */
 function sanitize(input: string): string {
   return (
@@ -24,6 +26,15 @@ function sanitize(input: string): string {
   );
 }
 
+/**
+ * Given a country name, gets the ISO 3166-1 Alpha-2 code of the country
+ *
+ * @param input - The country name, can contain multiple spaces, dashes...
+ * @example
+ * ```typescript
+ * getCountryCode('united   States'); // 'US'
+ * ```
+ */
 export function getCountryCode(input: string): O.Option<string> {
   return pipe(
     O.fromNullable(

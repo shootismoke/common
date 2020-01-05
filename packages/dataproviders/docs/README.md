@@ -12,11 +12,11 @@ A library to fetch air quality data from various providers (AqiCN, OpenAQ...) an
 
 ## Supported Air Quality Providers
 
-| Provider | Provider Code | Website            | Notes                                                                   |
-| -------- | ------------- | ------------------ | ----------------------------------------------------------------------- |
-| AqiCN    | `aqicn`       | https://aqicn.org  | API token needed, get one [here](https://aqicn.org/data-platform/token) |
-| WAQI     | `waqi`        | https://waqi.info/ | Same institution as AqiCN                                               |
-| OpenAQ   | `openaq`      | https://openaq.org |                                                                         |
+| Provider | Provider Code | Website            | Notes                                                                            |
+| -------- | ------------- | ------------------ | -------------------------------------------------------------------------------- |
+| AqiCN    | `aqicn`       | https://aqicn.org  | API token needed, get one for free [here](https://aqicn.org/data-platform/token) |
+| WAQI     | `waqi`        | https://waqi.info/ | Same institution as AqiCN                                                        |
+| OpenAQ   | `openaq`      | https://openaq.org |                                                                                  |
 
 ## ⚡ Get Started
 
