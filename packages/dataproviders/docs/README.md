@@ -1,6 +1,6 @@
-[@shootismoke/dataproviders - v0.2.3](README.md) › [Globals](globals.md)
+[@shootismoke/dataproviders - v0.2.5](README.md) › [Globals](globals.md)
 
-# @shootismoke/dataproviders - v0.2.3
+# @shootismoke/dataproviders - v0.2.5
 
 [![npm (scoped)](https://img.shields.io/npm/v/@shootismoke/dataproviders.svg)](https://www.npmjs.com/package/@shootismoke/dataproviders)
 [![dependencies Status](https://david-dm.org/shootismoke/common/status.svg?path=packages/dataproviders)](https://david-dm.org/shootismoke/common?path=packages/dataproviders)
