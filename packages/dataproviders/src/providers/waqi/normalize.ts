@@ -73,7 +73,7 @@ export function normalize({
         },
         location: `waqi|${data.x}`,
         mobile: false,
-        parameter: data.pol,
+        parameter: data.pol as Pollutant,
         sourceName: 'waqi',
         sourceType: 'other',
         unit: getPollutantMeta(data.pol as Pollutant).preferredUnit,
