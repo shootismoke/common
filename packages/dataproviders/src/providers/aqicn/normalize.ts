@@ -120,7 +120,7 @@ export function normalize(data: ByStation): E.Either<Error, Normalized> {
             date: { local, utc },
             location: stationId,
             mobile: false,
-            parameter: data.dominentpol as Pollutant,
+            parameter: pollutant,
             sourceName: 'aqicn',
             sourceType: 'other',
             value: convert(pollutant, 'usaEpa', 'raw', v),
