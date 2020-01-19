@@ -16,16 +16,16 @@ describe('Convert pm25', () => {
   testConvert('usaEpa', 'pm25', 550, 550);
 
   testConvert('usaEpa', 'co', 90, 8.4);
-  testConvert('usaEpa', 'o3', 122, 0.077);
+  testConvert('usaEpa', 'o3', 122, 76.9);
 
   // From https://github.com/hrbonz/python-aqi/blob/master/test/test_epa.py
   testConvert('usaEpa', 'pm25', 39, 9.3);
   testConvert('usaEpa', 'pm25', 57, 15);
   testConvert('usaEpa', 'pm25', 135, 49.5);
   testConvert('usaEpa', 'pm25', 285, 235.4);
-  testConvert('usaEpa', 'o3', 155, 0.08753333); // Note: different from https://github.com/hrbonz/python-aqi/blob/1de807365eb44ef6c4e3d80af500ff8f6c273d41/test/test_epa.py#L34-L45
+  testConvert('usaEpa', 'o3', 155, 87.5); // Note: different from https://github.com/hrbonz/python-aqi/blob/1de807365eb44ef6c4e3d80af500ff8f6c273d41/test/test_epa.py#L34-L45
   // testConvert('usaEpa', 'o3', 147, 0.162); // FIXME Unfortunately We don't track hourly o3 now
-  testConvert('usaEpa', 'o3', 238, 0.141); // Note: different from https://github.com/hrbonz/python-aqi/blob/1de807365eb44ef6c4e3d80af500ff8f6c273d41/test/test_epa.py#L34-L45
+  testConvert('usaEpa', 'o3', 238, 141); // Note: different from https://github.com/hrbonz/python-aqi/blob/1de807365eb44ef6c4e3d80af500ff8f6c273d41/test/test_epa.py#L34-L45
   testConvert('usaEpa', 'pm25', 102, 35.9);
   testConvert('usaEpa', 'co', 90, 8.4);
 
