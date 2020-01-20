@@ -11,7 +11,8 @@
     "deploy": "lerna version --conventional-commits && lerna publish from-git",
     "docs": "lerna run docs --parallel",
     "lint": "tsc --noEmit && eslint --ext ts .",
-    "test": "jest"
+    "test": "jest",
+    "test:unit": "jest --testPathIgnorePatterns e2e"
   },
   "workspaces": [
     "packages/*"

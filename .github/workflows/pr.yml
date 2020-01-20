@@ -7,14 +7,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - run: yarn install
-      - run: yarn lint
+      - name: Run yarn lint
+        run: |
+          yarn install
+          yarn lint
+
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - name: Run unit tests
+        run: |
+          yarn install
+          yarn test:unit
+
+  test-e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
       - run: yarn install
-      - name: yarn test and send coverage
+      - name: Run E2E tests and send coverage
         uses: paambaati/codeclimate-action@v2.3.0
         env:
           AQICN_TOKEN: ${{ secrets.AQICN_TOKEN }}
