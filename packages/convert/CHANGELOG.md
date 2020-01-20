@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.7](https://github.com/shootismoke/common/compare/v0.2.6...v0.2.7) (2020-01-20)
+
+
+### Bug Fixes
+
+* **convert:** Correct Conversion of o3 ([#49](https://github.com/shootismoke/common/issues/49)) ([3dc9877](https://github.com/shootismoke/common/commit/3dc98778e4e2ef824f942eaa398a908ecd428316))
+
+
+
+
+
 ## [0.2.6](https://github.com/shootismoke/common/compare/v0.2.5...v0.2.6) (2020-01-05)
 
 
