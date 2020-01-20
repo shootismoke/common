@@ -1,9 +1,7 @@
-import axios from 'axios';
-import { pipe } from 'fp-ts/lib/pipeable';
 import * as TE from 'fp-ts/lib/TaskEither';
 
 import { LatLng } from '../../types';
-import { ACCURATE_RADIUS, decodeWith, promiseToTE } from '../../util';
+import { ACCURATE_RADIUS, fetchAndDecode } from '../../util';
 import { OpenAQResponse, OpenAQResponseCodec } from './validation';
 
 const RESULT_LIMIT = 10;
@@ -17,15 +15,9 @@ const BASE_URL = `https://api.openaq.org/v1/measurements?include_fields=attribut
 export function fetchByGps(gps: LatLng): TE.TaskEither<Error, OpenAQResponse> {
   const { latitude, longitude } = gps;
 
-  return pipe(
-    promiseToTE(() =>
-      axios
-        .get(
-          `${BASE_URL}&coordinates=${latitude},${longitude}&radius=${ACCURATE_RADIUS}`
-        )
-        .then(({ data }) => data)
-    ),
-    TE.chain(decodeWith(OpenAQResponseCodec))
+  return fetchAndDecode(
+    `${BASE_URL}&coordinates=${latitude},${longitude}&radius=${ACCURATE_RADIUS}`,
+    OpenAQResponseCodec
   );
 }
 
@@ -37,10 +29,8 @@ export function fetchByGps(gps: LatLng): TE.TaskEither<Error, OpenAQResponse> {
 export function fetchByStation(
   stationId: string
 ): TE.TaskEither<Error, OpenAQResponse> {
-  return pipe(
-    promiseToTE(() =>
-      axios.get(`${BASE_URL}&location=${stationId}`).then(({ data }) => data)
-    ),
-    TE.chain(decodeWith(OpenAQResponseCodec))
+  return fetchAndDecode(
+    `${BASE_URL}&location=${stationId}`,
+    OpenAQResponseCodec
   );
 }

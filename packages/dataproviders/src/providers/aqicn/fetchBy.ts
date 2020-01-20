@@ -1,10 +1,9 @@
-import axios from 'axios';
 import { pipe } from 'fp-ts/lib/pipeable';
 import * as TE from 'fp-ts/lib/TaskEither';
 import { TypeOf } from 'io-ts';
 
 import { LatLng } from '../../types';
-import { decodeWith, promiseToTE } from '../../util';
+import { fetchAndDecode } from '../../util';
 import { ByStation, ByStationCodec } from './validation';
 
 /**
@@ -55,15 +54,11 @@ export function fetchByGps(
   return pipe(
     checkToken(options),
     TE.chain(() =>
-      promiseToTE(() =>
-        axios
-          .get(
-            `http://api.waqi.info/feed/geo:${latitude};${longitude}/?token=${options.token}`
-          )
-          .then(({ data }) => data)
+      fetchAndDecode(
+        `http://api.waqi.info/feed/geo:${latitude};${longitude}/?token=${options.token}`,
+        ByStationCodec
       )
     ),
-    TE.chain(decodeWith(ByStationCodec)),
     TE.chain(checkError)
   );
 }
@@ -80,15 +75,11 @@ export function fetchByStation(
   return pipe(
     checkToken(options),
     TE.chain(() =>
-      promiseToTE(() =>
-        axios
-          .get(
-            `https://api.waqi.info/feed/@${stationId}/?token=${options.token}`
-          )
-          .then(({ data }) => data)
+      fetchAndDecode(
+        `https://api.waqi.info/feed/@${stationId}/?token=${options.token}`,
+        ByStationCodec
       )
     ),
-    TE.chain(decodeWith(ByStationCodec)),
     TE.chain(checkError)
   );
 }
