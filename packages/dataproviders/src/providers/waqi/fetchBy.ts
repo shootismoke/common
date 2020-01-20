@@ -1,9 +1,7 @@
-import axios from 'axios';
-import { pipe } from 'fp-ts/lib/pipeable';
 import * as TE from 'fp-ts/lib/TaskEither';
 
 import { LatLng } from '../../types';
-import { decodeWith, promiseToTE } from '../../util';
+import { fetchAndDecode } from '../../util';
 import { ByStation, ByStationCodec } from './validation';
 
 /**
@@ -14,14 +12,8 @@ import { ByStation, ByStationCodec } from './validation';
 export function fetchByGps(gps: LatLng): TE.TaskEither<Error, ByStation> {
   const { latitude, longitude } = gps;
 
-  return pipe(
-    promiseToTE(() =>
-      axios
-        .get(
-          `https://wind.waqi.info/mapq/nearest?geo=1/${latitude}/${longitude}`
-        )
-        .then(({ data }) => data)
-    ),
-    TE.chain(decodeWith(ByStationCodec))
+  return fetchAndDecode(
+    `https://wind.waqi.info/mapq/nearest?geo=1/${latitude}/${longitude}`,
+    ByStationCodec
   );
 }
