@@ -16,7 +16,7 @@ import { promiseToTE } from './fp';
  *
  * @param codec - Codec used to decode
  */
-function decodeWith<A, O, I>(
+export function decodeWith<A, O, I>(
   codec: Type<A, O, I>
 ): (response: I) => TE.TaskEither<Error, A> {
   return (response: I): TE.TaskEither<Error, A> =>
