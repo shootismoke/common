@@ -1,6 +1,6 @@
-[@shootismoke/convert - v0.2.5](README.md) › [Globals](globals.md)
+[@shootismoke/convert](README.md) › [Globals](globals.md)
 
-# @shootismoke/convert - v0.2.5
+# @shootismoke/convert
 
 ## Index
 
