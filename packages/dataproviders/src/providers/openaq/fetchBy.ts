@@ -36,7 +36,7 @@ export interface OpenAQOptions {
   parameter?: Pollutant[];
 }
 
-function additionalOptions(options: OpenAQOptions): string {
+function additionalOptions(options: OpenAQOptions = {}): string {
   let query = '';
 
   // dateFrom
@@ -75,7 +75,7 @@ function additionalOptions(options: OpenAQOptions): string {
  */
 export function fetchByGps(
   gps: LatLng,
-  options: OpenAQOptions
+  options?: OpenAQOptions
 ): TE.TaskEither<Error, OpenAQResponse> {
   const { latitude, longitude } = gps;
 
@@ -94,7 +94,7 @@ export function fetchByGps(
  */
 export function fetchByStation(
   stationId: string,
-  options: OpenAQOptions
+  options?: OpenAQOptions
 ): TE.TaskEither<Error, OpenAQResponse> {
   return fetchAndDecode(
     `${BASE_URL}?location=${stationId}${additionalOptions(options)}`,
