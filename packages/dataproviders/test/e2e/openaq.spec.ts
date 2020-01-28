@@ -1,9 +1,9 @@
 import { pipe } from 'fp-ts/lib/pipeable';
 import * as T from 'fp-ts/lib/Task';
 import * as TE from 'fp-ts/lib/TaskEither';
-import { LatLng } from 'packages/dataproviders/lib';
 
 import { openaq } from '../../src/providers/openaq';
+import { LatLng } from '../../src/types';
 import { testProviderE2E } from '../../src/util';
 
 describe('openaq e2e', () => {
