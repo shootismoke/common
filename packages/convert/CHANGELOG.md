@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.8](https://github.com/shootismoke/common/compare/v0.2.7...v0.2.8) (2020-01-28)
+
+
+### Bug Fixes
+
+* **dataproviders:** Add correct options to openaq fetch ([#69](https://github.com/shootismoke/common/issues/69)) ([e2589eb](https://github.com/shootismoke/common/commit/e2589eb10cdea861384d0f55c2e05f439d1055d7))
+
+
+
+
+
 ## [0.2.7](https://github.com/shootismoke/common/compare/v0.2.6...v0.2.7) (2020-01-20)
 
 
