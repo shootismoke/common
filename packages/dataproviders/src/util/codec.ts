@@ -33,13 +33,24 @@ export function decodeWith<A, O, I>(
  *
  * @param url - The URL to fetch from
  * @param codec = The io-ts codec used for decoding
+ * @param options - Additional options, e.g. error handling
  */
-export function fetchAndDecode<A, O, I>(
+export function fetchAndDecode<A, E, O, I>(
   url: string,
-  codec: Type<A, O, I>
+  codec: Type<A, O, I>,
+  options: {
+    onError?: (error: E) => Error;
+  } = {}
 ): TE.TaskEither<Error, A> {
   return pipe(
-    promiseToTE(() => axios.get(url).then(({ data }) => data)),
+    promiseToTE(() =>
+      axios
+        .get(url)
+        .then(({ data }) => data)
+        .catch(error => {
+          throw options.onError ? options.onError(error) : error;
+        })
+    ),
     TE.chain(decodeWith(codec))
   );
 }

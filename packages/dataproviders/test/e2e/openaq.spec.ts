@@ -1,6 +1,7 @@
 import { pipe } from 'fp-ts/lib/pipeable';
 import * as T from 'fp-ts/lib/Task';
 import * as TE from 'fp-ts/lib/TaskEither';
+import { LatLng } from 'packages/dataproviders/lib';
 
 import { openaq } from '../../src/providers/openaq';
 import { testProviderE2E } from '../../src/util';
@@ -31,7 +32,28 @@ describe('openaq e2e', () => {
       )();
     });
 
-    it.only('should fetch correctly with options', done => {
+    it('should correctly show errors', done => {
+      pipe(
+        openaq.fetchByGps({} as LatLng),
+        TE.fold(
+          error => {
+            expect(error.message).toBe(
+              '400 Bad Request: child "coordinates" fails because [invalid coordinates pair]'
+            );
+            done();
+
+            return T.of(void undefined);
+          },
+          () => {
+            done.fail();
+
+            return T.of(void undefined);
+          }
+        )
+      )();
+    });
+
+    it('should fetch correctly with options', done => {
       jest.setTimeout(30000); // This request might take a bit longer
 
       const dateTo = new Date(); // Today
