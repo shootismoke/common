@@ -1,6 +1,6 @@
-[@shootismoke/dataproviders - v0.2.5](README.md) › [Globals](globals.md)
+[@shootismoke/dataproviders](README.md) › [Globals](globals.md)
 
-# @shootismoke/dataproviders - v0.2.5
+# @shootismoke/dataproviders
 
 ## Index
 

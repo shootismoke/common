@@ -1,4 +1,4 @@
-[@shootismoke/convert - v0.2.5](../README.md) › [Globals](../globals.md) › ["convert"](_convert_.md)
+[@shootismoke/convert](../README.md) › [Globals](../globals.md) › ["convert"](_convert_.md)
 
 # External module: "convert"
 
@@ -14,7 +14,7 @@
 
 ▸ **convert**<**From**, **To**>(`pollutant`: [Pollutant](_util_pollutant_.md#pollutant), `from`: From, `to`: To, `value`: number): *number*
 
-*Defined in [convert.ts:14](https://github.com/shootismoke/common/blob/9e664ce/packages/convert/src/convert.ts#L14)*
+*Defined in [convert.ts:14](https://github.com/shootismoke/common/blob/3cf9705/packages/convert/src/convert.ts#L14)*
 
 For any pollutant, convert an AQI to its raw concentration, or vice versa,
 or convert an AQI to another AQI

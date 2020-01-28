@@ -1,4 +1,4 @@
-[@shootismoke/convert - v0.2.5](../README.md) › [Globals](../globals.md) › ["util/pollutant"](_util_pollutant_.md)
+[@shootismoke/convert](../README.md) › [Globals](../globals.md) › ["util/pollutant"](_util_pollutant_.md)
 
 # External module: "util/pollutant"
 
@@ -32,7 +32,7 @@
 
 Ƭ **Pollutant**: *"co" | "c6h6" | "ox" | "nh3" | "nmhc" | "no" | "nox" | "no2" | "o3" | "pm10" | "pm25" | "so2" | "trs"*
 
-*Defined in [util/pollutant.ts:27](https://github.com/shootismoke/common/blob/9e664ce/packages/convert/src/util/pollutant.ts#L27)*
+*Defined in [util/pollutant.ts:27](https://github.com/shootismoke/common/blob/3cf9705/packages/convert/src/util/pollutant.ts#L27)*
 
 All the pollutants tracked by @shootismoke.
 
@@ -40,9 +40,9 @@ ___
 
 ###  Unit
 
-Ƭ **Unit**: *"ppb" | "ppm" | "µg/m³"*
+Ƭ **Unit**: *typeof ppb | typeof ppm | typeof ugm3*
 
-*Defined in [util/pollutant.ts:22](https://github.com/shootismoke/common/blob/9e664ce/packages/convert/src/util/pollutant.ts#L22)*
+*Defined in [util/pollutant.ts:22](https://github.com/shootismoke/common/blob/3cf9705/packages/convert/src/util/pollutant.ts#L22)*
 
 Pollutant concentration units.
 
@@ -50,9 +50,9 @@ Pollutant concentration units.
 
 ### `Const` AllPollutants
 
-• **AllPollutants**: *"co" | "c6h6" | "ox" | "nh3" | "nmhc" | "no" | "nox" | "no2" | "o3" | "pm10" | "pm25" | "so2" | "trs"[]* =  Object.keys(Pollutants) as Pollutant[]
+• **AllPollutants**: *"co" | "c6h6" | "ox" | "nh3" | "nmhc" | "no" | "nox" | "no2" | "o3" | "pm10" | "pm25" | "so2" | "trs"[]* = Object.keys(Pollutants) as Pollutant[]
 
-*Defined in [util/pollutant.ts:141](https://github.com/shootismoke/common/blob/9e664ce/packages/convert/src/util/pollutant.ts#L141)*
+*Defined in [util/pollutant.ts:141](https://github.com/shootismoke/common/blob/3cf9705/packages/convert/src/util/pollutant.ts#L141)*
 
 Array of all pollutants tracked by @shootismoke.
 
@@ -60,9 +60,9 @@ ___
 
 ### `Const` AllUnits
 
-• **AllUnits**: *string[]* =  [ppb, ppm, ugm3]
+• **AllUnits**: *string[]* = [ppb, ppm, ugm3]
 
-*Defined in [util/pollutant.ts:17](https://github.com/shootismoke/common/blob/9e664ce/packages/convert/src/util/pollutant.ts#L17)*
+*Defined in [util/pollutant.ts:17](https://github.com/shootismoke/common/blob/3cf9705/packages/convert/src/util/pollutant.ts#L17)*
 
 Array of pollutant concentration units.
 
@@ -72,7 +72,7 @@ ___
 
 • **ppb**: *"ppb"* = "ppb"
 
-*Defined in [util/pollutant.ts:4](https://github.com/shootismoke/common/blob/9e664ce/packages/convert/src/util/pollutant.ts#L4)*
+*Defined in [util/pollutant.ts:4](https://github.com/shootismoke/common/blob/3cf9705/packages/convert/src/util/pollutant.ts#L4)*
 
 Parts per billion.
 
@@ -82,7 +82,7 @@ ___
 
 • **ppm**: *"ppm"* = "ppm"
 
-*Defined in [util/pollutant.ts:8](https://github.com/shootismoke/common/blob/9e664ce/packages/convert/src/util/pollutant.ts#L8)*
+*Defined in [util/pollutant.ts:8](https://github.com/shootismoke/common/blob/3cf9705/packages/convert/src/util/pollutant.ts#L8)*
 
 Parts per million.
 
@@ -92,7 +92,7 @@ ___
 
 • **ugm3**: *"µg/m³"* = "µg/m³"
 
-*Defined in [util/pollutant.ts:12](https://github.com/shootismoke/common/blob/9e664ce/packages/convert/src/util/pollutant.ts#L12)*
+*Defined in [util/pollutant.ts:12](https://github.com/shootismoke/common/blob/3cf9705/packages/convert/src/util/pollutant.ts#L12)*
 
 Microgram per cubic meter.
 
@@ -102,7 +102,7 @@ Microgram per cubic meter.
 
 ▸ **getPollutantMeta**(`pollutant`: [Pollutant](_util_pollutant_.md#pollutant)): *[PollutantMeta](../interfaces/_util_pollutant_.pollutantmeta.md)*
 
-*Defined in [util/pollutant.ts:148](https://github.com/shootismoke/common/blob/9e664ce/packages/convert/src/util/pollutant.ts#L148)*
+*Defined in [util/pollutant.ts:148](https://github.com/shootismoke/common/blob/3cf9705/packages/convert/src/util/pollutant.ts#L148)*
 
 Get metadata (code, name, description, unit) for a pollutant.
 
@@ -120,7 +120,7 @@ ___
 
 ▸ **isPollutant**(`pollutant`: string): *pollutant is Pollutant*
 
-*Defined in [util/pollutant.ts:158](https://github.com/shootismoke/common/blob/9e664ce/packages/convert/src/util/pollutant.ts#L158)*
+*Defined in [util/pollutant.ts:158](https://github.com/shootismoke/common/blob/3cf9705/packages/convert/src/util/pollutant.ts#L158)*
 
 Check if the input pollutant is a recognized pollutant which we can convert
 AQI to/from raw concentrations.
