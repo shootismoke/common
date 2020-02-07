@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.9](https://github.com/shootismoke/common/compare/v0.2.8...v0.2.9) (2020-02-07)
+
+
+### Bug Fixes
+
+* **dataproviders:** Add better error messages for openaq ([#70](https://github.com/shootismoke/common/issues/70)) ([bced690](https://github.com/shootismoke/common/commit/bced690f27fa7336da4db05fe2ac49f6a0a825e2))
+* **graphql:** Update to latest graphql schema ([#81](https://github.com/shootismoke/common/issues/81)) ([6e054f8](https://github.com/shootismoke/common/commit/6e054f822ce69797feb74984cb707a982d285947))
+
+
+
+
+
 ## [0.2.8](https://github.com/shootismoke/common/compare/v0.2.7...v0.2.8) (2020-01-28)
 
 
