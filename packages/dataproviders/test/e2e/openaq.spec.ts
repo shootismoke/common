@@ -1,3 +1,4 @@
+import { subDays } from 'date-fns';
 import { pipe } from 'fp-ts/lib/pipeable';
 import * as T from 'fp-ts/lib/Task';
 import * as TE from 'fp-ts/lib/TaskEither';
@@ -55,13 +56,11 @@ describe('openaq e2e', () => {
   it('should fetch correctly with options', done => {
     jest.setTimeout(30000); // This request might take a bit longer
 
-    const dateTo = new Date(); // Today
-    dateTo.setDate(dateTo.getDate() - 7); // Change it so that it is 7 days in the past.
-    const dateFrom = new Date();
-    dateFrom.setDate(dateTo.getDate() - 14); // Change it so that it is 14 days in the past.
+    const dateFrom = subDays(new Date(), 14);
+    const dateTo = subDays(new Date(), 7);
 
     pipe(
-      openaq.fetchByStation('Coyhaique', {
+      openaq.fetchByStation('FR04002', {
         dateFrom,
         dateTo,
         limit: 2,
