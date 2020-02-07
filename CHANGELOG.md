@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.10](https://github.com/shootismoke/common/compare/v0.2.9...v0.2.10) (2020-02-07)
+
+
+### Bug Fixes
+
+* **graphql:** Update to latest schema with `station` ([#88](https://github.com/shootismoke/common/issues/88)) ([92b4b05](https://github.com/shootismoke/common/commit/92b4b05b435162ed14105de0748f39c566f45492))
+
+
+
+
+
 ## [0.2.9](https://github.com/shootismoke/common/compare/v0.2.8...v0.2.9) (2020-02-07)
 
 
