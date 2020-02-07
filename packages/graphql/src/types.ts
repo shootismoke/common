@@ -16,122 +16,25 @@ export type Scalars = {
   Int: number;
   Float: number;
   Date: any;
-  /** The `Upload` scalar type represents a file upload. */
   Upload: any;
-};
-
-export type Attribution = {
-  __typename?: 'Attribution';
-  name: Scalars['String'];
-  url?: Maybe<Scalars['String']>;
-};
-
-export type AttributionInput = {
-  name: Scalars['String'];
-  url?: Maybe<Scalars['String']>;
-};
-
-export type AveragingPeriod = {
-  __typename?: 'AveragingPeriod';
-  value: Scalars['Float'];
-  unit: Scalars['String'];
-};
-
-export type AveragingPeriodInput = {
-  value: Scalars['Float'];
-  unit: Scalars['String'];
 };
 
 export type CacheControlScope = 'PUBLIC' | 'PRIVATE';
 
-export type CreateHistoryItemInput = {
-  measurement: CreateMeasurementInput;
-  userId: Scalars['ID'];
-};
-
-export type CreateMeasurementInput = {
-  attribution?: Maybe<Array<AttributionInput>>;
-  averagingPeriod?: Maybe<AveragingPeriodInput>;
-  city: Scalars['String'];
-  coordinates: LatLngInput;
-  country: Scalars['String'];
-  date: LocalDateInput;
-  location: Scalars['String'];
-  mobile: Scalars['Boolean'];
-  parameter: Parameter;
-  sourceName: Scalars['String'];
-  sourceNames?: Maybe<Array<Scalars['String']>>;
-  sourceType: SourceType;
-  unit: Scalars['String'];
-  value: Scalars['Float'];
-};
-
 export type CreateUserInput = {
   expoInstallationId: Scalars['String'];
   expoPushToken?: Maybe<Scalars['String']>;
+  lastStation: Scalars['String'];
   notifications?: Maybe<NotificationsInput>;
 };
 
 export type Frequency = 'never' | 'daily' | 'weekly' | 'monthly';
 
-export type HistoryItem = {
-  __typename?: 'HistoryItem';
-  _id: Scalars['ID'];
-  measurement: Measurement;
-  userId: Scalars['ID'];
-};
-
-export type LatLng = {
-  __typename?: 'LatLng';
-  latitude: Scalars['Float'];
-  longitude: Scalars['Float'];
-};
-
-export type LatLngInput = {
-  latitude: Scalars['Float'];
-  longitude: Scalars['Float'];
-};
-
-export type LocalDate = {
-  __typename?: 'LocalDate';
-  local: Scalars['Date'];
-  utc: Scalars['Date'];
-};
-
-export type LocalDateInput = {
-  local: Scalars['Date'];
-  utc: Scalars['Date'];
-};
-
-export type Measurement = {
-  __typename?: 'Measurement';
-  _id: Scalars['ID'];
-  attribution?: Maybe<Array<Attribution>>;
-  averagingPeriod?: Maybe<AveragingPeriod>;
-  city: Scalars['String'];
-  coordinates: LatLng;
-  country: Scalars['String'];
-  date: LocalDate;
-  location: Scalars['String'];
-  mobile: Scalars['Boolean'];
-  parameter: Parameter;
-  sourceName: Scalars['String'];
-  sourceNames: Array<Scalars['String']>;
-  sourceType: SourceType;
-  unit: Scalars['String'];
-  value: Scalars['Float'];
-};
-
 export type Mutation = {
   __typename?: 'Mutation';
   _?: Maybe<Scalars['Boolean']>;
-  createHistoryItem: Scalars['Boolean'];
   createUser: User;
   updateUser: User;
-};
-
-export type MutationCreateHistoryItemArgs = {
-  input: CreateHistoryItemInput;
 };
 
 export type MutationCreateUserArgs = {
@@ -152,31 +55,15 @@ export type NotificationsInput = {
   frequency: Frequency;
 };
 
-export type Parameter =
-  | 'co'
-  | 'c6h6'
-  | 'ox'
-  | 'o3'
-  | 'nh3'
-  | 'nmhc'
-  | 'no'
-  | 'nox'
-  | 'no2'
-  | 'pm25'
-  | 'pm10'
-  | 'so2'
-  | 'trs';
-
 export type Query = {
   __typename?: 'Query';
   _?: Maybe<Scalars['Boolean']>;
 };
 
-export type SourceType = 'government' | 'research' | 'other';
-
 export type UpdateUserInput = {
   expoInstallationId?: Maybe<Scalars['String']>;
   expoPushToken?: Maybe<Scalars['String']>;
+  lastStation?: Maybe<Scalars['String']>;
   notifications?: Maybe<NotificationsInput>;
 };
 
@@ -185,7 +72,7 @@ export type User = {
   _id: Scalars['ID'];
   expoInstallationId: Scalars['String'];
   expoPushToken?: Maybe<Scalars['String']>;
-  history: Array<Maybe<HistoryItem>>;
+  lastStation: Scalars['String'];
   notifications: Notifications;
 };
 
@@ -298,31 +185,16 @@ export type ResolversTypes = ResolversObject<{
   Query: ResolverTypeWrapper<{}>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
   Mutation: ResolverTypeWrapper<{}>;
-  CreateHistoryItemInput: CreateHistoryItemInput;
-  CreateMeasurementInput: CreateMeasurementInput;
-  AttributionInput: AttributionInput;
-  String: ResolverTypeWrapper<Scalars['String']>;
-  AveragingPeriodInput: AveragingPeriodInput;
-  Float: ResolverTypeWrapper<Scalars['Float']>;
-  LatLngInput: LatLngInput;
-  LocalDateInput: LocalDateInput;
-  Date: ResolverTypeWrapper<Scalars['Date']>;
-  Parameter: Parameter;
-  SourceType: SourceType;
-  ID: ResolverTypeWrapper<Scalars['ID']>;
   CreateUserInput: CreateUserInput;
+  String: ResolverTypeWrapper<Scalars['String']>;
   NotificationsInput: NotificationsInput;
   Frequency: Frequency;
   User: ResolverTypeWrapper<User>;
-  HistoryItem: ResolverTypeWrapper<HistoryItem>;
-  Measurement: ResolverTypeWrapper<Measurement>;
-  Attribution: ResolverTypeWrapper<Attribution>;
-  AveragingPeriod: ResolverTypeWrapper<AveragingPeriod>;
-  LatLng: ResolverTypeWrapper<LatLng>;
-  LocalDate: ResolverTypeWrapper<LocalDate>;
+  ID: ResolverTypeWrapper<Scalars['ID']>;
   Notifications: ResolverTypeWrapper<Notifications>;
   UpdateUserInput: UpdateUserInput;
   CacheControlScope: CacheControlScope;
+  Date: ResolverTypeWrapper<Scalars['Date']>;
   Upload: ResolverTypeWrapper<Scalars['Upload']>;
   Int: ResolverTypeWrapper<Scalars['Int']>;
 }>;
@@ -332,31 +204,16 @@ export type ResolversParentTypes = ResolversObject<{
   Query: {};
   Boolean: Scalars['Boolean'];
   Mutation: {};
-  CreateHistoryItemInput: CreateHistoryItemInput;
-  CreateMeasurementInput: CreateMeasurementInput;
-  AttributionInput: AttributionInput;
-  String: Scalars['String'];
-  AveragingPeriodInput: AveragingPeriodInput;
-  Float: Scalars['Float'];
-  LatLngInput: LatLngInput;
-  LocalDateInput: LocalDateInput;
-  Date: Scalars['Date'];
-  Parameter: Parameter;
-  SourceType: SourceType;
-  ID: Scalars['ID'];
   CreateUserInput: CreateUserInput;
+  String: Scalars['String'];
   NotificationsInput: NotificationsInput;
   Frequency: Frequency;
   User: User;
-  HistoryItem: HistoryItem;
-  Measurement: Measurement;
-  Attribution: Attribution;
-  AveragingPeriod: AveragingPeriod;
-  LatLng: LatLng;
-  LocalDate: LocalDate;
+  ID: Scalars['ID'];
   Notifications: Notifications;
   UpdateUserInput: UpdateUserInput;
   CacheControlScope: CacheControlScope;
+  Date: Scalars['Date'];
   Upload: Scalars['Upload'];
   Int: Scalars['Int'];
 }>;
@@ -371,100 +228,16 @@ export type CacheControlDirectiveResolver<
   }
 > = DirectiveResolverFn<Result, Parent, ContextType, Args>;
 
-export type AttributionResolvers<
-  ContextType = any,
-  ParentType extends ResolversParentTypes['Attribution'] = ResolversParentTypes['Attribution']
-> = ResolversObject<{
-  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  url?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-}>;
-
-export type AveragingPeriodResolvers<
-  ContextType = any,
-  ParentType extends ResolversParentTypes['AveragingPeriod'] = ResolversParentTypes['AveragingPeriod']
-> = ResolversObject<{
-  value?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
-  unit?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-}>;
-
 export interface DateScalarConfig
   extends GraphQLScalarTypeConfig<ResolversTypes['Date'], any> {
   name: 'Date';
 }
-
-export type HistoryItemResolvers<
-  ContextType = any,
-  ParentType extends ResolversParentTypes['HistoryItem'] = ResolversParentTypes['HistoryItem']
-> = ResolversObject<{
-  _id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
-  measurement?: Resolver<
-    ResolversTypes['Measurement'],
-    ParentType,
-    ContextType
-  >;
-  userId?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
-}>;
-
-export type LatLngResolvers<
-  ContextType = any,
-  ParentType extends ResolversParentTypes['LatLng'] = ResolversParentTypes['LatLng']
-> = ResolversObject<{
-  latitude?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
-  longitude?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
-}>;
-
-export type LocalDateResolvers<
-  ContextType = any,
-  ParentType extends ResolversParentTypes['LocalDate'] = ResolversParentTypes['LocalDate']
-> = ResolversObject<{
-  local?: Resolver<ResolversTypes['Date'], ParentType, ContextType>;
-  utc?: Resolver<ResolversTypes['Date'], ParentType, ContextType>;
-}>;
-
-export type MeasurementResolvers<
-  ContextType = any,
-  ParentType extends ResolversParentTypes['Measurement'] = ResolversParentTypes['Measurement']
-> = ResolversObject<{
-  _id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
-  attribution?: Resolver<
-    Maybe<Array<ResolversTypes['Attribution']>>,
-    ParentType,
-    ContextType
-  >;
-  averagingPeriod?: Resolver<
-    Maybe<ResolversTypes['AveragingPeriod']>,
-    ParentType,
-    ContextType
-  >;
-  city?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  coordinates?: Resolver<ResolversTypes['LatLng'], ParentType, ContextType>;
-  country?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  date?: Resolver<ResolversTypes['LocalDate'], ParentType, ContextType>;
-  location?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  mobile?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
-  parameter?: Resolver<ResolversTypes['Parameter'], ParentType, ContextType>;
-  sourceName?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  sourceNames?: Resolver<
-    Array<ResolversTypes['String']>,
-    ParentType,
-    ContextType
-  >;
-  sourceType?: Resolver<ResolversTypes['SourceType'], ParentType, ContextType>;
-  unit?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  value?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
-}>;
 
 export type MutationResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']
 > = ResolversObject<{
   _?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
-  createHistoryItem?: Resolver<
-    ResolversTypes['Boolean'],
-    ParentType,
-    ContextType,
-    RequireFields<MutationCreateHistoryItemArgs, 'input'>
-  >;
   createUser?: Resolver<
     ResolversTypes['User'],
     ParentType,
@@ -513,11 +286,7 @@ export type UserResolvers<
     ParentType,
     ContextType
   >;
-  history?: Resolver<
-    Array<Maybe<ResolversTypes['HistoryItem']>>,
-    ParentType,
-    ContextType
-  >;
+  lastStation?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   notifications?: Resolver<
     ResolversTypes['Notifications'],
     ParentType,
@@ -526,13 +295,7 @@ export type UserResolvers<
 }>;
 
 export type Resolvers<ContextType = any> = ResolversObject<{
-  Attribution?: AttributionResolvers<ContextType>;
-  AveragingPeriod?: AveragingPeriodResolvers<ContextType>;
   Date?: GraphQLScalarType;
-  HistoryItem?: HistoryItemResolvers<ContextType>;
-  LatLng?: LatLngResolvers<ContextType>;
-  LocalDate?: LocalDateResolvers<ContextType>;
-  Measurement?: MeasurementResolvers<ContextType>;
   Mutation?: MutationResolvers<ContextType>;
   Notifications?: NotificationsResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
