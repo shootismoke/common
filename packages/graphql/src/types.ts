@@ -24,7 +24,6 @@ export type CacheControlScope = 'PUBLIC' | 'PRIVATE';
 export type CreateUserInput = {
   expoInstallationId: Scalars['String'];
   expoPushToken?: Maybe<Scalars['String']>;
-  lastStation: Scalars['String'];
   notifications?: Maybe<NotificationsInput>;
 };
 
@@ -49,10 +48,12 @@ export type MutationUpdateUserArgs = {
 export type Notifications = {
   __typename?: 'Notifications';
   frequency: Frequency;
+  station: Scalars['String'];
 };
 
 export type NotificationsInput = {
   frequency: Frequency;
+  station?: Maybe<Scalars['String']>;
 };
 
 export type Query = {
@@ -63,7 +64,6 @@ export type Query = {
 export type UpdateUserInput = {
   expoInstallationId?: Maybe<Scalars['String']>;
   expoPushToken?: Maybe<Scalars['String']>;
-  lastStation?: Maybe<Scalars['String']>;
   notifications?: Maybe<NotificationsInput>;
 };
 
@@ -72,7 +72,6 @@ export type User = {
   _id: Scalars['ID'];
   expoInstallationId: Scalars['String'];
   expoPushToken?: Maybe<Scalars['String']>;
-  lastStation: Scalars['String'];
   notifications: Notifications;
 };
 
@@ -257,6 +256,7 @@ export type NotificationsResolvers<
   ParentType extends ResolversParentTypes['Notifications'] = ResolversParentTypes['Notifications']
 > = ResolversObject<{
   frequency?: Resolver<ResolversTypes['Frequency'], ParentType, ContextType>;
+  station?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
 }>;
 
 export type QueryResolvers<
@@ -286,7 +286,6 @@ export type UserResolvers<
     ParentType,
     ContextType
   >;
-  lastStation?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   notifications?: Resolver<
     ResolversTypes['Notifications'],
     ParentType,
