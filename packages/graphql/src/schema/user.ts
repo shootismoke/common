@@ -10,7 +10,7 @@ export const userSchema = gql`
 
   type Notifications {
     frequency: Frequency!
-    station: String!
+    station: String
   }
 
   type User {

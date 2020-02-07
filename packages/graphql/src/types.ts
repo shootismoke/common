@@ -48,7 +48,7 @@ export type MutationUpdateUserArgs = {
 export type Notifications = {
   __typename?: 'Notifications';
   frequency: Frequency;
-  station: Scalars['String'];
+  station?: Maybe<Scalars['String']>;
 };
 
 export type NotificationsInput = {
@@ -256,7 +256,7 @@ export type NotificationsResolvers<
   ParentType extends ResolversParentTypes['Notifications'] = ResolversParentTypes['Notifications']
 > = ResolversObject<{
   frequency?: Resolver<ResolversTypes['Frequency'], ParentType, ContextType>;
-  station?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  station?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
 }>;
 
 export type QueryResolvers<
