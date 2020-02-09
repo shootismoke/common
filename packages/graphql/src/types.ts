@@ -48,12 +48,14 @@ export type Notifications = {
   expoPushToken: Scalars['ID'];
   frequency: Frequency;
   station: Scalars['String'];
+  timezone: Scalars['String'];
 };
 
 export type NotificationsInput = {
   expoPushToken: Scalars['ID'];
   frequency: Frequency;
   station: Scalars['String'];
+  timezone: Scalars['String'];
 };
 
 export type Query = {
@@ -255,6 +257,7 @@ export type NotificationsResolvers<
   expoPushToken?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   frequency?: Resolver<ResolversTypes['Frequency'], ParentType, ContextType>;
   station?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  timezone?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
 }>;
 
 export type QueryResolvers<
