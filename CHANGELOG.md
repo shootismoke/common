@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.13](https://github.com/shootismoke/common/compare/v0.2.11...v0.2.13) (2020-02-12)
+
+
+### Bug Fixes
+
+* **graphql:** New graphql schema, with universalId ([#91](https://github.com/shootismoke/common/issues/91)) ([a981807](https://github.com/shootismoke/common/commit/a981807d24d94d2b11b10012e2efeb210b4aebc1))
+* **graphql:** Update to latest graphql with timezone ([#90](https://github.com/shootismoke/common/issues/90)) ([eeff991](https://github.com/shootismoke/common/commit/eeff9914f9439b040d61c4e194a7f4bd5615b9e0))
+
+
+
+
+
 ## [0.2.11](https://github.com/shootismoke/common/compare/v0.2.10...v0.2.11) (2020-02-09)
 
 
