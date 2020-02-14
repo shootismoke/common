@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.14](https://github.com/shootismoke/common/compare/v0.2.13...v0.2.14) (2020-02-14)
+
+
+### Bug Fixes
+
+* **graphql:** Add getUser query schema ([#92](https://github.com/shootismoke/common/issues/92)) ([43caae8](https://github.com/shootismoke/common/commit/43caae877c42d14e75a547e7b41cdf0abb3e0228))
+
+
+
+
+
 ## [0.2.13](https://github.com/shootismoke/common/compare/v0.2.11...v0.2.13) (2020-02-12)
 
 
