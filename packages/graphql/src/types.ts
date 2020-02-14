@@ -61,6 +61,11 @@ export type NotificationsInput = {
 export type Query = {
   __typename?: 'Query';
   _?: Maybe<Scalars['Boolean']>;
+  getUser: User;
+};
+
+export type QueryGetUserArgs = {
+  expoInstallationId: Scalars['ID'];
 };
 
 export type UpdateUserInput = {
@@ -182,13 +187,13 @@ export type DirectiveResolverFn<
 export type ResolversTypes = ResolversObject<{
   Query: ResolverTypeWrapper<{}>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
-  Mutation: ResolverTypeWrapper<{}>;
-  CreateUserInput: CreateUserInput;
   ID: ResolverTypeWrapper<Scalars['ID']>;
   User: ResolverTypeWrapper<User>;
   Notifications: ResolverTypeWrapper<Notifications>;
   Frequency: Frequency;
   String: ResolverTypeWrapper<Scalars['String']>;
+  Mutation: ResolverTypeWrapper<{}>;
+  CreateUserInput: CreateUserInput;
   UpdateUserInput: UpdateUserInput;
   NotificationsInput: NotificationsInput;
   CacheControlScope: CacheControlScope;
@@ -201,13 +206,13 @@ export type ResolversTypes = ResolversObject<{
 export type ResolversParentTypes = ResolversObject<{
   Query: {};
   Boolean: Scalars['Boolean'];
-  Mutation: {};
-  CreateUserInput: CreateUserInput;
   ID: Scalars['ID'];
   User: User;
   Notifications: Notifications;
   Frequency: Frequency;
   String: Scalars['String'];
+  Mutation: {};
+  CreateUserInput: CreateUserInput;
   UpdateUserInput: UpdateUserInput;
   NotificationsInput: NotificationsInput;
   CacheControlScope: CacheControlScope;
@@ -265,6 +270,12 @@ export type QueryResolvers<
   ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']
 > = ResolversObject<{
   _?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
+  getUser?: Resolver<
+    ResolversTypes['User'],
+    ParentType,
+    ContextType,
+    RequireFields<QueryGetUserArgs, 'expoInstallationId'>
+  >;
 }>;
 
 export interface UploadScalarConfig
