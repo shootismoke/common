@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.15](https://github.com/shootismoke/common/compare/v0.2.14...v0.2.15) (2020-02-15)
+
+
+### Bug Fixes
+
+* **dataproviders:** Better error msg when 0 result ([#94](https://github.com/shootismoke/common/issues/94)) ([84934f4](https://github.com/shootismoke/common/commit/84934f444c36c72aa1c228c1e81a051348cfa6dd))
+
+
+
+
+
 ## [0.2.9](https://github.com/shootismoke/common/compare/v0.2.8...v0.2.9) (2020-02-07)
 
 
