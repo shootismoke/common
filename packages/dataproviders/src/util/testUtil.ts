@@ -56,7 +56,7 @@ function testTE<T>(
           // Skip if we somehow couldn't connect
           'can not connect',
           // Skip if openaq doesn't return results
-          '[openaq] Cannot normalize, no results',
+          '[openaq] Cannot normalize, got 0 result',
           // Skip if aqicn doesn't track pollutants that don't interest us
           'no pollutants currently tracked',
           // Skip if aqicn country name is not sanitized
