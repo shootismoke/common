@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.16](https://github.com/shootismoke/common/compare/v0.2.15...v0.2.16) (2020-02-15)
+
+
+### Bug Fixes
+
+* **graphql:** Add _id on notifications ([1359933](https://github.com/shootismoke/common/commit/135993390ddb57abd25c33935f1cff2c05b85834))
+
+
+
+
+
 ## [0.2.14](https://github.com/shootismoke/common/compare/v0.2.13...v0.2.14) (2020-02-14)
 
 
