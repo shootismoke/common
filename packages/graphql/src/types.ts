@@ -45,6 +45,7 @@ export type MutationUpdateUserArgs = {
 
 export type Notifications = {
   __typename?: 'Notifications';
+  _id: Scalars['ID'];
   expoPushToken: Scalars['ID'];
   frequency: Frequency;
   timezone: Scalars['String'];
@@ -259,6 +260,7 @@ export type NotificationsResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes['Notifications'] = ResolversParentTypes['Notifications']
 > = ResolversObject<{
+  _id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   expoPushToken?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   frequency?: Resolver<ResolversTypes['Frequency'], ParentType, ContextType>;
   timezone?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
