@@ -16,7 +16,7 @@ export function normalize(data: OpenAQResponse): E.Either<Error, Normalized> {
     return E.left(
       providerError(
         'openaq',
-        `Cannot normalize, no results: ${JSON.stringify(data)}`
+        `Cannot normalize, got 0 result`
       )
     );
   }
