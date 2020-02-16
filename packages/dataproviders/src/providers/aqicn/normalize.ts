@@ -37,7 +37,7 @@ function sanitizeCountry(input: string): string {
  * @param data - The data to normalize
  */
 export function normalize(data: ByStation): E.Either<Error, Normalized> {
-  const stationId = `waqi|${data.idx}`;
+  const stationId = `aqicn|${data.idx}`;
 
   // Sometimes we don't get geo
   if (!data.city.geo) {
