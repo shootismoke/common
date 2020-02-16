@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.17](https://github.com/shootismoke/common/compare/v0.2.16...v0.2.17) (2020-02-16)
+
+
+### Bug Fixes
+
+* **dataproviders:** Correct universalId for aqicn ([#95](https://github.com/shootismoke/common/issues/95)) ([d712991](https://github.com/shootismoke/common/commit/d7129911c4dbe4371b0a8e2c7ed874c5e96ff9ea))
+
+
+
+
+
 ## [0.2.16](https://github.com/shootismoke/common/compare/v0.2.15...v0.2.16) (2020-02-15)
 
 
