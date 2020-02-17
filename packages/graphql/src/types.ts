@@ -27,15 +27,24 @@ export type CreateUserInput = {
 
 export type Frequency = 'never' | 'daily' | 'weekly' | 'monthly';
 
+export type GetOrCreateUserInput = {
+  expoInstallationId: Scalars['ID'];
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
   _?: Maybe<Scalars['Boolean']>;
   createUser: User;
+  getOrCreateUser: User;
   updateUser: User;
 };
 
 export type MutationCreateUserArgs = {
   input: CreateUserInput;
+};
+
+export type MutationGetOrCreateUserArgs = {
+  input: GetOrCreateUserInput;
 };
 
 export type MutationUpdateUserArgs = {
@@ -195,6 +204,7 @@ export type ResolversTypes = ResolversObject<{
   String: ResolverTypeWrapper<Scalars['String']>;
   Mutation: ResolverTypeWrapper<{}>;
   CreateUserInput: CreateUserInput;
+  GetOrCreateUserInput: GetOrCreateUserInput;
   UpdateUserInput: UpdateUserInput;
   NotificationsInput: NotificationsInput;
   CacheControlScope: CacheControlScope;
@@ -214,6 +224,7 @@ export type ResolversParentTypes = ResolversObject<{
   String: Scalars['String'];
   Mutation: {};
   CreateUserInput: CreateUserInput;
+  GetOrCreateUserInput: GetOrCreateUserInput;
   UpdateUserInput: UpdateUserInput;
   NotificationsInput: NotificationsInput;
   CacheControlScope: CacheControlScope;
@@ -247,6 +258,12 @@ export type MutationResolvers<
     ParentType,
     ContextType,
     RequireFields<MutationCreateUserArgs, 'input'>
+  >;
+  getOrCreateUser?: Resolver<
+    ResolversTypes['User'],
+    ParentType,
+    ContextType,
+    RequireFields<MutationGetOrCreateUserArgs, 'input'>
   >;
   updateUser?: Resolver<
     ResolversTypes['User'],
