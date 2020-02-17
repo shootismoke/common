@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.18](https://github.com/shootismoke/common/compare/v0.2.17...v0.2.18) (2020-02-17)
+
+
+### Bug Fixes
+
+* **graphql:** Add getOrCreateUser mutation ([#101](https://github.com/shootismoke/common/issues/101)) ([b14ecaa](https://github.com/shootismoke/common/commit/b14ecaaaf2baae21363a3ac5be5fd565168626c4))
+
+
+
+
+
 ## [0.2.17](https://github.com/shootismoke/common/compare/v0.2.16...v0.2.17) (2020-02-16)
 
 
