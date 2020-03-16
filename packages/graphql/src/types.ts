@@ -16,10 +16,7 @@ export type Scalars = {
   Int: number;
   Float: number;
   Date: any;
-  Upload: any;
 };
-
-export type CacheControlScope = 'PUBLIC' | 'PRIVATE';
 
 export type CreateUserInput = {
   expoInstallationId: Scalars['ID'];
@@ -27,24 +24,15 @@ export type CreateUserInput = {
 
 export type Frequency = 'never' | 'daily' | 'weekly' | 'monthly';
 
-export type GetOrCreateUserInput = {
-  expoInstallationId: Scalars['ID'];
-};
-
 export type Mutation = {
   __typename?: 'Mutation';
   _?: Maybe<Scalars['Boolean']>;
   createUser: User;
-  getOrCreateUser: User;
   updateUser: User;
 };
 
 export type MutationCreateUserArgs = {
   input: CreateUserInput;
-};
-
-export type MutationGetOrCreateUserArgs = {
-  input: GetOrCreateUserInput;
 };
 
 export type MutationUpdateUserArgs = {
@@ -71,7 +59,7 @@ export type NotificationsInput = {
 export type Query = {
   __typename?: 'Query';
   _?: Maybe<Scalars['Boolean']>;
-  getUser: User;
+  getUser?: Maybe<User>;
 };
 
 export type QueryGetUserArgs = {
@@ -204,13 +192,9 @@ export type ResolversTypes = ResolversObject<{
   String: ResolverTypeWrapper<Scalars['String']>;
   Mutation: ResolverTypeWrapper<{}>;
   CreateUserInput: CreateUserInput;
-  GetOrCreateUserInput: GetOrCreateUserInput;
   UpdateUserInput: UpdateUserInput;
   NotificationsInput: NotificationsInput;
-  CacheControlScope: CacheControlScope;
   Date: ResolverTypeWrapper<Scalars['Date']>;
-  Upload: ResolverTypeWrapper<Scalars['Upload']>;
-  Int: ResolverTypeWrapper<Scalars['Int']>;
 }>;
 
 /** Mapping between all available schema types and the resolvers parents */
@@ -224,24 +208,10 @@ export type ResolversParentTypes = ResolversObject<{
   String: Scalars['String'];
   Mutation: {};
   CreateUserInput: CreateUserInput;
-  GetOrCreateUserInput: GetOrCreateUserInput;
   UpdateUserInput: UpdateUserInput;
   NotificationsInput: NotificationsInput;
-  CacheControlScope: CacheControlScope;
   Date: Scalars['Date'];
-  Upload: Scalars['Upload'];
-  Int: Scalars['Int'];
 }>;
-
-export type CacheControlDirectiveResolver<
-  Result,
-  Parent,
-  ContextType = any,
-  Args = {
-    maxAge?: Maybe<Maybe<Scalars['Int']>>;
-    scope?: Maybe<Maybe<CacheControlScope>>;
-  }
-> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
 
 export interface DateScalarConfig
   extends GraphQLScalarTypeConfig<ResolversTypes['Date'], any> {
@@ -258,12 +228,6 @@ export type MutationResolvers<
     ParentType,
     ContextType,
     RequireFields<MutationCreateUserArgs, 'input'>
-  >;
-  getOrCreateUser?: Resolver<
-    ResolversTypes['User'],
-    ParentType,
-    ContextType,
-    RequireFields<MutationGetOrCreateUserArgs, 'input'>
   >;
   updateUser?: Resolver<
     ResolversTypes['User'],
@@ -290,17 +254,12 @@ export type QueryResolvers<
 > = ResolversObject<{
   _?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
   getUser?: Resolver<
-    ResolversTypes['User'],
+    Maybe<ResolversTypes['User']>,
     ParentType,
     ContextType,
     RequireFields<QueryGetUserArgs, 'expoInstallationId'>
   >;
 }>;
-
-export interface UploadScalarConfig
-  extends GraphQLScalarTypeConfig<ResolversTypes['Upload'], any> {
-  name: 'Upload';
-}
 
 export type UserResolvers<
   ContextType = any,
@@ -320,7 +279,6 @@ export type Resolvers<ContextType = any> = ResolversObject<{
   Mutation?: MutationResolvers<ContextType>;
   Notifications?: NotificationsResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
-  Upload?: GraphQLScalarType;
   User?: UserResolvers<ContextType>;
 }>;
 
@@ -329,14 +287,3 @@ export type Resolvers<ContextType = any> = ResolversObject<{
  * Use "Resolvers" root object instead. If you wish to get "IResolvers", add "typesPrefix: I" to your config.
  */
 export type IResolvers<ContextType = any> = Resolvers<ContextType>;
-export type DirectiveResolvers<ContextType = any> = ResolversObject<{
-  cacheControl?: CacheControlDirectiveResolver<any, any, ContextType>;
-}>;
-
-/**
- * @deprecated
- * Use "DirectiveResolvers" root object instead. If you wish to get "IDirectiveResolvers", add "typesPrefix: I" to your config.
- */
-export type IDirectiveResolvers<ContextType = any> = DirectiveResolvers<
-  ContextType
->;
