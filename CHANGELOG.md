@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.19](https://github.com/shootismoke/common/compare/v0.2.18...v0.2.19) (2020-03-16)
+
+
+### Bug Fixes
+
+* **graphql:** Generate types for latest backend ([#119](https://github.com/shootismoke/common/issues/119)) ([c8d18c8](https://github.com/shootismoke/common/commit/c8d18c86b689a7a191514e36d22759dc5894fb43))
+
+
+
+
+
 ## [0.2.18](https://github.com/shootismoke/common/compare/v0.2.17...v0.2.18) (2020-02-17)
 
 
