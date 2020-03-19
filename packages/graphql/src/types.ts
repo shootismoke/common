@@ -59,11 +59,18 @@ export type NotificationsInput = {
 export type Query = {
   __typename?: 'Query';
   _?: Maybe<Scalars['Boolean']>;
+  timestampMessage: TimestampMessage;
   getUser?: Maybe<User>;
 };
 
 export type QueryGetUserArgs = {
   expoInstallationId: Scalars['ID'];
+};
+
+export type TimestampMessage = {
+  __typename?: 'TimestampMessage';
+  ts: Scalars['Int'];
+  tsm: Scalars['String'];
 };
 
 export type UpdateUserInput = {
@@ -185,11 +192,13 @@ export type DirectiveResolverFn<
 export type ResolversTypes = ResolversObject<{
   Query: ResolverTypeWrapper<{}>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
+  TimestampMessage: ResolverTypeWrapper<TimestampMessage>;
+  Int: ResolverTypeWrapper<Scalars['Int']>;
+  String: ResolverTypeWrapper<Scalars['String']>;
   ID: ResolverTypeWrapper<Scalars['ID']>;
   User: ResolverTypeWrapper<User>;
   Notifications: ResolverTypeWrapper<Notifications>;
   Frequency: Frequency;
-  String: ResolverTypeWrapper<Scalars['String']>;
   Mutation: ResolverTypeWrapper<{}>;
   CreateUserInput: CreateUserInput;
   UpdateUserInput: UpdateUserInput;
@@ -201,11 +210,13 @@ export type ResolversTypes = ResolversObject<{
 export type ResolversParentTypes = ResolversObject<{
   Query: {};
   Boolean: Scalars['Boolean'];
+  TimestampMessage: TimestampMessage;
+  Int: Scalars['Int'];
+  String: Scalars['String'];
   ID: Scalars['ID'];
   User: User;
   Notifications: Notifications;
   Frequency: Frequency;
-  String: Scalars['String'];
   Mutation: {};
   CreateUserInput: CreateUserInput;
   UpdateUserInput: UpdateUserInput;
@@ -253,12 +264,25 @@ export type QueryResolvers<
   ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']
 > = ResolversObject<{
   _?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
+  timestampMessage?: Resolver<
+    ResolversTypes['TimestampMessage'],
+    ParentType,
+    ContextType
+  >;
   getUser?: Resolver<
     Maybe<ResolversTypes['User']>,
     ParentType,
     ContextType,
     RequireFields<QueryGetUserArgs, 'expoInstallationId'>
   >;
+}>;
+
+export type TimestampMessageResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['TimestampMessage'] = ResolversParentTypes['TimestampMessage']
+> = ResolversObject<{
+  ts?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  tsm?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
 }>;
 
 export type UserResolvers<
@@ -279,6 +303,7 @@ export type Resolvers<ContextType = any> = ResolversObject<{
   Mutation?: MutationResolvers<ContextType>;
   Notifications?: NotificationsResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
+  TimestampMessage?: TimestampMessageResolvers<ContextType>;
   User?: UserResolvers<ContextType>;
 }>;
 
