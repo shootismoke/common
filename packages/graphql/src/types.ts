@@ -59,7 +59,7 @@ export type NotificationsInput = {
 export type Query = {
   __typename?: 'Query';
   _?: Maybe<Scalars['Boolean']>;
-  timestampMessage: TimestampMessage;
+  hawkTimestampMessage: TimestampMessage;
   getUser?: Maybe<User>;
 };
 
@@ -264,7 +264,7 @@ export type QueryResolvers<
   ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']
 > = ResolversObject<{
   _?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
-  timestampMessage?: Resolver<
+  hawkTimestampMessage?: Resolver<
     ResolversTypes['TimestampMessage'],
     ParentType,
     ContextType
