@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.20](https://github.com/shootismoke/common/compare/v0.2.19...v0.2.20) (2020-03-19)
+
+
+### Bug Fixes
+
+* **graphql:** Add hawk graphql schema ([#120](https://github.com/shootismoke/common/issues/120)) ([f763416](https://github.com/shootismoke/common/commit/f7634164763c2fa9a26c52fadb2a950514d696ee))
+
+
+
+
+
 ## [0.2.19](https://github.com/shootismoke/common/compare/v0.2.18...v0.2.19) (2020-03-16)
 
 
