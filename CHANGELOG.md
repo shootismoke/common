@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.23](https://github.com/shootismoke/common/compare/v0.2.22...v0.2.23) (2020-03-21)
+
+
+### Bug Fixes
+
+* **dataproviders:** Sanitize aqicn response delhi to india ([#123](https://github.com/shootismoke/common/issues/123)) ([9f23ec7](https://github.com/shootismoke/common/commit/9f23ec7fa9a8ef1dd09db11ff2c68b6ae8d2e2db))
+
+
+
+
+
 ## [0.2.22](https://github.com/shootismoke/common/compare/v0.2.21...v0.2.22) (2020-03-21)
 
 
