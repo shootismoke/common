@@ -24,12 +24,6 @@ export type CreateUserInput = {
 
 export type Frequency = 'never' | 'daily' | 'weekly' | 'monthly';
 
-export type HawkTimestampMessage = {
-  __typename?: 'HawkTimestampMessage';
-  ts: Scalars['Int'];
-  tsm: Scalars['String'];
-};
-
 export type Mutation = {
   __typename?: 'Mutation';
   _?: Maybe<Scalars['Boolean']>;
@@ -65,7 +59,6 @@ export type NotificationsInput = {
 export type Query = {
   __typename?: 'Query';
   _?: Maybe<Scalars['Boolean']>;
-  hawkTimestampMessage: HawkTimestampMessage;
   getUser?: Maybe<User>;
 };
 
@@ -192,13 +185,11 @@ export type DirectiveResolverFn<
 export type ResolversTypes = ResolversObject<{
   Query: ResolverTypeWrapper<{}>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
-  HawkTimestampMessage: ResolverTypeWrapper<HawkTimestampMessage>;
-  Int: ResolverTypeWrapper<Scalars['Int']>;
-  String: ResolverTypeWrapper<Scalars['String']>;
   ID: ResolverTypeWrapper<Scalars['ID']>;
   User: ResolverTypeWrapper<User>;
   Notifications: ResolverTypeWrapper<Notifications>;
   Frequency: Frequency;
+  String: ResolverTypeWrapper<Scalars['String']>;
   Mutation: ResolverTypeWrapper<{}>;
   CreateUserInput: CreateUserInput;
   UpdateUserInput: UpdateUserInput;
@@ -210,13 +201,11 @@ export type ResolversTypes = ResolversObject<{
 export type ResolversParentTypes = ResolversObject<{
   Query: {};
   Boolean: Scalars['Boolean'];
-  HawkTimestampMessage: HawkTimestampMessage;
-  Int: Scalars['Int'];
-  String: Scalars['String'];
   ID: Scalars['ID'];
   User: User;
   Notifications: Notifications;
   Frequency: Frequency;
+  String: Scalars['String'];
   Mutation: {};
   CreateUserInput: CreateUserInput;
   UpdateUserInput: UpdateUserInput;
@@ -228,14 +217,6 @@ export interface DateScalarConfig
   extends GraphQLScalarTypeConfig<ResolversTypes['Date'], any> {
   name: 'Date';
 }
-
-export type HawkTimestampMessageResolvers<
-  ContextType = any,
-  ParentType extends ResolversParentTypes['HawkTimestampMessage'] = ResolversParentTypes['HawkTimestampMessage']
-> = ResolversObject<{
-  ts?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
-  tsm?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-}>;
 
 export type MutationResolvers<
   ContextType = any,
@@ -272,11 +253,6 @@ export type QueryResolvers<
   ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']
 > = ResolversObject<{
   _?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
-  hawkTimestampMessage?: Resolver<
-    ResolversTypes['HawkTimestampMessage'],
-    ParentType,
-    ContextType
-  >;
   getUser?: Resolver<
     Maybe<ResolversTypes['User']>,
     ParentType,
@@ -300,7 +276,6 @@ export type UserResolvers<
 
 export type Resolvers<ContextType = any> = ResolversObject<{
   Date?: GraphQLScalarType;
-  HawkTimestampMessage?: HawkTimestampMessageResolvers<ContextType>;
   Mutation?: MutationResolvers<ContextType>;
   Notifications?: NotificationsResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
