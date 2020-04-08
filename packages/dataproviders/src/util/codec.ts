@@ -23,7 +23,7 @@ export function decodeWith<A, O, I>(
     TE.fromEither(
       pipe(
         codec.decode(response),
-        E.mapLeft(errors => new Error(failure(errors).join('\n')))
+        E.mapLeft((errors) => new Error(failure(errors).join('\n')))
       )
     );
 }
@@ -47,7 +47,7 @@ export function fetchAndDecode<A, E, O, I>(
       axios
         .get(url)
         .then(({ data }) => data)
-        .catch(error => {
+        .catch((error) => {
           throw options.onError ? options.onError(error) : error;
         })
     ),

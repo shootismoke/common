@@ -8,5 +8,5 @@ import breakpoints from './breakpoints.json';
  */
 export const usaEpa: Aqi = {
   displayName: 'AQI (US)',
-  ...createAqiFromBreakpoints('usaEpa', breakpoints as Breakpoints)
+  ...createAqiFromBreakpoints('usaEpa', breakpoints as Breakpoints),
 };

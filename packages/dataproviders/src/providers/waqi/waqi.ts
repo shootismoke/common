@@ -15,5 +15,5 @@ export const waqi: Provider<ByStation, ByStation, {}> = {
   id: 'waqi',
   name: 'WAQI',
   normalizeByGps: normalize,
-  normalizeByStation: () => E.left(new Error('Unimplemented'))
+  normalizeByStation: () => E.left(new Error('Unimplemented')),
 };

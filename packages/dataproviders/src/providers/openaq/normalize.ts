@@ -17,9 +17,9 @@ export function normalize(data: OpenAQResponse): E.Either<Error, Normalized> {
   }
 
   return E.right(
-    results.map(result => ({
+    results.map((result) => ({
       ...result,
-      location: `openaq|${result.location}`
+      location: `openaq|${result.location}`,
     })) as Normalized
   );
 }

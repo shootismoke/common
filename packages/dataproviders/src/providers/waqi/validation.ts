@@ -34,10 +34,10 @@ export const ByStationCodec = t.type({
       t: t.number,
       u: t.string,
       v: t.string,
-      x: t.string
+      x: t.string,
     })
   ),
-  g: t.any
+  g: t.any,
 });
 
 export type ByStation = t.TypeOf<typeof ByStationCodec>;

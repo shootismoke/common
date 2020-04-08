@@ -9,5 +9,5 @@ export const openaq: Provider<OpenAQResponse, OpenAQResponse, OpenAQOptions> = {
   id: 'openaq',
   name: 'Open AQ',
   normalizeByGps: normalize,
-  normalizeByStation: normalize
+  normalizeByStation: normalize,
 };

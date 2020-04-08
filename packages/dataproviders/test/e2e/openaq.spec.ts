@@ -9,14 +9,14 @@ import { testProviderE2E } from '../../src/util';
 
 describe('openaq e2e', () => {
   testProviderE2E(openaq, {
-    skip: ['fetchByStation']
+    skip: ['fetchByStation'],
   });
 
-  it('should fetch station Coyhaique', done => {
+  it('should fetch station Coyhaique', (done) => {
     pipe(
       openaq.fetchByStation('Coyhaique'),
       TE.fold(
-        error => {
+        (error) => {
           done.fail(error);
 
           return T.of(void undefined);
@@ -32,11 +32,11 @@ describe('openaq e2e', () => {
     )();
   });
 
-  it('should correctly show errors', done => {
+  it('should correctly show errors', (done) => {
     pipe(
       openaq.fetchByGps({} as LatLng),
       TE.fold(
-        error => {
+        (error) => {
           expect(error.message).toBe(
             '400 Bad Request: child "coordinates" fails because [invalid coordinates pair]'
           );
@@ -53,10 +53,10 @@ describe('openaq e2e', () => {
     )();
   });
 
-  it('should fetch correctly with options', done => {
+  it('should fetch correctly with options', (done) => {
     jest.setTimeout(30000); // This request might take a bit longer
 
-    const dateFrom = subDays(new Date(), 14);
+    const dateFrom = subDays(new Date(), 9000);
     const dateTo = subDays(new Date(), 7);
 
     pipe(
@@ -64,10 +64,10 @@ describe('openaq e2e', () => {
         dateFrom,
         dateTo,
         limit: 2,
-        parameter: ['pm25']
+        parameter: ['pm25'],
       }),
       TE.fold(
-        error => {
+        (error) => {
           done.fail(error);
 
           return T.of(void undefined);

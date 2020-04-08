@@ -1,7 +1,7 @@
 import {
   aqicn as aqicnFp,
   openaq as openaqFp,
-  waqi as waqiFp
+  waqi as waqiFp,
 } from './providers';
 import { LatLng, Normalized, Provider, ProviderPromise } from './types';
 import { eitherToFunction, teToPromise } from './util';
@@ -25,7 +25,7 @@ function promisifyProvider<DataByGps, DataByStation, Options>(
     },
     normalizeByStation(d: DataByStation): Normalized {
       return eitherToFunction(provider.normalizeByStation(d));
-    }
+    },
   };
 }
 

@@ -59,7 +59,7 @@ import { attributionsCodec } from '../../util';
 // }
 
 const pollutantValue = t.type({
-  v: t.number
+  v: t.number,
 });
 
 // Ideally, we should have a list of all pollutants tracked by AqiCN, but I
@@ -73,13 +73,13 @@ const AqicnStationCodecData = t.type({
       t.tuple([
         // Somehow, we also sometimes get strings as geo lat/lng
         t.union([t.string, t.number]),
-        t.union([t.string, t.number])
+        t.union([t.string, t.number]),
       ]),
       // We also could get null
-      t.null
+      t.null,
     ]),
     name: t.union([t.string, t.undefined]),
-    url: t.union([t.string, t.undefined])
+    url: t.union([t.string, t.undefined]),
   }),
   // Should be `t.keyof(pollutants.props)`, but sometimes we do get "" or undefined
   dominentpol: t.union([t.string, t.undefined]),
@@ -93,18 +93,18 @@ const AqicnStationCodecData = t.type({
     // Timezone
     tz: t.union([t.string, t.undefined]),
     // As timestamp
-    v: t.number
-  })
+    v: t.number,
+  }),
 });
 
 export const ByStationCodec = t.type({
   status: t.keyof({
     ok: null,
     error: null,
-    nope: null // http://api.waqi.info/feed/geo:31.54;84.3/?token=
+    nope: null, // http://api.waqi.info/feed/geo:31.54;84.3/?token=
   }),
   data: t.union([AqicnStationCodecData, t.string, t.undefined]),
-  msg: t.union([t.string, t.undefined])
+  msg: t.union([t.string, t.undefined]),
 });
 
 export type ByStation = t.TypeOf<typeof AqicnStationCodecData>;

@@ -8,5 +8,5 @@ import breakpoints from './breakpoints.json';
  */
 export const chnMep: Aqi = {
   displayName: 'AQI (CN)',
-  ...createAqiFromBreakpoints('chnMep', breakpoints as Breakpoints)
+  ...createAqiFromBreakpoints('chnMep', breakpoints as Breakpoints),
 };

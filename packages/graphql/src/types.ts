@@ -1,7 +1,7 @@
 import {
   GraphQLResolveInfo,
   GraphQLScalarType,
-  GraphQLScalarTypeConfig
+  GraphQLScalarTypeConfig,
 } from 'graphql';
 export type Maybe<T> = T | null;
 export type RequireFields<T, K extends keyof T> = {
