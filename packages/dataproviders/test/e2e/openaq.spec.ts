@@ -56,7 +56,7 @@ describe('openaq e2e', () => {
   it('should fetch correctly with options', (done) => {
     jest.setTimeout(30000); // This request might take a bit longer
 
-    const dateFrom = subDays(new Date(), 14);
+    const dateFrom = subDays(new Date(), 9000);
     const dateTo = subDays(new Date(), 7);
 
     pipe(
