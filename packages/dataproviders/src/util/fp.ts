@@ -31,12 +31,12 @@ export function teToPromise<A>(te: TE.TaskEither<Error, A>): Promise<A> {
     pipe(
       te,
       TE.fold(
-        error => {
+        (error) => {
           reject(error);
 
           return T.of(undefined);
         },
-        data => {
+        (data) => {
           resolve(data);
 
           return T.of(undefined);
@@ -53,10 +53,10 @@ export function eitherToFunction<A>(e: E.Either<Error, A>): A {
   return pipe(
     e,
     E.fold(
-      error => {
+      (error) => {
         throw error;
       },
-      data => data
+      (data) => data
     )
   );
 }

@@ -6,11 +6,11 @@ import * as t from 'io-ts';
 export const attributionsCodec = t.array(
   t.intersection([
     t.type({
-      name: t.string
+      name: t.string,
     }),
     t.partial({
-      url: t.string
-    })
+      url: t.string,
+    }),
   ])
 );
 
@@ -19,7 +19,7 @@ export const attributionsCodec = t.array(
  */
 export const latLngCodec = t.type({
   latitude: t.number,
-  longitude: t.number
+  longitude: t.number,
 });
 
 /**
@@ -40,7 +40,7 @@ export const pollutantCodec = t.union([
   t.literal('pm10'),
   t.literal('pm25'),
   t.literal('so2'),
-  t.literal('trs')
+  t.literal('trs'),
 ]);
 
 /**
@@ -49,7 +49,7 @@ export const pollutantCodec = t.union([
 export const unitCodec = t.union([
   t.literal('ppb'),
   t.literal('ppm'),
-  t.literal('µg/m³')
+  t.literal('µg/m³'),
 ]);
 
 /**
@@ -58,7 +58,7 @@ export const unitCodec = t.union([
 export const sourceTypeCodec = t.union([
   t.literal('government'),
   t.literal('research'),
-  t.literal('other')
+  t.literal('other'),
 ]);
 
 // Required fields for OpenAQ data format
@@ -68,7 +68,7 @@ const required = t.type({
   country: t.string,
   date: t.type({
     local: t.string,
-    utc: t.string
+    utc: t.string,
   }),
   location: t.string,
   mobile: t.boolean,
@@ -76,7 +76,7 @@ const required = t.type({
   sourceName: t.string,
   sourceType: sourceTypeCodec,
   value: t.number,
-  unit: unitCodec
+  unit: unitCodec,
 });
 
 // Optional fields for OpenAQ data format
@@ -84,8 +84,8 @@ const optional = t.partial({
   attribution: attributionsCodec,
   averagingPeriod: t.type({
     unit: t.string,
-    value: t.number
-  })
+    value: t.number,
+  }),
 });
 
 /**

@@ -5,5 +5,5 @@ export {
   ACCURATE_RADIUS,
   getDominantPol,
   OpenAQFormat,
-  stationName
+  stationName,
 } from './util';

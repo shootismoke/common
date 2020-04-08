@@ -140,6 +140,6 @@ export function createAqiFromBreakpoints(
       assertTracked(aqiCode, pollutant, breakpoints);
 
       return toRaw(breakpoints.aqi, breakpoints[pollutant], value);
-    }
+    },
   };
 }

@@ -2,7 +2,7 @@ import {
   convert,
   getPollutantMeta,
   isPollutant,
-  Pollutant
+  Pollutant,
 } from '@shootismoke/convert';
 import * as E from 'fp-ts/lib/Either';
 import { pipe } from 'fp-ts/lib/pipeable';
@@ -17,7 +17,7 @@ import { ByStation } from './validation';
  * @param data - The data to normalize
  */
 export function normalize({
-  d: [data]
+  d: [data],
 }: ByStation): E.Either<Error, Normalized> {
   const stationId = `waqi|${data.x}`;
 
@@ -54,22 +54,22 @@ export function normalize({
     E.fromOption(() =>
       providerError('waqi', `Cannot get code from country ${countryRaw}`)
     ),
-    E.map(country => [
+    E.map((country) => [
       {
         attribution: [{ name: data.nlo }],
         averagingPeriod: {
           unit: 'day',
-          value: 1
+          value: 1,
         },
         coordinates: {
           latitude: data.geo[0],
-          longitude: data.geo[1]
+          longitude: data.geo[1],
         },
         country,
         city,
         date: {
           local: utc, // FIXME How should we get local time from UTC time?
-          utc
+          utc,
         },
         location: `waqi|${data.x}`,
         mobile: false,
@@ -77,8 +77,8 @@ export function normalize({
         sourceName: 'waqi',
         sourceType: 'other',
         unit: getPollutantMeta(data.pol as Pollutant).preferredUnit,
-        value: raw
-      }
+        value: raw,
+      },
     ])
   );
 }

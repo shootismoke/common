@@ -59,80 +59,80 @@ const Pollutants: Record<Pollutant, PollutantMeta> = {
     id: 'co',
     name: 'CO',
     description: 'Carbon monoxide',
-    preferredUnit: ppb
+    preferredUnit: ppb,
   },
   c6h6: {
     id: 'c6h6',
     name: 'C6H6',
     description: 'Benzene',
-    preferredUnit: ugm3
+    preferredUnit: ugm3,
   },
   ox: {
     id: 'ox',
     name: 'Ox',
     description: 'Photochemical oxidants',
-    preferredUnit: ppb
+    preferredUnit: ppb,
   },
   o3: {
     id: 'o3',
     name: 'O3',
     description: 'Ozone',
-    preferredUnit: ppb
+    preferredUnit: ppb,
   },
   nh3: {
     id: 'nh3',
     name: 'NH3',
     description: 'Ammonia',
-    preferredUnit: ppb
+    preferredUnit: ppb,
   },
   nmhc: {
     id: 'nmhc',
     name: 'NMHC',
     description: 'Non-methane hydrocarbons',
-    preferredUnit: ppb
+    preferredUnit: ppb,
   },
   no: {
     id: 'no',
     name: 'NO',
     description: 'Nitrogen monoxide',
-    preferredUnit: ppb
+    preferredUnit: ppb,
   },
   nox: {
     id: 'nox',
     name: 'NOx',
     description: 'Nitrogen oxides',
-    preferredUnit: ppb
+    preferredUnit: ppb,
   },
   no2: {
     id: 'no2',
     name: 'NO2',
     description: 'Nitrogen dioxide',
-    preferredUnit: ppb
+    preferredUnit: ppb,
   },
   pm25: {
     id: 'pm25',
     name: 'PM25',
     description: 'Fine particulate matter (<2.5µm)',
-    preferredUnit: ugm3
+    preferredUnit: ugm3,
   },
   pm10: {
     id: 'pm10',
     name: 'PM10',
     description: 'Inhalable particulate matter (<10µm)',
-    preferredUnit: ugm3
+    preferredUnit: ugm3,
   },
   so2: {
     id: 'so2',
     name: 'SO2',
     description: 'Sulfur dioxide',
-    preferredUnit: ppb
+    preferredUnit: ppb,
   },
   trs: {
     id: 'trs',
     name: 'TRS',
     description: 'Total reduced sulfur',
-    preferredUnit: ugm3
-  }
+    preferredUnit: ugm3,
+  },
 };
 
 /**

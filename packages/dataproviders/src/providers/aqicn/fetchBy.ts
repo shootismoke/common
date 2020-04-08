@@ -13,7 +13,7 @@ import { ByStation, ByStationCodec } from './validation';
 function checkError({
   status,
   data,
-  msg
+  msg,
 }: TypeOf<typeof ByStationCodec>): TE.TaskEither<Error, ByStation> {
   return status === 'ok'
     ? TE.right(data as ByStation)

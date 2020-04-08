@@ -12,16 +12,16 @@ export const OpenAQResponseCodec = t.type({
     limit: t.number,
     name: t.string,
     page: t.number,
-    website: t.string
+    website: t.string,
   }),
-  results: t.array(OpenAQCodec)
+  results: t.array(OpenAQCodec),
 });
 
 const OpenAQErrorCodec = t.type({
   error: t.string,
   message: t.string,
   statusCode: t.number,
-  validation: t.type({ keys: t.record(t.number, t.string), source: t.string })
+  validation: t.type({ keys: t.record(t.number, t.string), source: t.string }),
 });
 
 /**

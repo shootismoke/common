@@ -50,20 +50,22 @@ function additionalOptions(options: OpenAQOptions = {}): string {
   }
 
   // includeFields
-  query += `&include_fields=${options.includeFields ||
+  query += `&include_fields=${
+    options.includeFields ||
     [
       'attribution',
       'averagingPeriod',
       'mobile',
       'sourceName',
-      'sourceType'
-    ].join(',')}`;
+      'sourceType',
+    ].join(',')
+  }`;
 
   // limit
   query += `&limit=${options.limit || RESULT_LIMIT}`;
 
   // parameter
-  query += (options.parameter || []).map(p => `&parameter[]=${p}`).join('');
+  query += (options.parameter || []).map((p) => `&parameter[]=${p}`).join('');
 
   return query;
 }
@@ -99,7 +101,7 @@ export function fetchByGps(
     )}`,
     OpenAQResponseCodec,
     {
-      onError
+      onError,
     }
   );
 }
@@ -117,7 +119,7 @@ export function fetchByStation(
     `${BASE_URL}?location=${stationId}${additionalOptions(options)}`,
     OpenAQResponseCodec,
     {
-      onError
+      onError,
     }
   );
 }

@@ -2,7 +2,7 @@ import {
   convert,
   getPollutantMeta,
   Pollutant,
-  usaEpa
+  usaEpa,
 } from '@shootismoke/convert';
 import { format, utcToZonedTime } from 'date-fns-tz';
 import * as E from 'fp-ts/lib/Either';
@@ -95,7 +95,7 @@ export function normalize(data: ByStation): E.Either<Error, Normalized> {
       providerError('aqicn', `Cannot get code from country ${countryRaw}`)
     ),
     E.map(
-      country =>
+      (country) =>
         pollutants.map(([pol, { v }]) => {
           const pollutant = pol as Pollutant;
 
@@ -109,12 +109,12 @@ export function normalize(data: ByStation): E.Either<Error, Normalized> {
             attribution: data.attributions,
             averagingPeriod: {
               unit: 'day',
-              value: 1
+              value: 1,
             },
             city: data.city.name || 'Unknown city', // FIXME Don't put "unknown" here
             coordinates: {
               latitude: +data.city.geo[0],
-              longitude: +data.city.geo[1]
+              longitude: +data.city.geo[1],
             },
             country,
             date: { local, utc },
@@ -124,7 +124,7 @@ export function normalize(data: ByStation): E.Either<Error, Normalized> {
             sourceName: 'aqicn',
             sourceType: 'other',
             value: convert(pollutant, 'usaEpa', 'raw', v),
-            unit: getPollutantMeta(pollutant).preferredUnit
+            unit: getPollutantMeta(pollutant).preferredUnit,
           };
         }) as Normalized
     )

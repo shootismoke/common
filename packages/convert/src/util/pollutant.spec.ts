@@ -16,7 +16,7 @@ describe('getPollutantMeta', () => {
       id: 'pm25',
       name: 'PM25',
       description: 'Fine particulate matter (<2.5µm)',
-      preferredUnit: ugm3
+      preferredUnit: ugm3,
     });
   });
 });

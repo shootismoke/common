@@ -9,7 +9,7 @@ import { LatLng, Normalized, Provider } from '../types';
 function generateRandomLatLng(): LatLng {
   return {
     latitude: Math.floor(Math.random() * 9000) / 100,
-    longitude: Math.floor(Math.random() * 9000) / 100
+    longitude: Math.floor(Math.random() * 9000) / 100,
   };
 }
 
@@ -23,7 +23,7 @@ function generateRandomStationId(): string {
  * @param normalized - The normalized data to test
  */
 export function testNormalized(normalized: Normalized): void {
-  normalized.forEach(data => {
+  normalized.forEach((data) => {
     expect(data.country.length).toBe(2);
     expect(data.date).toBeDefined();
     expect(data.location).toHaveProperty('latitude');
@@ -41,14 +41,14 @@ function testTE<T>(
 ): void {
   pipe(
     te,
-    TE.map(response => {
+    TE.map((response) => {
       expect(response).toBeDefined();
 
       return response;
     }),
-    TE.chain(response => TE.fromEither(normalize(response))),
+    TE.chain((response) => TE.fromEither(normalize(response))),
     TE.fold(
-      error => {
+      (error) => {
         // We don't fail the test if one of the following errors occur
         const skippedErrorMessages = [
           // Skip if the random stationId is an unknown station
@@ -64,10 +64,10 @@ function testTE<T>(
           // Skip if aqicn doesn't expose city
           'no city',
           // Skip if cannot find country for waqi
-          '[waqi] Cannot get code from country'
+          '[waqi] Cannot get code from country',
         ];
 
-        if (skippedErrorMessages.some(msg => error.message.includes(msg))) {
+        if (skippedErrorMessages.some((msg) => error.message.includes(msg))) {
           done();
 
           return T.of(void undefined);
@@ -98,11 +98,13 @@ export function testProviderE2E<DataByGps, DataByStation, Options>(
 ): void {
   if (!skip.includes('fetchByGps')) {
     describe('fetchByGps', () => {
-      [...Array(2)].map(generateRandomLatLng).forEach(gps => {
-        it(`should fetch ${provider.id} by gps: ${JSON.stringify(gps)}`, done =>
+      [...Array(2)].map(generateRandomLatLng).forEach((gps) => {
+        it(`should fetch ${provider.id} by gps: ${JSON.stringify(
+          gps
+        )}`, (done) =>
           testTE(
             provider.fetchByGps(gps, options),
-            d => provider.normalizeByGps(d),
+            (d) => provider.normalizeByGps(d),
             done
           ));
       });
@@ -111,11 +113,11 @@ export function testProviderE2E<DataByGps, DataByStation, Options>(
 
   if (!skip.includes('fetchByStation')) {
     describe('fetchByStation', () => {
-      [...Array(2)].map(generateRandomStationId).forEach(stationId => {
-        it(`should fetch ${provider.id} by station: ${stationId}`, done =>
+      [...Array(2)].map(generateRandomStationId).forEach((stationId) => {
+        it(`should fetch ${provider.id} by station: ${stationId}`, (done) =>
           testTE(
             provider.fetchByStation(stationId, options),
-            d => provider.normalizeByStation(d),
+            (d) => provider.normalizeByStation(d),
             done
           ));
       });

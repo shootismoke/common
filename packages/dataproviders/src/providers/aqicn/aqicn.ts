@@ -12,5 +12,5 @@ export const aqicn: Provider<ByStation, ByStation, AqicnOptions> = {
   id: 'aqicn',
   name: 'AQI CN',
   normalizeByGps: normalize,
-  normalizeByStation: normalize
+  normalizeByStation: normalize,
 };
