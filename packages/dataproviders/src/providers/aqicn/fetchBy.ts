@@ -11,21 +11,21 @@ import { ByStation, ByStationCodec } from './validation';
  * if yes, return an error.
  */
 function checkError({
-  status,
-  data,
-  msg,
+	status,
+	data,
+	msg,
 }: TypeOf<typeof ByStationCodec>): TE.TaskEither<Error, ByStation> {
-  return status === 'ok'
-    ? TE.right(data as ByStation)
-    : TE.left(new Error(msg || (data as string)));
+	return status === 'ok'
+		? TE.right(data as ByStation)
+		: TE.left(new Error(msg || (data as string)));
 }
 
 export interface AqicnOptions {
-  /**
-   * Aqicn token
-   * @see https://aqicn.org/data-platform/token/#/
-   */
-  token: string;
+	/**
+	 * Aqicn token
+	 * @see https://aqicn.org/data-platform/token/#/
+	 */
+	token: string;
 }
 
 /**
@@ -34,10 +34,10 @@ export interface AqicnOptions {
  * @param options - Options to pass to aqicn
  */
 function checkToken(options?: AqicnOptions): TE.TaskEither<Error, undefined> {
-  if (!options || !options.token) {
-    return TE.left(new Error('AqiCN requires a token'));
-  }
-  return TE.right(undefined);
+	if (!options || !options.token) {
+		return TE.left(new Error('AqiCN requires a token'));
+	}
+	return TE.right(undefined);
 }
 
 /**
@@ -46,21 +46,21 @@ function checkToken(options?: AqicnOptions): TE.TaskEither<Error, undefined> {
  * @param gps - Latitude and longitude of the user's current position
  */
 export function fetchByGps(
-  gps: LatLng,
-  options: AqicnOptions
+	gps: LatLng,
+	options: AqicnOptions
 ): TE.TaskEither<Error, ByStation> {
-  const { latitude, longitude } = gps;
+	const { latitude, longitude } = gps;
 
-  return pipe(
-    checkToken(options),
-    TE.chain(() =>
-      fetchAndDecode(
-        `http://api.waqi.info/feed/geo:${latitude};${longitude}/?token=${options.token}`,
-        ByStationCodec
-      )
-    ),
-    TE.chain(checkError)
-  );
+	return pipe(
+		checkToken(options),
+		TE.chain(() =>
+			fetchAndDecode(
+				`http://api.waqi.info/feed/geo:${latitude};${longitude}/?token=${options.token}`,
+				ByStationCodec
+			)
+		),
+		TE.chain(checkError)
+	);
 }
 
 /**
@@ -69,17 +69,17 @@ export function fetchByGps(
  * @param stationId - The station ID to search
  */
 export function fetchByStation(
-  stationId: string,
-  options: AqicnOptions
+	stationId: string,
+	options: AqicnOptions
 ): TE.TaskEither<Error, ByStation> {
-  return pipe(
-    checkToken(options),
-    TE.chain(() =>
-      fetchAndDecode(
-        `https://api.waqi.info/feed/@${stationId}/?token=${options.token}`,
-        ByStationCodec
-      )
-    ),
-    TE.chain(checkError)
-  );
+	return pipe(
+		checkToken(options),
+		TE.chain(() =>
+			fetchAndDecode(
+				`https://api.waqi.info/feed/@${stationId}/?token=${options.token}`,
+				ByStationCodec
+			)
+		),
+		TE.chain(checkError)
+	);
 }

@@ -17,15 +17,15 @@ import { promiseToTE } from './fp';
  * @param codec - Codec used to decode
  */
 export function decodeWith<A, O, I>(
-  codec: Type<A, O, I>
+	codec: Type<A, O, I>
 ): (response: I) => TE.TaskEither<Error, A> {
-  return (response: I): TE.TaskEither<Error, A> =>
-    TE.fromEither(
-      pipe(
-        codec.decode(response),
-        E.mapLeft((errors) => new Error(failure(errors).join('\n')))
-      )
-    );
+	return (response: I): TE.TaskEither<Error, A> =>
+		TE.fromEither(
+			pipe(
+				codec.decode(response),
+				E.mapLeft((errors) => new Error(failure(errors).join('\n')))
+			)
+		);
 }
 
 /**
@@ -36,21 +36,21 @@ export function decodeWith<A, O, I>(
  * @param options - Additional options, e.g. error handling
  */
 export function fetchAndDecode<A, E, O, I>(
-  url: string,
-  codec: Type<A, O, I>,
-  options: {
-    onError?: (error: E) => Error;
-  } = {}
+	url: string,
+	codec: Type<A, O, I>,
+	options: {
+		onError?: (error: E) => Error;
+	} = {}
 ): TE.TaskEither<Error, A> {
-  return pipe(
-    promiseToTE(() =>
-      axios
-        .get(url)
-        .then(({ data }) => data)
-        .catch((error) => {
-          throw options.onError ? options.onError(error) : error;
-        })
-    ),
-    TE.chain(decodeWith(codec))
-  );
+	return pipe(
+		promiseToTE(() =>
+			axios
+				.get(url)
+				.then(({ data }) => data as I)
+				.catch((error) => {
+					throw options.onError ? options.onError(error) : error;
+				})
+		),
+		TE.chain(decodeWith(codec))
+	);
 }

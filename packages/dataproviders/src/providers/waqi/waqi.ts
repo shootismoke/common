@@ -9,11 +9,11 @@ import { ByStation } from './validation';
 /**
  * @see https://wind.waqi.info/
  */
-export const waqi: Provider<ByStation, ByStation, {}> = {
-  fetchByGps,
-  fetchByStation: () => TE.left(new Error('Unimplemented')),
-  id: 'waqi',
-  name: 'WAQI',
-  normalizeByGps: normalize,
-  normalizeByStation: () => E.left(new Error('Unimplemented')),
+export const waqi: Provider<ByStation, ByStation, unknown> = {
+	fetchByGps,
+	fetchByStation: () => TE.left(new Error('Unimplemented')),
+	id: 'waqi',
+	name: 'WAQI',
+	normalizeByGps: normalize,
+	normalizeByStation: () => E.left(new Error('Unimplemented')),
 };

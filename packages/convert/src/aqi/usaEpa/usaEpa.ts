@@ -7,6 +7,6 @@ import breakpoints from './breakpoints.json';
  * @see https://www3.epa.gov/airnow/aqi-technical-assistance-document-sept2018.pdf
  */
 export const usaEpa: Aqi = {
-  displayName: 'AQI (US)',
-  ...createAqiFromBreakpoints('usaEpa', breakpoints as Breakpoints),
+	displayName: 'AQI (US)',
+	...createAqiFromBreakpoints('usaEpa', breakpoints as Breakpoints),
 };

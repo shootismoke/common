@@ -23,21 +23,21 @@ import * as t from 'io-ts';
 // }
 
 export const ByStationCodec = t.type({
-  d: t.array(
-    t.type({
-      d: t.number,
-      geo: t.tuple([t.number, t.number]),
-      key: t.string,
-      nlo: t.string,
-      nna: t.string,
-      pol: t.string,
-      t: t.number,
-      u: t.string,
-      v: t.string,
-      x: t.string,
-    })
-  ),
-  g: t.any,
+	d: t.array(
+		t.type({
+			d: t.number,
+			geo: t.tuple([t.number, t.number]),
+			key: t.string,
+			nlo: t.string,
+			nna: t.string,
+			pol: t.string,
+			t: t.number,
+			u: t.string,
+			v: t.string,
+			x: t.string,
+		})
+	),
+	g: t.any,
 });
 
 export type ByStation = t.TypeOf<typeof ByStationCodec>;

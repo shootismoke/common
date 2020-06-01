@@ -7,9 +7,9 @@ import { OpenAQFormat } from './openaq';
  * @param openaq - The OpenAQ format normalized data
  */
 export function stationName(data: OpenAQFormat): string {
-  if (data.attribution && data.attribution.length) {
-    return data.attribution[0].name;
-  }
+	if (data.attribution && data.attribution.length) {
+		return data.attribution[0].name;
+	}
 
-  return `Station ${data.location}`;
+	return `Station ${data.location}`;
 }

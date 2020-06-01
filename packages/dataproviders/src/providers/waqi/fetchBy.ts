@@ -10,10 +10,10 @@ import { ByStation, ByStationCodec } from './validation';
  * @param gps - Latitude and longitude of the user's current position
  */
 export function fetchByGps(gps: LatLng): TE.TaskEither<Error, ByStation> {
-  const { latitude, longitude } = gps;
+	const { latitude, longitude } = gps;
 
-  return fetchAndDecode(
-    `https://wind.waqi.info/mapq/nearest?geo=1/${latitude}/${longitude}`,
-    ByStationCodec
-  );
+	return fetchAndDecode(
+		`https://wind.waqi.info/mapq/nearest?geo=1/${latitude}/${longitude}`,
+		ByStationCodec
+	);
 }

@@ -1,1 +1,6 @@
-lib/
+.eslintrc.js
+packages/graphql/src/types.ts
+**/bin/*
+**/coverage/*
+**/lib/*
+**/node_modules/*
