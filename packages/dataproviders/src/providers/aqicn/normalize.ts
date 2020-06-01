@@ -1,8 +1,8 @@
 import {
-  convert,
-  getPollutantMeta,
-  Pollutant,
-  usaEpa,
+	convert,
+	getPollutantMeta,
+	Pollutant,
+	usaEpa,
 } from '@shootismoke/convert';
 import { format, utcToZonedTime } from 'date-fns-tz';
 import * as E from 'fp-ts/lib/Either';
@@ -21,14 +21,14 @@ import { ByStation } from './validation';
  * we add them as we discover them.
  */
 function sanitizeCountry(input: string): string {
-  if (sanitized[input.toLowerCase() as keyof typeof sanitized]) {
-    return sanitized[input.toLowerCase() as keyof typeof sanitized];
-  }
+	if (sanitized[input.toLowerCase() as keyof typeof sanitized]) {
+		return sanitized[input.toLowerCase() as keyof typeof sanitized];
+	}
 
-  return input;
+	return input;
 
-  // FIXME The above castings seems hacky, should we just use an external
-  // service to get country from lat/lng?
+	// FIXME The above castings seems hacky, should we just use an external
+	// service to get country from lat/lng?
 }
 
 /**
@@ -37,96 +37,98 @@ function sanitizeCountry(input: string): string {
  * @param data - The data to normalize
  */
 export function normalize(data: ByStation): E.Either<Error, Normalized> {
-  const stationId = `aqicn|${data.idx}`;
+	const stationId = `aqicn|${data.idx}`;
 
-  // Sometimes we don't get geo
-  if (!data.city.geo) {
-    return E.left(
-      providerError(
-        'aqicn',
-        `Cannot normalize station ${stationId}, no city: ${JSON.stringify(
-          data
-        )}`
-      )
-    );
-  }
+	// Sometimes we don't get geo
+	if (!data.city.geo) {
+		return E.left(
+			providerError(
+				'aqicn',
+				`Cannot normalize station ${stationId}, no city: ${JSON.stringify(
+					data
+				)}`
+			)
+		);
+	}
 
-  // Since AqiCN uses useEpa as AQI for the pollutants, we can only
-  // normalize data for those pollutants
-  const pollutants = Object.entries(data.iaqi || {}).filter(([pol]) =>
-    usaEpa.pollutants.includes(pol as Pollutant)
-  );
-  if (!pollutants.length) {
-    return E.left(
-      providerError(
-        'aqicn',
-        `Cannot normalize station ${stationId}, no pollutants currently tracked: ${JSON.stringify(
-          data
-        )}`
-      )
-    );
-  }
-  // We now need to get the country from AQICN response. The only place I found
-  // is city.url...
-  // Example: http://aqicn.org/city/france/lorraine/thionville-nord/garche/
-  const AQICN_DOMAIN = 'aqicn.org/city/';
-  if (!data.city.url || !data.city.url.includes(AQICN_DOMAIN)) {
-    return E.left(
-      providerError(
-        'aqicn',
-        `Cannot extract country, got city.url: ${data.city.url}`
-      )
-    );
-  }
-  const countryRaw = sanitizeCountry(
-    data.city.url.split(AQICN_DOMAIN)[1].split('/')[0]
-  );
+	// Since AqiCN uses useEpa as AQI for the pollutants, we can only
+	// normalize data for those pollutants
+	const pollutants = Object.entries(data.iaqi || {}).filter(([pol]) =>
+		usaEpa.pollutants.includes(pol as Pollutant)
+	);
+	if (!pollutants.length) {
+		return E.left(
+			providerError(
+				'aqicn',
+				`Cannot normalize station ${stationId}, no pollutants currently tracked: ${JSON.stringify(
+					data
+				)}`
+			)
+		);
+	}
+	// We now need to get the country from AQICN response. The only place I found
+	// is city.url...
+	// Example: http://aqicn.org/city/france/lorraine/thionville-nord/garche/
+	const AQICN_DOMAIN = 'aqicn.org/city/';
+	if (!data.city.url || !data.city.url.includes(AQICN_DOMAIN)) {
+		return E.left(
+			providerError(
+				'aqicn',
+				`Cannot extract country, got city.url: ${
+					data.city.url as string
+				}`
+			)
+		);
+	}
+	const countryRaw = sanitizeCountry(
+		data.city.url.split(AQICN_DOMAIN)[1].split('/')[0]
+	);
 
-  // Get the timezoned date
-  const utc = new Date(+data.time.v * 1000).toISOString();
-  const local = format(
-    utcToZonedTime(+data.time.v * 1000, data.time.tz || 'Z'),
-    "yyyy-MM-dd'T'HH:mm:ss.SSSxxx"
-  );
+	// Get the timezoned date
+	const utc = new Date(+data.time.v * 1000).toISOString();
+	const local = format(
+		utcToZonedTime(+data.time.v * 1000, data.time.tz || 'Z'),
+		"yyyy-MM-dd'T'HH:mm:ss.SSSxxx"
+	);
 
-  return pipe(
-    getCountryCode(countryRaw),
-    E.fromOption(() =>
-      providerError('aqicn', `Cannot get code from country ${countryRaw}`)
-    ),
-    E.map(
-      (country) =>
-        pollutants.map(([pol, { v }]) => {
-          const pollutant = pol as Pollutant;
+	return pipe(
+		getCountryCode(countryRaw),
+		E.fromOption(() =>
+			providerError('aqicn', `Cannot get code from country ${countryRaw}`)
+		),
+		E.map(
+			(country) =>
+				pollutants.map(([pol, { v }]) => {
+					const pollutant = pol as Pollutant;
 
-          if (!data.city.geo) {
-            throw new Error(
-              'We returned TE.left if data.city.geo was not defined. qed.'
-            );
-          }
+					if (!data.city.geo) {
+						throw new Error(
+							'We returned TE.left if data.city.geo was not defined. qed.'
+						);
+					}
 
-          return {
-            attribution: data.attributions,
-            averagingPeriod: {
-              unit: 'day',
-              value: 1,
-            },
-            city: data.city.name || 'Unknown city', // FIXME Don't put "unknown" here
-            coordinates: {
-              latitude: +data.city.geo[0],
-              longitude: +data.city.geo[1],
-            },
-            country,
-            date: { local, utc },
-            location: stationId,
-            mobile: false,
-            parameter: pollutant,
-            sourceName: 'aqicn',
-            sourceType: 'other',
-            value: convert(pollutant, 'usaEpa', 'raw', v),
-            unit: getPollutantMeta(pollutant).preferredUnit,
-          };
-        }) as Normalized
-    )
-  );
+					return {
+						attribution: data.attributions,
+						averagingPeriod: {
+							unit: 'day',
+							value: 1,
+						},
+						city: data.city.name || 'Unknown city', // FIXME Don't put "unknown" here
+						coordinates: {
+							latitude: +data.city.geo[0],
+							longitude: +data.city.geo[1],
+						},
+						country,
+						date: { local, utc },
+						location: stationId,
+						mobile: false,
+						parameter: pollutant,
+						sourceName: 'aqicn',
+						sourceType: 'other',
+						value: convert(pollutant, 'usaEpa', 'raw', v),
+						unit: getPollutantMeta(pollutant).preferredUnit,
+					};
+				}) as Normalized
+		)
+	);
 }

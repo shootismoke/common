@@ -12,24 +12,24 @@ import { Pollutant } from './util';
  * @param value - The value to convert
  */
 export function convert<
-  From extends AqiCode | 'raw',
-  To extends AqiCode | 'raw'
+	From extends AqiCode | 'raw',
+	To extends AqiCode | 'raw'
 >(pollutant: Pollutant, from: From, to: To, value: number): number {
-  if (from === 'raw' && to === 'raw') {
-    return value;
-  }
+	if (from === 'raw' && to === 'raw') {
+		return value;
+	}
 
-  // Convert raw to AQI
-  if (from === 'raw') {
-    return aqiCodes[to as AqiCode].fromRaw(pollutant, value);
-  }
+	// Convert raw to AQI
+	if (from === 'raw') {
+		return aqiCodes[to as AqiCode].fromRaw(pollutant, value);
+	}
 
-  // Convert AQI to raw
-  if (to === 'raw') {
-    return aqiCodes[from as AqiCode].toRaw(pollutant, value);
-  }
+	// Convert AQI to raw
+	if (to === 'raw') {
+		return aqiCodes[from as AqiCode].toRaw(pollutant, value);
+	}
 
-  // Convert AQI to AQI
-  const raw = aqiCodes[from as AqiCode].toRaw(pollutant, value);
-  return aqiCodes[to as AqiCode].fromRaw(pollutant, raw);
+	// Convert AQI to AQI
+	const raw = aqiCodes[from as AqiCode].toRaw(pollutant, value);
+	return aqiCodes[to as AqiCode].fromRaw(pollutant, raw);
 }
