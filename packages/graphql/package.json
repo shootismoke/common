@@ -1,32 +1,32 @@
 {
-  "name": "@shootismoke/graphql",
-  "version": "0.2.22",
-  "author": "Amaury Martiny <amaury.martiny@protonmail.com>",
-  "description": "TypeScript types for GraphQL schemas in Sh**t! I Smoke",
-  "files": [
-    "lib/"
-  ],
-  "license": "GPL-3.0",
-  "main": "lib/index.js",
-  "publishConfig": {
-    "access": "public"
-  },
-  "repository": "https://github.com/shootismoke/common",
-  "scripts": {
-    "prebuild": "rimraf lib",
-    "build": "tsc -p tsconfig.settings.json",
-    "generate": "graphql-codegen",
-    "copy-schema": "copyfiles -f ../../../backend/src/schema/* src/schema"
-  },
-  "devDependencies": {
-    "@graphql-codegen/cli": "^1.8.2",
-    "@graphql-codegen/typescript": "^1.8.2",
-    "@graphql-codegen/typescript-resolvers": "^1.8.2",
-    "@shootismoke/convert": "^0.2.8",
-    "copyfiles": "^2.1.1",
-    "graphql": "^14.5.8"
-  },
-  "peerDependencies": {
-    "graphql-tag": "^2.10.1"
-  }
+	"name": "@shootismoke/graphql",
+	"version": "0.2.22",
+	"author": "Amaury Martiny <amaury.martiny@protonmail.com>",
+	"description": "TypeScript types for GraphQL schemas in Sh**t! I Smoke",
+	"files": [
+		"lib/"
+	],
+	"license": "GPL-3.0",
+	"main": "lib/index.js",
+	"publishConfig": {
+		"access": "public"
+	},
+	"repository": "https://github.com/shootismoke/common",
+	"scripts": {
+		"prebuild": "rimraf lib",
+		"build": "tsc -p tsconfig.settings.json",
+		"generate": "graphql-codegen",
+		"copy-schema": "copyfiles -f ../../../backend/src/schema/* src/schema"
+	},
+	"devDependencies": {
+		"@graphql-codegen/cli": "^1.8.2",
+		"@graphql-codegen/typescript": "^1.8.2",
+		"@graphql-codegen/typescript-resolvers": "^1.8.2",
+		"@shootismoke/convert": "^0.2.8",
+		"copyfiles": "^2.1.1",
+		"graphql": "^14.5.8"
+	},
+	"peerDependencies": {
+		"graphql-tag": "^2.10.1"
+	}
 }

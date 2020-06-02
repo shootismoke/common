@@ -1,7 +1,10 @@
 {
-  "extends": "./node_modules/@amaurymartiny/tsconfig/tsconfig",
-  "compilerOptions": {
-    "declaration": true,
-    "resolveJsonModule": true
-  }
+	"extends": "./node_modules/@amaurymartiny/tsconfig/tsconfig",
+	"compilerOptions": {
+		"declaration": true,
+		"downlevelIteration": true,
+		"jsx": "react-native",
+		"resolveJsonModule": true,
+		"skipLibCheck": true
+	}
 }

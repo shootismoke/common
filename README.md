@@ -19,6 +19,7 @@ The below packages are used internally in [Sh\*\*t! I Smoke](https://shootismoke
 | Packages                                     | NPM                                                                                                                          | Description                                                                                                                                                                          |
 | -------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [`@shootismoke/graphql`](./packages/graphql) | [![npm (scoped)](https://img.shields.io/npm/v/@shootismoke/graphql.svg)](https://www.npmjs.com/package/@shootismoke/graphql) | (Internal) TypeScript types and GraphQL schemas for Sh\*\*t! I Smoke backend. The actual GraphQL backend is hosted at [@shootismoke/backend](https://github.com/shootismoke/backend) |
+| [`@shootismoke/ui`](./packages/ui)           | [![npm (scoped)](https://img.shields.io/npm/v/@shootismoke/ui.svg)](https://www.npmjs.com/package/@shootismoke/ui)           | (Internal) UI components shared across Web & React Native projects.                                                                                                                  |
 
 ## FAQ
 
