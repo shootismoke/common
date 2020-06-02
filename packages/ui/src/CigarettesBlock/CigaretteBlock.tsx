@@ -23,13 +23,9 @@ import * as theme from '../util/theme';
 import { Cigarettes } from '../Cigarettes';
 import loadingAnimation from './animation.json';
 import { swearWords } from './swearWords';
+import { Translate } from '../util/translate';
 
-export type Translate = (
-	keyword: string,
-	replace?: Record<string, string>
-) => string;
-
-interface CigaretteBlockProps extends ViewProps {
+export interface CigaretteBlockProps extends ViewProps {
 	cigarettes: number;
 	frequency?: Frequency;
 	loading?: boolean;
@@ -98,7 +94,7 @@ export function CigaretteBlock(props: CigaretteBlockProps): React.ReactElement {
 
 		return (
 			<Text style={styles.shit}>
-				{t(swearWord)}!&nbsp;{t('home_cigarettes_smoked_pastPresent')}
+				{t(swearWord)}!&nbsp;{t('home_cigarettes_smoked_past_present')}
 				<Text style={styles.cigarettesCount}>
 					{t('home_cigarettes_count', {
 						cigarettes: `${cigarettesRounded}`,

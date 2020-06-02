@@ -19,7 +19,7 @@ import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
 
 import { Cigarette } from './Cigarette';
 
-interface CigarettesProps {
+export interface CigarettesProps {
 	/**
 	 * The number of cigarettes to show.
 	 */
