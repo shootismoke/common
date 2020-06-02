@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.25](https://github.com/shootismoke/common/compare/v0.2.24...v0.2.25) (2020-06-02)
+
+
+### Bug Fixes
+
+* **ui:** Use jsx: react ([#180](https://github.com/shootismoke/common/issues/180)) ([88f4e3e](https://github.com/shootismoke/common/commit/88f4e3efdd2b7bc7af0536f1bd755a16b7f8b86e))
+
+
+
+
+
 ## [0.2.24](https://github.com/shootismoke/common/compare/v0.2.23...v0.2.24) (2020-06-02)
 
 
