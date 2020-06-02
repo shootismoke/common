@@ -3,7 +3,7 @@
 	"compilerOptions": {
 		"declaration": true,
 		"downlevelIteration": true,
-		"jsx": "react-native",
+		"jsx": "react",
 		"resolveJsonModule": true,
 		"skipLibCheck": true
 	}
