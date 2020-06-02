@@ -4,6 +4,7 @@
 	"author": "Amaury Martiny <amaury.martiny@protonmail.com>",
 	"description": "UI components shared across Web & React Native projects",
 	"files": [
+		"assets/",
 		"lib/"
 	],
 	"license": "GPL-3.0",
@@ -14,7 +15,7 @@
 	"repository": "https://github.com/shootismoke/common",
 	"scripts": {
 		"prebuild": "rimraf lib",
-		"build": "tsc -p tsconfig.settings.json && cp -r assets lib",
+		"build": "tsc -p tsconfig.settings.json",
 		"docs": "rimraf docs && typedoc src"
 	},
 	"dependencies": {
