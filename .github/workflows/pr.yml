@@ -16,6 +16,7 @@ jobs:
       - name: Run yarn lint
         run: |
           yarn install
+          yarn build
           yarn lint
 
   test:
