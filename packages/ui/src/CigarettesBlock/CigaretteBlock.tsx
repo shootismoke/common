@@ -18,8 +18,8 @@ import LottieView from 'lottie-react-native';
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View, ViewProps } from 'react-native';
 
-import { Frequency } from '../../util/race';
-import { theme } from '../../util/theme';
+import { Frequency } from '../context/Frequency';
+import * as theme from '../util/theme';
 import { Cigarettes } from '../Cigarettes';
 import loadingAnimation from './animation.json';
 import { swearWords } from './swearWords';
@@ -98,7 +98,7 @@ export function CigaretteBlock(props: CigaretteBlockProps): React.ReactElement {
 
 		return (
 			<Text style={styles.shit}>
-				{t('home_cigarettes_smoked_pastPresent')}
+				{t(swearWord)}!&nbsp;{t('home_cigarettes_smoked_pastPresent')}
 				<Text style={styles.cigarettesCount}>
 					{t('home_cigarettes_count', {
 						cigarettes: `${cigarettesRounded}`,

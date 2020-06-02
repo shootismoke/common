@@ -24,7 +24,7 @@ import {
 	View,
 } from 'react-native';
 
-import { theme } from '../../util/theme';
+import * as theme from '../util/theme';
 
 export interface ButtonProps extends TouchableOpacityProps {
 	as?: typeof View; // Give a possibility to show the Button as View instead of TouchableOpacity

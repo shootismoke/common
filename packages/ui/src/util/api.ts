@@ -14,11 +14,16 @@
 // You should have received a copy of the GNU General Public License
 // along with Sh**t! I Smoke.  If not, see <http://www.gnu.org/licenses/>.
 
-export * from './Button';
-export * from './Cigarettes';
-export * from './CigarettesBlock';
-export * from './context';
-export * from './util/api';
-export * from './util/noop';
-export * from './util/race';
-export * from './util/theme';
+import { Normalized, OpenAQFormat } from '@shootismoke/dataproviders';
+
+/**
+ * Api is basically the normalized data from '@shootismoke/dataproviders',
+ * where we make sure to add cigarette conversion
+ */
+export interface Api {
+	normalized: Normalized;
+	pm25: OpenAQFormat;
+	shootismoke: {
+		dailyCigarettes: number;
+	};
+}

@@ -14,20 +14,26 @@
 	"repository": "https://github.com/shootismoke/common",
 	"scripts": {
 		"prebuild": "rimraf lib",
-		"build": "tsc -p tsconfig.settings.json",
+		"build": "tsc -p tsconfig.settings.json && cp -r assets lib",
 		"docs": "rimraf docs && typedoc src"
 	},
 	"dependencies": {
 		"@expo/vector-icons": "^10.2.0",
+		"@shootismoke/dataproviders": "^0.2.23",
+		"@types/p-any": "^1.1.3",
 		"expo-constants": "^9.0.0",
+		"lottie-react-native": "^3.4.0",
+		"p-any": "^3.0.0",
 		"react-native-web": "^0.12.2"
 	},
 	"devDependencies": {
+		"@types/react": "^16.9.35",
+		"@types/react-native": "^0.62.12",
 		"react": "^16.13.1",
 		"react-native": "https://github.com/expo/react-native/archive/sdk-37.0.1.tar.gz"
 	},
 	"peerDependencies": {
-		"@types/react-native": "^0.62.12",
+		"expo": "^37.0.12",
 		"react": "^16.13.1",
 		"react-native": "https://github.com/expo/react-native/archive/sdk-37.0.1.tar.gz"
 	}
