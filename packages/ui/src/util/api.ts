@@ -18,7 +18,7 @@ import { Normalized, OpenAQFormat } from '@shootismoke/dataproviders';
 
 /**
  * Api is basically the normalized data from '@shootismoke/dataproviders',
- * where we make sure to add cigarette conversion
+ * where we make sure to add cigarette conversion.
  */
 export interface Api {
 	normalized: Normalized;
