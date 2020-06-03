@@ -15,23 +15,24 @@
 // along with Sh**t! I Smoke.  If not, see <http://www.gnu.org/licenses/>.
 
 import LottieView from 'lottie-react-native';
-import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, View, ViewProps } from 'react-native';
+import React from 'react';
+import { StyleSheet, View, ViewProps } from 'react-native';
 
 import { Frequency } from '../context/Frequency';
 import * as theme from '../util/theme';
-import { Cigarettes } from '../Cigarettes';
+import { Cigarettes, CigarettesProps } from '../Cigarettes';
 import loadingAnimation from './animation.json';
-import { swearWords } from './swearWords';
+import { Translate } from '../util/translate';
+import { CigarettesText } from '../CigarettesText';
 
-export type Translate = (
-	keyword: string,
-	replace?: Record<string, string>
-) => string;
-
-interface CigaretteBlockProps extends ViewProps {
-	cigarettes: number;
+export interface CigarettesBlockProps extends ViewProps, CigarettesProps {
+	/**
+	 * If set, will show the frequency in the text.
+	 */
 	frequency?: Frequency;
+	/**
+	 * Show lottie animation while loading.
+	 */
 	loading?: boolean;
 	t: Translate;
 }
@@ -41,24 +42,10 @@ const styles = StyleSheet.create({
 		display: 'flex',
 		justifyContent: 'flex-end',
 	},
-	cigarettesCount: {
-		color: theme.primaryColor,
-	},
 	lottie: {
 		backgroundColor: theme.backgroundColor,
 	},
-	shit: {
-		...theme.shitText,
-		marginTop: theme.spacing.normal,
-	},
 });
-
-function getSwearWord(cigaretteCount: number, t: Translate): string {
-	if (cigaretteCount <= 1) return t('home_cigarettes_oh');
-
-	// Return a random swear word
-	return swearWords(t)[Math.floor(Math.random() * swearWords.length)];
-}
 
 function renderAnimation(): React.ReactElement {
 	return (
@@ -73,54 +60,43 @@ function renderAnimation(): React.ReactElement {
 	);
 }
 
-export function CigaretteBlock(props: CigaretteBlockProps): React.ReactElement {
-	const { cigarettes, frequency, loading, style, t, ...rest } = props;
-
-	// Decide on a swear word. The effect says that the swear word only changes
-	// when the cigarettes count changes.
-	const [swearWord, setSwearWord] = useState(getSwearWord(cigarettes, t));
-	useEffect(() => {
-		setSwearWord(getSwearWord(cigarettes, t));
-	}, [cigarettes, t]);
-
-	const renderCigarettesText = (): React.ReactElement => {
-		if (loading) {
-			// FIXME i18n
-			return (
-				<Text style={styles.shit}>
-					Loading<Text style={styles.cigarettesCount}>...{'\n'}</Text>
-				</Text>
-			);
-		}
-
-		// Round to 1 decimal
-		const cigarettesRounded = Math.round(cigarettes * 10) / 10;
-
-		return (
-			<Text style={styles.shit}>
-				{t(swearWord)}!&nbsp;{t('home_cigarettes_smoked_pastPresent')}
-				<Text style={styles.cigarettesCount}>
-					{t('home_cigarettes_count', {
-						cigarettes: `${cigarettesRounded}`,
-						singularPlural:
-							cigarettesRounded === 1
-								? t('home_cigarettes_cigarette').toLowerCase()
-								: t('home_cigarettes_cigarettes').toLowerCase(),
-					})}
-				</Text>
-				{frequency}
-			</Text>
-		);
-	};
+export function CigarettesBlock(
+	props: CigarettesBlockProps
+): React.ReactElement {
+	const {
+		cigarettes,
+		fullCigaretteLength,
+		frequency,
+		loading,
+		showMaxCigarettes,
+		showVerticalAfter,
+		spacingVertical,
+		spacingHorizontal,
+		style,
+		t,
+		...rest
+	} = props;
 
 	return (
 		<View style={style} {...rest}>
 			{loading ? (
 				renderAnimation()
 			) : (
-				<Cigarettes cigarettes={cigarettes} />
+				<Cigarettes
+					cigarettes={cigarettes}
+					fullCigaretteLength={fullCigaretteLength}
+					showMaxCigarettes={showMaxCigarettes}
+					showVerticalAfter={showVerticalAfter}
+					spacingVertical={spacingVertical}
+					spacingHorizontal={spacingHorizontal}
+				/>
 			)}
-			{renderCigarettesText()}
+			<CigarettesText
+				cigarettes={cigarettes}
+				frequency={frequency}
+				loading={loading}
+				t={t}
+			/>
 		</View>
 	);
 }

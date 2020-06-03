@@ -14,16 +14,15 @@
 // You should have received a copy of the GNU General Public License
 // along with Sh**t! I Smoke.  If not, see <http://www.gnu.org/licenses/>.
 
-import { Normalized, OpenAQFormat } from '@shootismoke/dataproviders';
-
 /**
- * Api is basically the normalized data from '@shootismoke/dataproviders',
- * where we make sure to add cigarette conversion.
+ * Swear words, untranslated.
  */
-export interface Api {
-	normalized: Normalized;
-	pm25: OpenAQFormat;
-	shootismoke: {
-		dailyCigarettes: number;
-	};
-}
+export const swearWords = [
+	'home_swear_word_shoot',
+	'home_swear_word_dang',
+	'home_swear_word_darn',
+	'home_swear_word_geez',
+	'home_swear_word_omg',
+	'home_swear_word_crap',
+	'home_swear_word_arrgh',
+];

@@ -28,7 +28,7 @@ import { pm25ToCigarettes } from './secretSauce';
 /**
  * Given some normalized data points, filter out the first one that contains
  * pm25 data. Returns a TaskEither left is none is found, or format the data
- * into the Api interface
+ * into the Api interface.
  *
  * @param normalized - The normalized data to process
  */
@@ -51,7 +51,7 @@ function filterPm25(normalized: Normalized): Api {
 }
 
 /**
- * Options to be passed into the `raceApi` function.
+ * Options to be passed into the {@link raceApiPromise} function.
  */
 interface RaceApiOptions {
 	/**
@@ -62,7 +62,7 @@ interface RaceApiOptions {
 
 /**
  * Fetch data parallely from difference data sources, and return the first
- * response
+ * response.
  *
  * @param gps - The GPS coordinates to fetch data for
  */
@@ -97,7 +97,6 @@ export function raceApiPromise(
 		}),
 	];
 
-	// Not sure how to fix these eslint errors.
 	return promiseAny(tasks).catch((errors: AggregateError) => {
 		// Transform an AggregateError into a JS native Error
 		const aggregateMessage = [...errors]

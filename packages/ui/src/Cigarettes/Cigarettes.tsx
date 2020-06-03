@@ -19,7 +19,7 @@ import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
 
 import { Cigarette } from './Cigarette';
 
-interface CigarettesProps {
+export interface CigarettesProps {
 	/**
 	 * The number of cigarettes to show.
 	 */
@@ -95,6 +95,16 @@ export function Cigarettes(props: CigarettesProps): React.ReactElement {
 			: cigarettes <= showVerticalAfter
 			? 'horizontal'
 			: 'vertical';
+	const cigaretteStyle =
+		orientation === 'horizontal'
+			? {
+					marginBottom: spacingHorizontal,
+					marginRight: spacingVertical,
+			  }
+			: {
+					marginBottom: spacingVertical,
+					marginRight: spacingHorizontal,
+			  };
 
 	return (
 		<View style={style}>
@@ -107,17 +117,7 @@ export function Cigarettes(props: CigarettesProps): React.ReactElement {
 							orientation={orientation}
 							percentage={1}
 							fullCigaretteLength={fullCigaretteLength}
-							style={
-								orientation === 'horizontal'
-									? {
-											marginBottom: spacingHorizontal,
-											marginRight: spacingVertical,
-									  }
-									: {
-											marginBottom: spacingVertical,
-											marginRight: spacingHorizontal,
-									  }
-							}
+							style={cigaretteStyle}
 						/>
 					))}
 				{(cigarettes === 1 || decimal > 0) && (
@@ -125,6 +125,7 @@ export function Cigarettes(props: CigarettesProps): React.ReactElement {
 						orientation={orientation}
 						percentage={decimal || 1}
 						fullCigaretteLength={fullCigaretteLength}
+						style={cigaretteStyle}
 					/>
 				)}
 			</View>
