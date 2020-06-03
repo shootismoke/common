@@ -15,11 +15,11 @@
 // along with Sh**t! I Smoke.  If not, see <http://www.gnu.org/licenses/>.
 
 import React from 'react';
-import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
+import { StyleSheet, View, ViewProps } from 'react-native';
 
 import { Cigarette } from './Cigarette';
 
-export interface CigarettesProps {
+export interface CigarettesProps extends ViewProps {
 	/**
 	 * The number of cigarettes to show.
 	 */
@@ -57,7 +57,6 @@ export interface CigarettesProps {
 	 * @default 20
 	 */
 	spacingVertical?: number;
-	style?: StyleProp<ViewStyle>;
 }
 
 const styles = StyleSheet.create({
@@ -77,6 +76,7 @@ export function Cigarettes(props: CigarettesProps): React.ReactElement {
 		spacingHorizontal = 5,
 		spacingVertical = 20,
 		style,
+		...rest
 	} = props;
 
 	// We don't show more than `showMaxCigarettes` cigarettes, and we round to
@@ -107,28 +107,26 @@ export function Cigarettes(props: CigarettesProps): React.ReactElement {
 			  };
 
 	return (
-		<View style={style}>
-			<View style={styles.innerContainer}>
-				{cigarettes > 1 &&
-					count >= 1 &&
-					Array.from(Array(count)).map((_, i) => (
-						<Cigarette
-							key={i}
-							orientation={orientation}
-							percentage={1}
-							fullCigaretteLength={fullCigaretteLength}
-							style={cigaretteStyle}
-						/>
-					))}
-				{(cigarettes === 1 || decimal > 0) && (
+		<View style={[styles.innerContainer, style]} {...rest}>
+			{cigarettes > 1 &&
+				count >= 1 &&
+				Array.from(Array(count)).map((_, i) => (
 					<Cigarette
+						key={i}
 						orientation={orientation}
-						percentage={decimal || 1}
+						percentage={1}
 						fullCigaretteLength={fullCigaretteLength}
 						style={cigaretteStyle}
 					/>
-				)}
-			</View>
+				))}
+			{(cigarettes === 1 || decimal > 0) && (
+				<Cigarette
+					orientation={orientation}
+					percentage={decimal || 1}
+					fullCigaretteLength={fullCigaretteLength}
+					style={cigaretteStyle}
+				/>
+			)}
 		</View>
 	);
 }

@@ -22,19 +22,26 @@ import {
 	Text,
 	View,
 	ImageSourcePropType,
+	ViewProps,
 } from 'react-native';
 
 import cigarette from '../../assets/images/cigarette.png';
 import * as theme from '../util/theme';
 import { Translate } from '../util/translate';
 
-export interface ConversionBoxProps {
+export interface ConversionBoxProps extends ViewProps {
+	cigarettes?: 1 | 2 | 3;
+	showFootnote?: boolean;
 	t: Translate;
 }
 
+/**
+ * Height of the cigarette image, also the line height of the "22" text.
+ */
+const LINE_HEIGHT = 44;
+
 const styles = StyleSheet.create({
 	box: {
-		alignItems: 'center',
 		borderColor: '#EAEAEA',
 		borderRadius: 8,
 		borderWidth: 1,
@@ -50,30 +57,33 @@ const styles = StyleSheet.create({
 		marginTop: 15,
 	},
 	cigarette: {
+		bottom: 12,
+		height: LINE_HEIGHT,
 		left: 6,
 		position: 'absolute',
-		bottom: 12,
+		width: LINE_HEIGHT,
 	},
 	equal: {
 		...theme.text,
-		color: theme.secondaryTextColor,
-		fontSize: 44,
-		lineHeight: 44,
+		color: theme.textColor,
+		fontSize: LINE_HEIGHT,
+		lineHeight: LINE_HEIGHT,
 		marginHorizontal: 18,
 	},
 	equivalence: {
 		alignItems: 'center',
+		display: 'flex',
 		flexDirection: 'row',
 		justifyContent: 'center',
 	},
 	label: {
 		...theme.title,
-		color: theme.secondaryTextColor,
 		fontSize: 12,
 		fontWeight: '900',
 		letterSpacing: 0.5,
 	},
 	micro: {
+		fontFamily: 'arial',
 		...Platform.select({
 			ios: {
 				fontFamily: 'Georgia',
@@ -85,28 +95,29 @@ const styles = StyleSheet.create({
 	},
 	statisticsLeft: {
 		alignItems: 'flex-end',
-		justifyContent: 'flex-end',
 		marginTop: 36,
 		paddingRight: 10,
 		width: 90,
 	},
 	statisticsRight: {
-		alignItems: 'center',
+		alignItems: 'center', // For mobile
+		textAlign: 'center', // For web
 		width: 90,
 	},
 	value: {
 		...theme.text,
-		color: theme.secondaryTextColor,
-		fontSize: 44,
-		lineHeight: 44,
+		color: theme.textColor,
+		fontFamily: theme.gothamBlack,
+		fontSize: LINE_HEIGHT,
+		lineHeight: LINE_HEIGHT,
 	},
 });
 
 export function ConversionBox(props: ConversionBoxProps): React.ReactElement {
-	const { t } = props;
+	const { cigarettes = 1, showFootnote, style, t, ...rest } = props;
 
 	return (
-		<View style={styles.box}>
+		<View style={[styles.box, style]} {...rest}>
 			<View style={styles.equivalence}>
 				<View style={styles.statisticsLeft}>
 					<Image
@@ -118,14 +129,18 @@ export function ConversionBox(props: ConversionBoxProps): React.ReactElement {
 				</View>
 				<Text style={styles.equal}>=</Text>
 				<View style={styles.statisticsRight}>
-					<Text style={styles.value}>22</Text>
+					<Text style={styles.value}>{22 * cigarettes}</Text>
 					<Text style={styles.label}>
 						<Text style={styles.micro}>&micro;</Text>
 						g/m&sup3; PM2.5*
 					</Text>
 				</View>
 			</View>
-			<Text style={styles.boxDescription}>{t('about_box_footnote')}</Text>
+			{showFootnote && (
+				<Text style={styles.boxDescription}>
+					{t('about_box_footnote')}
+				</Text>
+			)}
 		</View>
 	);
 }
