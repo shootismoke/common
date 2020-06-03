@@ -14,7 +14,15 @@
 // You should have received a copy of the GNU General Public License
 // along with Sh**t! I Smoke.  If not, see <http://www.gnu.org/licenses/>.
 
-export type Translate = (
-	keyword: string,
-	replace?: Record<string, string | number>
-) => string;
+/**
+ * Swear words, untranslated.
+ */
+export const swearWords = [
+	'home_swear_word_shoot',
+	'home_swear_word_dang',
+	'home_swear_word_darn',
+	'home_swear_word_geez',
+	'home_swear_word_omg',
+	'home_swear_word_crap',
+	'home_swear_word_arrgh',
+];
