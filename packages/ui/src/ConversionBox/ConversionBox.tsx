@@ -24,7 +24,7 @@ import {
 	ImageSourcePropType,
 } from 'react-native';
 
-import cigarette from '../../../assets/images/cigarette.png';
+import cigarette from '../../assets/images/cigarette.png';
 import * as theme from '../util/theme';
 import { Translate } from '../util/translate';
 

@@ -20,14 +20,19 @@ import { StyleSheet, Text, View, ViewProps } from 'react-native';
 
 import { Frequency } from '../context/Frequency';
 import * as theme from '../util/theme';
-import { Cigarettes } from '../Cigarettes';
+import { Cigarettes, CigarettesProps } from '../Cigarettes';
 import loadingAnimation from './animation.json';
 import { swearWords } from './swearWords';
 import { Translate } from '../util/translate';
 
-export interface CigaretteBlockProps extends ViewProps {
-	cigarettes: number;
+export interface CigaretteBlockProps extends ViewProps, CigarettesProps {
+	/**
+	 * If set, will show the frequency in the text.
+	 */
 	frequency?: Frequency;
+	/**
+	 * Show lottie animation while loading.
+	 */
 	loading?: boolean;
 	t: Translate;
 }
