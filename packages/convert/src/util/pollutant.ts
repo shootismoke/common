@@ -25,6 +25,7 @@ export type Unit = typeof ppb | typeof ppm | typeof ugm3;
  * All the pollutants tracked by @shootismoke.
  */
 export type Pollutant =
+	| 'ch4'
 	| 'co'
 	| 'c6h6'
 	| 'ox'
@@ -55,6 +56,12 @@ export interface PollutantMeta {
  * @ignore
  */
 const Pollutants: Record<Pollutant, PollutantMeta> = {
+	ch4: {
+		id: 'ch4',
+		name: 'CH4',
+		description: 'Methane',
+		preferredUnit: ppb,
+	},
 	co: {
 		id: 'co',
 		name: 'CO',

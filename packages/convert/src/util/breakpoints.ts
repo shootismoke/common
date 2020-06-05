@@ -2,8 +2,12 @@
  * @ignore
  */ /** */
 
+import debug from 'debug';
+
 import { Aqi } from '../types';
 import { Pollutant } from './pollutant';
+
+const l = debug('shootismoke:convert');
 
 /**
  * Round a number to closest 10^-{decimal}
@@ -110,10 +114,12 @@ function assertTracked<P extends Pollutant>(
 	breakpoints: Breakpoints
 ): asserts breakpoints is Record<P | 'aqi', Piecewise> {
 	if (!breakpoints.aqi) {
+		l(`${aqiCode} does not have AQI breakpoints`);
 		throw new Error(`${aqiCode} does not have AQI breakpoints`);
 	}
 
 	if (!breakpoints[pollutant]) {
+		l(`${aqiCode} does not apply to pollutant ${pollutant}`);
 		throw new Error(`${aqiCode} does not apply to pollutant ${pollutant}`);
 	}
 }

@@ -16,5 +16,9 @@
 		"prebuild": "rimraf lib",
 		"build": "tsc -p tsconfig.settings.json",
 		"docs": "rimraf docs && typedoc src"
+	},
+	"dependencies": {
+		"@types/debug": "^4.1.5",
+		"debug": "^4.1.1"
 	}
 }

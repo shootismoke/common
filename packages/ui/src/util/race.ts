@@ -21,9 +21,12 @@ import {
 } from '@shootismoke/dataproviders';
 import { aqicn, openaq } from '@shootismoke/dataproviders/lib/promise';
 import promiseAny, { AggregateError } from 'p-any';
+import debug from 'debug';
 
 import { Api } from './api';
 import { pm25ToCigarettes } from './secretSauce';
+
+const l = debug('shootismoke:ui:race');
 
 /**
  * Given some normalized data points, filter out the first one that contains
@@ -60,11 +63,7 @@ async function fetchForProvider<DataByGps, DataByStation, Options>(
 ): Promise<Normalized> {
 	const data = await provider.fetchByGps(gps, options);
 	const normalized = provider.normalizeByGps(data);
-	console.log(
-		`<ApiContext> Got data from ${provider.id}: ${JSON.stringify(
-			normalized
-		)}`
-	);
+	l(`Got data from ${provider.id}: ${JSON.stringify(normalized)}`);
 
 	return normalized;
 }
