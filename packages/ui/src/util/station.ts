@@ -72,6 +72,14 @@ export function distanceToStation(
 	api: Api,
 	unit: DistanceUnit = 'km'
 ): number {
+	// This case should be very rare, only happens on OpenAQ that sometimes,
+	// the `coordinates` field isn't returned. This field is actually optional
+	// in the OpenAQ format.
+	// FIXME Return something better than 0?
+	if (!api.pm25.coordinates) {
+		return 0;
+	}
+
 	return Math.round(
 		haversine(
 			currentLocation,

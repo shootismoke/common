@@ -4,7 +4,6 @@ import * as T from 'fp-ts/lib/Task';
 import * as TE from 'fp-ts/lib/TaskEither';
 
 import { openaq } from '../../src/providers/openaq';
-import { LatLng } from '../../src/types';
 import { testProviderE2E } from '../../src/util';
 
 describe('openaq e2e', () => {
@@ -25,27 +24,6 @@ describe('openaq e2e', () => {
 					expect(results.length).toBeGreaterThanOrEqual(1);
 
 					done();
-
-					return T.of(void undefined);
-				}
-			)
-		)().catch(console.error);
-	});
-
-	it('should correctly show errors', (done) => {
-		pipe(
-			openaq.fetchByGps({} as LatLng),
-			TE.fold(
-				(error) => {
-					expect(error.message).toBe(
-						'400 Bad Request: child "coordinates" fails because [invalid coordinates pair]'
-					);
-					done();
-
-					return T.of(void undefined);
-				},
-				() => {
-					done.fail();
 
 					return T.of(void undefined);
 				}
