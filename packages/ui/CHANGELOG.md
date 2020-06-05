@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.27](https://github.com/shootismoke/common/compare/v0.2.26...v0.2.27) (2020-06-05)
+
+
+### Features
+
+* Add functions to ui, fix fetchByGps in dataproviders ([#183](https://github.com/shootismoke/common/issues/183)) ([6678714](https://github.com/shootismoke/common/commit/6678714d432d20b31e48e82ed07d12ce59dbcddc))
+
+
+
+
+
 ## [0.2.26](https://github.com/shootismoke/common/compare/v0.2.25...v0.2.26) (2020-06-03)
 
 
