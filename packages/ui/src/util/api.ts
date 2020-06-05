@@ -27,3 +27,12 @@ export interface Api {
 		dailyCigarettes: number;
 	};
 }
+
+/**
+ * Round a number to 1 decimal. Useful for showing cigarettes on the home page.
+ *
+ * @param n - The number to round;
+ */
+export function round(n: number): number {
+	return Math.round(n * 10) / 10;
+}

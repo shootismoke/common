@@ -17,10 +17,13 @@ export const attributionsCodec = t.array(
 /**
  * @ignore
  */
-export const latLngCodec = t.type({
-	latitude: t.number,
-	longitude: t.number,
-});
+export const latLngCodec = t.union([
+	t.type({
+		latitude: t.number,
+		longitude: t.number,
+	}),
+	t.undefined,
+]);
 
 /**
  * @ignore
@@ -62,40 +65,45 @@ export const sourceTypeCodec = t.union([
 ]);
 
 // Required fields for OpenAQ data format
-const required = t.type({
+const OpenAQCodecRequired = t.type({
 	city: t.string,
-	coordinates: latLngCodec, // Note: this one is optional in https://github.com/openaq/openaq-data-format
+	coordinates: latLngCodec,
 	country: t.string,
 	date: t.type({
 		local: t.string,
 		utc: t.string,
 	}),
 	location: t.string,
-	mobile: t.boolean,
 	parameter: pollutantCodec,
 	sourceName: t.string,
-	sourceType: sourceTypeCodec,
 	value: t.number,
 	unit: unitCodec,
 });
 
 // Optional fields for OpenAQ data format
-const optional = t.partial({
+export const OpenAQCodecOptional = t.partial({
 	attribution: attributionsCodec,
 	averagingPeriod: t.type({
 		unit: t.string,
 		value: t.number,
 	}),
+	mobile: t.boolean,
+	sourceType: sourceTypeCodec,
 });
 
 /**
- * An io-ts codec to validate the OpenAQ data format
+ * An io-ts codec to validate the OpenAQ data format.
  *
  * @see https://github.com/openaq/openaq-data-format
  */
-export const OpenAQCodec = t.intersection([required, optional]);
+export const OpenAQCodec = t.intersection([
+	OpenAQCodecRequired,
+	OpenAQCodecOptional,
+]);
 
 /**
+ * A TypeScript type to represent the OpenAQ data format.
+ *
  * @see https://github.com/openaq/openaq-data-format
  */
 export type OpenAQFormat = t.TypeOf<typeof OpenAQCodec>;

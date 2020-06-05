@@ -4,6 +4,7 @@
 		"declaration": true,
 		"downlevelIteration": true,
 		"jsx": "react",
+		"lib": ["esnext"],
 		"resolveJsonModule": true,
 		"skipLibCheck": true
 	}

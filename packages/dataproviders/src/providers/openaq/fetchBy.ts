@@ -3,13 +3,20 @@ import * as TE from 'fp-ts/lib/TaskEither';
 
 import { LatLng } from '../../types';
 import { ACCURATE_RADIUS, fetchAndDecode } from '../../util';
-import { OpenAQError, OpenAQResponse, OpenAQResponseCodec } from './validation';
+import {
+	OpenAQError,
+	OpenAQLatestCodec,
+	OpenAQLatest,
+	OpenAQMeasurements,
+	OpenAQMeasurementsCodec,
+} from './validation';
 
 const RESULT_LIMIT = 10;
-const BASE_URL = `https://api.openaq.org/v1/measurements`;
+const BASE_LATEST_URL = `https://api.openaq.org/v1/latest`;
+const BASE_MEASUREMENTS_URL = `https://api.openaq.org/v1/measurements`;
 
 /**
- * @see https://docs.openaq.org/#api-Measurements-GetMeasurements
+ * @see https://docs.openaq.org/#api-Latest
  */
 export interface OpenAQOptions {
 	/**
@@ -91,14 +98,14 @@ function onError(error: { response?: { data: OpenAQError } }): Error {
 export function fetchByGps(
 	gps: LatLng,
 	options?: OpenAQOptions
-): TE.TaskEither<Error, OpenAQResponse> {
+): TE.TaskEither<Error, OpenAQLatest> {
 	const { latitude, longitude } = gps;
 
 	return fetchAndDecode(
-		`${BASE_URL}?coordinates=${latitude},${longitude}&radius=${ACCURATE_RADIUS}${additionalOptions(
+		`${BASE_LATEST_URL}?coordinates=${latitude},${longitude}&radius=${ACCURATE_RADIUS}${additionalOptions(
 			options
 		)}`,
-		OpenAQResponseCodec,
+		OpenAQLatestCodec,
 		{
 			onError,
 		}
@@ -113,10 +120,12 @@ export function fetchByGps(
 export function fetchByStation(
 	stationId: string,
 	options?: OpenAQOptions
-): TE.TaskEither<Error, OpenAQResponse> {
+): TE.TaskEither<Error, OpenAQMeasurements> {
 	return fetchAndDecode(
-		`${BASE_URL}?location=${stationId}${additionalOptions(options)}`,
-		OpenAQResponseCodec,
+		`${BASE_MEASUREMENTS_URL}?location=${stationId}${additionalOptions(
+			options
+		)}`,
+		OpenAQMeasurementsCodec,
 		{
 			onError,
 		}

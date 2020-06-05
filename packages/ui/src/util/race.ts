@@ -32,7 +32,7 @@ import { pm25ToCigarettes } from './secretSauce';
  *
  * @param normalized - The normalized data to process
  */
-function filterPm25(normalized: Normalized): Api {
+export function filterPm25(normalized: Normalized): Api {
 	const pm25 = normalized.filter(({ parameter }) => parameter === 'pm25');
 
 	if (pm25.length) {
@@ -51,6 +51,25 @@ function filterPm25(normalized: Normalized): Api {
 }
 
 /**
+ * Helper function to fetch & normalize data for 1 provider.
+ */
+async function fetchForProvider<DataByGps, DataByStation, Options>(
+	gps: LatLng,
+	provider: ProviderPromise<DataByGps, DataByStation, Options>,
+	options?: Options
+): Promise<Normalized> {
+	const data = await provider.fetchByGps(gps, options);
+	const normalized = provider.normalizeByGps(data);
+	console.log(
+		`<ApiContext> Got data from ${provider.id}: ${JSON.stringify(
+			normalized
+		)}`
+	);
+
+	return normalized;
+}
+
+/**
  * Options to be passed into the {@link raceApiPromise} function.
  */
 interface RaceApiOptions {
@@ -62,7 +81,7 @@ interface RaceApiOptions {
 
 /**
  * Fetch data parallely from difference data sources, and return the first
- * response.
+ * response as an {@link Api} format.
  *
  * @param gps - The GPS coordinates to fetch data for
  */
@@ -70,31 +89,12 @@ export function raceApiPromise(
 	gps: LatLng,
 	options: RaceApiOptions
 ): Promise<Api> {
-	// Helper function to fetch & normalize data for 1 provider
-	async function fetchForProvider<DataByGps, DataByStation, Options>(
-		provider: ProviderPromise<DataByGps, DataByStation, Options>,
-		options?: Options
-	): Promise<Api> {
-		const data = await provider.fetchByGps(gps, options);
-		const normalized = provider.normalizeByGps(data);
-		console.log(
-			`<ApiContext> Got data from ${provider.id}: ${JSON.stringify(
-				normalized
-			)}`
-		);
-
-		return filterPm25(normalized);
-	}
-
 	// Run these tasks parallely
 	const tasks = [
-		fetchForProvider(aqicn, {
+		fetchForProvider(gps, aqicn, {
 			token: options.aqicnToken,
-		}),
-		fetchForProvider(openaq, {
-			limit: 1,
-			parameter: ['pm25'],
-		}),
+		}).then(filterPm25),
+		fetchForProvider(gps, openaq).then(filterPm25),
 	];
 
 	return promiseAny(tasks).catch((errors: AggregateError) => {
