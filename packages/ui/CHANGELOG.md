@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.30](https://github.com/shootismoke/common/compare/v0.2.29...v0.2.30) (2020-06-09)
+
+
+### Bug Fixes
+
+* **ui:** Fix styles TS typings ([baa7021](https://github.com/shootismoke/common/commit/baa70219ef6d14889c7b26ccc1f87488ad56887b))
+
+
+
+
+
 ## [0.2.29](https://github.com/shootismoke/common/compare/v0.2.28...v0.2.29) (2020-06-09)
 
 
