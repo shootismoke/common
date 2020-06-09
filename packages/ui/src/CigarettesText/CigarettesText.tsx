@@ -36,10 +36,6 @@ const styles = StyleSheet.create({
 	cigarettesCount: {
 		color: theme.primaryColor,
 	},
-	shit: {
-		...theme.shitText,
-		marginTop: theme.spacing.normal,
-	},
 });
 
 /**
@@ -68,7 +64,7 @@ export function CigarettesText(props: CigaretteTextProps): React.ReactElement {
 	if (loading) {
 		// FIXME i18n
 		return (
-			<Text style={styles.shit}>
+			<Text style={theme.shitText}>
 				Loading<Text style={styles.cigarettesCount}>...{'\n'}</Text>
 			</Text>
 		);
@@ -78,7 +74,7 @@ export function CigarettesText(props: CigaretteTextProps): React.ReactElement {
 	const cigarettesRounded = Math.round(cigarettes * 10) / 10;
 
 	return (
-		<Text style={[styles.shit, style]} {...rest}>
+		<Text style={[theme.shitText, style]} {...rest}>
 			{t('home_cigarettes_swear_smoke', {
 				swearWord: t(swearWord),
 				youSmoke: t('home_cigarettes_you_smoke'),
