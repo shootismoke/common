@@ -16,7 +16,13 @@
 
 import LottieView from 'lottie-react-native';
 import React from 'react';
-import { StyleSheet, View, ViewProps, StyleProp } from 'react-native';
+import {
+	StyleSheet,
+	View,
+	ViewProps,
+	StyleProp,
+	ViewStyle,
+} from 'react-native';
 
 import { Frequency } from '../context/Frequency';
 import * as theme from '../util/theme';
@@ -33,7 +39,7 @@ export interface CigarettesBlockProps extends ViewProps, CigarettesProps {
 	/**
 	 * Style of the inner cigarette block.
 	 */
-	cigarettesStyle?: StyleProp<ViewProps>;
+	cigarettesStyle?: StyleProp<ViewStyle>;
 	/**
 	 * Show lottie animation while loading.
 	 */
@@ -42,7 +48,7 @@ export interface CigarettesBlockProps extends ViewProps, CigarettesProps {
 	/**
 	 * Style of the inner cigarette block.
 	 */
-	textStyle?: StyleProp<ViewProps>;
+	textStyle?: StyleProp<ViewStyle>;
 }
 
 const styles = StyleSheet.create({
