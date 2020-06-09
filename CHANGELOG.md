@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.29](https://github.com/shootismoke/common/compare/v0.2.28...v0.2.29) (2020-06-09)
+
+
+### Bug Fixes
+
+* **ui:** Add cigarettes customization ([#194](https://github.com/shootismoke/common/issues/194)) ([3eb4693](https://github.com/shootismoke/common/commit/3eb469301707b7ceef8f50a86c84b6df58690029))
+
+
+
+
+
 ## [0.2.28](https://github.com/shootismoke/common/compare/v0.2.27...v0.2.28) (2020-06-05)
 
 **Note:** Version bump only for package @shootismoke/common
