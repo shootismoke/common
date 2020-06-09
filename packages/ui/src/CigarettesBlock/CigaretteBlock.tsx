@@ -16,7 +16,7 @@
 
 import LottieView from 'lottie-react-native';
 import React from 'react';
-import { StyleSheet, View, ViewProps } from 'react-native';
+import { StyleSheet, View, ViewProps, StyleProp } from 'react-native';
 
 import { Frequency } from '../context/Frequency';
 import * as theme from '../util/theme';
@@ -31,10 +31,18 @@ export interface CigarettesBlockProps extends ViewProps, CigarettesProps {
 	 */
 	frequency?: Frequency;
 	/**
+	 * Style of the inner cigarette block.
+	 */
+	cigarettesStyle?: StyleProp<ViewProps>;
+	/**
 	 * Show lottie animation while loading.
 	 */
 	loading?: boolean;
 	t: Translate;
+	/**
+	 * Style of the inner cigarette block.
+	 */
+	textStyle?: StyleProp<ViewProps>;
 }
 
 const styles = StyleSheet.create({
@@ -45,11 +53,16 @@ const styles = StyleSheet.create({
 	lottie: {
 		backgroundColor: theme.backgroundColor,
 	},
+	shitText: {
+		marginTop: theme.spacing.normal,
+	},
 });
 
-function renderAnimation(): React.ReactElement {
+function renderAnimation(
+	cigarettesStyle: StyleProp<ViewProps>
+): React.ReactElement {
 	return (
-		<View style={styles.animationContainer}>
+		<View style={[styles.animationContainer, cigarettesStyle]}>
 			<LottieView
 				autoPlay
 				autoSize
@@ -65,6 +78,7 @@ export function CigarettesBlock(
 ): React.ReactElement {
 	const {
 		cigarettes,
+		cigarettesStyle,
 		fullCigaretteLength,
 		frequency,
 		loading,
@@ -72,15 +86,15 @@ export function CigarettesBlock(
 		showVerticalAfter,
 		spacingVertical,
 		spacingHorizontal,
-		style,
 		t,
+		textStyle,
 		...rest
 	} = props;
 
 	return (
-		<View style={style} {...rest}>
+		<View {...rest}>
 			{loading ? (
-				renderAnimation()
+				renderAnimation(cigarettesStyle)
 			) : (
 				<Cigarettes
 					cigarettes={cigarettes}
@@ -89,12 +103,14 @@ export function CigarettesBlock(
 					showVerticalAfter={showVerticalAfter}
 					spacingVertical={spacingVertical}
 					spacingHorizontal={spacingHorizontal}
+					style={cigarettesStyle}
 				/>
 			)}
 			<CigarettesText
 				cigarettes={cigarettes}
 				frequency={frequency}
 				loading={loading}
+				style={[styles.shitText, textStyle]}
 				t={t}
 			/>
 		</View>

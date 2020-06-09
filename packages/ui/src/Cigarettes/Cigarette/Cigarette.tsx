@@ -50,11 +50,6 @@ const styles = StyleSheet.create({
 	diagonal: {
 		transform: [{ rotate: '45deg' }, { scale: 1 }],
 	},
-	diagonalContainer: {
-		alignItems: 'center',
-		display: 'flex',
-		justifyContent: 'center',
-	},
 	head: {
 		position: 'absolute',
 		right: 0,
@@ -78,9 +73,13 @@ const MIN_PERCENTAGE = 0.4;
  * Given the full length of a cigarette, and the percentage of the cigarette
  * smoked, get the actual length of the cigarette.
  */
-function getCigaretteActualLength(length: number, percentage: number): number {
+function getCigaretteActualLength(
+	fullCigaretteLength: number,
+	percentage: number
+): number {
 	return Math.ceil(
-		((1 - MIN_PERCENTAGE) * percentage + MIN_PERCENTAGE) * length
+		((1 - MIN_PERCENTAGE) * percentage + MIN_PERCENTAGE) *
+			fullCigaretteLength
 	);
 }
 
@@ -116,8 +115,11 @@ function getContainerStyle(
 	}
 }
 
+/**
+ * Render a horizontal or vertical cigarette.
+ */
 function renderCigarette(
-	orientation: CigaretteOrientation,
+	orientation: 'horizontal' | 'vertical',
 	percentage: number,
 	fullCigaretteLength: number,
 	additionalStyle?: StyleProp<ViewStyle>
@@ -197,21 +199,18 @@ function renderCigarette(
 export function Cigarette(props: CigaretteProps): React.ReactElement {
 	const { orientation, percentage, fullCigaretteLength, style } = props;
 
-	// Assuming cigarette is vertical:
-	const height = fullCigaretteLength;
-	const width = height * CIGARETTE_ASPECT_RATIO;
+	// Only used for diagonal. Assuming cigarette is vertical:
+	const height = getCigaretteActualLength(fullCigaretteLength, percentage);
+	const width = fullCigaretteLength * CIGARETTE_ASPECT_RATIO;
 
+	// For diagonal cigarettes, we render a horizontal cigarette, and rotate it
+	// 45deg.
 	return orientation === 'diagonal' ? (
 		<View
 			style={[
-				styles.diagonalContainer,
 				{
-					height: Math.ceil(
-						(fullCigaretteLength + width) / Math.SQRT2
-					),
-					width: Math.ceil(
-						(fullCigaretteLength + width) / Math.SQRT2
-					),
+					height: (height + width) / Math.SQRT2,
+					width: (height + width) / Math.SQRT2,
 				},
 				style,
 			]}

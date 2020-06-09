@@ -18,6 +18,7 @@ import React from 'react';
 import { StyleSheet, View, ViewProps } from 'react-native';
 
 import { Cigarette } from './Cigarette';
+import { round } from '../util/api';
 
 export interface CigarettesProps extends ViewProps {
 	/**
@@ -61,6 +62,7 @@ export interface CigarettesProps extends ViewProps {
 
 const styles = StyleSheet.create({
 	innerContainer: {
+		alignContent: 'flex-end',
 		alignItems: 'flex-end',
 		flexDirection: 'row',
 		flexWrap: 'wrap',
@@ -81,10 +83,9 @@ export function Cigarettes(props: CigarettesProps): React.ReactElement {
 
 	// We don't show more than `showMaxCigarettes` cigarettes, and we round to
 	// 0.1.
-	const cigarettes =
-		Math.round(
-			Math.max(0.1, Math.min(realCigarettes, showMaxCigarettes)) * 10
-		) / 10;
+	const cigarettes = round(
+		Math.max(0.1, Math.min(realCigarettes, showMaxCigarettes))
+	);
 
 	const count = Math.floor(cigarettes); // The cigarette count, without decimal.
 	const decimal = cigarettes - count;
@@ -96,7 +97,9 @@ export function Cigarettes(props: CigarettesProps): React.ReactElement {
 			? 'horizontal'
 			: 'vertical';
 	const cigaretteStyle =
-		orientation === 'horizontal'
+		orientation === 'diagonal'
+			? undefined
+			: orientation === 'horizontal'
 			? {
 					marginBottom: spacingHorizontal,
 					marginRight: spacingVertical,
