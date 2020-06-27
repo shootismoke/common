@@ -51,7 +51,7 @@ describe('openaq e2e', () => {
 					return T.of(void undefined);
 				},
 				({ results }) => {
-					expect(results.length).toBe(2);
+					expect(results.length).toBeLessThanOrEqual(2);
 					expect(
 						results.some(({ parameter }) => parameter !== 'pm25')
 					).toBe(false);
