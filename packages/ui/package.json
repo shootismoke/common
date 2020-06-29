@@ -27,7 +27,7 @@
 		"haversine": "^1.1.1",
 		"lottie-react-native": "^3.4.0",
 		"p-any": "^3.0.0",
-		"react-native-web": "^0.12.2",
+		"react-native-web": "^0.13.0",
 		"retry-ts": "^0.1.2"
 	},
 	"devDependencies": {
