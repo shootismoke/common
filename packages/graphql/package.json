@@ -1,6 +1,6 @@
 {
 	"name": "@shootismoke/graphql",
-	"version": "0.2.29",
+	"version": "0.2.31",
 	"author": "Amaury Martiny <amaury.martiny@protonmail.com>",
 	"description": "TypeScript types for GraphQL schemas in Sh**t! I Smoke",
 	"files": [
@@ -22,7 +22,7 @@
 		"@graphql-codegen/cli": "^1.8.2",
 		"@graphql-codegen/typescript": "^1.8.2",
 		"@graphql-codegen/typescript-resolvers": "^1.8.2",
-		"@shootismoke/convert": "^0.2.28",
+		"@shootismoke/convert": "^0.2.31",
 		"copyfiles": "^2.1.1",
 		"graphql": "^15.1.0"
 	},
