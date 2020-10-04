@@ -22,6 +22,8 @@ import {
 	TouchableOpacity,
 	TouchableOpacityProps,
 	View,
+	StyleProp,
+	TextStyle,
 } from 'react-native';
 
 import * as theme from '../util/theme';
@@ -30,7 +32,8 @@ export interface ButtonProps extends TouchableOpacityProps {
 	as?: typeof View; // Give a possibility to show the Button as View instead of TouchableOpacity
 	children?: string | React.ReactElement;
 	icon?: string;
-	type?: 'primary' | 'secondary';
+	textStyle?: StyleProp<TextStyle>;
+	type?: 'primary' | 'secondary' | 'full';
 }
 
 const styles = StyleSheet.create({
@@ -43,6 +46,16 @@ const styles = StyleSheet.create({
 	buttonText: {
 		...theme.title,
 		color: theme.primaryColor,
+	},
+	buttonTextFull: {
+		...theme.title,
+		color: 'white',
+	},
+	full: {
+		backgroundColor: theme.primaryColor,
+		borderColor: theme.primaryColor,
+		borderRadius: 24,
+		borderWidth: 2,
 	},
 	icon: {
 		marginRight: theme.spacing.mini,
@@ -61,6 +74,7 @@ export function Button(props: ButtonProps): React.ReactElement {
 		icon,
 		onPress,
 		style,
+		textStyle,
 		type = 'primary',
 		...rest
 	} = props;
@@ -72,7 +86,11 @@ export function Button(props: ButtonProps): React.ReactElement {
 			onPress={onPress}
 			style={[
 				styles.button,
-				type === 'primary' ? styles.primary : undefined,
+				type === 'primary'
+					? styles.primary
+					: type === 'full'
+					? styles.full
+					: undefined,
 				style,
 			]}
 			{...rest}
@@ -87,7 +105,16 @@ export function Button(props: ButtonProps): React.ReactElement {
 			)}
 			{children &&
 				(typeof children === 'string' ? (
-					<Text style={styles.buttonText}>{children}</Text>
+					<Text
+						style={[
+							type === 'full'
+								? styles.buttonTextFull
+								: styles.buttonText,
+							textStyle,
+						]}
+					>
+						{children}
+					</Text>
 				) : (
 					children
 				))}
