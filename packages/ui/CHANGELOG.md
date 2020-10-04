@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.32](https://github.com/shootismoke/common/compare/v0.2.31...v0.2.32) (2020-10-04)
+
+
+### Features
+
+* Add custom styling of inner button ([#296](https://github.com/shootismoke/common/issues/296)) ([ef57322](https://github.com/shootismoke/common/commit/ef573225edbf24b47637ae906e8d45804e171d74))
+
+
+
+
+
 ## [0.2.30](https://github.com/shootismoke/common/compare/v0.2.29...v0.2.30) (2020-06-09)
 
 
