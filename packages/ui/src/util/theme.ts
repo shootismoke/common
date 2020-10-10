@@ -15,14 +15,12 @@
 // along with Sh**t! I Smoke.  If not, see <http://www.gnu.org/licenses/>.
 
 import Constants from 'expo-constants';
-import { Platform, ViewStyle } from 'react-native';
+import { ViewStyle } from 'react-native';
 
 export type ShadowPosition = 'top' | 'bottom';
 
 export const backgroundColor = '#FAFAFC';
-export const gothamBlack = 'gotham-black';
 export const iconBackgroundColor = '#EBE7DD';
-export const gotham = 'gotham-book';
 export const primaryColor = '#F8A65D';
 export const textColor = '#44464A';
 export const secondaryTextColor = '#8B909A';
@@ -32,20 +30,6 @@ export const spacing = {
 	small: 15,
 	normal: 20,
 	big: 36,
-};
-
-/**
- * The Gotham font seems like not 100% aligned vertically in the middle,even
- * when everything's configured in the middle, just remove this and see for
- * youself.
- * FIXME
- */
-const fixTextMargin = {
-	...Platform.select({
-		ios: {
-			marginTop: 3,
-		},
-	}),
 };
 
 /**
@@ -81,7 +65,6 @@ export const fullScreen = {
 
 export const link = {
 	color: primaryColor,
-	fontFamily: gotham,
 	textDecorationLine: 'underline' as const,
 };
 
@@ -90,11 +73,10 @@ export const link = {
  */
 export const shitText = {
 	color: textColor,
-	fontFamily: gothamBlack,
 	fontSize: 31,
+	fontWeight: '800',
 	letterSpacing: -1,
 	lineHeight: 36,
-	...fixTextMargin,
 };
 
 /**
@@ -102,7 +84,6 @@ export const shitText = {
  */
 export const text = {
 	color: secondaryTextColor,
-	fontFamily: gotham,
 	fontSize: 11,
 	letterSpacing: 0.85,
 	lineHeight: 15,
@@ -112,9 +93,8 @@ export const title = {
 	letterSpacing: 3.14,
 	lineHeight: 18,
 	color: textColor,
-	fontFamily: gothamBlack,
 	fontSize: 12,
-	...fixTextMargin,
+	fontWeight: '800',
 };
 
 export const withLetterSpacing = {
