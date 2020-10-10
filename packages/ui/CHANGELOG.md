@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/shootismoke/common/compare/v0.2.32...v0.3.0) (2020-10-10)
+
+
+### Features
+
+* Update icons and remove Gotham ([#304](https://github.com/shootismoke/common/issues/304)) ([d3f804e](https://github.com/shootismoke/common/commit/d3f804e65ed2b796614282bf2fe6e9aa5b05fc9b))
+
+
+
+
+
 ## [0.2.32](https://github.com/shootismoke/common/compare/v0.2.31...v0.2.32) (2020-10-04)
 
 
