@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
 		...theme.text,
 		color: theme.textColor,
 		fontSize: LINE_HEIGHT,
-		fontWeight: '800',
+		fontWeight: '800' as const,
 		lineHeight: LINE_HEIGHT,
 	},
 });

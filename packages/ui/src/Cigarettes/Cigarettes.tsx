@@ -15,7 +15,7 @@
 // along with Sh**t! I Smoke.  If not, see <http://www.gnu.org/licenses/>.
 
 import React from 'react';
-import { StyleSheet, View, ViewProps } from 'react-native';
+import { StyleSheet, View, ViewProps, StyleProp } from 'react-native';
 
 import { Cigarette } from './Cigarette';
 import { round } from '../util/api';
@@ -25,6 +25,10 @@ export interface CigarettesProps extends ViewProps {
 	 * The number of cigarettes to show.
 	 */
 	cigarettes: number;
+	/**
+	 * Additional styling for inner cigarettes
+	 */
+	cigaretteStyle?: StyleProp<ViewProps>;
 	/**
 	 * Length, in pixels, of a full cigarette.
 	 *
@@ -72,6 +76,7 @@ const styles = StyleSheet.create({
 export function Cigarettes(props: CigarettesProps): React.ReactElement {
 	const {
 		cigarettes: realCigarettes,
+		cigaretteStyle,
 		fullCigaretteLength = 90,
 		showMaxCigarettes = 50,
 		showVerticalAfter = 4,
@@ -96,7 +101,7 @@ export function Cigarettes(props: CigarettesProps): React.ReactElement {
 			: cigarettes <= showVerticalAfter
 			? 'horizontal'
 			: 'vertical';
-	const cigaretteStyle =
+	const baseCigaretteStyle =
 		orientation === 'diagonal'
 			? undefined
 			: orientation === 'horizontal'
@@ -119,7 +124,7 @@ export function Cigarettes(props: CigarettesProps): React.ReactElement {
 						orientation={orientation}
 						percentage={1}
 						fullCigaretteLength={fullCigaretteLength}
-						style={cigaretteStyle}
+						style={[baseCigaretteStyle, cigaretteStyle]}
 					/>
 				))}
 			{(cigarettes === 1 || decimal > 0) && (
@@ -127,7 +132,7 @@ export function Cigarettes(props: CigarettesProps): React.ReactElement {
 					orientation={orientation}
 					percentage={decimal || 1}
 					fullCigaretteLength={fullCigaretteLength}
-					style={cigaretteStyle}
+					style={[baseCigaretteStyle, cigaretteStyle]}
 				/>
 			)}
 		</View>

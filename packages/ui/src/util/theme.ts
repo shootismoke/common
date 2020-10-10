@@ -74,7 +74,7 @@ export const link = {
 export const shitText = {
 	color: textColor,
 	fontSize: 31,
-	fontWeight: '800',
+	fontWeight: '800' as const,
 	letterSpacing: -1,
 	lineHeight: 36,
 };
@@ -94,7 +94,7 @@ export const title = {
 	lineHeight: 18,
 	color: textColor,
 	fontSize: 12,
-	fontWeight: '800',
+	fontWeight: '800' as const,
 };
 
 export const withLetterSpacing = {
