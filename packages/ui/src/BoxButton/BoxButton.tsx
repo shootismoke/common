@@ -27,7 +27,7 @@ import * as theme from '../util/theme';
 
 interface BoxButtonProps extends TouchableWithoutFeedbackProps {
 	active?: boolean;
-	children: string;
+	children: string | JSX.Element;
 }
 
 const styles = StyleSheet.create({
@@ -58,14 +58,18 @@ export function BoxButton(props: BoxButtonProps): React.ReactElement {
 	return (
 		<TouchableWithoutFeedback onPress={onPress} {...rest}>
 			<View style={[styles.boxButton, style]}>
-				<Text
-					style={[
-						styles.boxButtonText,
-						active ? styles.activeText : undefined,
-					]}
-				>
-					{children}
-				</Text>
+				{typeof children === 'string' ? (
+					<Text
+						style={[
+							styles.boxButtonText,
+							active ? styles.activeText : undefined,
+						]}
+					>
+						{children}
+					</Text>
+				) : (
+					children
+				)}
 			</View>
 		</TouchableWithoutFeedback>
 	);

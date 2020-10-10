@@ -107,8 +107,8 @@ const styles = StyleSheet.create({
 	value: {
 		...theme.text,
 		color: theme.textColor,
-		fontFamily: theme.gothamBlack,
 		fontSize: LINE_HEIGHT,
+		fontWeight: '800' as const,
 		lineHeight: LINE_HEIGHT,
 	},
 });
