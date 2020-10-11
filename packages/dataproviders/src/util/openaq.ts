@@ -32,6 +32,7 @@ export const pollutantCodec = t.union([
 	// FIXME
 	// Instead of rewriting these, can we use the types and array defined in
 	// import { AllPollutants, Pollutant } from '@shootismoke/convert';
+	t.literal('bc'),
 	t.literal('ch4'),
 	t.literal('co'),
 	t.literal('c6h6'),
