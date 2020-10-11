@@ -36,16 +36,16 @@ The package mainly exports the `convert` function.
 
 The function can convert, for any pollutant:
 
-- from a raw concentration to a supported AQI
-- from a supported AQI to a raw concentration
-- from a supported AQI to another AQI
+-   from a raw concentration to a supported AQI
+-   from a supported AQI to a raw concentration
+-   from a supported AQI to another AQI
 
 Arguments:
 
-- `pollutant: Pollutant`: One of the supported pollutants, [see them](#supported-pollutants).
-- `from: AqiCode | 'raw'`: An AQI code or the `'raw'` string
-- `to: AqiCode | 'raw'`: An AQI code or the `'raw'` string
-- `value: number`: The value to convert
+-   `pollutant: Pollutant`: One of the supported pollutants, [see them](#supported-pollutants).
+-   `from: AqiCode | 'raw'`: An AQI code or the `'raw'` string
+-   `to: AqiCode | 'raw'`: An AQI code or the `'raw'` string
+-   `value: number`: The value to convert
 
 ```typescript
 import { convert, getPollutantMeta } from '@shootismoke/convert';
@@ -63,7 +63,7 @@ console.log(aqi); // 57
 
 ### Supported Pollutants
 
-The pollutants the AQIs apply to are: `'co' | 'c6h6' | 'ox' | 'nh3' | 'nmhc' | 'no' | 'nox' | 'no2' | 'o3' | 'pm10' | 'pm25' | 'so2' | 'trs'`. Check [this file](./src/util/pollutant.ts) to see the metadata for each pollutant (full name, unit...).
+The pollutants the AQIs apply to are: `'bc' | 'co' | 'c6h6' | 'ox' | 'nh3' | 'nmhc' | 'no' | 'nox' | 'no2' | 'o3' | 'pm10' | 'pm25' | 'so2' | 'trs'`. Check [this file](./src/util/pollutant.ts) to see the metadata for each pollutant (full name, unit...).
 
 ### Full Documentation
 
