@@ -75,17 +75,17 @@ export function CigarettesText(props: CigaretteTextProps): React.ReactElement {
 
 	return (
 		<Text style={[theme.shitText, style]} {...rest}>
-			{t('home_cigarettes_swear_smoke', {
+			{t('cigarettes_swear_smoke', {
 				swearWord: t(swearWord),
 				youSmoke: t('home_cigarettes_you_smoke'),
 			})}
 			<Text style={styles.cigarettesCount}>
-				{t('home_cigarettes_count', {
+				{t('cigarettes_count', {
 					count: cigarettesRounded,
 					singularPlural:
 						cigarettesRounded === 1
-							? t('home_cigarettes_cigarette')
-							: t('home_cigarettes_cigarettes'),
+							? t('cigarettes_cigarette')
+							: t('cigarettes_cigarettes'),
 				})}
 			</Text>
 			{frequency}
