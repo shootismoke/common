@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/shootismoke/common/compare/v0.3.0...v0.3.1) (2020-10-11)
+
+
+### Features
+
+* Add Black Carbon pollutant ([#305](https://github.com/shootismoke/common/issues/305)) ([6a21aab](https://github.com/shootismoke/common/commit/6a21aab4f6f3b9174b26e5585b1e708b8c65f3c3))
+
+
+
+
+
 # [0.3.0](https://github.com/shootismoke/common/compare/v0.2.32...v0.3.0) (2020-10-10)
 
 **Note:** Version bump only for package @shootismoke/dataproviders
