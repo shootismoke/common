@@ -16,20 +16,20 @@
 
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, ViewProps } from 'react-native';
+import { WithTranslation, Trans } from 'react-i18next';
 
 import { Frequency } from '../context/Frequency';
 import * as theme from '../util/theme';
 import { swearWords } from './swearWords';
-import { Translate } from '../util/translate';
+// import { Translate } from '../util/translate'; TODO remove soon
 
-export interface CigaretteTextProps extends ViewProps {
+export interface CigaretteTextProps extends ViewProps, WithTranslation {
 	cigarettes: number;
 	/**
 	 * If set, will show the frequency in the text.
 	 */
 	frequency?: Frequency;
 	loading?: boolean;
-	t: Translate;
 }
 
 const styles = StyleSheet.create({
@@ -39,15 +39,14 @@ const styles = StyleSheet.create({
 });
 
 /**
- * Return a random swear word, untranslated.
+ * Return a random swear word translation id.
  *
  * @param cigaretteCount - The cigarette count for which we show the swear
  * word.
  */
-export function getSwearWord(cigaretteCount: number): string {
+export function getSwearWordId(cigaretteCount: number): string {
 	if (cigaretteCount <= 1) return 'home_cigarettes_oh';
 
-	// Return a random swear word, untranslated.
 	return swearWords[Math.floor(Math.random() * swearWords.length)];
 }
 
@@ -56,16 +55,19 @@ export function CigarettesText(props: CigaretteTextProps): React.ReactElement {
 
 	// Decide on a swear word. The effect says that the swear word only changes
 	// when the cigarettes count changes.
-	const [swearWord, setSwearWord] = useState(getSwearWord(cigarettes));
+	const [swearWord, setSwearWord] = useState(getSwearWordId(cigarettes));
 	useEffect(() => {
-		setSwearWord(getSwearWord(cigarettes));
+		setSwearWord(getSwearWordId(cigarettes));
 	}, [cigarettes, t]);
 
 	if (loading) {
 		// FIXME i18n
 		return (
 			<Text style={theme.shitText}>
-				Loading<Text style={styles.cigarettesCount}>...{'\n'}</Text>
+				<Trans i18nKey='loading_cigarettes' t={t}>
+					Loading<Text style={styles.cigarettesCount}>...</Text>
+				</Trans>
+				{'\n'}
 			</Text>
 		);
 	}
@@ -75,20 +77,17 @@ export function CigarettesText(props: CigaretteTextProps): React.ReactElement {
 
 	return (
 		<Text style={[theme.shitText, style]} {...rest}>
-			{t('home_cigarettes_swear_smoke', {
-				swearWord: t(swearWord),
-				youSmoke: t('home_cigarettes_you_smoke'),
-			})}
-			<Text style={styles.cigarettesCount}>
-				{t('home_cigarettes_count', {
-					count: cigarettesRounded,
-					singularPlural:
-						cigarettesRounded === 1
-							? t('home_cigarettes_cigarette')
-							: t('home_cigarettes_cigarettes'),
-				})}
-			</Text>
-			{frequency}
+			<Trans i18nKey='' tOptions={{ context: frequency }} t={t}>
+				{t(swearWord)}! You smoke {'\n'}
+				{/* {t('cigarettes_swear_smoke', {
+					swearWord: t(swearWord),
+					youSmoke: t('cigarettes_you_smoke'),
+				})} */}
+				<Text style={styles.cigarettesCount}>
+					{t('cigarettes_count', { count: cigarettesRounded })}
+				</Text>
+				{frequency}
+			</Trans>
 		</Text>
 	);
 }
