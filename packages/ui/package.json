@@ -33,12 +33,16 @@
 	"devDependencies": {
 		"@types/react": "^16.9.35",
 		"@types/react-native": "^0.63.1",
+		"i18next": "^19.8.2",
 		"react": "^16.13.1",
+		"react-i18next": "^11.7.3",
 		"react-native": "https://github.com/expo/react-native/archive/sdk-37.0.1.tar.gz"
 	},
 	"peerDependencies": {
 		"expo": "^37.0.12",
+		"i18next": "^19.8.2",
 		"react": "^16.13.1",
+		"react-i18next": "^11.7.3",
 		"react-native": "https://github.com/expo/react-native/archive/sdk-37.0.1.tar.gz"
 	}
 }
