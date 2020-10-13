@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/shootismoke/common/compare/v0.3.1...v0.4.0) (2020-10-13)
+
+
+### Bug Fixes
+
+* **ui:** Allow aqicn & openaq options in race ([#314](https://github.com/shootismoke/common/issues/314)) ([6226962](https://github.com/shootismoke/common/commit/62269629559fc3db6fc76cde16a9570cb645d81d))
+
+
+### BREAKING CHANGES
+
+* **ui:** The raceApiPromise function's 2nd argument, RaceApiOptions, now is an object with 2 optional fields: aqicn and openaq, where each field represents the options to pass down to the respective dataprovider.
+
+
+
+
+
 ## [0.3.1](https://github.com/shootismoke/common/compare/v0.3.0...v0.3.1) (2020-10-11)
 
 
