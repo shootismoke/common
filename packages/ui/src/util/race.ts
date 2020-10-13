@@ -20,12 +20,12 @@ import {
 	ProviderPromise,
 } from '@shootismoke/dataproviders';
 import { aqicn, openaq } from '@shootismoke/dataproviders/lib/promise';
+import { OpenAQOptions } from '@shootismoke/dataproviders/lib/providers/openaq/fetchBy';
 import promiseAny, { AggregateError } from 'p-any';
 import debug from 'debug';
 
 import { Api } from './api';
 import { pm25ToCigarettes } from './secretSauce';
-import { OpenAQOptions } from '@shootismoke/dataproviders/lib/providers/openaq/fetchBy';
 
 const l = debug('shootismoke:ui:race');
 
