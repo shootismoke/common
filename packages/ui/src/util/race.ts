@@ -25,6 +25,7 @@ import debug from 'debug';
 
 import { Api } from './api';
 import { pm25ToCigarettes } from './secretSauce';
+import { OpenAQOptions } from '@shootismoke/dataproviders/lib/providers/openaq/fetchBy';
 
 const l = debug('shootismoke:ui:race');
 
@@ -72,10 +73,13 @@ async function fetchForProvider<DataByGps, DataByStation, Options>(
  * Options to be passed into the {@link raceApiPromise} function.
  */
 interface RaceApiOptions {
-	/**
-	 * The token for fetching aqicn data.
-	 */
-	aqicnToken: string;
+	aqicn?: {
+		/**
+		 * The token for fetching aqicn data.
+		 */
+		aqicnToken?: string;
+	};
+	openaq?: OpenAQOptions;
 }
 
 /**
@@ -91,9 +95,9 @@ export function raceApiPromise(
 	// Run these tasks parallely
 	const tasks = [
 		fetchForProvider(gps, aqicn, {
-			token: options.aqicnToken,
+			token: options.aqicn?.aqicnToken,
 		}).then(filterPm25),
-		fetchForProvider(gps, openaq).then(filterPm25),
+		fetchForProvider(gps, openaq, options.openaq).then(filterPm25),
 	];
 
 	return promiseAny(tasks).catch((errors: AggregateError) => {
