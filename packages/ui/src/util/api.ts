@@ -18,13 +18,31 @@ import { Normalized, OpenAQFormat } from '@shootismoke/dataproviders';
 
 /**
  * Api is basically the normalized data from '@shootismoke/dataproviders',
- * where we make sure to add cigarette conversion.
+ * where we make sure to add cigarette conversion. An API is returned only when
+ * there is PM2.5 data (even inacurrate.)
  */
 export interface Api {
+	/**
+	 * All normalized data returned by the provider.
+	 */
 	normalized: Normalized;
+	/**
+	 * Raw data corresponding to the PM2.5 pollutant.
+	 */
 	pm25: OpenAQFormat;
+	/**
+	 * Data used by shootismoke frontends.
+	 */
 	shootismoke: {
+		/**
+		 * The amount of cigarettes converted from the PM2.5 level.
+		 */
 		dailyCigarettes: number;
+		/**
+		 * Whether the pm25 level is accuruate. This happens when the station
+		 * from which the measurement took place is not too far.
+		 */
+		isAccurate: boolean;
 	};
 }
 
