@@ -26,6 +26,7 @@ import debug from 'debug';
 
 import { Api } from './api';
 import { pm25ToCigarettes } from './secretSauce';
+import { isStationTooFar } from './station';
 
 const l = debug('shootismoke:ui:race');
 
@@ -36,8 +37,10 @@ const l = debug('shootismoke:ui:race');
  *
  * @param normalized - The normalized data to process
  */
-export function filterPm25(normalized: Normalized): Api {
+export function createApi(gps: LatLng, normalized: Normalized): Api {
 	const pm25 = normalized.filter(({ parameter }) => parameter === 'pm25');
+
+	// TODO We can sort the pm25 array by closest to gps
 
 	if (pm25.length) {
 		return {
@@ -45,6 +48,7 @@ export function filterPm25(normalized: Normalized): Api {
 			pm25: pm25[0],
 			shootismoke: {
 				dailyCigarettes: pm25ToCigarettes(pm25[0].value),
+				isAccurate: !isStationTooFar(gps, pm25[0]),
 			},
 		};
 	} else {
@@ -96,8 +100,10 @@ export function raceApiPromise(
 	const tasks = [
 		fetchForProvider(gps, aqicn, {
 			token: options.aqicn?.aqicnToken,
-		}).then(filterPm25),
-		fetchForProvider(gps, openaq, options.openaq).then(filterPm25),
+		}).then((normalized) => createApi(gps, normalized)),
+		fetchForProvider(gps, openaq, options.openaq).then((normalized) =>
+			createApi(gps, normalized)
+		),
 	];
 
 	return promiseAny(tasks).catch((errors: AggregateError) => {

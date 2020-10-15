@@ -14,10 +14,8 @@
 // You should have received a copy of the GNU General Public License
 // along with Sh**t! I Smoke.  If not, see <http://www.gnu.org/licenses/>.
 
-import { LatLng } from '@shootismoke/dataproviders';
+import { LatLng, OpenAQFormat } from '@shootismoke/dataproviders';
 import haversine from 'haversine';
-
-import { Api } from './api';
 
 /**
  * We can show distances in these two units.
@@ -69,21 +67,21 @@ export function getCorrectLatLng(
  */
 export function distanceToStation(
 	currentLocation: LatLng,
-	api: Api,
+	pm25Measurement: OpenAQFormat,
 	unit: DistanceUnit = 'km'
 ): number {
 	// This case should be very rare, only happens on OpenAQ that sometimes,
 	// the `coordinates` field isn't returned. This field is actually optional
 	// in the OpenAQ format.
 	// FIXME Return something better than 0?
-	if (!api.pm25.coordinates) {
+	if (!pm25Measurement.coordinates) {
 		return 0;
 	}
 
 	return Math.round(
 		haversine(
 			currentLocation,
-			getCorrectLatLng(currentLocation, api.pm25.coordinates),
+			getCorrectLatLng(currentLocation, pm25Measurement.coordinates),
 			{ unit }
 		)
 	);
@@ -96,6 +94,12 @@ export function distanceToStation(
  * @param currentLocation - The current location of the user.
  * @param api - The api object returned by remote data.
  */
-export function isStationTooFar(currentLocation: LatLng, api: Api): boolean {
-	return distanceToStation(currentLocation, api) > MAX_DISTANCE_TO_STATION;
+export function isStationTooFar(
+	currentLocation: LatLng,
+	pm25Measurement: OpenAQFormat
+): boolean {
+	return (
+		distanceToStation(currentLocation, pm25Measurement) >
+		MAX_DISTANCE_TO_STATION
+	);
 }
