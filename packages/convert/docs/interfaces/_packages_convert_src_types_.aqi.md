@@ -27,7 +27,7 @@ An interface to represent an AQI
 
 • **displayName**: *string*
 
-*Defined in [packages/convert/src/types.ts:8](https://github.com/shootismoke/common/blob/7194251/packages/convert/src/types.ts#L8)*
+*Defined in [packages/convert/src/types.ts:8](https://github.com/shootismoke/common/blob/af8195a/packages/convert/src/types.ts#L8)*
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 • **pollutants**: *[Pollutant](../modules/_packages_convert_src_util_pollutant_.md#pollutant)[]*
 
-*Defined in [packages/convert/src/types.ts:10](https://github.com/shootismoke/common/blob/7194251/packages/convert/src/types.ts#L10)*
+*Defined in [packages/convert/src/types.ts:10](https://github.com/shootismoke/common/blob/af8195a/packages/convert/src/types.ts#L10)*
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 • **range**: *[number, number]*
 
-*Defined in [packages/convert/src/types.ts:11](https://github.com/shootismoke/common/blob/7194251/packages/convert/src/types.ts#L11)*
+*Defined in [packages/convert/src/types.ts:11](https://github.com/shootismoke/common/blob/af8195a/packages/convert/src/types.ts#L11)*
 
 ## Methods
 
@@ -51,7 +51,7 @@ ___
 
 ▸ **fromRaw**(`pollutant`: [Pollutant](../modules/_packages_convert_src_util_pollutant_.md#pollutant), `raw`: number): *number*
 
-*Defined in [packages/convert/src/types.ts:9](https://github.com/shootismoke/common/blob/7194251/packages/convert/src/types.ts#L9)*
+*Defined in [packages/convert/src/types.ts:9](https://github.com/shootismoke/common/blob/af8195a/packages/convert/src/types.ts#L9)*
 
 **Parameters:**
 
@@ -68,7 +68,7 @@ ___
 
 ▸ **toRaw**(`pollutant`: [Pollutant](../modules/_packages_convert_src_util_pollutant_.md#pollutant), `value`: number): *number*
 
-*Defined in [packages/convert/src/types.ts:12](https://github.com/shootismoke/common/blob/7194251/packages/convert/src/types.ts#L12)*
+*Defined in [packages/convert/src/types.ts:12](https://github.com/shootismoke/common/blob/af8195a/packages/convert/src/types.ts#L12)*
 
 **Parameters:**
 

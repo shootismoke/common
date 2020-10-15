@@ -18,6 +18,6 @@
 
 Ƭ **AqiCode**: *keyof typeof aqiCodes*
 
-*Defined in [packages/convert/src/types.ts:18](https://github.com/shootismoke/common/blob/7194251/packages/convert/src/types.ts#L18)*
+*Defined in [packages/convert/src/types.ts:18](https://github.com/shootismoke/common/blob/af8195a/packages/convert/src/types.ts#L18)*
 
 List of AQI codes
