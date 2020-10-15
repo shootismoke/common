@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/shootismoke/common/compare/v0.4.0...v0.5.0) (2020-10-15)
+
+
+### Features
+
+* Add isAccurate field on API ([#315](https://github.com/shootismoke/common/issues/315)) ([e35acd7](https://github.com/shootismoke/common/commit/e35acd7df05bb5b6ec33b4d490c777d39ff69ca0))
+
+
+### BREAKING CHANGES
+
+* `isStationToFar` and `distanceToStation` now take a PM2.5 measurement `OpenAQFormat` object, instead of the Api object.
+
+
+
+
+
 # [0.4.0](https://github.com/shootismoke/common/compare/v0.3.1...v0.4.0) (2020-10-13)
 
 
