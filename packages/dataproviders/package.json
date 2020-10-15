@@ -1,6 +1,6 @@
 {
 	"name": "@shootismoke/dataproviders",
-	"version": "0.5.0",
+	"version": "0.5.1",
 	"author": "Amaury Martiny <amaury.martiny@protonmail.com>",
 	"description": "Helpers to fetch data from air quality data providers",
 	"files": [
@@ -18,7 +18,7 @@
 		"docs": "rimraf docs && typedoc src"
 	},
 	"dependencies": {
-		"@shootismoke/convert": "^0.5.0",
+		"@shootismoke/convert": "^0.5.1",
 		"axios": "^0.20.0",
 		"date-fns": "^2.8.1",
 		"date-fns-tz": "^1.0.9",
