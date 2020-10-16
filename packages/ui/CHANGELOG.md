@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.2](https://github.com/shootismoke/common/compare/v0.5.1...v0.5.2) (2020-10-16)
+
+
+### Bug Fixes
+
+* **ui:** raceApiPromise only return recent results ([#316](https://github.com/shootismoke/common/issues/316)) ([1176a83](https://github.com/shootismoke/common/commit/1176a83e51ed3b701b3ccdf7ee3dc2d490e673c4))
+
+
+
+
+
 ## [0.5.1](https://github.com/shootismoke/common/compare/v0.5.0...v0.5.1) (2020-10-15)
 
 **Note:** Version bump only for package @shootismoke/ui
