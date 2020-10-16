@@ -21,26 +21,39 @@ import {
 } from '@shootismoke/dataproviders';
 import { aqicn, openaq } from '@shootismoke/dataproviders/lib/promise';
 import { OpenAQOptions } from '@shootismoke/dataproviders/lib/providers/openaq/fetchBy';
+import { differenceInHours, subHours } from 'date-fns';
 import promiseAny, { AggregateError } from 'p-any';
 import debug from 'debug';
 
 import { Api } from './api';
 import { pm25ToCigarettes } from './secretSauce';
-import { isStationTooFar } from './station';
+import { distanceToStation, isStationTooFar } from './station';
 
 const l = debug('shootismoke:ui:race');
 
 /**
- * Given some normalized data points, filter out the first one that contains
- * pm25 data. Returns a TaskEither left is none is found, or format the data
- * into the Api interface.
+ * We show pm25 results within this number of hours. More than this, we
+ * consider the results as inaccurate.
+ */
+const NORMALIZED_WITHIN_HOURS = 6;
+
+/**
+ * Given some normalized data points, and the current GPS, construct an API
+ * object.
  *
  * @param normalized - The normalized data to process
  */
-export function createApi(gps: LatLng, normalized: Normalized): Api {
-	const pm25 = normalized.filter(({ parameter }) => parameter === 'pm25');
+function createApi(gps: LatLng, normalized: Normalized): Api {
+	const now = new Date();
+	const pm25 = normalized
+		.filter(({ parameter }) => parameter === 'pm25')
+		.filter(
+			({ date }) =>
+				differenceInHours(new Date(date.utc), now) <=
+				NORMALIZED_WITHIN_HOURS
+		);
 
-	// TODO We can sort the pm25 array by closest to gps
+	// TODO We can sort the pm25 array by closest to `gps`.
 
 	if (pm25.length) {
 		return {
@@ -48,6 +61,7 @@ export function createApi(gps: LatLng, normalized: Normalized): Api {
 			pm25: pm25[0],
 			shootismoke: {
 				dailyCigarettes: pm25ToCigarettes(pm25[0].value),
+				distanceToStation: distanceToStation(gps, pm25[0]),
 				isAccurate: !isStationTooFar(gps, pm25[0]),
 			},
 		};
@@ -92,26 +106,34 @@ interface RaceApiOptions {
  *
  * @param gps - The GPS coordinates to fetch data for
  */
-export function raceApiPromise(
+export async function raceApiPromise(
 	gps: LatLng,
 	options: RaceApiOptions
 ): Promise<Api> {
-	// Run these tasks parallely
-	const tasks = [
-		fetchForProvider(gps, aqicn, {
-			token: options.aqicn?.aqicnToken,
-		}).then((normalized) => createApi(gps, normalized)),
-		fetchForProvider(gps, openaq, options.openaq).then((normalized) =>
-			createApi(gps, normalized)
-		),
-	];
+	try {
+		const now = new Date();
 
-	return promiseAny(tasks).catch((errors: AggregateError) => {
+		// Run these tasks parallely
+		const tasks = [
+			fetchForProvider(gps, aqicn, {
+				token: options.aqicn?.aqicnToken,
+			}),
+			fetchForProvider(gps, openaq, {
+				dateFrom: subHours(now, NORMALIZED_WITHIN_HOURS),
+				...options.openaq,
+			}),
+		];
+
+		// Race the 2 tasks, return the first one.
+		const firstNormalized = await promiseAny(tasks);
+
+		return createApi(gps, firstNormalized);
+	} catch (errors) {
 		// Transform an AggregateError into a JS native Error
-		const aggregateMessage = [...errors]
+		const aggregateMessage = [...(errors as AggregateError)]
 			.map(({ message }, index) => `${index + 1}. ${message}`)
 			.join('. ');
 
 		throw new Error(aggregateMessage);
-	});
+	}
 }

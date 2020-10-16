@@ -39,6 +39,11 @@ export interface Api {
 		 */
 		dailyCigarettes: number;
 		/**
+		 * The distance to the closest station where PM2.5 level can be
+		 * measured.
+		 */
+		distanceToStation: number;
+		/**
 		 * Whether the pm25 level is accuruate. This happens when the station
 		 * from which the measurement took place is not too far.
 		 */
