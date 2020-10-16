@@ -21,7 +21,7 @@
 
 ▸ **checkError**(`__namedParameters`: object): *TaskEither‹Error, [ByStation](_packages_dataproviders_src_providers_aqicn_validation_.md#bystation)›*
 
-*Defined in [packages/dataproviders/src/providers/aqicn/fetchBy.ts:13](https://github.com/shootismoke/common/blob/af8195a/packages/dataproviders/src/providers/aqicn/fetchBy.ts#L13)*
+*Defined in [packages/dataproviders/src/providers/aqicn/fetchBy.ts:13](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/providers/aqicn/fetchBy.ts#L13)*
 
 Check if the response we get from aqicn is `{"status": "error", "msg": "..."}`,
 if yes, return an error.
@@ -44,7 +44,7 @@ ___
 
 ▸ **checkToken**(`options?`: [AqicnOptions](../interfaces/_packages_dataproviders_src_providers_aqicn_fetchby_.aqicnoptions.md)): *TaskEither‹Error, undefined›*
 
-*Defined in [packages/dataproviders/src/providers/aqicn/fetchBy.ts:36](https://github.com/shootismoke/common/blob/af8195a/packages/dataproviders/src/providers/aqicn/fetchBy.ts#L36)*
+*Defined in [packages/dataproviders/src/providers/aqicn/fetchBy.ts:36](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/providers/aqicn/fetchBy.ts#L36)*
 
 Check that a token has been correctly passed
 
@@ -62,7 +62,7 @@ ___
 
 ▸ **fetchByGps**(`gps`: [LatLng](../interfaces/_packages_dataproviders_src_types_.latlng.md), `options`: [AqicnOptions](../interfaces/_packages_dataproviders_src_providers_aqicn_fetchby_.aqicnoptions.md)): *TaskEither‹Error, [ByStation](_packages_dataproviders_src_providers_aqicn_validation_.md#bystation)›*
 
-*Defined in [packages/dataproviders/src/providers/aqicn/fetchBy.ts:48](https://github.com/shootismoke/common/blob/af8195a/packages/dataproviders/src/providers/aqicn/fetchBy.ts#L48)*
+*Defined in [packages/dataproviders/src/providers/aqicn/fetchBy.ts:48](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/providers/aqicn/fetchBy.ts#L48)*
 
 Fetch the closest station to the user's current position
 
@@ -81,7 +81,7 @@ ___
 
 ▸ **fetchByStation**(`stationId`: string, `options`: [AqicnOptions](../interfaces/_packages_dataproviders_src_providers_aqicn_fetchby_.aqicnoptions.md)): *TaskEither‹Error, [ByStation](_packages_dataproviders_src_providers_aqicn_validation_.md#bystation)›*
 
-*Defined in [packages/dataproviders/src/providers/aqicn/fetchBy.ts:71](https://github.com/shootismoke/common/blob/af8195a/packages/dataproviders/src/providers/aqicn/fetchBy.ts#L71)*
+*Defined in [packages/dataproviders/src/providers/aqicn/fetchBy.ts:71](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/providers/aqicn/fetchBy.ts#L71)*
 
 Fetch data by station
 

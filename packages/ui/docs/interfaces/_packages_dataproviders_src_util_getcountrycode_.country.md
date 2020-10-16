@@ -20,7 +20,7 @@
 
 • **code**: *string*
 
-*Defined in [packages/dataproviders/src/util/getCountryCode.ts:7](https://github.com/shootismoke/common/blob/af8195a/packages/dataproviders/src/util/getCountryCode.ts#L7)*
+*Defined in [packages/dataproviders/src/util/getCountryCode.ts:7](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/util/getCountryCode.ts#L7)*
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 • **name**: *string*
 
-*Defined in [packages/dataproviders/src/util/getCountryCode.ts:8](https://github.com/shootismoke/common/blob/af8195a/packages/dataproviders/src/util/getCountryCode.ts#L8)*
+*Defined in [packages/dataproviders/src/util/getCountryCode.ts:8](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/util/getCountryCode.ts#L8)*
 
 ___
 
@@ -36,4 +36,4 @@ ___
 
 • **others**: *string[]*
 
-*Defined in [packages/dataproviders/src/util/getCountryCode.ts:9](https://github.com/shootismoke/common/blob/af8195a/packages/dataproviders/src/util/getCountryCode.ts#L9)*
+*Defined in [packages/dataproviders/src/util/getCountryCode.ts:9](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/util/getCountryCode.ts#L9)*

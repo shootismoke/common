@@ -51,7 +51,7 @@
 	},
 })
 
-*Defined in [packages/ui/src/Button/Button.tsx:39](https://github.com/shootismoke/common/blob/af8195a/packages/ui/src/Button/Button.tsx#L39)*
+*Defined in [packages/ui/src/Button/Button.tsx:39](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/Button/Button.tsx#L39)*
 
 #### Type declaration:
 
@@ -101,7 +101,7 @@
 
 ▸ **Button**(`props`: [ButtonProps](../interfaces/_packages_ui_src_button_button_.buttonprops.md)): *ReactElement*
 
-*Defined in [packages/ui/src/Button/Button.tsx:70](https://github.com/shootismoke/common/blob/af8195a/packages/ui/src/Button/Button.tsx#L70)*
+*Defined in [packages/ui/src/Button/Button.tsx:70](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/Button/Button.tsx#L70)*
 
 **Parameters:**
 

@@ -10,6 +10,7 @@
 
 ### Variables
 
+* [NORMALIZED_WITHIN_HOURS](_packages_ui_src_util_race_.md#const-normalized_within_hours)
 * [l](_packages_ui_src_util_race_.md#const-l)
 
 ### Functions
@@ -20,11 +21,22 @@
 
 ## Variables
 
+### `Const` NORMALIZED_WITHIN_HOURS
+
+• **NORMALIZED_WITHIN_HOURS**: *6* = 6
+
+*Defined in [packages/ui/src/util/race.ts:38](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/util/race.ts#L38)*
+
+We show pm25 results within this number of hours. More than this, we
+consider the results as inaccurate.
+
+___
+
 ### `Const` l
 
 • **l**: *Debugger* = debug('shootismoke:ui:race')
 
-*Defined in [packages/ui/src/util/race.ts:31](https://github.com/shootismoke/common/blob/af8195a/packages/ui/src/util/race.ts#L31)*
+*Defined in [packages/ui/src/util/race.ts:32](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/util/race.ts#L32)*
 
 ## Functions
 
@@ -32,11 +44,10 @@
 
 ▸ **createApi**(`gps`: [LatLng](../interfaces/_packages_dataproviders_src_types_.latlng.md), `normalized`: [Normalized](_packages_dataproviders_src_types_.md#normalized)): *[Api](../interfaces/_packages_ui_src_util_api_.api.md)*
 
-*Defined in [packages/ui/src/util/race.ts:40](https://github.com/shootismoke/common/blob/af8195a/packages/ui/src/util/race.ts#L40)*
+*Defined in [packages/ui/src/util/race.ts:46](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/util/race.ts#L46)*
 
-Given some normalized data points, filter out the first one that contains
-pm25 data. Returns a TaskEither left is none is found, or format the data
-into the Api interface.
+Given some normalized data points, and the current GPS, construct an API
+object.
 
 **Parameters:**
 
@@ -53,7 +64,7 @@ ___
 
 ▸ **fetchForProvider**‹**DataByGps**, **DataByStation**, **Options**›(`gps`: [LatLng](../interfaces/_packages_dataproviders_src_types_.latlng.md), `provider`: [ProviderPromise](../interfaces/_packages_dataproviders_src_types_.providerpromise.md)‹DataByGps, DataByStation, Options›, `options?`: Options): *Promise‹[Normalized](_packages_dataproviders_src_types_.md#normalized)›*
 
-*Defined in [packages/ui/src/util/race.ts:64](https://github.com/shootismoke/common/blob/af8195a/packages/ui/src/util/race.ts#L64)*
+*Defined in [packages/ui/src/util/race.ts:78](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/util/race.ts#L78)*
 
 Helper function to fetch & normalize data for 1 provider.
 
@@ -81,7 +92,7 @@ ___
 
 ▸ **raceApiPromise**(`gps`: [LatLng](../interfaces/_packages_dataproviders_src_types_.latlng.md), `options`: [RaceApiOptions](../interfaces/_packages_ui_src_util_race_.raceapioptions.md)): *Promise‹[Api](../interfaces/_packages_ui_src_util_api_.api.md)›*
 
-*Defined in [packages/ui/src/util/race.ts:95](https://github.com/shootismoke/common/blob/af8195a/packages/ui/src/util/race.ts#L95)*
+*Defined in [packages/ui/src/util/race.ts:109](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/util/race.ts#L109)*
 
 Fetch data parallely from difference data sources, and return the first
 response as an [Api](../interfaces/_packages_ui_src_util_api_.api.md) format.

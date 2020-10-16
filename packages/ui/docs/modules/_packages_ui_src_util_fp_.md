@@ -20,7 +20,7 @@
 
 ▸ **promiseToTE**‹**A**›(`fn`: Lazy‹Promise‹A››): *TaskEither‹Error, A›*
 
-*Defined in [packages/ui/src/util/fp.ts:108](https://github.com/shootismoke/common/blob/af8195a/packages/ui/src/util/fp.ts#L108)*
+*Defined in [packages/ui/src/util/fp.ts:108](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/util/fp.ts#L108)*
 
 Convert a Promise<A> into a TaskEither<Error, A>.
 
@@ -42,7 +42,7 @@ ___
 
 ▸ **retry**‹**A**›(`teFn`: function, `options`: [RetryOptions](../interfaces/_packages_ui_src_util_fp_.retryoptions.md)): *TaskEither‹Error, A›*
 
-*Defined in [packages/ui/src/util/fp.ts:76](https://github.com/shootismoke/common/blob/af8195a/packages/ui/src/util/fp.ts#L76)*
+*Defined in [packages/ui/src/util/fp.ts:76](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/util/fp.ts#L76)*
 
 Retry a TaskEither.
 
@@ -75,7 +75,7 @@ ___
 
 ▸ **sideEffect**‹**E**, **A**›(`fn`: function): *(Anonymous function)*
 
-*Defined in [packages/ui/src/util/fp.ts:47](https://github.com/shootismoke/common/blob/af8195a/packages/ui/src/util/fp.ts#L47)*
+*Defined in [packages/ui/src/util/fp.ts:47](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/util/fp.ts#L47)*
 
 A side-effect in a TaskEither chain: if the TaskEither fails, still return
 a TaskEither.Right

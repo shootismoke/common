@@ -66,7 +66,7 @@
 
 • **0**: *T*
 
-*Defined in [packages/dataproviders/src/types.ts:15](https://github.com/shootismoke/common/blob/af8195a/packages/dataproviders/src/types.ts#L15)*
+*Defined in [packages/dataproviders/src/types.ts:15](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/types.ts#L15)*
 
 ___
 
