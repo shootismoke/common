@@ -34,7 +34,7 @@
 	},
 })
 
-*Defined in [packages/ui/src/CigarettesBlock/CigaretteBlock.tsx:54](https://github.com/shootismoke/common/blob/af8195a/packages/ui/src/CigarettesBlock/CigaretteBlock.tsx#L54)*
+*Defined in [packages/ui/src/CigarettesBlock/CigaretteBlock.tsx:54](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/CigarettesBlock/CigaretteBlock.tsx#L54)*
 
 #### Type declaration:
 
@@ -58,7 +58,7 @@
 
 ▸ **CigarettesBlock**(`props`: [CigarettesBlockProps](../interfaces/_packages_ui_src_cigarettesblock_cigaretteblock_.cigarettesblockprops.md)): *ReactElement*
 
-*Defined in [packages/ui/src/CigarettesBlock/CigaretteBlock.tsx:82](https://github.com/shootismoke/common/blob/af8195a/packages/ui/src/CigarettesBlock/CigaretteBlock.tsx#L82)*
+*Defined in [packages/ui/src/CigarettesBlock/CigaretteBlock.tsx:82](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/CigarettesBlock/CigaretteBlock.tsx#L82)*
 
 **Parameters:**
 
@@ -74,7 +74,7 @@ ___
 
 ▸ **renderAnimation**(`cigarettesStyle`: StyleProp‹ViewProps›): *ReactElement*
 
-*Defined in [packages/ui/src/CigarettesBlock/CigaretteBlock.tsx:67](https://github.com/shootismoke/common/blob/af8195a/packages/ui/src/CigarettesBlock/CigaretteBlock.tsx#L67)*
+*Defined in [packages/ui/src/CigarettesBlock/CigaretteBlock.tsx:67](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/CigarettesBlock/CigaretteBlock.tsx#L67)*
 
 **Parameters:**
 

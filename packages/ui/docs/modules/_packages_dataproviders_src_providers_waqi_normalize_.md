@@ -14,7 +14,7 @@
 
 ▸ **normalize**(`__namedParameters`: object): *E.Either‹Error, [Normalized](_packages_dataproviders_src_types_.md#normalized)›*
 
-*Defined in [packages/dataproviders/src/providers/waqi/normalize.ts:19](https://github.com/shootismoke/common/blob/af8195a/packages/dataproviders/src/providers/waqi/normalize.ts#L19)*
+*Defined in [packages/dataproviders/src/providers/waqi/normalize.ts:19](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/providers/waqi/normalize.ts#L19)*
 
 Normalize aqicn byGps data
 

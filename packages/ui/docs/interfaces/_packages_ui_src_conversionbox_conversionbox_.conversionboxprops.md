@@ -254,7 +254,7 @@ ___
 
 • **cigarettes**? : *1 | 2 | 3*
 
-*Defined in [packages/ui/src/ConversionBox/ConversionBox.tsx:33](https://github.com/shootismoke/common/blob/af8195a/packages/ui/src/ConversionBox/ConversionBox.tsx#L33)*
+*Defined in [packages/ui/src/ConversionBox/ConversionBox.tsx:33](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/ConversionBox/ConversionBox.tsx#L33)*
 
 ___
 
@@ -755,7 +755,7 @@ ___
 
 • **showFootnote**? : *undefined | false | true*
 
-*Defined in [packages/ui/src/ConversionBox/ConversionBox.tsx:34](https://github.com/shootismoke/common/blob/af8195a/packages/ui/src/ConversionBox/ConversionBox.tsx#L34)*
+*Defined in [packages/ui/src/ConversionBox/ConversionBox.tsx:34](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/ConversionBox/ConversionBox.tsx#L34)*
 
 ___
 
@@ -773,7 +773,7 @@ ___
 
 • **t**: *[Translate](../modules/_packages_ui_src_util_translate_.md#translate)*
 
-*Defined in [packages/ui/src/ConversionBox/ConversionBox.tsx:35](https://github.com/shootismoke/common/blob/af8195a/packages/ui/src/ConversionBox/ConversionBox.tsx#L35)*
+*Defined in [packages/ui/src/ConversionBox/ConversionBox.tsx:35](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/ConversionBox/ConversionBox.tsx#L35)*
 
 ___
 

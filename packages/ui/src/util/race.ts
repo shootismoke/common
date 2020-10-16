@@ -106,32 +106,29 @@ interface RaceApiOptions {
  *
  * @param gps - The GPS coordinates to fetch data for
  */
-export async function raceApiPromise(
+export function raceApiPromise(
 	gps: LatLng,
 	options: RaceApiOptions
 ): Promise<Api> {
-	try {
-		const now = new Date();
+	const now = new Date();
 
-		// Run these tasks parallely
-		const tasks = [
-			fetchForProvider(gps, aqicn, {
-				token: options.aqicn?.aqicnToken,
-			}).then((normalized) => createApi(gps, normalized)),
-			fetchForProvider(gps, openaq, {
-				dateFrom: subHours(now, NORMALIZED_WITHIN_HOURS),
-				...options.openaq,
-			}).then((normalized) => createApi(gps, normalized)),
-		];
+	// Run these tasks parallely
+	const tasks = [
+		fetchForProvider(gps, aqicn, {
+			token: options.aqicn?.aqicnToken,
+		}).then((normalized) => createApi(gps, normalized)),
+		fetchForProvider(gps, openaq, {
+			dateFrom: subHours(now, NORMALIZED_WITHIN_HOURS),
+			...options.openaq,
+		}).then((normalized) => createApi(gps, normalized)),
+	];
 
-		// Race the 2 tasks, return the first one.
-		return promiseAny(tasks);
-	} catch (errors) {
+	return promiseAny(tasks).catch((errors: AggregateError) => {
 		// Transform an AggregateError into a JS native Error
-		const aggregateMessage = [...(errors as AggregateError)]
+		const aggregateMessage = [...errors]
 			.map(({ message }, index) => `${index + 1}. ${message}`)
 			.join('. ');
 
 		throw new Error(aggregateMessage);
-	}
+	});
 }

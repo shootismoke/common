@@ -27,7 +27,7 @@
 
 • **BASE_LATEST_URL**: *"https://api.openaq.org/v1/latest"* = `https://api.openaq.org/v1/latest`
 
-*Defined in [packages/dataproviders/src/providers/openaq/fetchBy.ts:15](https://github.com/shootismoke/common/blob/af8195a/packages/dataproviders/src/providers/openaq/fetchBy.ts#L15)*
+*Defined in [packages/dataproviders/src/providers/openaq/fetchBy.ts:15](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/providers/openaq/fetchBy.ts#L15)*
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 • **BASE_MEASUREMENTS_URL**: *"https://api.openaq.org/v1/measurements"* = `https://api.openaq.org/v1/measurements`
 
-*Defined in [packages/dataproviders/src/providers/openaq/fetchBy.ts:16](https://github.com/shootismoke/common/blob/af8195a/packages/dataproviders/src/providers/openaq/fetchBy.ts#L16)*
+*Defined in [packages/dataproviders/src/providers/openaq/fetchBy.ts:16](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/providers/openaq/fetchBy.ts#L16)*
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 • **RESULT_LIMIT**: *10* = 10
 
-*Defined in [packages/dataproviders/src/providers/openaq/fetchBy.ts:14](https://github.com/shootismoke/common/blob/af8195a/packages/dataproviders/src/providers/openaq/fetchBy.ts#L14)*
+*Defined in [packages/dataproviders/src/providers/openaq/fetchBy.ts:14](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/providers/openaq/fetchBy.ts#L14)*
 
 ## Functions
 
@@ -51,7 +51,7 @@ ___
 
 ▸ **additionalOptions**(`options`: [OpenAQOptions](../interfaces/_packages_dataproviders_src_providers_openaq_fetchby_.openaqoptions.md)): *string*
 
-*Defined in [packages/dataproviders/src/providers/openaq/fetchBy.ts:46](https://github.com/shootismoke/common/blob/af8195a/packages/dataproviders/src/providers/openaq/fetchBy.ts#L46)*
+*Defined in [packages/dataproviders/src/providers/openaq/fetchBy.ts:46](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/providers/openaq/fetchBy.ts#L46)*
 
 **Parameters:**
 
@@ -67,7 +67,7 @@ ___
 
 ▸ **fetchByGps**(`gps`: [LatLng](../interfaces/_packages_dataproviders_src_types_.latlng.md), `options?`: [OpenAQOptions](../interfaces/_packages_dataproviders_src_providers_openaq_fetchby_.openaqoptions.md)): *TaskEither‹Error, [OpenAQLatest](_packages_dataproviders_src_providers_openaq_validation_.md#openaqlatest)›*
 
-*Defined in [packages/dataproviders/src/providers/openaq/fetchBy.ts:98](https://github.com/shootismoke/common/blob/af8195a/packages/dataproviders/src/providers/openaq/fetchBy.ts#L98)*
+*Defined in [packages/dataproviders/src/providers/openaq/fetchBy.ts:98](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/providers/openaq/fetchBy.ts#L98)*
 
 Fetch the closest station to the user's current position
 
@@ -86,7 +86,7 @@ ___
 
 ▸ **fetchByStation**(`stationId`: string, `options?`: [OpenAQOptions](../interfaces/_packages_dataproviders_src_providers_openaq_fetchby_.openaqoptions.md)): *TaskEither‹Error, [OpenAQMeasurements](_packages_dataproviders_src_providers_openaq_validation_.md#openaqmeasurements)›*
 
-*Defined in [packages/dataproviders/src/providers/openaq/fetchBy.ts:120](https://github.com/shootismoke/common/blob/af8195a/packages/dataproviders/src/providers/openaq/fetchBy.ts#L120)*
+*Defined in [packages/dataproviders/src/providers/openaq/fetchBy.ts:120](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/providers/openaq/fetchBy.ts#L120)*
 
 Fetch data by station
 
@@ -105,7 +105,7 @@ ___
 
 ▸ **onError**(`error`: object): *Error*
 
-*Defined in [packages/dataproviders/src/providers/openaq/fetchBy.ts:82](https://github.com/shootismoke/common/blob/af8195a/packages/dataproviders/src/providers/openaq/fetchBy.ts#L82)*
+*Defined in [packages/dataproviders/src/providers/openaq/fetchBy.ts:82](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/providers/openaq/fetchBy.ts#L82)*
 
 Handle error from OpenAQ response
 

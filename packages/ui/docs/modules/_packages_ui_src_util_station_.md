@@ -24,7 +24,7 @@
 
 Ƭ **DistanceUnit**: *"km" | "mile"*
 
-*Defined in [packages/ui/src/util/station.ts:23](https://github.com/shootismoke/common/blob/af8195a/packages/ui/src/util/station.ts#L23)*
+*Defined in [packages/ui/src/util/station.ts:23](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/util/station.ts#L23)*
 
 We can show distances in these two units.
 
@@ -34,7 +34,7 @@ We can show distances in these two units.
 
 • **MAX_DISTANCE_TO_STATION**: *10* = 10
 
-*Defined in [packages/ui/src/util/station.ts:28](https://github.com/shootismoke/common/blob/af8195a/packages/ui/src/util/station.ts#L28)*
+*Defined in [packages/ui/src/util/station.ts:28](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/util/station.ts#L28)*
 
 Above this distance (km), we consider the station too far from the user
 
@@ -44,7 +44,7 @@ Above this distance (km), we consider the station too far from the user
 
 ▸ **distanceToStation**(`currentLocation`: [LatLng](../interfaces/_packages_dataproviders_src_types_.latlng.md), `pm25Measurement`: [OpenAQFormat](_packages_dataproviders_src_util_openaq_.md#openaqformat), `unit`: [DistanceUnit](_packages_ui_src_util_station_.md#distanceunit)): *number*
 
-*Defined in [packages/ui/src/util/station.ts:68](https://github.com/shootismoke/common/blob/af8195a/packages/ui/src/util/station.ts#L68)*
+*Defined in [packages/ui/src/util/station.ts:68](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/util/station.ts#L68)*
 
 Get distance from current location to station.
 
@@ -64,7 +64,7 @@ ___
 
 ▸ **getCorrectLatLng**(`currentLocation`: [LatLng](../interfaces/_packages_dataproviders_src_types_.latlng.md), `station`: [LatLng](../interfaces/_packages_dataproviders_src_types_.latlng.md)): *[LatLng](../interfaces/_packages_dataproviders_src_types_.latlng.md)*
 
-*Defined in [packages/ui/src/util/station.ts:41](https://github.com/shootismoke/common/blob/af8195a/packages/ui/src/util/station.ts#L41)*
+*Defined in [packages/ui/src/util/station.ts:41](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/util/station.ts#L41)*
 
 Station given by the AQICN API is fucked up. Sometimes it's [lat, lng],
 sometimes it's [lng, lat].
@@ -86,7 +86,7 @@ ___
 
 ▸ **isStationTooFar**(`currentLocation`: [LatLng](../interfaces/_packages_dataproviders_src_types_.latlng.md), `pm25Measurement`: [OpenAQFormat](_packages_dataproviders_src_util_openaq_.md#openaqformat)): *boolean*
 
-*Defined in [packages/ui/src/util/station.ts:97](https://github.com/shootismoke/common/blob/af8195a/packages/ui/src/util/station.ts#L97)*
+*Defined in [packages/ui/src/util/station.ts:97](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/util/station.ts#L97)*
 
 Returns true if the station is at more than [MAX_DISTANCE_TO_STATION](_packages_ui_src_util_station_.md#const-max_distance_to_station)
 kilometers away from the current location.

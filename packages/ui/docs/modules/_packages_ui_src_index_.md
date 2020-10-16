@@ -25,11 +25,11 @@
 * [MAX_DISTANCE_TO_STATION](_packages_ui_src_index_.md#max_distance_to_station)
 * [ShadowPosition](_packages_ui_src_index_.md#shadowposition)
 * [backgroundColor](_packages_ui_src_index_.md#backgroundcolor)
-* [createApi](_packages_ui_src_index_.md#createapi)
 * [disabledOpacity](_packages_ui_src_index_.md#disabledopacity)
 * [distanceToStation](_packages_ui_src_index_.md#distancetostation)
 * [elevationShadowStyle](_packages_ui_src_index_.md#elevationshadowstyle)
 * [fullScreen](_packages_ui_src_index_.md#fullscreen)
+* [getAQI](_packages_ui_src_index_.md#getaqi)
 * [getCorrectLatLng](_packages_ui_src_index_.md#getcorrectlatlng)
 * [getSwearWord](_packages_ui_src_index_.md#getswearword)
 * [iconBackgroundColor](_packages_ui_src_index_.md#iconbackgroundcolor)
@@ -38,6 +38,7 @@
 * [noop](_packages_ui_src_index_.md#noop)
 * [pm25ToCigarettes](_packages_ui_src_index_.md#pm25tocigarettes)
 * [primaryColor](_packages_ui_src_index_.md#primarycolor)
+* [primaryPollutant](_packages_ui_src_index_.md#primarypollutant)
 * [raceApiPromise](_packages_ui_src_index_.md#raceapipromise)
 * [round](_packages_ui_src_index_.md#round)
 * [secondaryTextColor](_packages_ui_src_index_.md#secondarytextcolor)
@@ -165,12 +166,6 @@ ___
 
 ___
 
-###  createApi
-
-• **createApi**:
-
-___
-
 ###  disabledOpacity
 
 • **disabledOpacity**:
@@ -192,6 +187,12 @@ ___
 ###  fullScreen
 
 • **fullScreen**:
+
+___
+
+###  getAQI
+
+• **getAQI**:
 
 ___
 
@@ -240,6 +241,12 @@ ___
 ###  primaryColor
 
 • **primaryColor**:
+
+___
+
+###  primaryPollutant
+
+• **primaryPollutant**:
 
 ___
 

@@ -260,7 +260,7 @@ ___
 
 • **cigaretteStyle**? : *StyleProp‹ViewProps›*
 
-*Defined in [packages/ui/src/Cigarettes/Cigarettes.tsx:31](https://github.com/shootismoke/common/blob/af8195a/packages/ui/src/Cigarettes/Cigarettes.tsx#L31)*
+*Defined in [packages/ui/src/Cigarettes/Cigarettes.tsx:31](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/Cigarettes/Cigarettes.tsx#L31)*
 
 Additional styling for inner cigarettes
 
@@ -270,7 +270,7 @@ ___
 
 • **cigarettes**: *number*
 
-*Defined in [packages/ui/src/Cigarettes/Cigarettes.tsx:27](https://github.com/shootismoke/common/blob/af8195a/packages/ui/src/Cigarettes/Cigarettes.tsx#L27)*
+*Defined in [packages/ui/src/Cigarettes/Cigarettes.tsx:27](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/Cigarettes/Cigarettes.tsx#L27)*
 
 The number of cigarettes to show.
 
@@ -306,7 +306,7 @@ ___
 
 • **fullCigaretteLength**? : *undefined | number*
 
-*Defined in [packages/ui/src/Cigarettes/Cigarettes.tsx:37](https://github.com/shootismoke/common/blob/af8195a/packages/ui/src/Cigarettes/Cigarettes.tsx#L37)*
+*Defined in [packages/ui/src/Cigarettes/Cigarettes.tsx:37](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/Cigarettes/Cigarettes.tsx#L37)*
 
 Length, in pixels, of a full cigarette.
 
@@ -785,7 +785,7 @@ ___
 
 • **showMaxCigarettes**? : *undefined | number*
 
-*Defined in [packages/ui/src/Cigarettes/Cigarettes.tsx:43](https://github.com/shootismoke/common/blob/af8195a/packages/ui/src/Cigarettes/Cigarettes.tsx#L43)*
+*Defined in [packages/ui/src/Cigarettes/Cigarettes.tsx:43](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/Cigarettes/Cigarettes.tsx#L43)*
 
 The maximum number of cigarettes to show.
 
@@ -797,7 +797,7 @@ ___
 
 • **showVerticalAfter**? : *undefined | number*
 
-*Defined in [packages/ui/src/Cigarettes/Cigarettes.tsx:50](https://github.com/shootismoke/common/blob/af8195a/packages/ui/src/Cigarettes/Cigarettes.tsx#L50)*
+*Defined in [packages/ui/src/Cigarettes/Cigarettes.tsx:50](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/Cigarettes/Cigarettes.tsx#L50)*
 
 For small amount of cigarettes, we display them horizontally. After this
 number, they are displayed vertically.
@@ -810,7 +810,7 @@ ___
 
 • **spacingHorizontal**? : *undefined | number*
 
-*Defined in [packages/ui/src/Cigarettes/Cigarettes.tsx:57](https://github.com/shootismoke/common/blob/af8195a/packages/ui/src/Cigarettes/Cigarettes.tsx#L57)*
+*Defined in [packages/ui/src/Cigarettes/Cigarettes.tsx:57](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/Cigarettes/Cigarettes.tsx#L57)*
 
 Horizontal spacing, in pixels, between the cigarettes, assuming the
 cigarettes are displayed vertically.
@@ -823,7 +823,7 @@ ___
 
 • **spacingVertical**? : *undefined | number*
 
-*Defined in [packages/ui/src/Cigarettes/Cigarettes.tsx:64](https://github.com/shootismoke/common/blob/af8195a/packages/ui/src/Cigarettes/Cigarettes.tsx#L64)*
+*Defined in [packages/ui/src/Cigarettes/Cigarettes.tsx:64](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/Cigarettes/Cigarettes.tsx#L64)*
 
 Vertical spacing, in pixels, between the cigarettes, assuming the
 cigarettes are displayed vertically.

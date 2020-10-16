@@ -36,7 +36,7 @@ An interface representing an air quality data provider (fp-ts version)
 
 • **id**: *string*
 
-*Defined in [packages/dataproviders/src/types.ts:33](https://github.com/shootismoke/common/blob/af8195a/packages/dataproviders/src/types.ts#L33)*
+*Defined in [packages/dataproviders/src/types.ts:33](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/types.ts#L33)*
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 • **name**: *string*
 
-*Defined in [packages/dataproviders/src/types.ts:34](https://github.com/shootismoke/common/blob/af8195a/packages/dataproviders/src/types.ts#L34)*
+*Defined in [packages/dataproviders/src/types.ts:34](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/types.ts#L34)*
 
 ## Methods
 
@@ -52,7 +52,7 @@ ___
 
 ▸ **fetchByGps**(`gps`: [LatLng](_packages_dataproviders_src_types_.latlng.md), `options?`: Options): *TaskEither‹Error, DataByGps›*
 
-*Defined in [packages/dataproviders/src/types.ts:28](https://github.com/shootismoke/common/blob/af8195a/packages/dataproviders/src/types.ts#L28)*
+*Defined in [packages/dataproviders/src/types.ts:28](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/types.ts#L28)*
 
 **Parameters:**
 
@@ -69,7 +69,7 @@ ___
 
 ▸ **fetchByStation**(`stationId`: string, `options?`: Options): *TaskEither‹Error, DataByStation›*
 
-*Defined in [packages/dataproviders/src/types.ts:29](https://github.com/shootismoke/common/blob/af8195a/packages/dataproviders/src/types.ts#L29)*
+*Defined in [packages/dataproviders/src/types.ts:29](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/types.ts#L29)*
 
 **Parameters:**
 
@@ -86,7 +86,7 @@ ___
 
 ▸ **normalizeByGps**(`d`: DataByGps): *E.Either‹Error, [Normalized](../modules/_packages_dataproviders_src_types_.md#normalized)›*
 
-*Defined in [packages/dataproviders/src/types.ts:35](https://github.com/shootismoke/common/blob/af8195a/packages/dataproviders/src/types.ts#L35)*
+*Defined in [packages/dataproviders/src/types.ts:35](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/types.ts#L35)*
 
 **Parameters:**
 
@@ -102,7 +102,7 @@ ___
 
 ▸ **normalizeByStation**(`d`: DataByStation): *E.Either‹Error, [Normalized](../modules/_packages_dataproviders_src_types_.md#normalized)›*
 
-*Defined in [packages/dataproviders/src/types.ts:36](https://github.com/shootismoke/common/blob/af8195a/packages/dataproviders/src/types.ts#L36)*
+*Defined in [packages/dataproviders/src/types.ts:36](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/types.ts#L36)*
 
 **Parameters:**
 

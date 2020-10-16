@@ -24,7 +24,7 @@ there is PM2.5 data (even inacurrate.)
 
 • **normalized**: *[Normalized](../modules/_packages_dataproviders_src_types_.md#normalized)*
 
-*Defined in [packages/ui/src/util/api.ts:28](https://github.com/shootismoke/common/blob/af8195a/packages/ui/src/util/api.ts#L28)*
+*Defined in [packages/ui/src/util/api.ts:28](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/util/api.ts#L28)*
 
 All normalized data returned by the provider.
 
@@ -34,7 +34,7 @@ ___
 
 • **pm25**: *[OpenAQFormat](../modules/_packages_dataproviders_src_util_openaq_.md#openaqformat)*
 
-*Defined in [packages/ui/src/util/api.ts:32](https://github.com/shootismoke/common/blob/af8195a/packages/ui/src/util/api.ts#L32)*
+*Defined in [packages/ui/src/util/api.ts:32](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/util/api.ts#L32)*
 
 Raw data corresponding to the PM2.5 pollutant.
 
@@ -44,12 +44,14 @@ ___
 
 • **shootismoke**: *object*
 
-*Defined in [packages/ui/src/util/api.ts:36](https://github.com/shootismoke/common/blob/af8195a/packages/ui/src/util/api.ts#L36)*
+*Defined in [packages/ui/src/util/api.ts:36](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/util/api.ts#L36)*
 
 Data used by shootismoke frontends.
 
 #### Type declaration:
 
 * **dailyCigarettes**: *number*
+
+* **distanceToStation**: *number*
 
 * **isAccurate**: *boolean*

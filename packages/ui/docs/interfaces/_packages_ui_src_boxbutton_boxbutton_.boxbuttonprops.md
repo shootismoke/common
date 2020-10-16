@@ -235,7 +235,7 @@ ___
 
 • **active**? : *undefined | false | true*
 
-*Defined in [packages/ui/src/BoxButton/BoxButton.tsx:29](https://github.com/shootismoke/common/blob/af8195a/packages/ui/src/BoxButton/BoxButton.tsx#L29)*
+*Defined in [packages/ui/src/BoxButton/BoxButton.tsx:29](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/BoxButton/BoxButton.tsx#L29)*
 
 ___
 
@@ -243,7 +243,7 @@ ___
 
 • **children**: *string | Element*
 
-*Defined in [packages/ui/src/BoxButton/BoxButton.tsx:30](https://github.com/shootismoke/common/blob/af8195a/packages/ui/src/BoxButton/BoxButton.tsx#L30)*
+*Defined in [packages/ui/src/BoxButton/BoxButton.tsx:30](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/BoxButton/BoxButton.tsx#L30)*
 
 ___
 
