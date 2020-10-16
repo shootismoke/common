@@ -49,7 +49,7 @@ function createApi(gps: LatLng, normalized: Normalized): Api {
 		.filter(({ parameter }) => parameter === 'pm25')
 		.filter(
 			({ date }) =>
-				differenceInHours(new Date(date.utc), now) <=
+				Math.abs(differenceInHours(new Date(date.utc), now)) <=
 				NORMALIZED_WITHIN_HOURS
 		);
 
