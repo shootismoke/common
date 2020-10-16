@@ -1,6 +1,6 @@
 {
 	"name": "@shootismoke/ui",
-	"version": "0.5.2",
+	"version": "0.5.3",
 	"author": "Amaury Martiny <amaury.martiny@protonmail.com>",
 	"description": "UI components shared across Web & React Native projects",
 	"files": [
