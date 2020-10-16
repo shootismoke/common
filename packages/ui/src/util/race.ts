@@ -49,7 +49,7 @@ function createApi(gps: LatLng, normalized: Normalized): Api {
 		.filter(({ parameter }) => parameter === 'pm25')
 		.filter(
 			({ date }) =>
-				differenceInHours(new Date(date.utc), now) <=
+				Math.abs(differenceInHours(new Date(date.utc), now)) <=
 				NORMALIZED_WITHIN_HOURS
 		);
 
@@ -117,17 +117,15 @@ export async function raceApiPromise(
 		const tasks = [
 			fetchForProvider(gps, aqicn, {
 				token: options.aqicn?.aqicnToken,
-			}),
+			}).then((normalized) => createApi(gps, normalized)),
 			fetchForProvider(gps, openaq, {
 				dateFrom: subHours(now, NORMALIZED_WITHIN_HOURS),
 				...options.openaq,
-			}),
+			}).then((normalized) => createApi(gps, normalized)),
 		];
 
 		// Race the 2 tasks, return the first one.
-		const firstNormalized = await promiseAny(tasks);
-
-		return createApi(gps, firstNormalized);
+		return promiseAny(tasks);
 	} catch (errors) {
 		// Transform an AggregateError into a JS native Error
 		const aggregateMessage = [...(errors as AggregateError)]
