@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.5](https://github.com/shootismoke/common/compare/v0.5.4...v0.5.5) (2020-10-17)
+
+
+### Bug Fixes
+
+* **ui:** Filter out old data in Normalized ([#319](https://github.com/shootismoke/common/issues/319)) ([385fac3](https://github.com/shootismoke/common/commit/385fac33f83b18760299ad0b45bd2a5ab5c41e05))
+
+
+
+
+
 ## [0.5.4](https://github.com/shootismoke/common/compare/v0.5.3...v0.5.4) (2020-10-16)
 
 
