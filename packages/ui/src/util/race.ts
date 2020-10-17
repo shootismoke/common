@@ -20,31 +20,52 @@ import {
 	ProviderPromise,
 } from '@shootismoke/dataproviders';
 import { aqicn, openaq } from '@shootismoke/dataproviders/lib/promise';
+import { AqicnOptions } from '@shootismoke/dataproviders/lib/providers/aqicn/fetchBy';
 import { OpenAQOptions } from '@shootismoke/dataproviders/lib/providers/openaq/fetchBy';
+import { differenceInHours, subHours } from 'date-fns';
 import promiseAny, { AggregateError } from 'p-any';
 import debug from 'debug';
 
 import { Api } from './api';
 import { pm25ToCigarettes } from './secretSauce';
+import { distanceToStation, isStationTooFar } from './station';
 
 const l = debug('shootismoke:ui:race');
 
 /**
- * Given some normalized data points, filter out the first one that contains
- * pm25 data. Returns a TaskEither left is none is found, or format the data
- * into the Api interface.
+ * We show pm25 results within this number of hours. More than this, we
+ * consider the results as inaccurate.
+ */
+const NORMALIZED_WITHIN_HOURS = 6;
+
+/**
+ * Given some normalized data points, and the current GPS, construct an API
+ * object with sanitized data.
  *
  * @param normalized - The normalized data to process
  */
-export function filterPm25(normalized: Normalized): Api {
-	const pm25 = normalized.filter(({ parameter }) => parameter === 'pm25');
+function createApi(gps: LatLng, normalized: Normalized): Api {
+	const now = new Date();
+	// From the normalized data, remove the entries that are too old.
+	const sanitizedNormalized = normalized.filter(
+		({ date }) =>
+			Math.abs(differenceInHours(new Date(date.utc), now)) <=
+			NORMALIZED_WITHIN_HOURS
+	);
+	const pm25 = sanitizedNormalized.filter(
+		({ parameter }) => parameter === 'pm25'
+	);
+
+	// TODO We can sort the pm25 array by closest to `gps`.
 
 	if (pm25.length) {
 		return {
-			normalized,
+			normalized: sanitizedNormalized as Normalized, // We're sure there's at least one item in `sanitizedNormalized`.
 			pm25: pm25[0],
 			shootismoke: {
 				dailyCigarettes: pm25ToCigarettes(pm25[0].value),
+				distanceToStation: distanceToStation(gps, pm25[0]),
+				isAccurate: !isStationTooFar(gps, pm25[0]),
 			},
 		};
 	} else {
@@ -73,12 +94,7 @@ async function fetchForProvider<DataByGps, DataByStation, Options>(
  * Options to be passed into the {@link raceApiPromise} function.
  */
 interface RaceApiOptions {
-	aqicn?: {
-		/**
-		 * The token for fetching aqicn data.
-		 */
-		aqicnToken?: string;
-	};
+	aqicn?: AqicnOptions;
 	openaq?: OpenAQOptions;
 }
 
@@ -92,12 +108,17 @@ export function raceApiPromise(
 	gps: LatLng,
 	options: RaceApiOptions
 ): Promise<Api> {
+	const now = new Date();
+
 	// Run these tasks parallely
 	const tasks = [
-		fetchForProvider(gps, aqicn, {
-			token: options.aqicn?.aqicnToken,
-		}).then(filterPm25),
-		fetchForProvider(gps, openaq, options.openaq).then(filterPm25),
+		fetchForProvider(gps, aqicn, options.aqicn).then((normalized) =>
+			createApi(gps, normalized)
+		),
+		fetchForProvider(gps, openaq, {
+			dateFrom: subHours(now, NORMALIZED_WITHIN_HOURS),
+			...options.openaq,
+		}).then((normalized) => createApi(gps, normalized)),
 	];
 
 	return promiseAny(tasks).catch((errors: AggregateError) => {

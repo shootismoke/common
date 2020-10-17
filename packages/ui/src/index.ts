@@ -23,6 +23,7 @@ export * from './context';
 export * from './ConversionBox';
 export * from './util/api';
 export * from './util/noop';
+export * from './util/primaryPollutant';
 export * from './util/race';
 export * from './util/secretSauce';
 export * from './util/station';

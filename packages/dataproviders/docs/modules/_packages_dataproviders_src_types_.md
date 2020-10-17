@@ -20,7 +20,7 @@
 
 Ƭ **Normalized**: *ArrayOneOrMore‹[OpenAQFormat](_packages_dataproviders_src_util_openaq_.md#openaqformat)›*
 
-*Defined in [packages/dataproviders/src/types.ts:22](https://github.com/shootismoke/common/blob/7194251/packages/dataproviders/src/types.ts#L22)*
+*Defined in [packages/dataproviders/src/types.ts:22](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/types.ts#L22)*
 
 Normalized response from all data providers. We guarantee that normalized
 results have at least one element, in the openaq-data-format

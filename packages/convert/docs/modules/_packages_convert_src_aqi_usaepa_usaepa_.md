@@ -14,7 +14,7 @@
 
 ### ▪ **usaEpa**: *object*
 
-*Defined in [packages/convert/src/aqi/usaEpa/usaEpa.ts:9](https://github.com/shootismoke/common/blob/7194251/packages/convert/src/aqi/usaEpa/usaEpa.ts#L9)*
+*Defined in [packages/convert/src/aqi/usaEpa/usaEpa.ts:9](https://github.com/shootismoke/common/blob/72777b1/packages/convert/src/aqi/usaEpa/usaEpa.ts#L9)*
 
 AQI (US)
 
@@ -24,4 +24,4 @@ AQI (US)
 
 • **displayName**: *string* = "AQI (US)"
 
-*Defined in [packages/convert/src/aqi/usaEpa/usaEpa.ts:10](https://github.com/shootismoke/common/blob/7194251/packages/convert/src/aqi/usaEpa/usaEpa.ts#L10)*
+*Defined in [packages/convert/src/aqi/usaEpa/usaEpa.ts:10](https://github.com/shootismoke/common/blob/72777b1/packages/convert/src/aqi/usaEpa/usaEpa.ts#L10)*
