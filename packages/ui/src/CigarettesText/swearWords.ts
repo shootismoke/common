@@ -15,7 +15,7 @@
 // along with Sh**t! I Smoke.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Swear words, untranslated.
+ * TODO remove later
  */
 export const swearWords = [
 	'swear_word_shoot',
