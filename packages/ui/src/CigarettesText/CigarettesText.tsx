@@ -43,18 +43,23 @@ const styles = StyleSheet.create({
  * word.
  * @param maxLevel - The cigarette count for which we show the swear
  */
-export function getSwearWordId(cigaretteCount: number, maxLevel: number = 7): number {
+export function getSwearWordId(cigaretteCount: number, maxLevel = 7): number {
 	if (cigaretteCount <= 1) return 0;
 	const minLevel = 1;
-	const limRange = Math.random() * cigaretteCount * (maxLevel - minLevel) + minLevel;
+	const limRange =
+		Math.random() * cigaretteCount * (maxLevel - minLevel) + minLevel;
 	return Math.floor(limRange);
 }
 
 export function CigarettesText(props: CigaretteTextProps): React.ReactElement {
 	const {
 		cigarettes,
-		frequency, loading, style,
-		i18n, t, tReady,
+		frequency,
+		loading,
+		style,
+		i18n,
+		t,
+		tReady,
 		...rest
 	} = props;
 
@@ -68,7 +73,7 @@ export function CigarettesText(props: CigaretteTextProps): React.ReactElement {
 	if (loading) {
 		return (
 			<Text style={theme.shitText}>
-				<Trans i18nKey='loading_cigarettes' t={t}>
+				<Trans i18nKey="loading_cigarettes" t={t}>
 					Loading<Text style={styles.cigarettesCount}>...</Text>
 				</Trans>
 				{'\n'}
@@ -82,13 +87,18 @@ export function CigarettesText(props: CigaretteTextProps): React.ReactElement {
 	return (
 		<Text style={[theme.shitText, style]} {...rest}>
 			<Trans
-				i18nKey='cigarette_report'
+				i18nKey="cigarette_report"
 				tOptions={{ context: frequency }}
 				values={{ id: swearWordId, cig_count: cigarettesRounded }}
 				t={t}
 			>
-				$t(swear_word, {'{'} "context": "{'{{id}}'}" {'}'})! You smoke {'\n'}
-				<Text style={styles.cigarettesCount}>$t(cigarette_count, {'{'} "count": "{'{{cig_count}}'}" {'}'})</Text> {{ frequency }}.
+				$t(swear_word, {'{'} "context": "{'{{id}}'}" {'}'})! You smoke{' '}
+				{'\n'}
+				<Text style={styles.cigarettesCount}>
+					$t(cigarette_count, {'{'} "count": "{'{{cig_count}}'}" {'}'}
+					)
+				</Text>{' '}
+				{{ frequency }}.
 			</Trans>
 		</Text>
 	);

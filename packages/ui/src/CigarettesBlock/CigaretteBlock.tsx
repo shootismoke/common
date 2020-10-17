@@ -31,7 +31,10 @@ import { Cigarettes, CigarettesProps } from '../Cigarettes';
 import loadingAnimation from './animation.json';
 import { CigarettesText } from '../CigarettesText';
 
-export interface CigarettesBlockProps extends ViewProps, CigarettesProps, WithTranslation {
+export interface CigarettesBlockProps
+	extends ViewProps,
+		CigarettesProps,
+		WithTranslation {
 	/**
 	 * If set, will show the frequency in the text.
 	 */
@@ -92,7 +95,9 @@ export function CigarettesBlock(
 		spacingVertical,
 		spacingHorizontal,
 		textStyle,
-		i18n, t, tReady,
+		i18n,
+		t,
+		tReady,
 		...rest
 	} = props;
 
@@ -101,16 +106,16 @@ export function CigarettesBlock(
 			{loading ? (
 				renderAnimation(cigarettesStyle)
 			) : (
-					<Cigarettes
-						cigarettes={cigarettes}
-						fullCigaretteLength={fullCigaretteLength}
-						showMaxCigarettes={showMaxCigarettes}
-						showVerticalAfter={showVerticalAfter}
-						spacingVertical={spacingVertical}
-						spacingHorizontal={spacingHorizontal}
-						style={cigarettesStyle}
-					/>
-				)}
+				<Cigarettes
+					cigarettes={cigarettes}
+					fullCigaretteLength={fullCigaretteLength}
+					showMaxCigarettes={showMaxCigarettes}
+					showVerticalAfter={showVerticalAfter}
+					spacingVertical={spacingVertical}
+					spacingHorizontal={spacingHorizontal}
+					style={cigarettesStyle}
+				/>
+			)}
 			<CigarettesText
 				cigarettes={cigarettes}
 				frequency={frequency}

@@ -136,9 +136,7 @@ export function ConversionBox(props: ConversionBoxProps): React.ReactElement {
 				</View>
 			</View>
 			{showFootnote && (
-				<Text style={styles.boxDescription}>
-					{t('box_footnote')}
-				</Text>
+				<Text style={styles.boxDescription}>{t('box_footnote')}</Text>
 			)}
 		</View>
 	);
