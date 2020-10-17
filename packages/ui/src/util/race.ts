@@ -20,6 +20,7 @@ import {
 	ProviderPromise,
 } from '@shootismoke/dataproviders';
 import { aqicn, openaq } from '@shootismoke/dataproviders/lib/promise';
+import { AqicnOptions } from '@shootismoke/dataproviders/lib/providers/aqicn/fetchBy';
 import { OpenAQOptions } from '@shootismoke/dataproviders/lib/providers/openaq/fetchBy';
 import { differenceInHours, subHours } from 'date-fns';
 import promiseAny, { AggregateError } from 'p-any';
@@ -39,25 +40,27 @@ const NORMALIZED_WITHIN_HOURS = 6;
 
 /**
  * Given some normalized data points, and the current GPS, construct an API
- * object.
+ * object with sanitized data.
  *
  * @param normalized - The normalized data to process
  */
 function createApi(gps: LatLng, normalized: Normalized): Api {
 	const now = new Date();
-	const pm25 = normalized
-		.filter(({ parameter }) => parameter === 'pm25')
-		.filter(
-			({ date }) =>
-				Math.abs(differenceInHours(new Date(date.utc), now)) <=
-				NORMALIZED_WITHIN_HOURS
-		);
+	// From the normalized data, remove the entries that are too old.
+	const sanitizedNormalized = normalized.filter(
+		({ date }) =>
+			Math.abs(differenceInHours(new Date(date.utc), now)) <=
+			NORMALIZED_WITHIN_HOURS
+	);
+	const pm25 = sanitizedNormalized.filter(
+		({ parameter }) => parameter === 'pm25'
+	);
 
 	// TODO We can sort the pm25 array by closest to `gps`.
 
 	if (pm25.length) {
 		return {
-			normalized,
+			normalized: sanitizedNormalized as Normalized, // We're sure there's at least one item in `sanitizedNormalized`.
 			pm25: pm25[0],
 			shootismoke: {
 				dailyCigarettes: pm25ToCigarettes(pm25[0].value),
@@ -91,12 +94,7 @@ async function fetchForProvider<DataByGps, DataByStation, Options>(
  * Options to be passed into the {@link raceApiPromise} function.
  */
 interface RaceApiOptions {
-	aqicn?: {
-		/**
-		 * The token for fetching aqicn data.
-		 */
-		aqicnToken?: string;
-	};
+	aqicn?: AqicnOptions;
 	openaq?: OpenAQOptions;
 }
 
@@ -114,9 +112,9 @@ export function raceApiPromise(
 
 	// Run these tasks parallely
 	const tasks = [
-		fetchForProvider(gps, aqicn, {
-			token: options.aqicn?.aqicnToken,
-		}).then((normalized) => createApi(gps, normalized)),
+		fetchForProvider(gps, aqicn, options.aqicn).then((normalized) =>
+			createApi(gps, normalized)
+		),
 		fetchForProvider(gps, openaq, {
 			dateFrom: subHours(now, NORMALIZED_WITHIN_HOURS),
 			...options.openaq,
