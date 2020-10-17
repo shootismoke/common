@@ -3,6 +3,90 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.5](https://github.com/shootismoke/common/compare/v0.5.4...v0.5.5) (2020-10-17)
+
+
+### Bug Fixes
+
+* **ui:** Filter out old data in Normalized ([#319](https://github.com/shootismoke/common/issues/319)) ([385fac3](https://github.com/shootismoke/common/commit/385fac33f83b18760299ad0b45bd2a5ab5c41e05))
+
+
+
+
+
+## [0.5.4](https://github.com/shootismoke/common/compare/v0.5.3...v0.5.4) (2020-10-16)
+
+
+### Bug Fixes
+
+* **ui:** Use promise in raceApi ([#318](https://github.com/shootismoke/common/issues/318)) ([50e6bfc](https://github.com/shootismoke/common/commit/50e6bfcaf67502b1f0c28b2bca3b519aa21c04ca))
+
+
+
+
+
+## [0.5.3](https://github.com/shootismoke/common/compare/v0.5.2...v0.5.3) (2020-10-16)
+
+
+### Bug Fixes
+
+* **ui:** Difference in hours absolute should be smaller than 6 ([#317](https://github.com/shootismoke/common/issues/317)) ([f09b36f](https://github.com/shootismoke/common/commit/f09b36fdee3704ce298ea45656628b8bec6ecc3b))
+
+
+
+
+
+## [0.5.2](https://github.com/shootismoke/common/compare/v0.5.1...v0.5.2) (2020-10-16)
+
+
+### Bug Fixes
+
+* **ui:** raceApiPromise only return recent results ([#316](https://github.com/shootismoke/common/issues/316)) ([1176a83](https://github.com/shootismoke/common/commit/1176a83e51ed3b701b3ccdf7ee3dc2d490e673c4))
+
+
+
+
+
+## [0.5.1](https://github.com/shootismoke/common/compare/v0.5.0...v0.5.1) (2020-10-15)
+
+**Note:** Version bump only for package @shootismoke/ui
+
+
+
+
+
+# [0.5.0](https://github.com/shootismoke/common/compare/v0.4.0...v0.5.0) (2020-10-15)
+
+
+### Features
+
+* Add isAccurate field on API ([#315](https://github.com/shootismoke/common/issues/315)) ([e35acd7](https://github.com/shootismoke/common/commit/e35acd7df05bb5b6ec33b4d490c777d39ff69ca0))
+
+
+### BREAKING CHANGES
+
+* `isStationToFar` and `distanceToStation` now take a PM2.5 measurement `OpenAQFormat` object, instead of the Api object.
+
+
+
+
+
+# [0.4.0](https://github.com/shootismoke/common/compare/v0.3.1...v0.4.0) (2020-10-13)
+
+
+### Bug Fixes
+
+* **ui:** Allow aqicn & openaq options in race ([#314](https://github.com/shootismoke/common/issues/314)) ([6226962](https://github.com/shootismoke/common/commit/62269629559fc3db6fc76cde16a9570cb645d81d))
+
+
+### BREAKING CHANGES
+
+* **ui:** The raceApiPromise function's 2nd argument, RaceApiOptions, now is an object with 2 optional fields: aqicn and openaq, where each field represents the options to pass down to the respective dataprovider.
+
+
+
+
+
 ## [0.3.1](https://github.com/shootismoke/common/compare/v0.3.0...v0.3.1) (2020-10-11)
 
 **Note:** Version bump only for package @shootismoke/ui
