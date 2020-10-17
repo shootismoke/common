@@ -20,8 +20,6 @@ import { WithTranslation, Trans } from 'react-i18next';
 
 import { Frequency } from '../context/Frequency';
 import * as theme from '../util/theme';
-import { swearWords } from './swearWords';
-// import { Translate } from '../util/translate'; TODO remove soon
 
 export interface CigaretteTextProps extends ViewProps, WithTranslation {
 	cigarettes: number;
@@ -43,25 +41,31 @@ const styles = StyleSheet.create({
  *
  * @param cigaretteCount - The cigarette count for which we show the swear
  * word.
+ * @param maxLevel - The cigarette count for which we show the swear
  */
-export function getSwearWordId(cigaretteCount: number): string {
-	if (cigaretteCount <= 1) return 'home_cigarettes_oh';
-
-	return swearWords[Math.floor(Math.random() * swearWords.length)];
+export function getSwearWordId(cigaretteCount: number, maxLevel: number = 7): number {
+	if (cigaretteCount <= 1) return 0;
+	const minLevel = 1;
+	const limRange = Math.random() * cigaretteCount * (maxLevel - minLevel) + minLevel;
+	return Math.floor(limRange);
 }
 
 export function CigarettesText(props: CigaretteTextProps): React.ReactElement {
-	const { cigarettes, frequency, loading, style, t, ...rest } = props;
+	const {
+		cigarettes,
+		frequency, loading, style,
+		i18n, t, tReady,
+		...rest
+	} = props;
 
 	// Decide on a swear word. The effect says that the swear word only changes
 	// when the cigarettes count changes.
-	const [swearWord, setSwearWord] = useState(getSwearWordId(cigarettes));
+	const [swearWordId, setSwearWordId] = useState(getSwearWordId(cigarettes));
 	useEffect(() => {
-		setSwearWord(getSwearWordId(cigarettes));
+		setSwearWordId(getSwearWordId(cigarettes));
 	}, [cigarettes, t]);
 
 	if (loading) {
-		// FIXME i18n
 		return (
 			<Text style={theme.shitText}>
 				<Trans i18nKey='loading_cigarettes' t={t}>
@@ -77,17 +81,35 @@ export function CigarettesText(props: CigaretteTextProps): React.ReactElement {
 
 	return (
 		<Text style={[theme.shitText, style]} {...rest}>
-			<Trans i18nKey='' tOptions={{ context: frequency }} t={t}>
-				{t(swearWord)}! You smoke {'\n'}
-				{/* {t('cigarettes_swear_smoke', {
-					swearWord: t(swearWord),
-					youSmoke: t('cigarettes_you_smoke'),
-				})} */}
-				<Text style={styles.cigarettesCount}>
-					{t('cigarettes_count', { count: cigarettesRounded })}
-				</Text>
-				{frequency}
+			<Trans
+				i18nKey='cigarette_report'
+				tOptions={{ context: frequency }}
+				values={{ id: swearWordId, cig_count: cigarettesRounded }}
+				t={t}
+			>
+				$t(swear_word, {'{'} "context": "{'{{id}}'}" {'}'})! You smoke {'\n'}
+				<Text style={styles.cigarettesCount}>$t(cigarette_count, {'{'} "count": "{'{{cig_count}}'}" {'}'})</Text> {{ frequency }}.
 			</Trans>
 		</Text>
 	);
 }
+
+/**
+ * For i18next-parser
+ *
+ * > Convert dynamic values to static values
+ * t('swear_word', {context: '1'})
+ * t('swear_word', {context: '2'})
+ * t('swear_word', {context: '3'})
+ * t('swear_word', {context: '4'})
+ * t('swear_word', {context: '5'})
+ * t('swear_word', {context: '6'})
+ * t('swear_word', {context: '7'})
+ * t('cigarette_report')
+ * t('cigarette_report', {context: 'daily'})
+ * t('cigarette_report', {context: 'weekly'})
+ * t('cigarette_report', {context: 'monthly'})
+ *
+ * > Add hidden translation
+ * t('cigarette_count', {count: 1000})
+ */

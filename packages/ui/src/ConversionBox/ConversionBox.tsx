@@ -24,15 +24,14 @@ import {
 	ImageSourcePropType,
 	ViewProps,
 } from 'react-native';
+import { WithTranslation } from 'react-i18next';
 
 import cigarette from '../../assets/images/cigarette.png';
 import * as theme from '../util/theme';
-import { Translate } from '../util/translate';
 
-export interface ConversionBoxProps extends ViewProps {
+export interface ConversionBoxProps extends ViewProps, WithTranslation {
 	cigarettes?: 1 | 2 | 3;
 	showFootnote?: boolean;
-	t: Translate;
 }
 
 /**
@@ -125,7 +124,7 @@ export function ConversionBox(props: ConversionBoxProps): React.ReactElement {
 						style={styles.cigarette}
 					/>
 					<Text style={styles.value} />
-					<Text style={styles.label}>{t('about_box_per_day')}</Text>
+					<Text style={styles.label}>{t('box_per_day')}</Text>
 				</View>
 				<Text style={styles.equal}>=</Text>
 				<View style={styles.statisticsRight}>
@@ -138,7 +137,7 @@ export function ConversionBox(props: ConversionBoxProps): React.ReactElement {
 			</View>
 			{showFootnote && (
 				<Text style={styles.boxDescription}>
-					{t('about_box_footnote')}
+					{t('box_footnote')}
 				</Text>
 			)}
 		</View>

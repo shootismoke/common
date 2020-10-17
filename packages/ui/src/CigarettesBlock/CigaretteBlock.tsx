@@ -23,15 +23,15 @@ import {
 	StyleProp,
 	ViewStyle,
 } from 'react-native';
+import { WithTranslation } from 'react-i18next';
 
 import { Frequency } from '../context/Frequency';
 import * as theme from '../util/theme';
 import { Cigarettes, CigarettesProps } from '../Cigarettes';
 import loadingAnimation from './animation.json';
-import { Translate } from '../util/translate';
 import { CigarettesText } from '../CigarettesText';
 
-export interface CigarettesBlockProps extends ViewProps, CigarettesProps {
+export interface CigarettesBlockProps extends ViewProps, CigarettesProps, WithTranslation {
 	/**
 	 * If set, will show the frequency in the text.
 	 */
@@ -44,7 +44,6 @@ export interface CigarettesBlockProps extends ViewProps, CigarettesProps {
 	 * Show lottie animation while loading.
 	 */
 	loading?: boolean;
-	t: Translate;
 	/**
 	 * Style of the inner cigarette block.
 	 */
@@ -92,8 +91,8 @@ export function CigarettesBlock(
 		showVerticalAfter,
 		spacingVertical,
 		spacingHorizontal,
-		t,
 		textStyle,
+		i18n, t, tReady,
 		...rest
 	} = props;
 
@@ -102,22 +101,24 @@ export function CigarettesBlock(
 			{loading ? (
 				renderAnimation(cigarettesStyle)
 			) : (
-				<Cigarettes
-					cigarettes={cigarettes}
-					fullCigaretteLength={fullCigaretteLength}
-					showMaxCigarettes={showMaxCigarettes}
-					showVerticalAfter={showVerticalAfter}
-					spacingVertical={spacingVertical}
-					spacingHorizontal={spacingHorizontal}
-					style={cigarettesStyle}
-				/>
-			)}
+					<Cigarettes
+						cigarettes={cigarettes}
+						fullCigaretteLength={fullCigaretteLength}
+						showMaxCigarettes={showMaxCigarettes}
+						showVerticalAfter={showVerticalAfter}
+						spacingVertical={spacingVertical}
+						spacingHorizontal={spacingHorizontal}
+						style={cigarettesStyle}
+					/>
+				)}
 			<CigarettesText
 				cigarettes={cigarettes}
 				frequency={frequency}
 				loading={loading}
 				style={[styles.shitText, textStyle]}
 				t={t}
+				i18n={i18n}
+				tReady={tReady}
 			/>
 		</View>
 	);
