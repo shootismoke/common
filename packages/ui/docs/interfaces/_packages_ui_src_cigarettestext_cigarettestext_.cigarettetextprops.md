@@ -255,7 +255,7 @@ ___
 
 • **cigarettes**: *number*
 
-*Defined in [packages/ui/src/CigarettesText/CigarettesText.tsx:26](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/CigarettesText/CigarettesText.tsx#L26)*
+*Defined in [packages/ui/src/CigarettesText/CigarettesText.tsx:26](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/CigarettesText/CigarettesText.tsx#L26)*
 
 ___
 
@@ -289,7 +289,7 @@ ___
 
 • **frequency**? : *[Frequency](../modules/_packages_ui_src_context_frequency_.md#frequency)*
 
-*Defined in [packages/ui/src/CigarettesText/CigarettesText.tsx:30](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/CigarettesText/CigarettesText.tsx#L30)*
+*Defined in [packages/ui/src/CigarettesText/CigarettesText.tsx:30](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/CigarettesText/CigarettesText.tsx#L30)*
 
 If set, will show the frequency in the text.
 
@@ -367,7 +367,7 @@ ___
 
 • **loading**? : *undefined | false | true*
 
-*Defined in [packages/ui/src/CigarettesText/CigarettesText.tsx:31](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/CigarettesText/CigarettesText.tsx#L31)*
+*Defined in [packages/ui/src/CigarettesText/CigarettesText.tsx:31](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/CigarettesText/CigarettesText.tsx#L31)*
 
 ___
 
@@ -784,7 +784,7 @@ ___
 
 • **t**: *[Translate](../modules/_packages_ui_src_util_translate_.md#translate)*
 
-*Defined in [packages/ui/src/CigarettesText/CigarettesText.tsx:32](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/CigarettesText/CigarettesText.tsx#L32)*
+*Defined in [packages/ui/src/CigarettesText/CigarettesText.tsx:32](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/CigarettesText/CigarettesText.tsx#L32)*
 
 ___
 

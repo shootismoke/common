@@ -14,7 +14,7 @@
 
 ▸ **noop**(): *void*
 
-*Defined in [packages/ui/src/util/noop.ts:20](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/util/noop.ts#L20)*
+*Defined in [packages/ui/src/util/noop.ts:20](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/util/noop.ts#L20)*
 
 A function that does nothing.
 

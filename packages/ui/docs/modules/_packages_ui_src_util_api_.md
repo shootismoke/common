@@ -18,7 +18,7 @@
 
 ▸ **round**(`n`: number): *number*
 
-*Defined in [packages/ui/src/util/api.ts:59](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/util/api.ts#L59)*
+*Defined in [packages/ui/src/util/api.ts:59](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/util/api.ts#L59)*
 
 Round a number to 1 decimal. Useful for showing cigarettes on the home page.
 

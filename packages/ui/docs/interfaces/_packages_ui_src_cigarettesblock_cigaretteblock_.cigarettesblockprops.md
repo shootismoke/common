@@ -293,7 +293,7 @@ ___
 
 *Inherited from [CigarettesProps](_packages_ui_src_cigarettes_cigarettes_.cigarettesprops.md).[cigaretteStyle](_packages_ui_src_cigarettes_cigarettes_.cigarettesprops.md#optional-cigarettestyle)*
 
-*Defined in [packages/ui/src/Cigarettes/Cigarettes.tsx:31](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/Cigarettes/Cigarettes.tsx#L31)*
+*Defined in [packages/ui/src/Cigarettes/Cigarettes.tsx:31](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/Cigarettes/Cigarettes.tsx#L31)*
 
 Additional styling for inner cigarettes
 
@@ -305,7 +305,7 @@ ___
 
 *Inherited from [CigarettesProps](_packages_ui_src_cigarettes_cigarettes_.cigarettesprops.md).[cigarettes](_packages_ui_src_cigarettes_cigarettes_.cigarettesprops.md#cigarettes)*
 
-*Defined in [packages/ui/src/Cigarettes/Cigarettes.tsx:27](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/Cigarettes/Cigarettes.tsx#L27)*
+*Defined in [packages/ui/src/Cigarettes/Cigarettes.tsx:27](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/Cigarettes/Cigarettes.tsx#L27)*
 
 The number of cigarettes to show.
 
@@ -315,7 +315,7 @@ ___
 
 • **cigarettesStyle**? : *StyleProp‹ViewStyle›*
 
-*Defined in [packages/ui/src/CigarettesBlock/CigaretteBlock.tsx:42](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/CigarettesBlock/CigaretteBlock.tsx#L42)*
+*Defined in [packages/ui/src/CigarettesBlock/CigaretteBlock.tsx:42](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/CigarettesBlock/CigaretteBlock.tsx#L42)*
 
 Style of the inner cigarette block.
 
@@ -355,7 +355,7 @@ ___
 
 • **frequency**? : *[Frequency](../modules/_packages_ui_src_context_frequency_.md#frequency)*
 
-*Defined in [packages/ui/src/CigarettesBlock/CigaretteBlock.tsx:38](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/CigarettesBlock/CigaretteBlock.tsx#L38)*
+*Defined in [packages/ui/src/CigarettesBlock/CigaretteBlock.tsx:38](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/CigarettesBlock/CigaretteBlock.tsx#L38)*
 
 If set, will show the frequency in the text.
 
@@ -367,7 +367,7 @@ ___
 
 *Inherited from [CigarettesProps](_packages_ui_src_cigarettes_cigarettes_.cigarettesprops.md).[fullCigaretteLength](_packages_ui_src_cigarettes_cigarettes_.cigarettesprops.md#optional-fullcigarettelength)*
 
-*Defined in [packages/ui/src/Cigarettes/Cigarettes.tsx:37](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/Cigarettes/Cigarettes.tsx#L37)*
+*Defined in [packages/ui/src/Cigarettes/Cigarettes.tsx:37](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/Cigarettes/Cigarettes.tsx#L37)*
 
 Length, in pixels, of a full cigarette.
 
@@ -455,7 +455,7 @@ ___
 
 • **loading**? : *undefined | false | true*
 
-*Defined in [packages/ui/src/CigarettesBlock/CigaretteBlock.tsx:46](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/CigarettesBlock/CigaretteBlock.tsx#L46)*
+*Defined in [packages/ui/src/CigarettesBlock/CigaretteBlock.tsx:46](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/CigarettesBlock/CigaretteBlock.tsx#L46)*
 
 Show lottie animation while loading.
 
@@ -922,7 +922,7 @@ ___
 
 *Inherited from [CigarettesProps](_packages_ui_src_cigarettes_cigarettes_.cigarettesprops.md).[showMaxCigarettes](_packages_ui_src_cigarettes_cigarettes_.cigarettesprops.md#optional-showmaxcigarettes)*
 
-*Defined in [packages/ui/src/Cigarettes/Cigarettes.tsx:43](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/Cigarettes/Cigarettes.tsx#L43)*
+*Defined in [packages/ui/src/Cigarettes/Cigarettes.tsx:43](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/Cigarettes/Cigarettes.tsx#L43)*
 
 The maximum number of cigarettes to show.
 
@@ -936,7 +936,7 @@ ___
 
 *Inherited from [CigarettesProps](_packages_ui_src_cigarettes_cigarettes_.cigarettesprops.md).[showVerticalAfter](_packages_ui_src_cigarettes_cigarettes_.cigarettesprops.md#optional-showverticalafter)*
 
-*Defined in [packages/ui/src/Cigarettes/Cigarettes.tsx:50](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/Cigarettes/Cigarettes.tsx#L50)*
+*Defined in [packages/ui/src/Cigarettes/Cigarettes.tsx:50](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/Cigarettes/Cigarettes.tsx#L50)*
 
 For small amount of cigarettes, we display them horizontally. After this
 number, they are displayed vertically.
@@ -951,7 +951,7 @@ ___
 
 *Inherited from [CigarettesProps](_packages_ui_src_cigarettes_cigarettes_.cigarettesprops.md).[spacingHorizontal](_packages_ui_src_cigarettes_cigarettes_.cigarettesprops.md#optional-spacinghorizontal)*
 
-*Defined in [packages/ui/src/Cigarettes/Cigarettes.tsx:57](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/Cigarettes/Cigarettes.tsx#L57)*
+*Defined in [packages/ui/src/Cigarettes/Cigarettes.tsx:57](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/Cigarettes/Cigarettes.tsx#L57)*
 
 Horizontal spacing, in pixels, between the cigarettes, assuming the
 cigarettes are displayed vertically.
@@ -966,7 +966,7 @@ ___
 
 *Inherited from [CigarettesProps](_packages_ui_src_cigarettes_cigarettes_.cigarettesprops.md).[spacingVertical](_packages_ui_src_cigarettes_cigarettes_.cigarettesprops.md#optional-spacingvertical)*
 
-*Defined in [packages/ui/src/Cigarettes/Cigarettes.tsx:64](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/Cigarettes/Cigarettes.tsx#L64)*
+*Defined in [packages/ui/src/Cigarettes/Cigarettes.tsx:64](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/Cigarettes/Cigarettes.tsx#L64)*
 
 Vertical spacing, in pixels, between the cigarettes, assuming the
 cigarettes are displayed vertically.
@@ -991,7 +991,7 @@ ___
 
 • **t**: *[Translate](../modules/_packages_ui_src_util_translate_.md#translate)*
 
-*Defined in [packages/ui/src/CigarettesBlock/CigaretteBlock.tsx:47](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/CigarettesBlock/CigaretteBlock.tsx#L47)*
+*Defined in [packages/ui/src/CigarettesBlock/CigaretteBlock.tsx:47](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/CigarettesBlock/CigaretteBlock.tsx#L47)*
 
 ___
 
@@ -1013,7 +1013,7 @@ ___
 
 • **textStyle**? : *StyleProp‹ViewStyle›*
 
-*Defined in [packages/ui/src/CigarettesBlock/CigaretteBlock.tsx:51](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/CigarettesBlock/CigaretteBlock.tsx#L51)*
+*Defined in [packages/ui/src/CigarettesBlock/CigaretteBlock.tsx:51](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/CigarettesBlock/CigaretteBlock.tsx#L51)*
 
 Style of the inner cigarette block.
 

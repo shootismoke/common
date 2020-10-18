@@ -16,7 +16,7 @@
 
 ▸ **getAQI**(`normalized`: [Normalized](_packages_dataproviders_src_types_.md#normalized)): *number*
 
-*Defined in [packages/ui/src/util/primaryPollutant.ts:49](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/util/primaryPollutant.ts#L49)*
+*Defined in [packages/ui/src/util/primaryPollutant.ts:49](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/util/primaryPollutant.ts#L49)*
 
 From a set of normalized pollutant data, get the AQI, that is, the AQI of
 the primary pollutant.
@@ -35,7 +35,7 @@ ___
 
 ▸ **getSortedNormalized**(`normalized`: [Normalized](_packages_dataproviders_src_types_.md#normalized)): *[OpenAQFormat](_packages_dataproviders_src_util_openaq_.md#openaqformat)[]*
 
-*Defined in [packages/ui/src/util/primaryPollutant.ts:26](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/util/primaryPollutant.ts#L26)*
+*Defined in [packages/ui/src/util/primaryPollutant.ts:26](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/util/primaryPollutant.ts#L26)*
 
 From a set of normalized pollutant data, filter only the ones that can be
 converted to USA EPA, and sort the set.
@@ -54,7 +54,7 @@ ___
 
 ▸ **primaryPollutant**(`normalized`: [Normalized](_packages_dataproviders_src_types_.md#normalized)): *[OpenAQFormat](_packages_dataproviders_src_util_openaq_.md#openaqformat)*
 
-*Defined in [packages/ui/src/util/primaryPollutant.ts:67](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/util/primaryPollutant.ts#L67)*
+*Defined in [packages/ui/src/util/primaryPollutant.ts:67](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/util/primaryPollutant.ts#L67)*
 
 From a set of normalized pollutant data, find the primary pollutant.
 

@@ -14,7 +14,7 @@
 
 ▸ **getCountryCode**(`input`: string): *O.Option‹string›*
 
-*Defined in [packages/dataproviders/src/util/getCountryCode.ts:38](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/util/getCountryCode.ts#L38)*
+*Defined in [packages/dataproviders/src/util/getCountryCode.ts:38](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/util/getCountryCode.ts#L38)*
 
 Given a country name, gets the ISO 3166-1 Alpha-2 code of the country
 

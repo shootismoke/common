@@ -19,9 +19,9 @@ Options to be passed into the [raceApiPromise](../modules/_packages_ui_src_util_
 
 ### `Optional` aqicn
 
-• **aqicn**? : *undefined | object*
+• **aqicn**? : *[AqicnOptions](_packages_dataproviders_src_providers_aqicn_fetchby_.aqicnoptions.md)*
 
-*Defined in [packages/ui/src/util/race.ts:94](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/util/race.ts#L94)*
+*Defined in [packages/ui/src/util/race.ts:97](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/util/race.ts#L97)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **openaq**? : *[OpenAQOptions](_packages_dataproviders_src_providers_openaq_fetchby_.openaqoptions.md)*
 
-*Defined in [packages/ui/src/util/race.ts:100](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/util/race.ts#L100)*
+*Defined in [packages/ui/src/util/race.ts:98](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/util/race.ts#L98)*

@@ -14,7 +14,7 @@
 
 ▸ **getDominantPol**(`normalized`: [Normalized](_packages_dataproviders_src_types_.md#normalized)): *Pollutant*
 
-*Defined in [packages/dataproviders/src/util/getDominantPol.ts:11](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/util/getDominantPol.ts#L11)*
+*Defined in [packages/dataproviders/src/util/getDominantPol.ts:11](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/util/getDominantPol.ts#L11)*
 
 From some normalized data, calculate the dominant pollutant, i.e. the
 pollutant that has the highest AQI
