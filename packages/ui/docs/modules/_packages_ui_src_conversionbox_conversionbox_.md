@@ -23,7 +23,7 @@
 
 • **LINE_HEIGHT**: *44* = 44
 
-*Defined in [packages/ui/src/ConversionBox/ConversionBox.tsx:41](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/ConversionBox/ConversionBox.tsx#L41)*
+*Defined in [packages/ui/src/ConversionBox/ConversionBox.tsx:41](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/ConversionBox/ConversionBox.tsx#L41)*
 
 Height of the cigarette image, also the line height of the "22" text.
 
@@ -104,7 +104,7 @@ ___
 	},
 })
 
-*Defined in [packages/ui/src/ConversionBox/ConversionBox.tsx:43](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/ConversionBox/ConversionBox.tsx#L43)*
+*Defined in [packages/ui/src/ConversionBox/ConversionBox.tsx:43](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/ConversionBox/ConversionBox.tsx#L43)*
 
 #### Type declaration:
 
@@ -210,7 +210,7 @@ ___
 
 ▸ **ConversionBox**(`props`: [ConversionBoxProps](../interfaces/_packages_ui_src_conversionbox_conversionbox_.conversionboxprops.md)): *ReactElement*
 
-*Defined in [packages/ui/src/ConversionBox/ConversionBox.tsx:116](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/ConversionBox/ConversionBox.tsx#L116)*
+*Defined in [packages/ui/src/ConversionBox/ConversionBox.tsx:116](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/ConversionBox/ConversionBox.tsx#L116)*
 
 **Parameters:**
 

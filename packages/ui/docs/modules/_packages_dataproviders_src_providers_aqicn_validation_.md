@@ -21,7 +21,7 @@
 
 Ƭ **ByStation**: *t.TypeOf‹typeof AqicnStationCodecData›*
 
-*Defined in [packages/dataproviders/src/providers/aqicn/validation.ts:110](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/providers/aqicn/validation.ts#L110)*
+*Defined in [packages/dataproviders/src/providers/aqicn/validation.ts:110](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/providers/aqicn/validation.ts#L110)*
 
 ## Variables
 
@@ -58,7 +58,7 @@
 	}),
 })
 
-*Defined in [packages/dataproviders/src/providers/aqicn/validation.ts:69](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/providers/aqicn/validation.ts#L69)*
+*Defined in [packages/dataproviders/src/providers/aqicn/validation.ts:69](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/providers/aqicn/validation.ts#L69)*
 
 ___
 
@@ -74,7 +74,7 @@ ___
 	msg: t.union([t.string, t.undefined]),
 })
 
-*Defined in [packages/dataproviders/src/providers/aqicn/validation.ts:100](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/providers/aqicn/validation.ts#L100)*
+*Defined in [packages/dataproviders/src/providers/aqicn/validation.ts:100](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/providers/aqicn/validation.ts#L100)*
 
 ___
 
@@ -84,7 +84,7 @@ ___
 	v: t.number,
 })
 
-*Defined in [packages/dataproviders/src/providers/aqicn/validation.ts:61](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/providers/aqicn/validation.ts#L61)*
+*Defined in [packages/dataproviders/src/providers/aqicn/validation.ts:61](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/providers/aqicn/validation.ts#L61)*
 
 ___
 
@@ -92,4 +92,4 @@ ___
 
 • **pollutants**: *RecordC‹StringC‹›, TypeC‹object››* = t.record(t.string, pollutantValue)
 
-*Defined in [packages/dataproviders/src/providers/aqicn/validation.ts:67](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/providers/aqicn/validation.ts#L67)*
+*Defined in [packages/dataproviders/src/providers/aqicn/validation.ts:67](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/providers/aqicn/validation.ts#L67)*

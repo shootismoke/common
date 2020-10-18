@@ -24,7 +24,7 @@
 
 • **dateFrom**? : *Date*
 
-*Defined in [packages/dataproviders/src/providers/openaq/fetchBy.ts:26](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/providers/openaq/fetchBy.ts#L26)*
+*Defined in [packages/dataproviders/src/providers/openaq/fetchBy.ts:26](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/providers/openaq/fetchBy.ts#L26)*
 
 Show results after a certain date. This acts on the utc timestamp of each
 measurement.
@@ -35,7 +35,7 @@ ___
 
 • **dateTo**? : *Date*
 
-*Defined in [packages/dataproviders/src/providers/openaq/fetchBy.ts:30](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/providers/openaq/fetchBy.ts#L30)*
+*Defined in [packages/dataproviders/src/providers/openaq/fetchBy.ts:30](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/providers/openaq/fetchBy.ts#L30)*
 
 Show results before a certain date. This acts on the utc timestamp of each measurement.
 
@@ -45,7 +45,7 @@ ___
 
 • **includeFields**? : *string[]*
 
-*Defined in [packages/dataproviders/src/providers/openaq/fetchBy.ts:34](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/providers/openaq/fetchBy.ts#L34)*
+*Defined in [packages/dataproviders/src/providers/openaq/fetchBy.ts:34](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/providers/openaq/fetchBy.ts#L34)*
 
 Include extra fields in the output in addition to default values.
 
@@ -55,7 +55,7 @@ ___
 
 • **limit**? : *undefined | number*
 
-*Defined in [packages/dataproviders/src/providers/openaq/fetchBy.ts:39](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/providers/openaq/fetchBy.ts#L39)*
+*Defined in [packages/dataproviders/src/providers/openaq/fetchBy.ts:39](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/providers/openaq/fetchBy.ts#L39)*
 
 Change the number of results returned, max is 10000.
 
@@ -67,6 +67,6 @@ ___
 
 • **parameter**? : *[Pollutant](../modules/_packages_convert_src_util_pollutant_.md#pollutant)[]*
 
-*Defined in [packages/dataproviders/src/providers/openaq/fetchBy.ts:43](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/providers/openaq/fetchBy.ts#L43)*
+*Defined in [packages/dataproviders/src/providers/openaq/fetchBy.ts:43](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/providers/openaq/fetchBy.ts#L43)*
 
 Limit to certain one or more parameters.

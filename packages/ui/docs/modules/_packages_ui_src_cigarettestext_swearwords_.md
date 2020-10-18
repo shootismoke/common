@@ -22,6 +22,6 @@
 	'home_swear_word_arrgh',
 ]
 
-*Defined in [packages/ui/src/CigarettesText/swearWords.ts:20](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/CigarettesText/swearWords.ts#L20)*
+*Defined in [packages/ui/src/CigarettesText/swearWords.ts:20](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/CigarettesText/swearWords.ts#L20)*
 
 Swear words, untranslated.
