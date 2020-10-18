@@ -1,6 +1,6 @@
 {
 	"name": "@shootismoke/dataproviders",
-	"version": "0.5.4",
+	"version": "0.5.6",
 	"author": "Amaury Martiny <amaury.martiny@protonmail.com>",
 	"description": "Helpers to fetch data from air quality data providers",
 	"files": [
