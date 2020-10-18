@@ -14,7 +14,7 @@
 
 Ƭ **Translate**: *function*
 
-*Defined in [packages/ui/src/util/translate.ts:17](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/util/translate.ts#L17)*
+*Defined in [packages/ui/src/util/translate.ts:17](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/util/translate.ts#L17)*
 
 #### Type declaration:
 

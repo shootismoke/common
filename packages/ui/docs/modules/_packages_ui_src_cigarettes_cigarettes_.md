@@ -29,7 +29,7 @@
 	},
 })
 
-*Defined in [packages/ui/src/Cigarettes/Cigarettes.tsx:67](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/Cigarettes/Cigarettes.tsx#L67)*
+*Defined in [packages/ui/src/Cigarettes/Cigarettes.tsx:67](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/Cigarettes/Cigarettes.tsx#L67)*
 
 #### Type declaration:
 
@@ -49,7 +49,7 @@
 
 ▸ **Cigarettes**(`props`: [CigarettesProps](../interfaces/_packages_ui_src_cigarettes_cigarettes_.cigarettesprops.md)): *ReactElement*
 
-*Defined in [packages/ui/src/Cigarettes/Cigarettes.tsx:76](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/Cigarettes/Cigarettes.tsx#L76)*
+*Defined in [packages/ui/src/Cigarettes/Cigarettes.tsx:76](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/Cigarettes/Cigarettes.tsx#L76)*
 
 **Parameters:**
 

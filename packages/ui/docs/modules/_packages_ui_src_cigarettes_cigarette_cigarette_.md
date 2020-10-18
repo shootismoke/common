@@ -32,7 +32,7 @@
 
 Ƭ **CigaretteOrientation**: *"diagonal" | "horizontal" | "vertical"*
 
-*Defined in [packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx:32](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx#L32)*
+*Defined in [packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx:32](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx#L32)*
 
 ## Variables
 
@@ -40,7 +40,7 @@
 
 • **CIGARETTE_ASPECT_RATIO**: *number* = 21 / 280
 
-*Defined in [packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx:89](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx#L89)*
+*Defined in [packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx:89](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx#L89)*
 
 A cigarette's width:height aspect ratio.
 
@@ -50,7 +50,7 @@ ___
 
 • **CIGARETTE_HEAD_HW_RATIO**: *number* = 27 / 20
 
-*Defined in [packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx:90](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx#L90)*
+*Defined in [packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx:90](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx#L90)*
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 • **MIN_PERCENTAGE**: *0.4* = 0.4
 
-*Defined in [packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx:70](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx#L70)*
+*Defined in [packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx:70](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx#L70)*
 
 The percentage of cigarette length when `percentage=0`.
 
@@ -92,7 +92,7 @@ ___
 	},
 })
 
-*Defined in [packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx:41](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx#L41)*
+*Defined in [packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx:41](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx#L41)*
 
 #### Type declaration:
 
@@ -138,7 +138,7 @@ ___
 
 ▸ **Cigarette**(`props`: [CigaretteProps](../interfaces/_packages_ui_src_cigarettes_cigarette_cigarette_.cigaretteprops.md)): *ReactElement*
 
-*Defined in [packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx:199](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx#L199)*
+*Defined in [packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx:199](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx#L199)*
 
 **Parameters:**
 
@@ -154,7 +154,7 @@ ___
 
 ▸ **getCigaretteActualLength**(`fullCigaretteLength`: number, `percentage`: number): *number*
 
-*Defined in [packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx:76](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx#L76)*
+*Defined in [packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx:76](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx#L76)*
 
 Given the full length of a cigarette, and the percentage of the cigarette
 smoked, get the actual length of the cigarette.
@@ -174,7 +174,7 @@ ___
 
 ▸ **getContainerStyle**(`orientation`: [CigaretteOrientation](_packages_ui_src_cigarettes_cigarette_cigarette_.md#cigaretteorientation), `fullCigaretteLength`: number): *ViewStyle*
 
-*Defined in [packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx:92](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx#L92)*
+*Defined in [packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx:92](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx#L92)*
 
 **Parameters:**
 
@@ -191,7 +191,7 @@ ___
 
 ▸ **renderCigarette**(`orientation`: "horizontal" | "vertical", `percentage`: number, `fullCigaretteLength`: number, `additionalStyle?`: StyleProp‹ViewStyle›): *ReactElement*
 
-*Defined in [packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx:121](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx#L121)*
+*Defined in [packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx:121](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx#L121)*
 
 Render a horizontal or vertical cigarette.
 

@@ -24,7 +24,7 @@
 
 Ƭ **AlgoliaHit**: *t.TypeOf‹typeof AlgoliaHitT›*
 
-*Defined in [packages/ui/src/util/fetchAlgolia.ts:56](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/util/fetchAlgolia.ts#L56)*
+*Defined in [packages/ui/src/util/fetchAlgolia.ts:56](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/util/fetchAlgolia.ts#L56)*
 
 ## Variables
 
@@ -49,7 +49,7 @@
 	])
 )
 
-*Defined in [packages/ui/src/util/fetchAlgolia.ts:38](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/util/fetchAlgolia.ts#L38)*
+*Defined in [packages/ui/src/util/fetchAlgolia.ts:38](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/util/fetchAlgolia.ts#L38)*
 
 ___
 
@@ -61,7 +61,7 @@ ___
 	}),
 })
 
-*Defined in [packages/ui/src/util/fetchAlgolia.ts:58](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/util/fetchAlgolia.ts#L58)*
+*Defined in [packages/ui/src/util/fetchAlgolia.ts:58](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/util/fetchAlgolia.ts#L58)*
 
 ___
 
@@ -74,7 +74,7 @@ ___
 	'https://places-3.algolianet.com',
 ]
 
-*Defined in [packages/ui/src/util/fetchAlgolia.ts:30](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/util/fetchAlgolia.ts#L30)*
+*Defined in [packages/ui/src/util/fetchAlgolia.ts:30](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/util/fetchAlgolia.ts#L30)*
 
 ## Functions
 
@@ -82,7 +82,7 @@ ___
 
 ▸ **fetchAlgolia**(`search`: string, `gps?`: [LatLng](../interfaces/_packages_dataproviders_src_types_.latlng.md)): *TaskEither‹Error, [AlgoliaHit](_packages_ui_src_util_fetchalgolia_.md#algoliahit)[]›*
 
-*Defined in [packages/ui/src/util/fetchAlgolia.ts:64](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/util/fetchAlgolia.ts#L64)*
+*Defined in [packages/ui/src/util/fetchAlgolia.ts:64](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/util/fetchAlgolia.ts#L64)*
 
 **Parameters:**
 

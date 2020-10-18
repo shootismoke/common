@@ -23,7 +23,7 @@
 
 Ƭ **OpenAQError**: *t.TypeOf‹typeof OpenAQErrorCodec›*
 
-*Defined in [packages/dataproviders/src/providers/openaq/validation.ts:76](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/providers/openaq/validation.ts#L76)*
+*Defined in [packages/dataproviders/src/providers/openaq/validation.ts:76](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/providers/openaq/validation.ts#L76)*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 Ƭ **OpenAQLatest**: *t.TypeOf‹typeof OpenAQLatestCodec›*
 
-*Defined in [packages/dataproviders/src/providers/openaq/validation.ts:49](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/providers/openaq/validation.ts#L49)*
+*Defined in [packages/dataproviders/src/providers/openaq/validation.ts:49](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/providers/openaq/validation.ts#L49)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 Ƭ **OpenAQMeasurements**: *t.TypeOf‹typeof OpenAQMeasurementsCodec›*
 
-*Defined in [packages/dataproviders/src/providers/openaq/validation.ts:64](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/providers/openaq/validation.ts#L64)*
+*Defined in [packages/dataproviders/src/providers/openaq/validation.ts:64](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/providers/openaq/validation.ts#L64)*
 
 **`see`** https://docs.openaq.org/#api-Measurements
 
@@ -57,7 +57,7 @@ ___
 	}),
 })
 
-*Defined in [packages/dataproviders/src/providers/openaq/validation.ts:66](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/providers/openaq/validation.ts#L66)*
+*Defined in [packages/dataproviders/src/providers/openaq/validation.ts:66](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/providers/openaq/validation.ts#L66)*
 
 ___
 
@@ -87,7 +87,7 @@ ___
 	),
 })
 
-*Defined in [packages/dataproviders/src/providers/openaq/validation.ts:25](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/providers/openaq/validation.ts#L25)*
+*Defined in [packages/dataproviders/src/providers/openaq/validation.ts:25](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/providers/openaq/validation.ts#L25)*
 
 Codec for the /v1/latest endpoint.
 
@@ -102,7 +102,7 @@ ___
 	results: t.array(OpenAQCodec),
 })
 
-*Defined in [packages/dataproviders/src/providers/openaq/validation.ts:56](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/providers/openaq/validation.ts#L56)*
+*Defined in [packages/dataproviders/src/providers/openaq/validation.ts:56](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/providers/openaq/validation.ts#L56)*
 
 Codec for the /v1/measurements endpoint.
 
@@ -121,4 +121,4 @@ ___
 	website: t.string,
 })
 
-*Defined in [packages/dataproviders/src/providers/openaq/validation.ts:11](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/providers/openaq/validation.ts#L11)*
+*Defined in [packages/dataproviders/src/providers/openaq/validation.ts:11](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/providers/openaq/validation.ts#L11)*

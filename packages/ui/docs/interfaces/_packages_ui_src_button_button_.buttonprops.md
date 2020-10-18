@@ -252,7 +252,7 @@ ___
 
 • **as**? : *typeof View*
 
-*Defined in [packages/ui/src/Button/Button.tsx:32](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/Button/Button.tsx#L32)*
+*Defined in [packages/ui/src/Button/Button.tsx:32](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/Button/Button.tsx#L32)*
 
 ___
 
@@ -260,7 +260,7 @@ ___
 
 • **children**? : *string | ReactElement*
 
-*Defined in [packages/ui/src/Button/Button.tsx:33](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/Button/Button.tsx#L33)*
+*Defined in [packages/ui/src/Button/Button.tsx:33](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/Button/Button.tsx#L33)*
 
 ___
 
@@ -346,7 +346,7 @@ ___
 
 • **icon**? : *undefined | string*
 
-*Defined in [packages/ui/src/Button/Button.tsx:34](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/Button/Button.tsx#L34)*
+*Defined in [packages/ui/src/Button/Button.tsx:34](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/Button/Button.tsx#L34)*
 
 ___
 
@@ -553,7 +553,7 @@ ___
 
 • **textStyle**? : *StyleProp‹TextStyle›*
 
-*Defined in [packages/ui/src/Button/Button.tsx:35](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/Button/Button.tsx#L35)*
+*Defined in [packages/ui/src/Button/Button.tsx:35](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/Button/Button.tsx#L35)*
 
 ___
 
@@ -598,4 +598,4 @@ ___
 
 • **type**? : *"primary" | "secondary" | "full"*
 
-*Defined in [packages/ui/src/Button/Button.tsx:36](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/Button/Button.tsx#L36)*
+*Defined in [packages/ui/src/Button/Button.tsx:36](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/Button/Button.tsx#L36)*
