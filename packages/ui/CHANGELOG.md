@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.7](https://github.com/shootismoke/common/compare/v0.5.6...v0.5.7) (2020-10-18)
+
+
+### Bug Fixes
+
+* **dataproviders:** Use https for AQICN ([#321](https://github.com/shootismoke/common/issues/321)) ([1028ee7](https://github.com/shootismoke/common/commit/1028ee7f0dbec5b2a3527859de45a772a7ce1f53))
+
+
+
+
+
 ## [0.5.6](https://github.com/shootismoke/common/compare/v0.5.5...v0.5.6) (2020-10-18)
 
 **Note:** Version bump only for package @shootismoke/ui
