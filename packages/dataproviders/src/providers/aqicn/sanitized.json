@@ -1,6 +1,8 @@
 {
 	"afganistan": "afghanistan",
 
+	"liege": "belgium",
+
 	"anhui": "china",
 	"fujian": "china",
 	"gansu": "china",
@@ -35,8 +37,20 @@
 	"hongkong": "china",
 	"macao": "china",
 	"taiwan": "china",
+	"wuhan": "china",
 
+	"paris": "france",
+
+	"chennai": "india",
 	"delhi": "india",
+	"pune": "india",
+
+	"fukuoka": "japan",
+	"hamamatsu": "japan",
+	"kagoshima": "japan",
+	"kumamoto": "japan",
+
+	"ulaanbaatar": "mongolia",
 
 	"moscow": "russia",
 

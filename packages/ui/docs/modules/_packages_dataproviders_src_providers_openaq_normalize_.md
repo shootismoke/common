@@ -15,7 +15,7 @@
 
 ▸ **normalizeByGps**(`data`: [OpenAQLatest](_packages_dataproviders_src_providers_openaq_validation_.md#openaqlatest)): *E.Either‹Error, [Normalized](_packages_dataproviders_src_types_.md#normalized)›*
 
-*Defined in [packages/dataproviders/src/providers/openaq/normalize.ts:12](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/providers/openaq/normalize.ts#L12)*
+*Defined in [packages/dataproviders/src/providers/openaq/normalize.ts:12](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/providers/openaq/normalize.ts#L12)*
 
 Normalize aqicn byGps data
 
@@ -33,7 +33,7 @@ ___
 
 ▸ **normalizeByStation**(`data`: [OpenAQMeasurements](_packages_dataproviders_src_providers_openaq_validation_.md#openaqmeasurements)): *E.Either‹Error, [Normalized](_packages_dataproviders_src_types_.md#normalized)›*
 
-*Defined in [packages/dataproviders/src/providers/openaq/normalize.ts:47](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/providers/openaq/normalize.ts#L47)*
+*Defined in [packages/dataproviders/src/providers/openaq/normalize.ts:47](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/providers/openaq/normalize.ts#L47)*
 
 Normalize aqicn byGps data
 

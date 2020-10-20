@@ -34,7 +34,10 @@ export function testNormalized(normalized: Normalized): void {
 	});
 }
 
-function testTE<T>(
+/**
+ * Test that a TE is resolving correctly.
+ */
+export function testTE<T>(
 	te: TE.TaskEither<Error, T>,
 	normalize: (data: T) => E.Either<Error, Normalized>,
 	done: jest.DoneCallback
@@ -59,8 +62,6 @@ function testTE<T>(
 					'[openaq] Cannot normalize, got 0 result',
 					// Skip if aqicn doesn't track pollutants that don't interest us
 					'no pollutants currently tracked',
-					// Skip if aqicn country name is not sanitized
-					'[aqicn] Cannot get code from country',
 					// Skip if aqicn doesn't expose city
 					'no city',
 					// Skip if cannot find country for waqi

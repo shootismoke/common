@@ -2739,9 +2739,9 @@
     "@types/react" "*"
 
 "@types/react@*", "@types/react@^16.9.35":
-  version "16.9.52"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.52.tgz#c46c72d1a1d8d9d666f4dd2066c0e22600ccfde1"
-  integrity sha512-EHRjmnxiNivwhGdMh9sz1Yw9AUxTSZFxKqdBWAAzyZx3sufWwx6ogqHYh/WB1m/I4ZpjkoZLExF5QTy2ekVi/Q==
+  version "16.9.53"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.53.tgz#40cd4f8b8d6b9528aedd1fff8fcffe7a112a3d23"
+  integrity sha512-4nW60Sd4L7+WMXH1D6jCdVftuW7j4Za6zdp6tJ33Rqv0nk1ZAmQKML9ZLD4H0dehA3FZxXR/GM8gXplf82oNGw==
   dependencies:
     "@types/prop-types" "*"
     csstype "^3.0.2"
@@ -5578,9 +5578,9 @@ form-data@~2.3.2:
     mime-types "^2.1.12"
 
 fp-ts@^2.1.1:
-  version "2.8.3"
-  resolved "https://registry.yarnpkg.com/fp-ts/-/fp-ts-2.8.3.tgz#c09652bbf21e64d65a9f93587ad549ab0e03abe7"
-  integrity sha512-oGD3BTSzFCPs9alaI/2gh0SCNKyhPXkpeIBvkXNvnoczHfDAUd2HHtotCdLO0hOTTTTx8VKA0mhhR7LUNo+cKg==
+  version "2.8.4"
+  resolved "https://registry.yarnpkg.com/fp-ts/-/fp-ts-2.8.4.tgz#d1af738a94de8591d441ef656153d04bd878edeb"
+  integrity sha512-J+kwce5SysU0YKuZ3aCnFk+dyezZD1mij6u26w1fCVfuLYgJR4eeXmVfJiUjthpZ+4yCRkRfcwMI5SkGw52oFA==
 
 fragment-cache@^0.2.1:
   version "0.2.1"
@@ -9761,9 +9761,9 @@ react-native-safe-modules@^1.0.0:
     dedent "^0.6.0"
 
 react-native-web@^0.14.0:
-  version "0.14.0"
-  resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.14.0.tgz#d8faf2218153930417172db69111eac77d441261"
-  integrity sha512-jz7li7lgjZ2rJeH9HLBpAtLDzD1LHfK7TcmsrBes3za4hl5+Qn3UtlKbhiT/lcNGd2IDCP13Gj9DEWTRg/auNA==
+  version "0.14.2"
+  resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.14.2.tgz#18957b0c72f5200f2b97a0bd73b3657d5e2401bb"
+  integrity sha512-cjgqWhFLZoveJx8Upu6PH+1tq4ZbW6zvkQ8ChOWfQ8BdoYY0o4jhlBZJTgQVLNP6s7BkpMAb87er/T7Zhd8qJw==
   dependencies:
     array-find-index "^1.0.2"
     create-react-class "^15.6.2"
@@ -9820,9 +9820,9 @@ react-timer-mixin@^0.13.4:
   integrity sha512-4+ow23tp/Tv7hBM5Az5/Be/eKKF7DIvJ09voz5LyHGQaqqz9WV8YMs31eFvcYQs7d451LSg7kDJV70XYN/Ug/Q==
 
 react@^16.13.1:
-  version "16.13.1"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.13.1.tgz#2e818822f1a9743122c063d6410d85c1e3afe48e"
-  integrity sha512-YMZQQq32xHLX0bz5Mnibv1/LHb3Sqzngu7xstSM+vrkE5Kzr9xE0yMByK5kMoTK30YVJE61WfbxIFFvfeDKT1w==
+  version "16.14.0"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.14.0.tgz#94d776ddd0aaa37da3eda8fc5b6b18a4c9a3114d"
+  integrity sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
@@ -11509,9 +11509,9 @@ typedoc-default-themes@^0.11.4:
   integrity sha512-Y4Lf+qIb9NTydrexlazAM46SSLrmrQRqWiD52593g53SsmUFioAsMWt8m834J6qsp+7wHRjxCXSZeiiW5cMUdw==
 
 typedoc-plugin-markdown@^3.0.2:
-  version "3.0.8"
-  resolved "https://registry.yarnpkg.com/typedoc-plugin-markdown/-/typedoc-plugin-markdown-3.0.8.tgz#9b05b4ab9f885135374ecfde951d230f24388b38"
-  integrity sha512-07OqH28xT9TKl539jsAACf00lLxnrCMgRtrFs+eH6PU4BniiGGPMTMwbdDZV+upfOwnpSpImECz/F2OAWoHCGw==
+  version "3.0.10"
+  resolved "https://registry.yarnpkg.com/typedoc-plugin-markdown/-/typedoc-plugin-markdown-3.0.10.tgz#4bd68464686af2e633afdcc950211bde2b5e107e"
+  integrity sha512-pM393xoX1Wbj05cI1TIbubAIaZ7B/EQ5QAwc49KuMEOk/SZbutY/j0bkiX2YnY4+3t8aZi3tS0ZX1djqTcvjmg==
   dependencies:
     handlebars "^4.7.6"
 

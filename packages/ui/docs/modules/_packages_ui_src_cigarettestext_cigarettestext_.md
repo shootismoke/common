@@ -27,7 +27,7 @@
 	},
 })
 
-*Defined in [packages/ui/src/CigarettesText/CigarettesText.tsx:35](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/CigarettesText/CigarettesText.tsx#L35)*
+*Defined in [packages/ui/src/CigarettesText/CigarettesText.tsx:35](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/CigarettesText/CigarettesText.tsx#L35)*
 
 #### Type declaration:
 
@@ -41,7 +41,7 @@
 
 ▸ **CigarettesText**(`props`: [CigaretteTextProps](../interfaces/_packages_ui_src_cigarettestext_cigarettestext_.cigarettetextprops.md)): *ReactElement*
 
-*Defined in [packages/ui/src/CigarettesText/CigarettesText.tsx:54](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/CigarettesText/CigarettesText.tsx#L54)*
+*Defined in [packages/ui/src/CigarettesText/CigarettesText.tsx:54](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/CigarettesText/CigarettesText.tsx#L54)*
 
 **Parameters:**
 
@@ -57,7 +57,7 @@ ___
 
 ▸ **getSwearWord**(`cigaretteCount`: number): *string*
 
-*Defined in [packages/ui/src/CigarettesText/CigarettesText.tsx:47](https://github.com/shootismoke/common/blob/72777b1/packages/ui/src/CigarettesText/CigarettesText.tsx#L47)*
+*Defined in [packages/ui/src/CigarettesText/CigarettesText.tsx:47](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/CigarettesText/CigarettesText.tsx#L47)*
 
 Return a random swear word, untranslated.
 

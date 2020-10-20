@@ -55,7 +55,7 @@ export function fetchByGps(
 		checkToken(options),
 		TE.chain(() =>
 			fetchAndDecode(
-				`http://api.waqi.info/feed/geo:${latitude};${longitude}/?token=${options.token}`,
+				`https://api.waqi.info/feed/geo:${latitude};${longitude}/?token=${options.token}`,
 				ByStationCodec
 			)
 		),

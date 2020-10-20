@@ -16,6 +16,7 @@
 * [stationName](_packages_dataproviders_src_util_index_.md#stationname)
 * [testNormalized](_packages_dataproviders_src_util_index_.md#testnormalized)
 * [testProviderE2E](_packages_dataproviders_src_util_index_.md#testprovidere2e)
+* [testTE](_packages_dataproviders_src_util_index_.md#testte)
 
 ## References
 
@@ -76,3 +77,9 @@ ___
 ###  testProviderE2E
 
 • **testProviderE2E**:
+
+___
+
+###  testTE
+
+• **testTE**:

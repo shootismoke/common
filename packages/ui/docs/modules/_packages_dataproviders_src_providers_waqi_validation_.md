@@ -18,7 +18,7 @@
 
 Ƭ **ByStation**: *t.TypeOf‹typeof ByStationCodec›*
 
-*Defined in [packages/dataproviders/src/providers/waqi/validation.ts:43](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/providers/waqi/validation.ts#L43)*
+*Defined in [packages/dataproviders/src/providers/waqi/validation.ts:43](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/providers/waqi/validation.ts#L43)*
 
 ## Variables
 
@@ -42,4 +42,4 @@
 	g: t.any,
 })
 
-*Defined in [packages/dataproviders/src/providers/waqi/validation.ts:25](https://github.com/shootismoke/common/blob/72777b1/packages/dataproviders/src/providers/waqi/validation.ts#L25)*
+*Defined in [packages/dataproviders/src/providers/waqi/validation.ts:25](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/providers/waqi/validation.ts#L25)*

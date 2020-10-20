@@ -68,7 +68,7 @@ export function normalize(data: ByStation): E.Either<Error, Normalized> {
 	}
 	// We now need to get the country from AQICN response. The only place I found
 	// is city.url...
-	// Example: http://aqicn.org/city/france/lorraine/thionville-nord/garche/
+	// Example: https://aqicn.org/city/france/lorraine/thionville-nord/garche/
 	const AQICN_DOMAIN = 'aqicn.org/city/';
 	if (!data.city.url || !data.city.url.includes(AQICN_DOMAIN)) {
 		return E.left(
