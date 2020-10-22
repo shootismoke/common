@@ -46,12 +46,15 @@ const NORMALIZED_WITHIN_HOURS = 6;
  */
 function createApi(gps: LatLng, normalized: Normalized): Api {
 	const now = new Date();
-	// From the normalized data, remove the entries that are too old.
-	const sanitizedNormalized = normalized.filter(
-		({ date }) =>
-			Math.abs(differenceInHours(new Date(date.utc), now)) <=
-			NORMALIZED_WITHIN_HOURS
-	);
+	const sanitizedNormalized = normalized
+		// From the normalized data, remove the entries that are too old.
+		.filter(
+			({ date }) =>
+				Math.abs(differenceInHours(new Date(date.utc), now)) <=
+				NORMALIZED_WITHIN_HOURS
+		)
+		//Remove the entries that are negative (happens on openaq).
+		.filter(({ value }) => value < 0);
 	const pm25 = sanitizedNormalized.filter(
 		({ parameter }) => parameter === 'pm25'
 	);
