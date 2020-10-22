@@ -22,7 +22,7 @@
 
 ▸ **generateRandomLatLng**(): *[LatLng](../interfaces/_packages_dataproviders_src_types_.latlng.md)*
 
-*Defined in [packages/dataproviders/src/util/testUtil.ts:9](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/util/testUtil.ts#L9)*
+*Defined in [packages/dataproviders/src/util/testUtil.ts:9](https://github.com/shootismoke/common/blob/c0e7829/packages/dataproviders/src/util/testUtil.ts#L9)*
 
 **Returns:** *[LatLng](../interfaces/_packages_dataproviders_src_types_.latlng.md)*
 
@@ -32,7 +32,7 @@ ___
 
 ▸ **generateRandomStationId**(): *string*
 
-*Defined in [packages/dataproviders/src/util/testUtil.ts:16](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/util/testUtil.ts#L16)*
+*Defined in [packages/dataproviders/src/util/testUtil.ts:16](https://github.com/shootismoke/common/blob/c0e7829/packages/dataproviders/src/util/testUtil.ts#L16)*
 
 **Returns:** *string*
 
@@ -42,7 +42,7 @@ ___
 
 ▸ **testNormalized**(`normalized`: [Normalized](_packages_dataproviders_src_types_.md#normalized)): *void*
 
-*Defined in [packages/dataproviders/src/util/testUtil.ts:25](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/util/testUtil.ts#L25)*
+*Defined in [packages/dataproviders/src/util/testUtil.ts:25](https://github.com/shootismoke/common/blob/c0e7829/packages/dataproviders/src/util/testUtil.ts#L25)*
 
 Test that normalized data is correct
 
@@ -60,7 +60,7 @@ ___
 
 ▸ **testProviderE2E**‹**DataByGps**, **DataByStation**, **Options**›(`provider`: [Provider](../interfaces/_packages_dataproviders_src_types_.provider.md)‹DataByGps, DataByStation, Options›, `__namedParameters`: object): *void*
 
-*Defined in [packages/dataproviders/src/util/testUtil.ts:100](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/util/testUtil.ts#L100)*
+*Defined in [packages/dataproviders/src/util/testUtil.ts:100](https://github.com/shootismoke/common/blob/c0e7829/packages/dataproviders/src/util/testUtil.ts#L100)*
 
 Test helper to test a provider
 
@@ -91,7 +91,7 @@ ___
 
 ▸ **testTE**‹**T**›(`te`: TaskEither‹Error, T›, `normalize`: function, `done`: DoneCallback): *void*
 
-*Defined in [packages/dataproviders/src/util/testUtil.ts:40](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/util/testUtil.ts#L40)*
+*Defined in [packages/dataproviders/src/util/testUtil.ts:40](https://github.com/shootismoke/common/blob/c0e7829/packages/dataproviders/src/util/testUtil.ts#L40)*
 
 Test that a TE is resolving correctly.
 

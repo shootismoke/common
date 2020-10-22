@@ -15,7 +15,7 @@
 
 ▸ **normalize**(`data`: [ByStation](_packages_dataproviders_src_providers_aqicn_validation_.md#bystation)): *E.Either‹Error, [Normalized](_packages_dataproviders_src_types_.md#normalized)›*
 
-*Defined in [packages/dataproviders/src/providers/aqicn/normalize.ts:39](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/providers/aqicn/normalize.ts#L39)*
+*Defined in [packages/dataproviders/src/providers/aqicn/normalize.ts:39](https://github.com/shootismoke/common/blob/c0e7829/packages/dataproviders/src/providers/aqicn/normalize.ts#L39)*
 
 Normalize aqicn byGps data
 
@@ -33,7 +33,7 @@ ___
 
 ▸ **sanitizeCountry**(`input`: string): *string*
 
-*Defined in [packages/dataproviders/src/providers/aqicn/normalize.ts:23](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/providers/aqicn/normalize.ts#L23)*
+*Defined in [packages/dataproviders/src/providers/aqicn/normalize.ts:23](https://github.com/shootismoke/common/blob/c0e7829/packages/dataproviders/src/providers/aqicn/normalize.ts#L23)*
 
 Sanitize the country we get here from aqicn. For example, for China, the
 string after 'https://aqicn.org/city/' is not 'china', but directly the

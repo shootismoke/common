@@ -36,7 +36,7 @@ An interface representing an air quality data provider (Promise version)
 
 • **id**: *string*
 
-*Defined in [packages/dataproviders/src/types.ts:48](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/types.ts#L48)*
+*Defined in [packages/dataproviders/src/types.ts:48](https://github.com/shootismoke/common/blob/c0e7829/packages/dataproviders/src/types.ts#L48)*
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 • **name**: *string*
 
-*Defined in [packages/dataproviders/src/types.ts:49](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/types.ts#L49)*
+*Defined in [packages/dataproviders/src/types.ts:49](https://github.com/shootismoke/common/blob/c0e7829/packages/dataproviders/src/types.ts#L49)*
 
 ## Methods
 
@@ -52,7 +52,7 @@ ___
 
 ▸ **fetchByGps**(`gps`: [LatLng](_packages_dataproviders_src_types_.latlng.md), `options?`: Options): *Promise‹DataByGps›*
 
-*Defined in [packages/dataproviders/src/types.ts:43](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/types.ts#L43)*
+*Defined in [packages/dataproviders/src/types.ts:43](https://github.com/shootismoke/common/blob/c0e7829/packages/dataproviders/src/types.ts#L43)*
 
 **Parameters:**
 
@@ -69,7 +69,7 @@ ___
 
 ▸ **fetchByStation**(`stationId`: string, `options?`: Options): *Promise‹DataByStation›*
 
-*Defined in [packages/dataproviders/src/types.ts:44](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/types.ts#L44)*
+*Defined in [packages/dataproviders/src/types.ts:44](https://github.com/shootismoke/common/blob/c0e7829/packages/dataproviders/src/types.ts#L44)*
 
 **Parameters:**
 
@@ -86,7 +86,7 @@ ___
 
 ▸ **normalizeByGps**(`d`: DataByGps): *[Normalized](../modules/_packages_dataproviders_src_types_.md#normalized)*
 
-*Defined in [packages/dataproviders/src/types.ts:50](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/types.ts#L50)*
+*Defined in [packages/dataproviders/src/types.ts:50](https://github.com/shootismoke/common/blob/c0e7829/packages/dataproviders/src/types.ts#L50)*
 
 **Parameters:**
 
@@ -102,7 +102,7 @@ ___
 
 ▸ **normalizeByStation**(`d`: DataByStation): *[Normalized](../modules/_packages_dataproviders_src_types_.md#normalized)*
 
-*Defined in [packages/dataproviders/src/types.ts:51](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/types.ts#L51)*
+*Defined in [packages/dataproviders/src/types.ts:51](https://github.com/shootismoke/common/blob/c0e7829/packages/dataproviders/src/types.ts#L51)*
 
 **Parameters:**
 

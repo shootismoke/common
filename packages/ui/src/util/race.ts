@@ -53,8 +53,8 @@ function createApi(gps: LatLng, normalized: Normalized): Api {
 				Math.abs(differenceInHours(new Date(date.utc), now)) <=
 				NORMALIZED_WITHIN_HOURS
 		)
-		//Remove the entries that are negative (happens on openaq).
-		.filter(({ value }) => value < 0);
+		// Remove the entries that are negative (happens on openaq).
+		.filter(({ value }) => value >= 0);
 	const pm25 = sanitizedNormalized.filter(
 		({ parameter }) => parameter === 'pm25'
 	);

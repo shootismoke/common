@@ -21,7 +21,7 @@ Latitude and longitude object
 
 • **latitude**: *number*
 
-*Defined in [packages/dataproviders/src/types.ts:10](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/types.ts#L10)*
+*Defined in [packages/dataproviders/src/types.ts:10](https://github.com/shootismoke/common/blob/c0e7829/packages/dataproviders/src/types.ts#L10)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **longitude**: *number*
 
-*Defined in [packages/dataproviders/src/types.ts:11](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/types.ts#L11)*
+*Defined in [packages/dataproviders/src/types.ts:11](https://github.com/shootismoke/common/blob/c0e7829/packages/dataproviders/src/types.ts#L11)*

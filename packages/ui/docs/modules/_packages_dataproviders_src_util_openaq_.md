@@ -20,7 +20,7 @@
 
 Ƭ **OpenAQFormat**: *t.TypeOf‹typeof OpenAQCodec›*
 
-*Defined in [packages/dataproviders/src/util/openaq.ts:112](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/util/openaq.ts#L112)*
+*Defined in [packages/dataproviders/src/util/openaq.ts:112](https://github.com/shootismoke/common/blob/c0e7829/packages/dataproviders/src/util/openaq.ts#L112)*
 
 A TypeScript type to represent the OpenAQ data format.
 
@@ -35,7 +35,7 @@ A TypeScript type to represent the OpenAQ data format.
 	OpenAQCodecOptional,
 ])
 
-*Defined in [packages/dataproviders/src/util/openaq.ts:102](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/util/openaq.ts#L102)*
+*Defined in [packages/dataproviders/src/util/openaq.ts:102](https://github.com/shootismoke/common/blob/c0e7829/packages/dataproviders/src/util/openaq.ts#L102)*
 
 An io-ts codec to validate the OpenAQ data format.
 
@@ -55,7 +55,7 @@ ___
 	sourceType: sourceTypeCodec,
 })
 
-*Defined in [packages/dataproviders/src/util/openaq.ts:87](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/util/openaq.ts#L87)*
+*Defined in [packages/dataproviders/src/util/openaq.ts:87](https://github.com/shootismoke/common/blob/c0e7829/packages/dataproviders/src/util/openaq.ts#L87)*
 
 ___
 
@@ -76,4 +76,4 @@ ___
 	unit: unitCodec,
 })
 
-*Defined in [packages/dataproviders/src/util/openaq.ts:71](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/util/openaq.ts#L71)*
+*Defined in [packages/dataproviders/src/util/openaq.ts:71](https://github.com/shootismoke/common/blob/c0e7829/packages/dataproviders/src/util/openaq.ts#L71)*

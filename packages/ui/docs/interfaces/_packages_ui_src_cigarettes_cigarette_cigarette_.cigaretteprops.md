@@ -21,7 +21,7 @@
 
 • **fullCigaretteLength**: *number*
 
-*Defined in [packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx:37](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx#L37)*
+*Defined in [packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx:37](https://github.com/shootismoke/common/blob/c0e7829/packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx#L37)*
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 • **orientation**: *[CigaretteOrientation](../modules/_packages_ui_src_cigarettes_cigarette_cigarette_.md#cigaretteorientation)*
 
-*Defined in [packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx:36](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx#L36)*
+*Defined in [packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx:36](https://github.com/shootismoke/common/blob/c0e7829/packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx#L36)*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 • **percentage**: *number*
 
-*Defined in [packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx:35](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx#L35)*
+*Defined in [packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx:35](https://github.com/shootismoke/common/blob/c0e7829/packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx#L35)*
 
 ___
 
@@ -45,4 +45,4 @@ ___
 
 • **style**? : *StyleProp‹ViewStyle›*
 
-*Defined in [packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx:38](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx#L38)*
+*Defined in [packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx:38](https://github.com/shootismoke/common/blob/c0e7829/packages/ui/src/Cigarettes/Cigarette/Cigarette.tsx#L38)*

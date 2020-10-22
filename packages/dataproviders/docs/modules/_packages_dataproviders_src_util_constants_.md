@@ -15,7 +15,7 @@
 
 • **ACCURATE_RADIUS**: *15000* = 15000
 
-*Defined in [packages/dataproviders/src/util/constants.ts:5](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/util/constants.ts#L5)*
+*Defined in [packages/dataproviders/src/util/constants.ts:5](https://github.com/shootismoke/common/blob/c0e7829/packages/dataproviders/src/util/constants.ts#L5)*
 
 Radius (in m) from the station/sensor, where we consider the air quality
 measurement to be okay.
@@ -26,6 +26,6 @@ ___
 
 • **AllProviders**: *string[]* = ['aqicn', 'openaq', 'waqi']
 
-*Defined in [packages/dataproviders/src/util/constants.ts:10](https://github.com/shootismoke/common/blob/29c80cb/packages/dataproviders/src/util/constants.ts#L10)*
+*Defined in [packages/dataproviders/src/util/constants.ts:10](https://github.com/shootismoke/common/blob/c0e7829/packages/dataproviders/src/util/constants.ts#L10)*
 
 List of all supported providers' code, in an array

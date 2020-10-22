@@ -14,7 +14,7 @@
 
 ▸ **pm25ToCigarettes**(`rawPm25`: number): *number*
 
-*Defined in [packages/ui/src/util/secretSauce.ts:24](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/util/secretSauce.ts#L24)*
+*Defined in [packages/ui/src/util/secretSauce.ts:24](https://github.com/shootismoke/common/blob/c0e7829/packages/ui/src/util/secretSauce.ts#L24)*
 
 Convert raw pm25 level to number of cigarettes. 1 cigarette is equivalent of
 a PM2.5 level of 22ug/m3.

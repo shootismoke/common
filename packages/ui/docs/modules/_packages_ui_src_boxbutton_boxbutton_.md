@@ -42,7 +42,7 @@
 	},
 })
 
-*Defined in [packages/ui/src/BoxButton/BoxButton.tsx:33](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/BoxButton/BoxButton.tsx#L33)*
+*Defined in [packages/ui/src/BoxButton/BoxButton.tsx:33](https://github.com/shootismoke/common/blob/c0e7829/packages/ui/src/BoxButton/BoxButton.tsx#L33)*
 
 #### Type declaration:
 
@@ -80,7 +80,7 @@
 
 ▸ **BoxButton**(`props`: [BoxButtonProps](../interfaces/_packages_ui_src_boxbutton_boxbutton_.boxbuttonprops.md)): *ReactElement*
 
-*Defined in [packages/ui/src/BoxButton/BoxButton.tsx:55](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/BoxButton/BoxButton.tsx#L55)*
+*Defined in [packages/ui/src/BoxButton/BoxButton.tsx:55](https://github.com/shootismoke/common/blob/c0e7829/packages/ui/src/BoxButton/BoxButton.tsx#L55)*
 
 **Parameters:**
 
