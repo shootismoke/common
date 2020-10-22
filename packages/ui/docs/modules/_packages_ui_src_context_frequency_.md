@@ -26,7 +26,7 @@
 
 Ƭ **Frequency**: *"daily" | "weekly" | "monthly"*
 
-*Defined in [packages/ui/src/context/Frequency.tsx:21](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/context/Frequency.tsx#L21)*
+*Defined in [packages/ui/src/context/Frequency.tsx:21](https://github.com/shootismoke/common/blob/c0e7829/packages/ui/src/context/Frequency.tsx#L21)*
 
 ## Variables
 
@@ -37,7 +37,7 @@
 	setFrequency: noop,
 })
 
-*Defined in [packages/ui/src/context/Frequency.tsx:28](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/context/Frequency.tsx#L28)*
+*Defined in [packages/ui/src/context/Frequency.tsx:28](https://github.com/shootismoke/common/blob/c0e7829/packages/ui/src/context/Frequency.tsx#L28)*
 
 ## Functions
 
@@ -45,7 +45,7 @@
 
 ▸ **FrequencyContextProvider**(`__namedParameters`: object): *ReactElement*
 
-*Defined in [packages/ui/src/context/Frequency.tsx:33](https://github.com/shootismoke/common/blob/29c80cb/packages/ui/src/context/Frequency.tsx#L33)*
+*Defined in [packages/ui/src/context/Frequency.tsx:33](https://github.com/shootismoke/common/blob/c0e7829/packages/ui/src/context/Frequency.tsx#L33)*
 
 **Parameters:**
 

@@ -10,14 +10,8 @@
 * [BoxButton](_packages_ui_src_index_.md#boxbutton)
 * [Button](_packages_ui_src_index_.md#button)
 * [ButtonProps](_packages_ui_src_index_.md#buttonprops)
-* [CigaretteTextProps](_packages_ui_src_index_.md#cigarettetextprops)
 * [Cigarettes](_packages_ui_src_index_.md#cigarettes)
-* [CigarettesBlock](_packages_ui_src_index_.md#cigarettesblock)
-* [CigarettesBlockProps](_packages_ui_src_index_.md#cigarettesblockprops)
 * [CigarettesProps](_packages_ui_src_index_.md#cigarettesprops)
-* [CigarettesText](_packages_ui_src_index_.md#cigarettestext)
-* [ConversionBox](_packages_ui_src_index_.md#conversionbox)
-* [ConversionBoxProps](_packages_ui_src_index_.md#conversionboxprops)
 * [DistanceUnit](_packages_ui_src_index_.md#distanceunit)
 * [Frequency](_packages_ui_src_index_.md#frequency)
 * [FrequencyContext](_packages_ui_src_index_.md#frequencycontext)
@@ -31,7 +25,6 @@
 * [fullScreen](_packages_ui_src_index_.md#fullscreen)
 * [getAQI](_packages_ui_src_index_.md#getaqi)
 * [getCorrectLatLng](_packages_ui_src_index_.md#getcorrectlatlng)
-* [getSwearWord](_packages_ui_src_index_.md#getswearword)
 * [iconBackgroundColor](_packages_ui_src_index_.md#iconbackgroundcolor)
 * [isStationTooFar](_packages_ui_src_index_.md#isstationtoofar)
 * [link](_packages_ui_src_index_.md#link)
@@ -76,51 +69,15 @@ ___
 
 ___
 
-###  CigaretteTextProps
-
-• **CigaretteTextProps**:
-
-___
-
 ###  Cigarettes
 
 • **Cigarettes**:
 
 ___
 
-###  CigarettesBlock
-
-• **CigarettesBlock**:
-
-___
-
-###  CigarettesBlockProps
-
-• **CigarettesBlockProps**:
-
-___
-
 ###  CigarettesProps
 
 • **CigarettesProps**:
-
-___
-
-###  CigarettesText
-
-• **CigarettesText**:
-
-___
-
-###  ConversionBox
-
-• **ConversionBox**:
-
-___
-
-###  ConversionBoxProps
-
-• **ConversionBoxProps**:
 
 ___
 
@@ -199,12 +156,6 @@ ___
 ###  getCorrectLatLng
 
 • **getCorrectLatLng**:
-
-___
-
-###  getSwearWord
-
-• **getSwearWord**:
 
 ___
 
