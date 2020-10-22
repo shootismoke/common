@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/shootismoke/common/compare/v0.5.7...v0.6.0) (2020-10-22)
+
+
+### Bug Fixes
+
+* **ui:** Remove CigarettesBlock, CigarettesText and ConversionBox  ([#313](https://github.com/shootismoke/common/issues/313)) ([6631fae](https://github.com/shootismoke/common/commit/6631faee3317e8ad797db6556cbb7943f676e500))
+* **ui:** Remove measurements with negative value ([#327](https://github.com/shootismoke/common/issues/327)) ([8ed2f95](https://github.com/shootismoke/common/commit/8ed2f95f90b924ee4e536c0cc7c1c006096f63ed))
+
+
+### BREAKING CHANGES
+
+* **ui:** The component `CigarettesBlock`, `CigarettesText` and `ConversionBox` have been removed from the ui package.
+
+
+
+
+
 ## [0.5.7](https://github.com/shootismoke/common/compare/v0.5.6...v0.5.7) (2020-10-18)
 
 
