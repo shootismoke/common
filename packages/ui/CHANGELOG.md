@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.2](https://github.com/shootismoke/common/compare/v0.6.1...v0.6.2) (2020-10-31)
+
+
+### Features
+
+* **ui:** Export `slugify` function ([#336](https://github.com/shootismoke/common/issues/336)) ([d1eeab4](https://github.com/shootismoke/common/commit/d1eeab4cf73d74ed84c58f2210ff731f9c7f4103))
+
+
+
+
+
 ## [0.6.1](https://github.com/shootismoke/common/compare/v0.6.0...v0.6.1) (2020-10-22)
 
 
