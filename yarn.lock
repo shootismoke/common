@@ -9816,9 +9816,9 @@ react-native-safe-modules@^1.0.0:
     dedent "^0.6.0"
 
 react-native-web@^0.14.0:
-  version "0.14.4"
-  resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.14.4.tgz#b26abe160dd77239907761da033424944aead9a9"
-  integrity sha512-xbsFK/BOR9VEwep/LeFi8V8BgbWvlJRrEIAnEgCxU95+sCR3Hty9dH/JSGeclMqlwBLW3WlEBRGtUAl6ybTcjA==
+  version "0.14.7"
+  resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.14.7.tgz#3df5b009228e1b8d7ddbfc98c049ef663c7f3910"
+  integrity sha512-C0RTq/FKKJJfXVBgz4q3cwtnQb/yCDAuTZXxm8gzXtFkDDgwfGQ8NSXfGFM54VysUeHMtrzhgaEQcsQzdr9kqA==
   dependencies:
     array-find-index "^1.0.2"
     create-react-class "^15.6.2"
