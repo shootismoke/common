@@ -3,6 +3,7 @@
  */ /** */
 
 import axios from 'axios';
+import debug from 'debug';
 import * as E from 'fp-ts/lib/Either';
 import { pipe } from 'fp-ts/lib/pipeable';
 import * as TE from 'fp-ts/lib/TaskEither';
@@ -10,6 +11,8 @@ import { Type } from 'io-ts';
 import { failure } from 'io-ts/lib/PathReporter';
 
 import { promiseToTE } from './fp';
+
+const l = debug('shootismoke:dataproviders');
 
 /**
  * Decode, and return an Error on failure
@@ -42,6 +45,8 @@ export function fetchAndDecode<A, E, O, I>(
 		onError?: (error: E) => Error;
 	} = {}
 ): TE.TaskEither<Error, A> {
+	l(`Fetching URL ${url}`);
+
 	return pipe(
 		promiseToTE(() =>
 			axios
