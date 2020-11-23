@@ -101,6 +101,8 @@ export function testProviderE2E<DataByGps, DataByStation, Options>(
 	provider: Provider<DataByGps, DataByStation, Options>,
 	{ options, skip = [] }: TestProviderE2EOptions<Options>
 ): void {
+	jest.setTimeout(30000);
+
 	if (!skip.includes('fetchByGps')) {
 		describe('fetchByGps', () => {
 			[...Array(2)].map(generateRandomLatLng).forEach((gps) => {
@@ -128,4 +130,6 @@ export function testProviderE2E<DataByGps, DataByStation, Options>(
 			});
 		});
 	}
+
+	jest.setTimeout(5000);
 }

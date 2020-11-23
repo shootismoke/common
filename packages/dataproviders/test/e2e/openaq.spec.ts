@@ -7,13 +7,17 @@ import { openaq } from '../../src/providers/openaq';
 import { testProviderE2E } from '../../src/util';
 
 describe('openaq e2e', () => {
+	beforeAll(() => {
+		jest.setTimeout(30000); // Some requests might take a bit longer
+	});
+
 	testProviderE2E(openaq, {
 		skip: ['fetchByStation'],
 	});
 
-	it('should fetch station Coyhaique', (done) => {
+	it('should fetch station Beijing', (done) => {
 		pipe(
-			openaq.fetchByStation('Coyhaique'),
+			openaq.fetchByStation('Beijing'),
 			TE.fold(
 				(error) => {
 					done.fail(error);
@@ -32,13 +36,11 @@ describe('openaq e2e', () => {
 	});
 
 	it('should fetch correctly with options', (done) => {
-		jest.setTimeout(30000); // This request might take a bit longer
-
 		const dateFrom = subDays(new Date(), 9000);
 		const dateTo = subDays(new Date(), 7);
 
 		pipe(
-			openaq.fetchByStation('FR04002', {
+			openaq.fetchByStation('Beijing', {
 				dateFrom,
 				dateTo,
 				limit: 2,
