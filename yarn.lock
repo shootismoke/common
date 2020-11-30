@@ -1017,7 +1017,7 @@
     "@graphql-tools/utils" "^6.0.18"
     tslib "~2.0.0"
 
-"@graphql-codegen/plugin-helpers@^1.17.8", "@graphql-codegen/plugin-helpers@^1.17.9", "@graphql-codegen/plugin-helpers@^1.18.1", "@graphql-codegen/plugin-helpers@^1.18.2":
+"@graphql-codegen/plugin-helpers@^1.17.8", "@graphql-codegen/plugin-helpers@^1.18.1", "@graphql-codegen/plugin-helpers@^1.18.2":
   version "1.18.2"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/plugin-helpers/-/plugin-helpers-1.18.2.tgz#57011076cb8b8f5d04d37d226a5eda300c01be94"
   integrity sha512-SvX+Ryq2naLcoD6jJNxtzc/moWTgHJ+X0KRfvhGWTa+xtFTS02i+PWOR89YYPcD8+LF6GmyFBjx2FmLCx4JwMg==
@@ -1035,18 +1035,18 @@
     upper-case "2.0.1"
 
 "@graphql-codegen/typescript-resolvers@^1.8.2":
-  version "1.17.11"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-resolvers/-/typescript-resolvers-1.17.11.tgz#53c0a99ec581dbb123e77f9c4c0137c0f15a88d5"
-  integrity sha512-3C5gA9OiIJFNcMKcQKnc4vXerH5QT+0dB8O+lhLhPWZPlIaMVl5TpRME/Ej4imzy29ez826nUxNoKW5VdnvdqA==
+  version "1.18.0"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-resolvers/-/typescript-resolvers-1.18.0.tgz#9cf1b86da14cadf22d7f2507c9df163ed3eb5842"
+  integrity sha512-2td9zZgOEwZLg/9K1Rsx4V8z/c8CiIL4J1Mn7vx+PjFNHT3LI7HKuY1SbQkPjyctjahYMt/gmF1jXlBY/nZBNA==
   dependencies:
-    "@graphql-codegen/plugin-helpers" "^1.17.9"
-    "@graphql-codegen/typescript" "^1.17.10"
-    "@graphql-codegen/visitor-plugin-common" "^1.17.18"
+    "@graphql-codegen/plugin-helpers" "^1.18.2"
+    "@graphql-codegen/typescript" "^1.19.0"
+    "@graphql-codegen/visitor-plugin-common" "^1.17.21"
     "@graphql-tools/utils" "^6"
     auto-bind "~4.0.0"
     tslib "~2.0.1"
 
-"@graphql-codegen/typescript@^1.17.10", "@graphql-codegen/typescript@^1.8.2":
+"@graphql-codegen/typescript@^1.19.0", "@graphql-codegen/typescript@^1.8.2":
   version "1.19.0"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript/-/typescript-1.19.0.tgz#05b1b4502b91dee53ec4f0ae39e9537eff004c5c"
   integrity sha512-ThpMdtb6LmEKzLNxlotpk33eIMfX1i1aAlYDaqctIhFjZ2Rbvkgdb8q/5/my7yeH33BLnuqHDKrdkDsAAvCHcw==
@@ -1056,7 +1056,7 @@
     auto-bind "~4.0.0"
     tslib "~2.0.1"
 
-"@graphql-codegen/visitor-plugin-common@^1.17.18", "@graphql-codegen/visitor-plugin-common@^1.17.21":
+"@graphql-codegen/visitor-plugin-common@^1.17.21":
   version "1.17.21"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/visitor-plugin-common/-/visitor-plugin-common-1.17.21.tgz#e47a5623392bcdb89d5af2484798a2fd9a59df8c"
   integrity sha512-rhdJdj+4DAMgMSBlgkvfOMw65L46sAtYb7G/n9ucc9uJGUbiIcgvS/wpoQ/gxz2eUaNfcoFmjVLm+dkTM/XwqA==
