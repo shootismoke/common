@@ -19,7 +19,7 @@
 		"docs": "rimraf docs && typedoc src"
 	},
 	"dependencies": {
-		"@expo/vector-icons": "^10.2.0",
+		"@expo/vector-icons": "^12.0.1",
 		"@shootismoke/dataproviders": "^0.6.2",
 		"@sindresorhus/slugify": "^1.1.0",
 		"@types/haversine": "^1.1.4",
