@@ -14,7 +14,6 @@
 // You should have received a copy of the GNU General Public License
 // along with Sh**t! I Smoke.  If not, see <http://www.gnu.org/licenses/>.
 
-import Constants from 'expo-constants';
 import { ViewStyle } from 'react-native';
 
 export type ShadowPosition = 'top' | 'bottom';
@@ -56,12 +55,6 @@ export function elevationShadowStyle(
 		shadowRadius: 0.8 * elevation,
 	};
 }
-
-export const fullScreen = {
-	backgroundColor,
-	flexGrow: 1,
-	paddingTop: Constants.statusBarHeight,
-};
 
 export const link = {
 	color: primaryColor,

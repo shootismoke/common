@@ -14,7 +14,6 @@
 // You should have received a copy of the GNU General Public License
 // along with Sh**t! I Smoke.  If not, see <http://www.gnu.org/licenses/>.
 
-import { Ionicons } from '@expo/vector-icons';
 import React from 'react';
 import {
 	StyleSheet,
@@ -71,7 +70,6 @@ export function Button(props: ButtonProps): React.ReactElement {
 	const {
 		as: Wrapper = TouchableOpacity,
 		children,
-		icon,
 		onPress,
 		style,
 		textStyle,
@@ -95,14 +93,6 @@ export function Button(props: ButtonProps): React.ReactElement {
 			]}
 			{...rest}
 		>
-			{icon && (
-				<Ionicons
-					color={theme.primaryColor}
-					name={icon}
-					size={15}
-					style={!!children && styles.icon}
-				/>
-			)}
 			{children &&
 				(typeof children === 'string' ? (
 					<Text
