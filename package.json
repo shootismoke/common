@@ -23,7 +23,7 @@
 		"jest": "^25.1.0",
 		"lerna": "^3.18.3",
 		"ts-jest": "^25.0.0",
-		"typedoc": "^0.19.1",
+		"typedoc": "^0.20.14",
 		"typedoc-plugin-markdown": "^3.0.2",
 		"typescript": "^3.7.2"
 	}
