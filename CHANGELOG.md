@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.3](https://github.com/shootismoke/common/compare/v0.6.2...v0.6.3) (2021-01-12)
+
+
+### Bug Fixes
+
+* **ui:** Remove expo dependencies ([#386](https://github.com/shootismoke/common/issues/386)) ([ef578d0](https://github.com/shootismoke/common/commit/ef578d0e74c00713e21e66b1f00a6eb5a5453bd3))
+
+
+
+
+
 ## [0.6.2](https://github.com/shootismoke/common/compare/v0.6.1...v0.6.2) (2020-10-31)
 
 
