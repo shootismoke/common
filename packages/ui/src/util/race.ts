@@ -23,8 +23,8 @@ import { aqicn, openaq } from '@shootismoke/dataproviders/lib/promise';
 import { AqicnOptions } from '@shootismoke/dataproviders/lib/providers/aqicn/fetchBy';
 import { OpenAQOptions } from '@shootismoke/dataproviders/lib/providers/openaq/fetchBy';
 import { differenceInHours, subHours } from 'date-fns';
-import promiseAny, { AggregateError } from 'p-any';
 import debug from 'debug';
+import promiseAny, { AggregateError } from 'p-any';
 
 import { Api } from './api';
 import { pm25ToCigarettes } from './secretSauce';
@@ -44,7 +44,7 @@ const NORMALIZED_WITHIN_HOURS = 6;
  *
  * @param normalized - The normalized data to process
  */
-function createApi(gps: LatLng, normalized: Normalized): Api {
+export function createApi(gps: LatLng, normalized: Normalized): Api {
 	const now = new Date();
 	const sanitizedNormalized = normalized
 		// From the normalized data, remove the entries that are too old.
