@@ -1,6 +1,6 @@
 {
 	"name": "@shootismoke/ui",
-	"version": "0.6.3",
+	"version": "0.6.4",
 	"author": "Amaury Martiny <amaury.martiny@protonmail.com>",
 	"description": "UI components shared across Web & React Native projects",
 	"files": [
@@ -19,7 +19,7 @@
 		"docs": "rimraf docs && typedoc src"
 	},
 	"dependencies": {
-		"@shootismoke/dataproviders": "^0.6.3",
+		"@shootismoke/dataproviders": "^0.6.4",
 		"@sindresorhus/slugify": "^1.1.0",
 		"@types/haversine": "^1.1.4",
 		"@types/p-any": "^1.1.3",
