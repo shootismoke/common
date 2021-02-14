@@ -63,14 +63,17 @@ export const OpenAQMeasurementsCodec = t.type({
  */
 export type OpenAQMeasurements = t.TypeOf<typeof OpenAQMeasurementsCodec>;
 
-const OpenAQErrorCodec = t.type({
-	error: t.string,
-	message: t.string,
-	statusCode: t.number,
-	validation: t.type({
-		keys: t.record(t.number, t.string),
-		source: t.string,
+const OpenAQErrorCodec = t.union([
+	t.type({
+		error: t.string,
+		message: t.string,
+		statusCode: t.number,
+		validation: t.type({
+			keys: t.record(t.number, t.string),
+			source: t.string,
+		}),
 	}),
-});
+	t.string,
+]);
 
 export type OpenAQError = t.TypeOf<typeof OpenAQErrorCodec>;

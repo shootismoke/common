@@ -4,14 +4,17 @@ import * as T from 'fp-ts/lib/Task';
 import * as TE from 'fp-ts/lib/TaskEither';
 
 import { openaq } from '../../src/providers/openaq';
-import { testProviderE2E } from '../../src/util';
 
 describe('openaq e2e', () => {
 	beforeAll(() => jest.setTimeout(30000));
 
-	testProviderE2E(openaq, {
-		skip: ['fetchByStation'],
-	});
+	// OpenAQ has some issues with their API right now.
+	// https://github.com/openaq/openaq-api/issues/468
+	// So we skip this test for now.
+	// TODO Uncomment test.
+	// testProviderE2E(openaq, {
+	// 	skip: ['fetchByStation'],
+	// });
 
 	it('should fetch station Beijing', (done) => {
 		pipe(
