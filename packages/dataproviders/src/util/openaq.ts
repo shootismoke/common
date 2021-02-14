@@ -88,7 +88,7 @@ export const OpenAQCodecOptional = t.partial({
 	attribution: attributionsCodec,
 	averagingPeriod: t.type({
 		unit: t.string,
-		value: t.number,
+		value: t.union([t.number, t.null]),
 	}),
 	mobile: t.boolean,
 	sourceType: sourceTypeCodec,

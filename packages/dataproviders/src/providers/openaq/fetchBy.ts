@@ -82,9 +82,13 @@ function additionalOptions(options: OpenAQOptions = {}): string {
 function onError(error: { response?: { data: OpenAQError } }): Error {
 	// We had occasions from OpenAQ where the error had an empty response field
 	if (error?.response?.data) {
-		return new Error(
-			`${error.response.data.statusCode} ${error.response.data.error}: ${error.response.data.message}`
-		);
+		if (typeof error.response.data === 'string') {
+			return new Error(error.response.data);
+		} else {
+			return new Error(
+				`${error.response.data.statusCode} ${error.response.data.error}: ${error.response.data.message}`
+			);
+		}
 	}
 
 	return new Error(JSON.stringify(error));
