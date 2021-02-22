@@ -4390,9 +4390,9 @@ dataloader@2.0.0:
   integrity sha512-YzhyDAwA4TaQIhM5go+vCLmU0UikghC/t9DTQYZR2M/UvZ1MdOhPezSDZcjj9uqQJOMqjLcpWtyW2iNINdlatQ==
 
 date-fns-tz@^1.0.9:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/date-fns-tz/-/date-fns-tz-1.1.1.tgz#2e0dfcc62cc5b7b5fa7ea620f11a5e7f63a7ed75"
-  integrity sha512-5PR604TlyvpiNXtvn+PZCcCazsI8fI1am3/aimNFN8CMqHQ0KRl+6hB46y4mDbB7bk3+caEx3qHhS7Ewac/FIg==
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/date-fns-tz/-/date-fns-tz-1.1.2.tgz#893c73026e20a8ae1bfb0c565dd2972df723776e"
+  integrity sha512-QY3KoLy16bERNTEhJV2UJfvQRcPOwneAGwLcKUyHYT1PKydYyEZ7rKJjo6tDvx3bXlQhbnvq7CrvbFlonR00AQ==
 
 date-fns@^1.27.2:
   version "1.30.1"
