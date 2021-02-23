@@ -23,7 +23,7 @@ import {
 	View,
 } from 'react-native';
 
-import * as theme from '../util/theme';
+import * as theme from '../../util/theme';
 
 interface BoxButtonProps extends TouchableWithoutFeedbackProps {
 	active?: boolean;

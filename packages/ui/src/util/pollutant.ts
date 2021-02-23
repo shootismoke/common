@@ -14,8 +14,87 @@
 // You should have received a copy of the GNU General Public License
 // along with Sh**t! I Smoke.  If not, see <http://www.gnu.org/licenses/>.
 
-import { convert } from '@shootismoke/convert';
+import { convert, Pollutant } from '@shootismoke/convert';
 import { Normalized, OpenAQFormat } from '@shootismoke/dataproviders';
+
+type PollutantData = { effects: string; name: string };
+
+/**
+ * Definitions and effects of various pollutants.
+ *
+ * @see https://www.sciencedirect.com/topics/chemistry/air-pollutant
+ */
+const pollutantData: Partial<Record<Pollutant, PollutantData>> = {
+	bc: {
+		effects:
+			'Black carbon is a potent climate-warming component of particulate matter formed by the incomplete combustion of fossil fuels, wood and other fuels.',
+		name: 'Black Carbon',
+	},
+	c6h6: {
+		effects:
+			'Hydrocarbons are the primary pollutants that produce photochemical smog.',
+		name: 'Hydrocarbons',
+	},
+	// FIXME Add ch4
+	// ch4: {
+	// 	effects: 'Partly responsible for the atmospheric greenhouse effect.',
+	// 	name: 'Methane',
+	// },
+	co: {
+		effects:
+			'Carbon monoxide reduces the oxygen-carrying capacity of the blood by combining with haemoglobin, thus deprives tissues of O2.',
+		name: 'Carbon monoxide',
+	},
+	// FIXME Add co2
+	// co2: {
+	// 	effects: 'Partly responsible for the atmospheric greenhouse effect',
+	// },
+	no: {
+		effects:
+			'Nitrogen oxides cause eye, throat, and lung irritation. Primary pollutants that produce photochemical smog and acid rain, destroy ozone at the stratosphere.',
+		name: 'Nitrogen oxides',
+	},
+	no2: {
+		effects:
+			'Nitrogen oxides cause eye, throat, and lung irritation. Primary pollutants that produce photochemical smog and acid rain, destroy ozone at the stratosphere.',
+		name: 'Nitrogen oxides',
+	},
+	o3: {
+		effects:
+			'Ozone causes eye, throat, and lung irritation, impairs lung function.',
+		name: 'Ozone',
+	},
+	pm10: {
+		effects:
+			'Particulate matters under 10μm (PM10), may cause breathing difficulties.',
+		name: 'Particulates',
+	},
+	pm25: {
+		effects:
+			'Particulate matters under 2.5μm (PM2.5), may cause breathing difficulties.',
+		name: 'Particulates',
+	},
+	so2: {
+		effects:
+			'Sulfur dioxide causes eye, throat, and lung irritation. Primary pollutants that produce acid rain.',
+		name: 'Sulfur dioxide',
+	},
+};
+
+/**
+ * Get metadata about a pollutant.
+ *
+ * @param pollutant - The pollutant to get the data.
+ */
+export function getPollutantData(pollutant: Pollutant): PollutantData {
+	const polData = pollutantData[pollutant];
+
+	if (!polData) {
+		throw new Error('All pollutants are in pollutantData. qed.');
+	}
+
+	return polData;
+}
 
 /**
  * From a set of normalized pollutant data, filter only the ones that can be
