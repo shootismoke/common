@@ -35,7 +35,6 @@ export interface IExpoReport {
 }
 
 export interface IUser {
-	_id: string;
 	emailReport?: IEmailReport;
 	expoReport?: IExpoReport;
 	lastStationId: string;
