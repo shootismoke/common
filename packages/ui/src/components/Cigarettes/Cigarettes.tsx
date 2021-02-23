@@ -18,7 +18,7 @@ import React from 'react';
 import { StyleSheet, View, ViewProps, StyleProp } from 'react-native';
 
 import { Cigarette } from './Cigarette';
-import { round } from '../util/api';
+import { round } from '../../util/api';
 
 export interface CigarettesProps extends ViewProps {
 	/**

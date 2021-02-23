@@ -14,17 +14,17 @@
 // You should have received a copy of the GNU General Public License
 // along with Sh**t! I Smoke.  If not, see <http://www.gnu.org/licenses/>.
 
-export { default as slugify } from '@sindresorhus/slugify';
+import type { Frequency } from './types';
 
-export * from './components';
-
-export * from './context';
-
-export * from './util/api';
-export * from './util/noop';
-export * from './util/pollutant';
-export * from './util/race';
-export * from './util/secretSauce';
-export * from './util/station';
-export * from './util/theme';
-export * from './util/types';
+/**
+ * Convert a frequency to its equivalent period.
+ *
+ * @param frequency - The frequency to convert.
+ */
+export function frequencyToPeriod(frequency: Frequency): string {
+	return frequency === 'daily'
+		? 'day'
+		: frequency === 'weekly'
+		? 'week'
+		: 'month';
+}

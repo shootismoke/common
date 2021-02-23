@@ -1,5 +1,4 @@
 .eslintrc.js
-packages/graphql/src/types.ts
 packages/*/typedoc.js
 **/bin/*
 **/coverage/*
