@@ -1,7 +1,7 @@
 {
 	"name": "@shootismoke/graphql",
 	"version": "0.6.4",
-	"author": "Amaury Martiny <amaury.martiny@protonmail.com>",
+	"author": "Amaury <amaurym10@protonmail.com>",
 	"description": "TypeScript types for GraphQL schemas in Sh**t! I Smoke",
 	"files": [
 		"lib/"
