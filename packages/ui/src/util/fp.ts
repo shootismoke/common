@@ -16,7 +16,6 @@
 
 import * as C from 'fp-ts/lib/Console';
 import * as E from 'fp-ts/lib/Either';
-import { Lazy } from 'fp-ts/lib/function';
 import * as O from 'fp-ts/lib/Option';
 import { pipe } from 'fp-ts/lib/pipeable';
 import * as T from 'fp-ts/lib/Task';
@@ -29,6 +28,8 @@ import {
 	RetryStatus,
 } from 'retry-ts';
 import { retrying } from 'retry-ts/lib/Task';
+
+export { promiseToTE } from '@shootismoke/dataproviders/lib/util';
 
 /**
  * A side-effect in a TaskEither chain: if the TaskEither fails, still return
@@ -97,16 +98,5 @@ export function retry<A>(
 				)
 			),
 		E.isLeft
-	);
-}
-
-/**
- * Convert a Promise<A> into a TaskEither<Error, A>.
- *
- * @param fn - Function returning a Promise
- */
-export function promiseToTE<A>(fn: Lazy<Promise<A>>): TE.TaskEither<Error, A> {
-	return TE.tryCatch(fn, (reason: unknown) =>
-		reason instanceof Error ? reason : new Error(String(reason))
 	);
 }
