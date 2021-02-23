@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.1](https://github.com/shootismoke/common/compare/v0.7.0...v0.7.1) (2021-02-23)
+
+
+### Bug Fixes
+
+* **ui:** Fix `IUser` type by removing _id ([#418](https://github.com/shootismoke/common/issues/418)) ([80622c4](https://github.com/shootismoke/common/commit/80622c4f2c2f8075373f155daec4304dbf40863b))
+
+
+
+
+
 # [0.7.0](https://github.com/shootismoke/common/compare/v0.6.4...v0.7.0) (2021-02-23)
 
 
