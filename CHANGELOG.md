@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.2](https://github.com/shootismoke/common/compare/v0.7.1...v0.7.2) (2021-02-24)
+
+
+### Bug Fixes
+
+* **ui:** Fix cigarette image import link ([#419](https://github.com/shootismoke/common/issues/419)) ([a06547e](https://github.com/shootismoke/common/commit/a06547ef6ed3cc8489b89d06592a45b5c1ede6f0))
+
+
+
+
+
 ## [0.7.1](https://github.com/shootismoke/common/compare/v0.7.0...v0.7.1) (2021-02-23)
 
 
