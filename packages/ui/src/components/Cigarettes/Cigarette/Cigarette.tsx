@@ -24,10 +24,10 @@ import {
 	ImageSourcePropType,
 } from 'react-native';
 
-import buttVertical from '../../../assets/images/butt-vertical.png';
-import butt from '../../../assets/images/butt.png';
-import headVertical from '../../../assets/images/head-vertical.png';
-import head from '../../../assets/images/head.png';
+import buttVertical from '../../../../assets/images/butt-vertical.png';
+import butt from '../../../../assets/images/butt.png';
+import headVertical from '../../../../assets/images/head-vertical.png';
+import head from '../../../../assets/images/head.png';
 
 export type CigaretteOrientation = 'diagonal' | 'horizontal' | 'vertical';
 
