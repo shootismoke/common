@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/shootismoke/common/compare/v0.7.2...v0.8.0) (2021-02-27)
+
+
+### Features
+
+* Switch to OpenAQ API v2 ([#420](https://github.com/shootismoke/common/issues/420)) ([8cc35a5](https://github.com/shootismoke/common/commit/8cc35a5423c65ed0b7e69c744d4e67bb827565e6))
+
+
+### BREAKING CHANGES
+
+* The `OpenAQFormat` type has been renamed to `OpenAQResult`, and follows the v2 schema.
+
+
+
+
+
 # [0.7.0](https://github.com/shootismoke/common/compare/v0.6.4...v0.7.0) (2021-02-23)
 
 **Note:** Version bump only for package @shootismoke/dataproviders
