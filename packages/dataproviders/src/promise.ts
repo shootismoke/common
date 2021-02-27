@@ -2,9 +2,9 @@ import {
 	aqicn as aqicnFp,
 	openaq as openaqFp,
 	waqi as waqiFp,
-} from './Providers';
+} from './providers';
 import { LatLng, OpenAQResults } from './types';
-import { ProviderFP } from './Providers/types';
+import { ProviderFP } from './providers/types';
 import { eitherToFunction, teToPromise } from './util';
 
 /**
