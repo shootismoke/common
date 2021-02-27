@@ -1,6 +1,6 @@
 export * from './codec';
 export * from './constants';
-export * from './countries';
+export * from './countryCode';
 export * from './errors';
 export * from './fp';
 export * from './getDominantPol';

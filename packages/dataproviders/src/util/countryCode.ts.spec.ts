@@ -1,6 +1,6 @@
 import * as O from 'fp-ts/lib/Option';
 
-import { getCountryCode } from './countries';
+import { getCountryCode } from './countryCode';
 
 describe('getCountryCode', () => {
 	it('should match exact country', () => {
