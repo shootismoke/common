@@ -1,6 +1,4 @@
-[@shootismoke/convert](README.md) › [Globals](globals.md)
-
-# @shootismoke/convert
+@shootismoke/convert / [Exports](modules.md)
 
 [![npm (scoped)](https://img.shields.io/npm/v/@shootismoke/convert.svg)](https://www.npmjs.com/package/@shootismoke/convert)
 [![dependencies Status](https://david-dm.org/shootismoke/common/status.svg?path=packages/convert)](https://david-dm.org/shootismoke/common?path=packages/convert)

@@ -1,6 +1,4 @@
-[@shootismoke/ui](README.md) › [Globals](globals.md)
-
-# @shootismoke/ui
+@shootismoke/ui / [Exports](modules.md)
 
 [![npm (scoped)](https://img.shields.io/npm/v/@shootismoke/ui.svg)](https://www.npmjs.com/package/@shootismoke/ui)
 [![dependencies Status](https://david-dm.org/shootismoke/common/status.svg?path=packages/ui)](https://david-dm.org/shootismoke/common?path=packages/ui)
