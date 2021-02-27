@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.2](https://github.com/shootismoke/common/compare/v0.8.1...v0.8.2) (2021-02-27)
+
+
+### Bug Fixes
+
+* Add some exports, remove react-native stuff from default exports ([#421](https://github.com/shootismoke/common/issues/421)) ([9b6fec1](https://github.com/shootismoke/common/commit/9b6fec1e1c7e8f642b6c5cd6d4300b2d71bf0086))
+
+
+
+
+
 ## [0.8.1](https://github.com/shootismoke/common/compare/v0.8.0...v0.8.1) (2021-02-27)
 
 **Note:** Version bump only for package @shootismoke/ui
