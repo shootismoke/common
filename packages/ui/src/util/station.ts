@@ -22,6 +22,15 @@ import {
 import haversine from 'haversine';
 
 /**
+ * Capitalize a string.
+ *
+ * @param s - The string to capitalize
+ */
+export function capitalize(s: string): string {
+	return s.charAt(0).toUpperCase() + s.slice(1);
+}
+
+/**
  * We can show distances in these two units.
  */
 export type DistanceUnit = 'km' | 'mile';

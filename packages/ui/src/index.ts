@@ -16,6 +16,5 @@
 
 export { default as slugify } from '@sindresorhus/slugify';
 
-export * from './components';
 export * from './context';
 export * from './util';
