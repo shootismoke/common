@@ -10,7 +10,7 @@ interface Country {
 }
 
 /**
- * Sanitize a country name
+ * Sanitize a country name.
  *
  * @ignore
  */

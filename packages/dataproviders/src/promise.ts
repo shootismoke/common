@@ -2,17 +2,15 @@ import {
 	aqicn as aqicnFp,
 	openaq as openaqFp,
 	waqi as waqiFp,
-} from './providers';
+} from './Providers';
 import { LatLng, OpenAQResults } from './types';
-import { Provider } from './providers/types';
+import { ProviderFP } from './Providers/types';
 import { eitherToFunction, teToPromise } from './util';
 
 /**
- * An interface representing an air quality data provider (Promise version).
- *
- * @ignore
+ * An interface representing an air quality data Provider (Promise version).
  */
-interface ProviderPromise<DataByGps, DataByStation, Options> {
+export interface Provider<DataByGps, DataByStation, Options> {
 	fetchByGps(gps: LatLng, options?: Options): Promise<DataByGps>;
 	fetchByStation(
 		stationId: string,
@@ -24,29 +22,29 @@ interface ProviderPromise<DataByGps, DataByStation, Options> {
 	normalizeByStation(d: DataByStation): OpenAQResults;
 }
 
-function promisifyProvider<DataByGps, DataByStation, Options>(
-	provider: Provider<DataByGps, DataByStation, Options>
-): ProviderPromise<DataByGps, DataByStation, Options> {
+function promisifyProviderFP<DataByGps, DataByStation, Options>(
+	ProviderFP: ProviderFP<DataByGps, DataByStation, Options>
+): Provider<DataByGps, DataByStation, Options> {
 	return {
-		...provider,
+		...ProviderFP,
 		fetchByGps(gps: LatLng, options?: Options): Promise<DataByGps> {
-			return teToPromise(provider.fetchByGps(gps, options));
+			return teToPromise(ProviderFP.fetchByGps(gps, options));
 		},
 		fetchByStation(
 			stationId: string,
 			options?: Options
 		): Promise<DataByStation> {
-			return teToPromise(provider.fetchByStation(stationId, options));
+			return teToPromise(ProviderFP.fetchByStation(stationId, options));
 		},
 		normalizeByGps(d: DataByGps): OpenAQResults {
-			return eitherToFunction(provider.normalizeByGps(d));
+			return eitherToFunction(ProviderFP.normalizeByGps(d));
 		},
 		normalizeByStation(d: DataByStation): OpenAQResults {
-			return eitherToFunction(provider.normalizeByStation(d));
+			return eitherToFunction(ProviderFP.normalizeByStation(d));
 		},
 	};
 }
 
-export const aqicn = promisifyProvider(aqicnFp);
-export const openaq = promisifyProvider(openaqFp);
-export const waqi = promisifyProvider(waqiFp);
+export const aqicn = promisifyProviderFP(aqicnFp);
+export const openaq = promisifyProviderFP(openaqFp);
+export const waqi = promisifyProviderFP(waqiFp);

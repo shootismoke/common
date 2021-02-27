@@ -6,4 +6,3 @@ export * from './getCountryCode';
 export * from './getDominantPol';
 export * from './openaq';
 export * from './stationName';
-export * from './testUtil';

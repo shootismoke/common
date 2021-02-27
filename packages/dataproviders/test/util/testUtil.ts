@@ -4,8 +4,8 @@ import { pipe } from 'fp-ts/lib/pipeable';
 import * as T from 'fp-ts/lib/Task';
 import * as TE from 'fp-ts/lib/TaskEither';
 
-import type { LatLng, OpenAQResults } from '../types';
-import type { Provider } from '../providers/types';
+import type { LatLng, OpenAQResults } from '../../src/types';
+import type { ProviderFP } from '../../src/providers/types';
 
 function generateRandomLatLng(): LatLng {
 	return {
@@ -96,10 +96,10 @@ interface TestProviderE2EOptions<Options> {
 }
 
 /**
- * Test helper to test a provider
+ * Test helper to test a providerFP
  */
 export function testProviderE2E<DataByGps, DataByStation, Options>(
-	provider: Provider<DataByGps, DataByStation, Options>,
+	providerFP: ProviderFP<DataByGps, DataByStation, Options>,
 	{ options, skip = [] }: TestProviderE2EOptions<Options>
 ): void {
 	jest.setTimeout(30000);
@@ -107,12 +107,12 @@ export function testProviderE2E<DataByGps, DataByStation, Options>(
 	if (!skip.includes('fetchByGps')) {
 		describe('fetchByGps', () => {
 			[0, 0].map(generateRandomLatLng).forEach((gps) => {
-				it(`should fetch ${provider.id} by gps: ${JSON.stringify(
+				it(`should fetch ${providerFP.id} by gps: ${JSON.stringify(
 					gps
 				)}`, (done) =>
 					testTE(
-						provider.fetchByGps(gps, options),
-						(d) => provider.normalizeByGps(d),
+						providerFP.fetchByGps(gps, options),
+						(d) => providerFP.normalizeByGps(d),
 						done
 					));
 			});
@@ -122,10 +122,10 @@ export function testProviderE2E<DataByGps, DataByStation, Options>(
 	if (!skip.includes('fetchByStation')) {
 		describe('fetchByStation', () => {
 			[0, 0].map(generateRandomStationId).forEach((stationId) => {
-				it(`should fetch ${provider.id} by station: ${stationId}`, (done) =>
+				it(`should fetch ${providerFP.id} by station: ${stationId}`, (done) =>
 					testTE(
-						provider.fetchByStation(stationId, options),
-						(d) => provider.normalizeByStation(d),
+						providerFP.fetchByStation(stationId, options),
+						(d) => providerFP.normalizeByStation(d),
 						done
 					));
 			});

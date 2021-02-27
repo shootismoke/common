@@ -16,12 +16,13 @@
 
 import {
 	LatLng,
-	Normalized,
-	ProviderPromise,
+	aqicn,
+	AqicnOptions,
+	OpenAQOptions,
+	openaq,
+	OpenAQResults,
+	Provider,
 } from '@shootismoke/dataproviders';
-import { aqicn, openaq } from '@shootismoke/dataproviders/lib/promise';
-import { AqicnOptions } from '@shootismoke/dataproviders/lib/providers/aqicn/fetchBy';
-import { OpenAQOptions } from '@shootismoke/dataproviders/lib/providers/openaq/fetchBy';
 import { differenceInHours, subHours } from 'date-fns';
 import debug from 'debug';
 import promiseAny, { AggregateError } from 'p-any';
@@ -36,34 +37,35 @@ const l = debug('shootismoke:ui:race');
  * We show pm25 results within this number of hours. More than this, we
  * consider the results as inaccurate.
  */
-const NORMALIZED_WITHIN_HOURS = 6;
+const RESULTS_WITHIN_HOURS = 6;
 
 /**
- * Given some normalized data points, and the current GPS, construct an API
+ * Given some results data points, and the current GPS, construct an API
  * object with sanitized data.
  *
- * @param normalized - The normalized data to process
+ * @param results - The results results data to process
  */
-export function createApi(gps: LatLng, normalized: Normalized): Api {
+export function createApi(gps: LatLng, results: OpenAQResults): Api {
 	const now = new Date();
-	const sanitizedNormalized = normalized
-		// From the normalized data, remove the entries that are too old.
+	const sanitizedResults = results
+		// From the results results, remove the entries that are too old.
 		.filter(
 			({ date }) =>
 				Math.abs(differenceInHours(new Date(date.utc), now)) <=
-				NORMALIZED_WITHIN_HOURS
+				RESULTS_WITHIN_HOURS
 		)
 		// Remove the entries that are negative (happens on openaq).
 		.filter(({ value }) => value >= 0);
-	const pm25 = sanitizedNormalized.filter(
-		({ parameter }) => parameter === 'pm25'
+	// Filter pm25 pollutants with the correct unit.
+	const pm25 = sanitizedResults.filter(
+		({ parameter, unit }) => parameter === 'pm25' && unit === 'µg/m³'
 	);
 
-	// TODO We can sort the pm25 array by closest to `gps`.
+	// TODO We can also sort the pm25 array by closest to `gps`.
 
 	if (pm25.length) {
 		return {
-			normalized: sanitizedNormalized as Normalized, // We're sure there's at least one item in `sanitizedNormalized`.
+			results: sanitizedResults as OpenAQResults, // We're sure there's at least one item in `sanitizedResults`.
 			pm25: pm25[0],
 			shootismoke: {
 				dailyCigarettes: pm25ToCigarettes(pm25[0].value),
@@ -73,7 +75,7 @@ export function createApi(gps: LatLng, normalized: Normalized): Api {
 		};
 	} else {
 		throw new Error(
-			`Station ${normalized[0].location} does not have PM2.5 measurings right now`
+			`Station ${results[0].location} does not have PM2.5 measurings right now`
 		);
 	}
 }
@@ -83,14 +85,14 @@ export function createApi(gps: LatLng, normalized: Normalized): Api {
  */
 async function fetchForProvider<DataByGps, DataByStation, Options>(
 	gps: LatLng,
-	provider: ProviderPromise<DataByGps, DataByStation, Options>,
+	provider: Provider<DataByGps, DataByStation, Options>,
 	options?: Options
-): Promise<Normalized> {
+): Promise<OpenAQResults> {
 	const data = await provider.fetchByGps(gps, options);
-	const normalized = provider.normalizeByGps(data);
-	l(`Got data from ${provider.id}: ${JSON.stringify(normalized)}`);
+	const results = provider.normalizeByGps(data);
+	l(`Got data from ${provider.id}: ${JSON.stringify(results)}`);
 
-	return normalized;
+	return results;
 }
 
 /**
@@ -115,13 +117,13 @@ export function raceApiPromise(
 
 	// Run these tasks parallely
 	const tasks = [
-		fetchForProvider(gps, aqicn, options.aqicn).then((normalized) =>
-			createApi(gps, normalized)
+		fetchForProvider(gps, aqicn, options.aqicn).then((results) =>
+			createApi(gps, results)
 		),
 		fetchForProvider(gps, openaq, {
-			dateFrom: subHours(now, NORMALIZED_WITHIN_HOURS),
+			dateFrom: subHours(now, RESULTS_WITHIN_HOURS),
 			...options.openaq,
-		}).then((normalized) => createApi(gps, normalized)),
+		}).then((results) => createApi(gps, results)),
 	];
 
 	return promiseAny(tasks).catch((errors: AggregateError) => {

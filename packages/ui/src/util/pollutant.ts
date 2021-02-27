@@ -15,7 +15,7 @@
 // along with Sh**t! I Smoke.  If not, see <http://www.gnu.org/licenses/>.
 
 import { convert, Pollutant } from '@shootismoke/convert';
-import { Normalized, OpenAQResult } from '@shootismoke/dataproviders';
+import { OpenAQResults, OpenAQResult } from '@shootismoke/dataproviders';
 
 type PollutantData = { effects: string; name: string };
 
@@ -97,14 +97,14 @@ export function getPollutantData(pollutant: Pollutant): PollutantData {
 }
 
 /**
- * From a set of normalized pollutant data, filter only the ones that can be
+ * From a set of OpenAQResults pollutant data, filter only the ones that can be
  * converted to USA EPA, and sort the set.
  *
- * @param normalized - The normalized data for all pollutants.
+ * @param OpenAQResults - The OpenAQResults data for all pollutants.
  */
-function getSortedNormalized(normalized: Normalized): OpenAQResult[] {
+function getSortedOpenAQResults(OpenAQResults: OpenAQResults): OpenAQResult[] {
 	// We attempt to sort the pollutants by AQI.
-	const unsorted = normalized.filter(({ parameter }) =>
+	const unsorted = OpenAQResults.filter(({ parameter }) =>
 		// Only these pollutants can be converted to usaEpa
 		['o3', 'pm10', 'pm25', 'co', 'so2', 'no2'].includes(parameter)
 	);
@@ -120,13 +120,13 @@ function getSortedNormalized(normalized: Normalized): OpenAQResult[] {
 }
 
 /**
- * From a set of normalized pollutant data, get the AQI, that is, the AQI of
+ * From a set of OpenAQResults pollutant data, get the AQI, that is, the AQI of
  * the primary pollutant.
  *
- * @param normalized - The normalized data for all pollutants.
+ * @param OpenAQResults - The OpenAQResults data for all pollutants.
  */
-export function getAQI(normalized: Normalized): number {
-	const sorted = getSortedNormalized(normalized);
+export function getAQI(OpenAQResults: OpenAQResults): number {
+	const sorted = getSortedOpenAQResults(OpenAQResults);
 
 	if (sorted[0]) {
 		return convert(sorted[0].parameter, 'ugm3', 'usaEpa', sorted[0].value);
@@ -134,17 +134,17 @@ export function getAQI(normalized: Normalized): number {
 		// If the `unsorted` array doesn't contain any pollutants, then we just
 		// fallback to taking the 1st element's value. This is often not even
 		// an AQI. FIXME.
-		return normalized[0].value;
+		return OpenAQResults[0].value;
 	}
 }
 
 /**
- * From a set of normalized pollutant data, find the primary pollutant.
+ * From a set of OpenAQResults pollutant data, find the primary pollutant.
  *
- * @param normalized - The normalized data for all pollutants.
+ * @param OpenAQResults - The OpenAQResults data for all pollutants.
  */
-export function primaryPollutant(normalized: Normalized): OpenAQResult {
-	const sorted = getSortedNormalized(normalized);
+export function primaryPollutant(OpenAQResults: OpenAQResults): OpenAQResult {
+	const sorted = getSortedOpenAQResults(OpenAQResults);
 
 	if (sorted[0]) {
 		return sorted[0];
@@ -152,6 +152,6 @@ export function primaryPollutant(normalized: Normalized): OpenAQResult {
 		// If the `unsorted` array doesn't contain any pollutants, then we just
 		// fallback to taking the 1st element. Most of the case, the 1st
 		// element is of course not the primary pollutant though. FIXME.
-		return normalized[0];
+		return OpenAQResults[0];
 	}
 }

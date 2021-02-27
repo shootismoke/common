@@ -6,7 +6,7 @@ import type { LatLng, OpenAQResults } from '../types';
 /**
  * An interface representing an air quality data provider (fp-ts version).
  */
-export interface Provider<DataByGps, DataByStation, Options> {
+export interface ProviderFP<DataByGps, DataByStation, Options> {
 	fetchByGps(gps: LatLng, options?: Options): TE.TaskEither<Error, DataByGps>;
 	fetchByStation(
 		stationId: string,

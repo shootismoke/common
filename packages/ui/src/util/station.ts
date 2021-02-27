@@ -14,7 +14,11 @@
 // You should have received a copy of the GNU General Public License
 // along with Sh**t! I Smoke.  If not, see <http://www.gnu.org/licenses/>.
 
-import { LatLng, OpenAQResult } from '@shootismoke/dataproviders';
+import {
+	LatLng,
+	OpenAQResult,
+	ACCURATE_RADIUS,
+} from '@shootismoke/dataproviders';
 import haversine from 'haversine';
 
 /**
@@ -25,7 +29,7 @@ export type DistanceUnit = 'km' | 'mile';
 /**
  * Above this distance (km), we consider the station too far from the user
  */
-export const MAX_DISTANCE_TO_STATION = 10;
+export const MAX_DISTANCE_TO_STATION = ACCURATE_RADIUS / 1000;
 
 /**
  * Station given by the AQICN API is fucked up. Sometimes it's [lat, lng],

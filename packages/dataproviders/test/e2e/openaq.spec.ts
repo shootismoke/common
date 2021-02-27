@@ -4,7 +4,7 @@ import * as T from 'fp-ts/lib/Task';
 import * as TE from 'fp-ts/lib/TaskEither';
 
 import { openaq } from '../../src/providers/openaq';
-import { testProviderE2E } from '../../src/util';
+import { testProviderE2E } from '../util/testUtil';
 
 describe('openaq e2e', () => {
 	beforeAll(() => jest.setTimeout(30000));

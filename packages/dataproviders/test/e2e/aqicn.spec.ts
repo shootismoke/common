@@ -1,7 +1,7 @@
 import * as E from 'fp-ts/lib/Either';
 
 import { aqicn } from '../../src/providers/aqicn';
-import { testProviderE2E, testTE } from '../../src/util';
+import { testProviderE2E, testTE } from '../util/testUtil';
 
 const options = {
 	token: process.env.AQICN_TOKEN as string,
