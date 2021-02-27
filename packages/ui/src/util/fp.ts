@@ -28,8 +28,7 @@ import {
 	RetryStatus,
 } from 'retry-ts';
 import { retrying } from 'retry-ts/lib/Task';
-
-export { promiseToTE } from '@shootismoke/dataproviders/lib/util';
+export { promiseToTE } from '@shootismoke/dataproviders';
 
 /**
  * A side-effect in a TaskEither chain: if the TaskEither fails, still return

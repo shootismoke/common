@@ -8,7 +8,7 @@ import { format, utcToZonedTime } from 'date-fns-tz';
 import * as E from 'fp-ts/lib/Either';
 import { pipe } from 'fp-ts/lib/pipeable';
 
-import { Normalized } from '../../types';
+import { OpenAQResults } from '../../types';
 import { getCountryCode, providerError } from '../../util';
 import sanitized from './sanitized.json';
 import { ByStation } from './validation';
@@ -36,7 +36,7 @@ function sanitizeCountry(input: string): string {
  *
  * @param data - The data to normalize
  */
-export function normalize(data: ByStation): E.Either<Error, Normalized> {
+export function normalize(data: ByStation): E.Either<Error, OpenAQResults> {
 	const stationId = `aqicn|${data.idx}`;
 
 	// Sometimes we don't get geo
@@ -116,7 +116,7 @@ export function normalize(data: ByStation): E.Either<Error, Normalized> {
 							unit: 'day',
 							value: 1,
 						},
-						city: data.city.name || 'Unknown city', // FIXME Don't put "unknown" here
+						city: data.city.name,
 						coordinates: {
 							latitude: +data.city.geo[0],
 							longitude: +data.city.geo[1],
@@ -124,14 +124,14 @@ export function normalize(data: ByStation): E.Either<Error, Normalized> {
 						country,
 						date: { local, utc },
 						location: stationId,
-						mobile: false,
+						isMobile: false,
 						parameter: pollutant,
 						sourceName: 'aqicn',
-						sourceType: 'other',
+						entity: 'other',
 						value: convert(pollutant, 'usaEpa', 'ugm3', v),
 						unit: getPollutantMeta(pollutant).preferredUnit,
 					};
-				}) as Normalized
+				}) as OpenAQResults
 		)
 	);
 }

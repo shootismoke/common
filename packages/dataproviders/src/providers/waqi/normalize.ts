@@ -7,7 +7,7 @@ import {
 import * as E from 'fp-ts/lib/Either';
 import { pipe } from 'fp-ts/lib/pipeable';
 
-import { Normalized } from '../../types';
+import { OpenAQResults } from '../../types';
 import { getCountryCode, providerError } from '../../util';
 import { ByStation } from './validation';
 
@@ -18,7 +18,7 @@ import { ByStation } from './validation';
  */
 export function normalize({
 	d: [data],
-}: ByStation): E.Either<Error, Normalized> {
+}: ByStation): E.Either<Error, OpenAQResults> {
 	const stationId = `waqi|${data.x}`;
 
 	if (!isPollutant(data.pol)) {
@@ -71,11 +71,11 @@ export function normalize({
 					local: utc, // FIXME How should we get local time from UTC time?
 					utc,
 				},
+				entity: 'other',
 				location: `waqi|${data.x}`,
-				mobile: false,
+				isMobile: false,
 				parameter: data.pol as Pollutant,
 				sourceName: 'waqi',
-				sourceType: 'other',
 				unit: getPollutantMeta(data.pol as Pollutant).preferredUnit,
 				value: ugm3,
 			},

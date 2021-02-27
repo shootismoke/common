@@ -10,7 +10,7 @@ interface Country {
 }
 
 /**
- * Sanitize a country name
+ * Sanitize a country name.
  *
  * @ignore
  */
@@ -27,7 +27,7 @@ function sanitize(input: string): string {
 }
 
 /**
- * Given a country name, gets the ISO 3166-1 Alpha-2 code of the country
+ * Given a country name, gets the ISO 3166-1 Alpha-2 code of the country.
  *
  * @param input - The country name, can contain multiple spaces, dashes...
  * @example
@@ -53,4 +53,14 @@ export function getCountryCode(input: string): O.Option<string> {
 		),
 		O.map(({ code }) => code)
 	);
+}
+
+/**
+ * getCountryFromCode gets the country name from its ISO 3166-1 Alpha-2 code.
+ *
+ * @param code - The ISO 3166-1 Alpha-2 code of the country.
+ * @todo This function should live in @shootismoke/common.
+ */
+export function getCountryFromCode(code: string): string | undefined {
+	return countries.find((country) => country.code === code)?.name;
 }

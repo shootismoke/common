@@ -1,18 +1,22 @@
+import { ppb, ppm, ugm3 } from '@shootismoke/convert';
 import * as t from 'io-ts';
 
 /**
  * @ignore
  */
-export const attributionsCodec = t.array(
-	t.intersection([
-		t.type({
-			name: t.string,
-		}),
-		t.partial({
-			url: t.string,
-		}),
-	])
-);
+export const attributionsCodec = t.union([
+	t.array(
+		t.intersection([
+			t.type({
+				name: t.string,
+			}),
+			t.partial({
+				url: t.string,
+			}),
+		])
+	),
+	t.null,
+]);
 
 /**
  * @ignore
@@ -22,7 +26,7 @@ export const latLngCodec = t.union([
 		latitude: t.number,
 		longitude: t.number,
 	}),
-	t.undefined,
+	t.null,
 ]);
 
 /**
@@ -53,24 +57,28 @@ export const pollutantCodec = t.union([
  * @ignore
  */
 export const unitCodec = t.union([
-	t.literal('ppb'),
-	t.literal('ppm'),
-	t.literal('µg/m³'),
+	t.literal(ppb),
+	t.literal(ppm),
+	t.literal(ugm3),
 ]);
 
 /**
  * @ignore
  */
-export const sourceTypeCodec = t.union([
+export const entityCodec = t.union([
+	t.literal('community'),
 	t.literal('government'),
 	t.literal('research'),
 	t.literal('other'),
 ]);
 
-// Required fields for OpenAQ data format
+/**
+ * Required fields for OpenAQ data format.
+ *
+ * This is empirical! It is gathered from looking at multiple endpoints.
+ * @see https://github.com/openaq/openaq-data-format
+ */
 const OpenAQCodecRequired = t.type({
-	city: t.string,
-	coordinates: latLngCodec,
 	country: t.string,
 	date: t.type({
 		local: t.string,
@@ -78,25 +86,35 @@ const OpenAQCodecRequired = t.type({
 	}),
 	location: t.string,
 	parameter: pollutantCodec,
-	sourceName: t.string,
 	value: t.number,
 	unit: unitCodec,
 });
 
-// Optional fields for OpenAQ data format
+/**
+ * Optional fields for OpenAQ data format
+ *
+ * This is empirical! It is gathered from looking at multiple endpoints.
+ * @see https://github.com/openaq/openaq-data-format
+ * @ignore
+ */
 export const OpenAQCodecOptional = t.partial({
 	attribution: attributionsCodec,
 	averagingPeriod: t.type({
 		unit: t.string,
 		value: t.union([t.number, t.null]),
 	}),
-	mobile: t.boolean,
-	sourceType: sourceTypeCodec,
+	city: t.union([t.string, t.null]),
+	coordinates: latLngCodec,
+	entity: entityCodec,
+	isAnalysis: t.boolean,
+	isMobile: t.boolean,
+	sourceName: t.string,
 });
 
 /**
- * An io-ts codec to validate the OpenAQ data format.
+ * An io-ts codec to validate the v2 OpenAQ data format.
  *
+ * This is empirical! It is gathered from looking at multiple endpoints.
  * @see https://github.com/openaq/openaq-data-format
  */
 export const OpenAQCodec = t.intersection([
@@ -107,6 +125,38 @@ export const OpenAQCodec = t.intersection([
 /**
  * A TypeScript type to represent the OpenAQ data format.
  *
+ * This is empirical! It is gathered from looking at multiple endpoints.
  * @see https://github.com/openaq/openaq-data-format
  */
-export type OpenAQFormat = t.TypeOf<typeof OpenAQCodec>;
+export type OpenAQResult = t.TypeOf<typeof OpenAQCodec>;
+
+/**
+ * OpenAQ Error format.
+ *
+ * @see https://docs.openaq.org/#
+ * @ignore
+ */
+const OpenAQErrorObjectCodec = t.type({
+	detail: t.array(
+		t.type({
+			loc: t.array(t.string),
+			msg: t.string,
+			type: t.string,
+		})
+	),
+});
+
+/**
+ * An io-ts codec to validate the v2 OpenAQ error format.
+ */
+export const OpenAQErrorCodec = t.union([OpenAQErrorObjectCodec, t.string]); // We sometimes also get string.
+
+/**
+ * @ignore
+ */
+export type OpenAQErrorObject = t.TypeOf<typeof OpenAQErrorObjectCodec>;
+
+/**
+ * Type of the v2 OpenAQ error format.
+ */
+export type OpenAQError = t.TypeOf<typeof OpenAQErrorCodec>;

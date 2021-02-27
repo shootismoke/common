@@ -1,14 +1,14 @@
-import { Normalized } from '../types';
 import { getDominantPol } from './getDominantPol';
-import { OpenAQFormat } from './openaq';
+import { OpenAQResult } from './openaq';
+import { OpenAQResults } from '../types';
 
 describe('getDominantPol', () => {
 	it('should calculate the dominant pollutant', () => {
-		const normalized = [
-			{ parameter: 'pm25', value: 10 } as OpenAQFormat,
-			{ parameter: 'pm10', value: 20 } as OpenAQFormat,
-		] as Normalized;
+		const results = [
+			{ parameter: 'pm25', value: 10 } as OpenAQResult,
+			{ parameter: 'pm10', value: 20 } as OpenAQResult,
+		] as OpenAQResults;
 
-		expect(getDominantPol(normalized)).toBe('pm10');
+		expect(getDominantPol(results)).toBe('pm10');
 	});
 });

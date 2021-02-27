@@ -1,19 +1,18 @@
 import { Pollutant } from '@shootismoke/convert';
+import type { AxiosError } from 'axios';
 import * as TE from 'fp-ts/lib/TaskEither';
 
 import { LatLng } from '../../types';
-import { ACCURATE_RADIUS, fetchAndDecode } from '../../util';
 import {
+	ACCURATE_RADIUS,
+	fetchAndDecode,
 	OpenAQError,
-	OpenAQLatest,
-	OpenAQLatestCodec,
-	OpenAQMeasurements,
-	OpenAQMeasurementsCodec,
-} from './validation';
+	OpenAQErrorObject,
+} from '../../util';
+import { OpenAQMeasurements, OpenAQMeasurementsCodec } from './validation';
 
 const RESULT_LIMIT = 10;
-const BASE_LATEST_URL = `https://api.openaq.org/v1/latest`;
-const BASE_MEASUREMENTS_URL = `https://api.openaq.org/v1/measurements`;
+const OPENAQ_MEASUREMENTS_V2 = `https://api.openaq.org/v2/measurements`;
 
 /**
  * @see https://docs.openaq.org/#api-Latest
@@ -57,15 +56,10 @@ function additionalOptions(options: OpenAQOptions = {}): string {
 	}
 
 	// includeFields
-	query += `&include_fields=${(
-		options.includeFields || [
-			'attribution',
-			'averagingPeriod',
-			'mobile',
-			'sourceName',
-			'sourceType',
-		]
-	).join(',')}`;
+	// We add attribution by default
+	query += `&include_fields=${(options.includeFields || ['attribution']).join(
+		','
+	)}`;
 
 	// limit
 	query += `&limit=${options.limit || RESULT_LIMIT}`;
@@ -79,19 +73,22 @@ function additionalOptions(options: OpenAQOptions = {}): string {
 /**
  * Handle error from OpenAQ response
  */
-function onError(error: { response?: { data: OpenAQError } }): Error {
+function onError(err: AxiosError<OpenAQError>): Error {
 	// We had occasions from OpenAQ where the error had an empty response field
-	if (error?.response?.data) {
-		if (typeof error.response.data === 'string') {
-			return new Error(error.response.data);
-		} else {
+	// so we check that the data is populated first.
+	if (err?.response?.data) {
+		const e = err.response.data as OpenAQErrorObject;
+
+		if (e.detail) {
 			return new Error(
-				`${error.response.data.statusCode} ${error.response.data.error}: ${error.response.data.message}`
+				e.detail.map((err) => JSON.stringify(err)).join(', ')
 			);
+		} else {
+			return new Error(err.response.data as string);
 		}
 	}
 
-	return new Error(JSON.stringify(error));
+	return new Error(JSON.stringify(err));
 }
 
 /**
@@ -102,14 +99,14 @@ function onError(error: { response?: { data: OpenAQError } }): Error {
 export function fetchByGps(
 	gps: LatLng,
 	options?: OpenAQOptions
-): TE.TaskEither<Error, OpenAQLatest> {
+): TE.TaskEither<Error, OpenAQMeasurements> {
 	const { latitude, longitude } = gps;
 
 	return fetchAndDecode(
-		`${BASE_LATEST_URL}?coordinates=${latitude},${longitude}&radius=${ACCURATE_RADIUS}${additionalOptions(
+		`${OPENAQ_MEASUREMENTS_V2}?coordinates=${latitude},${longitude}&radius=${ACCURATE_RADIUS}${additionalOptions(
 			options
 		)}`,
-		OpenAQLatestCodec,
+		OpenAQMeasurementsCodec,
 		{
 			onError,
 		}
@@ -126,7 +123,7 @@ export function fetchByStation(
 	options?: OpenAQOptions
 ): TE.TaskEither<Error, OpenAQMeasurements> {
 	return fetchAndDecode(
-		`${BASE_MEASUREMENTS_URL}?location=${stationId}${additionalOptions(
+		`${OPENAQ_MEASUREMENTS_V2}?location=${stationId}${additionalOptions(
 			options
 		)}`,
 		OpenAQMeasurementsCodec,

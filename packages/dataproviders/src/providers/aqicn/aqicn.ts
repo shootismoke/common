@@ -1,4 +1,4 @@
-import { Provider } from '../../types';
+import { ProviderFP } from '../types';
 import { AqicnOptions, fetchByGps, fetchByStation } from './fetchBy';
 import { normalize } from './normalize';
 import { ByStation } from './validation';
@@ -6,7 +6,7 @@ import { ByStation } from './validation';
 /**
  * @see https://aqicn.org
  */
-export const aqicn: Provider<ByStation, ByStation, AqicnOptions> = {
+export const aqicn: ProviderFP<ByStation, ByStation, AqicnOptions> = {
 	fetchByGps,
 	fetchByStation,
 	id: 'aqicn',
