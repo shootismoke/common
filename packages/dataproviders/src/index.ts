@@ -6,6 +6,7 @@ export {
 	AllProviders,
 	ACCURATE_RADIUS,
 	getDominantPol,
+	getCountryFromCode,
 	stationName,
 } from './util';
 export * from './util/fp';
