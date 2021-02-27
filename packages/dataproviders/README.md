@@ -41,7 +41,8 @@ async function main() {
 
 	const results = aqicn.normalizeByStation(data); // `results` is an array of normalized OpenAQResults.
 	const res = results[0];
-	console.log(`${res.parameter}: ${normalized.value} ${normalized.unit}`); // Logs "pm25: 34.5 µg/m³".
+	console.log(`${res.parameter}: ${res.value} ${res.unit}`); // Logs "pm25: 34.5 µg/m³".
+
 	// Note how `data.dominentpol` has been converted to `res.parameter`: this is
 	// what we call "normalization" in @shootismoke/providers.
 }
