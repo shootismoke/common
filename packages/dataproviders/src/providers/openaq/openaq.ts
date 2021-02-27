@@ -1,10 +1,10 @@
-import { Provider } from '../../types';
+import { Provider } from '../types';
 import { fetchByGps, fetchByStation, OpenAQOptions } from './fetchBy';
-import { normalizeByGps, normalizeByStation } from './normalize';
-import { OpenAQLatest, OpenAQMeasurements } from './validation';
+import { normalize } from './normalize';
+import { OpenAQMeasurements } from './validation';
 
 export const openaq: Provider<
-	OpenAQLatest,
+	OpenAQMeasurements,
 	OpenAQMeasurements,
 	OpenAQOptions
 > = {
@@ -12,6 +12,6 @@ export const openaq: Provider<
 	fetchByStation,
 	id: 'openaq',
 	name: 'Open AQ',
-	normalizeByGps,
-	normalizeByStation,
+	normalizeByGps: normalize,
+	normalizeByStation: normalize,
 };

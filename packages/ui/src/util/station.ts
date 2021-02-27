@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU General Public License
 // along with Sh**t! I Smoke.  If not, see <http://www.gnu.org/licenses/>.
 
-import { LatLng, OpenAQFormat } from '@shootismoke/dataproviders';
+import { LatLng, OpenAQResult } from '@shootismoke/dataproviders';
 import haversine from 'haversine';
 
 /**
@@ -67,7 +67,7 @@ export function getCorrectLatLng(
  */
 export function distanceToStation(
 	currentLocation: LatLng,
-	pm25Measurement: OpenAQFormat,
+	pm25Measurement: OpenAQResult,
 	unit: DistanceUnit = 'km'
 ): number {
 	// This case should be very rare, only happens on OpenAQ that sometimes,
@@ -96,7 +96,7 @@ export function distanceToStation(
  */
 export function isStationTooFar(
 	currentLocation: LatLng,
-	pm25Measurement: OpenAQFormat
+	pm25Measurement: OpenAQResult
 ): boolean {
 	return (
 		distanceToStation(currentLocation, pm25Measurement) >

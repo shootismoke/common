@@ -4,7 +4,8 @@ import { pipe } from 'fp-ts/lib/pipeable';
 import * as T from 'fp-ts/lib/Task';
 import * as TE from 'fp-ts/lib/TaskEither';
 
-import { LatLng, Normalized, Provider } from '../types';
+import type { LatLng, OpenAQResults } from '../types';
+import type { Provider } from '../providers/types';
 
 function generateRandomLatLng(): LatLng {
 	return {
@@ -18,12 +19,12 @@ function generateRandomStationId(): string {
 }
 
 /**
- * Test that normalized data is correct
+ * Test that OpenAQResults data is correct
  *
- * @param normalized - The normalized data to test
+ * @param OpenAQResults - The OpenAQResults data to test
  */
-export function testNormalized(normalized: Normalized): void {
-	normalized.forEach((data) => {
+export function testOpenAQResults(OpenAQResults: OpenAQResults): void {
+	OpenAQResults.forEach((data) => {
 		expect(data.country.length).toBe(2);
 		expect(data.date).toBeDefined();
 		expect(data.location).toHaveProperty('latitude');
@@ -39,7 +40,7 @@ export function testNormalized(normalized: Normalized): void {
  */
 export function testTE<T>(
 	te: TE.TaskEither<Error, T>,
-	normalize: (data: T) => E.Either<Error, Normalized>,
+	normalize: (data: T) => E.Either<Error, OpenAQResults>,
 	done: jest.DoneCallback
 ): void {
 	pipe(

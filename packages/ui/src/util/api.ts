@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU General Public License
 // along with Sh**t! I Smoke.  If not, see <http://www.gnu.org/licenses/>.
 
-import { Normalized, OpenAQFormat } from '@shootismoke/dataproviders';
+import { Normalized, OpenAQResult } from '@shootismoke/dataproviders';
 
 /**
  * Api is basically the normalized data from '@shootismoke/dataproviders',
@@ -29,7 +29,7 @@ export interface Api {
 	/**
 	 * Raw data corresponding to the PM2.5 pollutant.
 	 */
-	pm25: OpenAQFormat;
+	pm25: OpenAQResult;
 	/**
 	 * Data used by shootismoke frontends.
 	 */

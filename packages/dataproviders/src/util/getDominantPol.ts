@@ -1,13 +1,13 @@
 import { Pollutant } from '@shootismoke/convert';
 
-import { Normalized } from '../types';
+import { OpenAQResults } from '../types';
 
 /**
  * From some normalized data, calculate the dominant pollutant, i.e. the
  * pollutant that has the highest AQI
  *
- * @param normalized - The normalized data
+ * @param results - The results data in OpenAQResult format.
  */
-export function getDominantPol(normalized: Normalized): Pollutant {
+export function getDominantPol(normalized: OpenAQResults): Pollutant {
 	return normalized.slice(-1).sort((a, b) => a.value - b.value)[0].parameter;
 }

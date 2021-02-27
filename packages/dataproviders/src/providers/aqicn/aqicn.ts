@@ -1,4 +1,4 @@
-import { Provider } from '../../types';
+import { Provider } from '../types';
 import { AqicnOptions, fetchByGps, fetchByStation } from './fetchBy';
 import { normalize } from './normalize';
 import { ByStation } from './validation';

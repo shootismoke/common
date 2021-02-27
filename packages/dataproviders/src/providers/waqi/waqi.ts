@@ -1,7 +1,7 @@
 import * as E from 'fp-ts/lib/Either';
 import * as TE from 'fp-ts/lib/TaskEither';
 
-import { Provider } from '../../types';
+import { Provider } from '../types';
 import { fetchByGps } from './fetchBy';
 import { normalize } from './normalize';
 import { ByStation } from './validation';

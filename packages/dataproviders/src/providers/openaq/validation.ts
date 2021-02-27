@@ -1,12 +1,6 @@
 import * as t from 'io-ts';
 
-import {
-	latLngCodec,
-	OpenAQCodec,
-	OpenAQCodecOptional,
-	pollutantCodec,
-	unitCodec,
-} from '../../util';
+import { OpenAQCodec } from '../../util';
 
 const OpenAQMetaCodec = t.type({
 	found: t.number,
@@ -18,40 +12,9 @@ const OpenAQMetaCodec = t.type({
 });
 
 /**
- * Codec for the /v1/latest endpoint.
+ * Codec for the /v2/measurements endpoint.
  *
- * @see https://docs.openaq.org/#api-Latest
- */
-export const OpenAQLatestCodec = t.type({
-	meta: OpenAQMetaCodec,
-	results: t.array(
-		t.type({
-			city: t.string,
-			coordinates: latLngCodec,
-			country: t.string,
-			location: t.string,
-			measurements: t.array(
-				t.intersection([
-					t.type({
-						lastUpdated: t.string,
-						parameter: pollutantCodec,
-						sourceName: t.string,
-						value: t.number,
-						unit: unitCodec,
-					}),
-					OpenAQCodecOptional,
-				])
-			),
-		})
-	),
-});
-
-export type OpenAQLatest = t.TypeOf<typeof OpenAQLatestCodec>;
-
-/**
- * Codec for the /v1/measurements endpoint.
- *
- * @see https://docs.openaq.org/#api-Measurements
+ * @see https://docs.openaq.org/#/v2/measurements_get_v2_measurements_get
  */
 export const OpenAQMeasurementsCodec = t.type({
 	meta: OpenAQMetaCodec,
@@ -59,21 +22,8 @@ export const OpenAQMeasurementsCodec = t.type({
 });
 
 /**
- * @see https://docs.openaq.org/#api-Measurements
+ * Return type for the /v2/measurements endpoint.
+ *
+ * @see https://docs.openaq.org/#/v2/measurements_get_v2_measurements_get
  */
 export type OpenAQMeasurements = t.TypeOf<typeof OpenAQMeasurementsCodec>;
-
-const OpenAQErrorCodec = t.union([
-	t.type({
-		error: t.string,
-		message: t.string,
-		statusCode: t.number,
-		validation: t.type({
-			keys: t.record(t.number, t.string),
-			source: t.string,
-		}),
-	}),
-	t.string,
-]);
-
-export type OpenAQError = t.TypeOf<typeof OpenAQErrorCodec>;

@@ -1,4 +1,4 @@
-import { OpenAQFormat } from './openaq';
+import { OpenAQResult } from './openaq';
 
 /**
  * Get the name of where the measurement has been done, usually the name of the
@@ -6,7 +6,7 @@ import { OpenAQFormat } from './openaq';
  *
  * @param openaq - The OpenAQ format normalized data
  */
-export function stationName(data: OpenAQFormat): string {
+export function stationName(data: OpenAQResult): string {
 	if (data.attribution && data.attribution.length) {
 		return data.attribution[0].name;
 	}

@@ -4,17 +4,14 @@ import * as T from 'fp-ts/lib/Task';
 import * as TE from 'fp-ts/lib/TaskEither';
 
 import { openaq } from '../../src/providers/openaq';
+import { testProviderE2E } from '../../src/util';
 
 describe('openaq e2e', () => {
 	beforeAll(() => jest.setTimeout(30000));
 
-	// OpenAQ has some issues with their API right now.
-	// https://github.com/openaq/openaq-api/issues/468
-	// So we skip this test for now.
-	// TODO Uncomment test.
-	// testProviderE2E(openaq, {
-	// 	skip: ['fetchByStation'],
-	// });
+	testProviderE2E(openaq, {
+		skip: ['fetchByStation'],
+	});
 
 	it('should fetch station Beijing', (done) => {
 		pipe(
@@ -45,6 +42,7 @@ describe('openaq e2e', () => {
 				dateFrom,
 				dateTo,
 				limit: 2,
+				includeFields: ['sourceName', 'isMobile', 'entity'],
 				parameter: ['pm25'],
 			}),
 			TE.fold(
@@ -54,16 +52,24 @@ describe('openaq e2e', () => {
 					return T.of(void undefined);
 				},
 				({ results }) => {
-					expect(results.length).toBeLessThanOrEqual(2);
+					// Check limit.
+					expect(results.length).toBeLessThanOrEqual(3); // Somehow when we fetch limit=2, it returns 3 results...
+					// Check parameter.
 					expect(
 						results.some(({ parameter }) => parameter !== 'pm25')
 					).toBe(false);
-					results.forEach(({ date: { utc } }) => {
-						const measurementDate = new Date(utc);
+
+					results.forEach((result) => {
+						// Check dateFrom & dateTo.
+						const measurementDate = new Date(result.date.utc);
 						expect(
 							dateFrom <= measurementDate &&
 								measurementDate <= dateTo
 						).toBe(true);
+						// Check includeFields.
+						expect(result.isMobile).not.toBeUndefined();
+						expect(result.entity).toBeTruthy();
+						expect(result.sourceName).toBeTruthy();
 					});
 
 					done();

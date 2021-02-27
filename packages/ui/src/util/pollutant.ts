@@ -15,7 +15,7 @@
 // along with Sh**t! I Smoke.  If not, see <http://www.gnu.org/licenses/>.
 
 import { convert, Pollutant } from '@shootismoke/convert';
-import { Normalized, OpenAQFormat } from '@shootismoke/dataproviders';
+import { Normalized, OpenAQResult } from '@shootismoke/dataproviders';
 
 type PollutantData = { effects: string; name: string };
 
@@ -102,7 +102,7 @@ export function getPollutantData(pollutant: Pollutant): PollutantData {
  *
  * @param normalized - The normalized data for all pollutants.
  */
-function getSortedNormalized(normalized: Normalized): OpenAQFormat[] {
+function getSortedNormalized(normalized: Normalized): OpenAQResult[] {
 	// We attempt to sort the pollutants by AQI.
 	const unsorted = normalized.filter(({ parameter }) =>
 		// Only these pollutants can be converted to usaEpa
@@ -143,7 +143,7 @@ export function getAQI(normalized: Normalized): number {
  *
  * @param normalized - The normalized data for all pollutants.
  */
-export function primaryPollutant(normalized: Normalized): OpenAQFormat {
+export function primaryPollutant(normalized: Normalized): OpenAQResult {
 	const sorted = getSortedNormalized(normalized);
 
 	if (sorted[0]) {

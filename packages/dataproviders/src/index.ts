@@ -1,9 +1,9 @@
-export * from './providers';
+export * from './promise';
 export * from './types';
 export {
 	AllProviders,
 	ACCURATE_RADIUS,
 	getDominantPol,
-	OpenAQFormat,
+	OpenAQResult,
 	stationName,
 } from './util';
