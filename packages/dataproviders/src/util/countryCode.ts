@@ -59,7 +59,6 @@ export function getCountryCode(input: string): O.Option<string> {
  * getCountryFromCode gets the country name from its ISO 3166-1 Alpha-2 code.
  *
  * @param code - The ISO 3166-1 Alpha-2 code of the country.
- * @todo This function should live in @shootismoke/common.
  */
 export function getCountryFromCode(code: string): string | undefined {
 	return countries.find((country) => country.code === code)?.name;

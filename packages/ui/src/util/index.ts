@@ -20,6 +20,7 @@ export * from './frequency';
 export * from './fp';
 export * from './noop';
 export * from './pollutant';
+export * from './provider';
 export * from './secretSauce';
 export * from './station';
 export * from './swearWords';
