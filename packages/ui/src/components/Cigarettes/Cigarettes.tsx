@@ -15,10 +15,10 @@
 // along with Sh**t! I Smoke.  If not, see <http://www.gnu.org/licenses/>.
 
 import React from 'react';
-import { StyleSheet, View, ViewProps, StyleProp } from 'react-native';
+import { StyleProp, StyleSheet, View, ViewProps } from 'react-native';
 
-import { Cigarette } from './Cigarette';
 import { round } from '../../util/api';
+import { Cigarette } from './Cigarette';
 
 export interface CigarettesProps extends ViewProps {
 	/**

@@ -15,9 +15,9 @@
 // along with Sh**t! I Smoke.  If not, see <http://www.gnu.org/licenses/>.
 
 import {
+	ACCURATE_RADIUS,
 	LatLng,
 	OpenAQResult,
-	ACCURATE_RADIUS,
 } from '@shootismoke/dataproviders';
 import haversine from 'haversine';
 

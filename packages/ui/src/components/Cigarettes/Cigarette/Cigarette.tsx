@@ -17,17 +17,17 @@
 import React from 'react';
 import {
 	Image,
+	ImageSourcePropType,
 	StyleProp,
 	StyleSheet,
 	View,
 	ViewStyle,
-	ImageSourcePropType,
 } from 'react-native';
 
-import buttVertical from '../../../../assets/images/butt-vertical.png';
 import butt from '../../../../assets/images/butt.png';
-import headVertical from '../../../../assets/images/head-vertical.png';
+import buttVertical from '../../../../assets/images/butt-vertical.png';
 import head from '../../../../assets/images/head.png';
+import headVertical from '../../../../assets/images/head-vertical.png';
 
 export type CigaretteOrientation = 'diagonal' | 'horizontal' | 'vertical';
 

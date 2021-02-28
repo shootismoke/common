@@ -15,7 +15,7 @@
 // along with Sh**t! I Smoke.  If not, see <http://www.gnu.org/licenses/>.
 
 import { convert, Pollutant } from '@shootismoke/convert';
-import { OpenAQResults, OpenAQResult } from '@shootismoke/dataproviders';
+import { OpenAQResult, OpenAQResults } from '@shootismoke/dataproviders';
 
 type PollutantData = { effects: string; name: string };
 
@@ -112,8 +112,8 @@ function getSortedOpenAQResults(results: OpenAQResults): OpenAQResult[] {
 	// Sort the array by AQI.
 	unsorted.sort(
 		(a, b) =>
-			convert(b.parameter, 'ugm3', 'usaEpa', b.value) -
-			convert(a.parameter, 'ugm3', 'usaEpa', a.value)
+			convert(b.parameter, 'µg/m³', 'usaEpa', b.value) -
+			convert(a.parameter, 'µg/m³', 'usaEpa', a.value)
 	);
 
 	return unsorted;
@@ -125,16 +125,22 @@ function getSortedOpenAQResults(results: OpenAQResults): OpenAQResult[] {
  *
  * @param OpenAQResults - The OpenAQResults data for all pollutants.
  */
-export function getAQI(results: OpenAQResults): number {
+export function getAQI(results: OpenAQResults): number | undefined {
 	const sorted = getSortedOpenAQResults(results);
 
 	if (sorted[0]) {
-		return convert(sorted[0].parameter, 'ugm3', 'usaEpa', sorted[0].value);
-	} else {
-		// If the `unsorted` array doesn't contain any pollutants, then we just
-		// fallback to taking the 1st element's value. This is often not even
-		// an AQI. FIXME.
-		return results[0].value;
+		try {
+			return convert(
+				sorted[0].parameter,
+				sorted[0].unit,
+				'usaEpa',
+				sorted[0].value
+			);
+		} catch (err) {
+			// convert() throws if the unit is not supported. We just silently
+			// return an error.
+			return;
+		}
 	}
 }
 
@@ -143,15 +149,12 @@ export function getAQI(results: OpenAQResults): number {
  *
  * @param results - The OpenAQResults data for all pollutants.
  */
-export function primaryPollutant(results: OpenAQResults): OpenAQResult {
+export function primaryPollutant(
+	results: OpenAQResults
+): OpenAQResult | undefined {
 	const sorted = getSortedOpenAQResults(results);
 
 	if (sorted[0]) {
 		return sorted[0];
-	} else {
-		// If the `unsorted` array doesn't contain any pollutants, then we just
-		// fallback to taking the 1st element. Most of the case, the 1st
-		// element is of course not the primary pollutant though. FIXME.
-		return results[0];
 	}
 }

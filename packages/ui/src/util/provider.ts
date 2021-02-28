@@ -1,7 +1,8 @@
 import { AllProviders, aqicn, openaq, waqi } from '@shootismoke/dataproviders';
+import retry from 'async-retry';
+
 import type { Api } from './api';
 import { createApi } from './api';
-import retry from 'async-retry';
 
 type AllProviders = 'aqicn' | 'openaq' | 'waqi';
 
