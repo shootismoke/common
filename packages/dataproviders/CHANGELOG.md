@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.3](https://github.com/shootismoke/common/compare/v0.8.2...v0.8.3) (2021-02-28)
+
+
+### Bug Fixes
+
+* Fix getDominantPol filter ([#422](https://github.com/shootismoke/common/issues/422)) ([f358c19](https://github.com/shootismoke/common/commit/f358c1952273896b7da300fa777fce102379e7de))
+
+
+
+
+
 ## [0.8.2](https://github.com/shootismoke/common/compare/v0.8.1...v0.8.2) (2021-02-27)
 
 
