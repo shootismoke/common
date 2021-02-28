@@ -80,8 +80,7 @@ export function testTE<T>(
 				done.fail(error);
 				return T.of(void undefined);
 			},
-			(a) => {
-				console.log(a);
+			() => {
 				done();
 				return T.of(void undefined);
 			}
