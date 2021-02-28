@@ -15,6 +15,7 @@ describe('raceApiPromise', () => {
 			options
 		);
 
+		// We expect paris to always return some response.
 		expect(api.shootismoke.dailyCigarettes).toBeTruthy();
 
 		done();
