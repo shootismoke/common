@@ -11,6 +11,8 @@ module.exports = {
 	],
 	moduleNameMapper: {
 		'@shootismoke/convert$': '<rootDir>/packages/convert/src/index.ts',
+		'@shootismoke/dataproviders$':
+			'<rootDir>/packages/dataproviders/src/index.ts',
 	},
 	setupFiles: ['./packages/dataproviders/test/util/setup.ts'],
 	testMatch: ['**/*.spec.ts'],
