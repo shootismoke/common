@@ -49,7 +49,7 @@ function assertKnownProvider(
  *
  * @param stationId - The stationId of the station
  */
-export function fetchStation(stationId: string): Promise<Api> {
+export function fetchStationId(stationId: string): Promise<Api> {
 	const [provider, station] = stationId.split('|');
 	assertKnownProvider(provider, stationId);
 
