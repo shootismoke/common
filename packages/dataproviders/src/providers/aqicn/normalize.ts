@@ -80,7 +80,7 @@ export function normalize(data: ByStation): E.Either<Error, OpenAQResults> {
 			)
 		);
 	}
-	const countryUgm3 = sanitizeCountry(
+	const countryRaw = sanitizeCountry(
 		data.city.url.split(AQICN_DOMAIN)[1].split('/')[0]
 	);
 
@@ -92,12 +92,9 @@ export function normalize(data: ByStation): E.Either<Error, OpenAQResults> {
 	);
 
 	return pipe(
-		getCountryCode(countryUgm3),
+		getCountryCode(countryRaw),
 		E.fromOption(() =>
-			providerError(
-				'aqicn',
-				`Cannot get code from country ${countryUgm3}`
-			)
+			providerError('aqicn', `Cannot get code from country ${countryRaw}`)
 		),
 		E.map(
 			(country) =>

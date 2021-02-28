@@ -65,8 +65,6 @@ export function testTE<T>(
 					'no pollutants currently tracked',
 					// Skip if aqicn doesn't expose city
 					'no city',
-					// Skip if cannot find country for waqi
-					'[waqi] Cannot get code from country',
 				];
 
 				if (

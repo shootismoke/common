@@ -10,13 +10,12 @@ type AllProviders = 'aqicn' | 'openaq' | 'waqi';
  * pm25 data. Returns a TaskEither left is none is found, or format the data
  * into the Api interface
  *
- * @param normalized - The normalized data to process
  */
 async function providerFetch(
 	provider: AllProviders,
 	station: string
 ): Promise<Api> {
-	const normalized =
+	const results =
 		provider === 'aqicn'
 			? aqicn.normalizeByStation(
 					await aqicn.fetchByStation(station, {
@@ -33,7 +32,7 @@ async function providerFetch(
 			  );
 
 	// Gps coordinates are irrelevant for expo report.
-	return createApi({ latitude: 0, longitude: 0 }, normalized);
+	return createApi({ latitude: 0, longitude: 0 }, results);
 }
 
 function assertKnownProvider(

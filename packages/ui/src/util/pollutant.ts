@@ -125,8 +125,8 @@ function getSortedOpenAQResults(OpenAQResults: OpenAQResults): OpenAQResult[] {
  *
  * @param OpenAQResults - The OpenAQResults data for all pollutants.
  */
-export function getAQI(OpenAQResults: OpenAQResults): number {
-	const sorted = getSortedOpenAQResults(OpenAQResults);
+export function getAQI(results: OpenAQResults): number {
+	const sorted = getSortedOpenAQResults(results);
 
 	if (sorted[0]) {
 		return convert(sorted[0].parameter, 'ugm3', 'usaEpa', sorted[0].value);
@@ -134,17 +134,17 @@ export function getAQI(OpenAQResults: OpenAQResults): number {
 		// If the `unsorted` array doesn't contain any pollutants, then we just
 		// fallback to taking the 1st element's value. This is often not even
 		// an AQI. FIXME.
-		return OpenAQResults[0].value;
+		return results[0].value;
 	}
 }
 
 /**
  * From a set of OpenAQResults pollutant data, find the primary pollutant.
  *
- * @param OpenAQResults - The OpenAQResults data for all pollutants.
+ * @param results - The OpenAQResults data for all pollutants.
  */
-export function primaryPollutant(OpenAQResults: OpenAQResults): OpenAQResult {
-	const sorted = getSortedOpenAQResults(OpenAQResults);
+export function primaryPollutant(results: OpenAQResults): OpenAQResult {
+	const sorted = getSortedOpenAQResults(results);
 
 	if (sorted[0]) {
 		return sorted[0];
@@ -152,6 +152,6 @@ export function primaryPollutant(OpenAQResults: OpenAQResults): OpenAQResult {
 		// If the `unsorted` array doesn't contain any pollutants, then we just
 		// fallback to taking the 1st element. Most of the case, the 1st
 		// element is of course not the primary pollutant though. FIXME.
-		return OpenAQResults[0];
+		return results[0];
 	}
 }
