@@ -100,11 +100,11 @@ export function getPollutantData(pollutant: Pollutant): PollutantData {
  * From a set of OpenAQResults pollutant data, filter only the ones that can be
  * converted to USA EPA, and sort the set.
  *
- * @param OpenAQResults - The OpenAQResults data for all pollutants.
+ * @param results - The OpenAQResults data for all pollutants.
  */
-function getSortedOpenAQResults(OpenAQResults: OpenAQResults): OpenAQResult[] {
+function getSortedOpenAQResults(results: OpenAQResults): OpenAQResult[] {
 	// We attempt to sort the pollutants by AQI.
-	const unsorted = OpenAQResults.filter(({ parameter }) =>
+	const unsorted = results.filter(({ parameter }) =>
 		// Only these pollutants can be converted to usaEpa
 		['o3', 'pm10', 'pm25', 'co', 'so2', 'no2'].includes(parameter)
 	);

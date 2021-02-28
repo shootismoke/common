@@ -23,8 +23,8 @@ function generateRandomStationId(): string {
  *
  * @param OpenAQResults - The OpenAQResults data to test
  */
-export function testOpenAQResults(OpenAQResults: OpenAQResults): void {
-	OpenAQResults.forEach((data) => {
+export function testOpenAQResults(results: OpenAQResults): void {
+	results.forEach((data) => {
 		expect(data.country.length).toBe(2);
 		expect(data.date).toBeDefined();
 		expect(data.location).toHaveProperty('latitude');
