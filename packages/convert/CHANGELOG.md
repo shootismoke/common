@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.5](https://github.com/shootismoke/common/compare/v0.8.4...v0.8.5) (2021-02-28)
+
+
+### Bug Fixes
+
+* **ui:** Rename fetchStation to fetchStationId ([#423](https://github.com/shootismoke/common/issues/423)) ([8649044](https://github.com/shootismoke/common/commit/8649044a8129104f5aad1f594b1a08a5d70b976f))
+
+
+
+
+
 ## [0.8.1](https://github.com/shootismoke/common/compare/v0.8.0...v0.8.1) (2021-02-27)
 
 **Note:** Version bump only for package @shootismoke/convert
