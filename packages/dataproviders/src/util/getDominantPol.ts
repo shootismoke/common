@@ -8,6 +8,6 @@ import { OpenAQResults } from '../types';
  *
  * @param results - The results data in OpenAQResult format.
  */
-export function getDominantPol(normalized: OpenAQResults): Pollutant {
-	return normalized.slice(-1).sort((a, b) => a.value - b.value)[0].parameter;
+export function getDominantPol(results: OpenAQResults): Pollutant {
+	return results.slice(-1).sort((a, b) => a.value - b.value)[0].parameter;
 }
