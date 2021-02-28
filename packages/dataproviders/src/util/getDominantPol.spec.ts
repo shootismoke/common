@@ -1,6 +1,6 @@
+import { OpenAQResults } from '../types';
 import { getDominantPol } from './getDominantPol';
 import { OpenAQResult } from './openaq';
-import { OpenAQResults } from '../types';
 
 describe('getDominantPol', () => {
 	it('should calculate the dominant pollutant', () => {

@@ -34,7 +34,7 @@ export function normalize({
 
 	const aqiUS = +data.v;
 	// Calculate pm25 ugm3 value to get cigarettes value
-	const ugm3 = convert('pm25', 'usaEpa', 'ugm3', aqiUS);
+	const ugm3 = convert('pm25', 'usaEpa', 'µg/m³', aqiUS);
 
 	if (!data.u.includes('/')) {
 		return E.left(

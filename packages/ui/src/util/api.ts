@@ -15,8 +15,8 @@
 // along with Sh**t! I Smoke.  If not, see <http://www.gnu.org/licenses/>.
 
 import type {
-	LatLng,
 	AqicnOptions,
+	LatLng,
 	OpenAQOptions,
 	OpenAQResult,
 	OpenAQResults,

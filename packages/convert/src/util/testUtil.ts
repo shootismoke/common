@@ -19,10 +19,10 @@ export function testConvert(
 		// Sometimes, because of rounding, the values are not exact. We just want
 		// them to be exact at +/-0.2
 		expect(
-			round(Math.abs(convert(pollutant, aqiCode, 'ugm3', aqi) - ugm3), 1)
+			round(Math.abs(convert(pollutant, aqiCode, 'µg/m³', aqi) - ugm3), 1)
 		).toBeLessThanOrEqual(0.2);
 		expect(
-			round(Math.abs(convert(pollutant, 'ugm3', aqiCode, ugm3) - aqi), 1)
+			round(Math.abs(convert(pollutant, 'µg/m³', aqiCode, ugm3) - aqi), 1)
 		).toBeLessThanOrEqual(0.2);
 	});
 }

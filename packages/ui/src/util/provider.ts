@@ -1,7 +1,8 @@
 import { AllProviders, aqicn, openaq, waqi } from '@shootismoke/dataproviders';
+import retry from 'async-retry';
+
 import type { Api } from './api';
 import { createApi } from './api';
-import retry from 'async-retry';
 
 type AllProviders = 'aqicn' | 'openaq' | 'waqi';
 
@@ -49,7 +50,7 @@ function assertKnownProvider(
  *
  * @param stationId - The stationId of the station
  */
-export function fetchStation(stationId: string): Promise<Api> {
+export function fetchStationId(stationId: string): Promise<Api> {
 	const [provider, station] = stationId.split('|');
 	assertKnownProvider(provider, stationId);
 

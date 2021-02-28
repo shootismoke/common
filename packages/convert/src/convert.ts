@@ -13,21 +13,25 @@ import { Pollutant } from './util';
  */
 export function convert(
 	pollutant: Pollutant,
-	from: AqiCode | 'ugm3',
-	to: AqiCode | 'ugm3',
+	from: AqiCode | 'µg/m³' | 'ppm' | 'ppb',
+	to: AqiCode | 'µg/m³' | 'ppm' | 'ppb',
 	value: number
 ): number {
+	if (from === 'ppb' || from === 'ppm' || to === 'ppb' || to === 'ppm') {
+		throw new Error(`Conversion from ${from} to ${to} not supported yet.`);
+	}
+
 	if (from === to) {
 		return value;
 	}
 
 	// Convert ugm3 to AQI
-	if (from === 'ugm3') {
+	if (from === 'µg/m³') {
 		return aqiCodes[to as AqiCode].fromUgm3(pollutant, value);
 	}
 
 	// Convert AQI to ugm3
-	if (to === 'ugm3') {
+	if (to === 'µg/m³') {
 		return aqiCodes[from].toUgm3(pollutant, value);
 	}
 

@@ -19,7 +19,7 @@ describe('aqicn e2e', () => {
 	});
 
 	describe('fetchByGps sanitize.json mapping', () => {
-		it(`should fetch paris by gps with sanitized.json mapping`, (done) =>
+		it('should fetch paris', (done) =>
 			testTE(
 				aqicn.fetchByGps(
 					{ latitude: 48.8546, longitude: 2.34771 },
@@ -29,10 +29,20 @@ describe('aqicn e2e', () => {
 				done
 			));
 
-		it.only(`should fetch pune by gps with sanitized.json mapping`, (done) =>
+		it('should fetch pune', (done) =>
 			testTE(
 				aqicn.fetchByGps(
 					{ latitude: 18.5203, longitude: 73.8543 },
+					options
+				),
+				(d) => aqicn.normalizeByGps(d),
+				done
+			));
+
+		it('should fetch beijing', (done) =>
+			testTE(
+				aqicn.fetchByGps(
+					{ latitude: 39.9289, longitude: 116.3883 },
 					options
 				),
 				(d) => aqicn.normalizeByGps(d),

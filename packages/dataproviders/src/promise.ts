@@ -3,8 +3,8 @@ import {
 	openaq as openaqFp,
 	waqi as waqiFp,
 } from './providers';
-import { LatLng, OpenAQResults } from './types';
 import { ProviderFP } from './providers/types';
+import { LatLng, OpenAQResults } from './types';
 import { eitherToFunction, teToPromise } from './util';
 
 /**

@@ -4,8 +4,8 @@ import { pipe } from 'fp-ts/lib/pipeable';
 import * as T from 'fp-ts/lib/Task';
 import * as TE from 'fp-ts/lib/TaskEither';
 
-import type { LatLng, OpenAQResults } from '../../src/types';
 import type { ProviderFP } from '../../src/providers/types';
+import type { LatLng, OpenAQResults } from '../../src/types';
 
 function generateRandomLatLng(): LatLng {
 	return {

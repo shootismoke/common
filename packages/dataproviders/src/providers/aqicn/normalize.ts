@@ -125,7 +125,7 @@ export function normalize(data: ByStation): E.Either<Error, OpenAQResults> {
 						parameter: pollutant,
 						sourceName: 'aqicn',
 						entity: 'other',
-						value: convert(pollutant, 'usaEpa', 'ugm3', v),
+						value: convert(pollutant, 'usaEpa', 'µg/m³', v),
 						unit: getPollutantMeta(pollutant).preferredUnit,
 					};
 				}) as OpenAQResults
