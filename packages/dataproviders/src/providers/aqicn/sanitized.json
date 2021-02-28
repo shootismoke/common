@@ -1,7 +1,10 @@
 {
 	"afganistan": "afghanistan",
 
+	"brussels": "belgium",
 	"liege": "belgium",
+
+	"british-columbia": "canada",
 
 	"anhui": "china",
 	"fujian": "china",
@@ -33,6 +36,8 @@
 	"beijing": "china",
 	"tianjin": "china",
 	"shanghai": "china",
+	"shenyang": "china",
+	"shenzhen": "china",
 	"chongqing": "china",
 	"hongkong": "china",
 	"macao": "china",
@@ -53,6 +58,8 @@
 	"ulaanbaatar": "mongolia",
 
 	"moscow": "russia",
+
+	"london": "uk",
 
 	"alabama": "usa",
 	"alaska": "usa",
@@ -75,6 +82,7 @@
 	"iowa": "usa",
 	"kansas": "usa",
 	"kentucky": "usa",
+	"losangeles": "usa",
 	"louisiana": "usa",
 	"maine": "usa",
 	"marshall islands": "usa",

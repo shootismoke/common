@@ -243,7 +243,7 @@
 	{ "name": "Uganda", "code": "UG", "others": [] },
 	{ "name": "Ukraine", "code": "UA", "others": [] },
 	{ "name": "United Arab Emirates", "code": "AE", "others": [] },
-	{ "name": "United Kingdom", "code": "GB", "others": [] },
+	{ "name": "United Kingdom", "code": "GB", "others": ["uk"] },
 	{ "name": "United States", "code": "US", "others": ["usa"] },
 	{
 		"name": "United States Minor Outlying Islands",

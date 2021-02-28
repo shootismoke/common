@@ -45,7 +45,6 @@ export function getCountryCode(input: string): O.Option<string> {
 				return (
 					sName === sInput ||
 					code === sInput ||
-					sName.includes(sInput) ||
 					sInput.includes(sName) ||
 					others.includes(sInput)
 				);
