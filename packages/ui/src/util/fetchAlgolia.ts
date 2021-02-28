@@ -42,20 +42,19 @@ const AlgoliaHitT = t.exact(
 				lat: t.number,
 				lng: t.number,
 			}),
-			country: t.string,
-			// eslint-disable-next-line
 			locale_names: t.array(t.string),
 			objectID: t.string,
 		}),
 		t.partial({
 			city: t.array(t.string),
+			country: t.string,
 			county: t.array(t.string),
 		}),
 	])
 );
 export type AlgoliaHit = t.TypeOf<typeof AlgoliaHitT>;
 
-const AxiosResponseT = t.type({
+const AxiosResponseT = t.partial({
 	data: t.type({
 		hits: t.array(AlgoliaHitT),
 	}),
@@ -111,7 +110,11 @@ export function fetchAlgolia(
 						)
 					)
 				),
-				TE.map((response) => response.data.hits),
+				TE.chain((response) =>
+					response.data?.hits
+						? TE.right(response.data.hits)
+						: TE.left(new Error('No data returned by algolia'))
+				),
 				TE.chain(
 					sideEffect((hits: AlgoliaHit[]) =>
 						TE.rightIO(
