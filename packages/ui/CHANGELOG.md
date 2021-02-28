@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.4](https://github.com/shootismoke/common/compare/v0.8.3...v0.8.4) (2021-02-28)
+
+
+### Bug Fixes
+
+* Fix getSortedOpenAQResults function ([8186c9f](https://github.com/shootismoke/common/commit/8186c9f08bd3f767d9f169a6f85231e349d783ab))
+
+
+
+
+
 ## [0.8.3](https://github.com/shootismoke/common/compare/v0.8.2...v0.8.3) (2021-02-28)
 
 
