@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.7](https://github.com/shootismoke/common/compare/v0.8.6...v0.8.7) (2021-03-01)
+
+
+### Bug Fixes
+
+* Fix AQICN date ISO normalization ([#430](https://github.com/shootismoke/common/issues/430)) ([5d9ad17](https://github.com/shootismoke/common/commit/5d9ad17484c88e0b26177a0f9e795cd34680bee6))
+
+
+
+
+
 ## [0.8.6](https://github.com/shootismoke/common/compare/v0.8.5...v0.8.6) (2021-02-28)
 
 
