@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU General Public License
 // along with Sh**t! I Smoke.  If not, see <http://www.gnu.org/licenses/>.
 
-import { convert, Pollutant } from '@shootismoke/convert';
+import { convert, Pollutant, ugm3 } from '@shootismoke/convert';
 import { OpenAQResult, OpenAQResults } from '@shootismoke/dataproviders';
 
 type PollutantData = { effects: string; name: string };
@@ -104,16 +104,19 @@ export function getPollutantData(pollutant: Pollutant): PollutantData {
  */
 function getSortedOpenAQResults(results: OpenAQResults): OpenAQResult[] {
 	// We attempt to sort the pollutants by AQI.
-	const unsorted = results.filter(({ parameter }) =>
+	const unsorted = results
+		// Since we can only convert ugm3, we filter those results.
+		.filter(({ unit }) => unit === ugm3)
 		// Only these pollutants can be converted to usaEpa
-		['o3', 'pm10', 'pm25', 'co', 'so2', 'no2'].includes(parameter)
-	);
+		.filter(({ parameter }) =>
+			['o3', 'pm10', 'pm25', 'co', 'so2', 'no2'].includes(parameter)
+		);
 
 	// Sort the array by AQI.
 	unsorted.sort(
 		(a, b) =>
-			convert(b.parameter, 'µg/m³', 'usaEpa', b.value) -
-			convert(a.parameter, 'µg/m³', 'usaEpa', a.value)
+			convert(b.parameter, b.unit, 'usaEpa', b.value) -
+			convert(a.parameter, a.unit, 'usaEpa', a.value)
 	);
 
 	return unsorted;

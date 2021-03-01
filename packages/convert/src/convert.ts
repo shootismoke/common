@@ -1,6 +1,6 @@
 import * as aqiCodes from './aqi';
 import { AqiCode } from './types';
-import { Pollutant } from './util';
+import { Pollutant, ugm3 } from './util';
 
 /**
  * For any pollutant, convert an AQI to its ugm3 concentration, or vice versa,
@@ -26,16 +26,16 @@ export function convert(
 	}
 
 	// Convert ugm3 to AQI
-	if (from === 'µg/m³') {
+	if (from === ugm3) {
 		return aqiCodes[to as AqiCode].fromUgm3(pollutant, value);
 	}
 
 	// Convert AQI to ugm3
-	if (to === 'µg/m³') {
+	if (to === ugm3) {
 		return aqiCodes[from].toUgm3(pollutant, value);
 	}
 
 	// Convert AQI to AQI
-	const ugm3 = aqiCodes[from].toUgm3(pollutant, value);
-	return aqiCodes[to].fromUgm3(pollutant, ugm3);
+	const ugm3Value = aqiCodes[from].toUgm3(pollutant, value);
+	return aqiCodes[to].fromUgm3(pollutant, ugm3Value);
 }

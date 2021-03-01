@@ -12,4 +12,15 @@ export const testCases = [
 		url:
 			'https://api.waqi.info/feed/geo:39.9289;116.3883/?token={AQICN_TOKEN}',
 	},
+	{
+		date: '2021-03-01T09:29:07.781Z',
+		results: aqicn.normalizeByGps(
+			// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+			JSON.parse(
+				'{"status":"ok","data":{"aqi":12,"idx":2284,"attributions":[{"url":"http://soramame.taiki.go.jp/","name":"Japan Atmospheric Environmental Regional Observation System (環境省大気汚染物質広域監視システム)","logo":"Japan-Soramame.png"},{"url":"https://www.kankyo.metro.tokyo.lg.jp/","name":"Tokyo, Japan Environment Agency (東京都環境局)","logo":"Japan-Tokyo.png"},{"url":"https://waqi.info/","name":"World Air Quality Index Project"}],"city":{"geo":[35.6718388,139.7551457],"name":"Hibiyakoen, Chiyoda, Tokyo, Japan (日比谷交差点千代田区)","url":"https://aqicn.org/city/japan/chiyodaku/hibiyakosaten"},"dominentpol":"pm10","iaqi":{"co":{"v":3.4},"dew":{"v":8.9},"h":{"v":64},"no2":{"v":26},"o3":{"v":24.1},"p":{"v":1018.4},"pm10":{"v":12},"pm25":{"v":1},"so2":{"v":1.5},"t":{"v":15.7},"w":{"v":6.1}},"time":{"s":"2021-03-01 18:00:00","tz":"+09:00","v":1614621600,"iso":"2021-03-01T18:00:00+09:00"},"forecast":{"daily":{"o3":[{"avg":16,"day":"2021-02-27","max":30,"min":3},{"avg":7,"day":"2021-02-28","max":22,"min":1},{"avg":11,"day":"2021-03-01","max":30,"min":1},{"avg":27,"day":"2021-03-02","max":31,"min":22},{"avg":20,"day":"2021-03-03","max":32,"min":2},{"avg":7,"day":"2021-03-04","max":22,"min":1},{"avg":4,"day":"2021-03-05","max":15,"min":1}],"pm10":[{"avg":6,"day":"2021-02-28","max":9,"min":0},{"avg":31,"day":"2021-03-01","max":46,"min":10},{"avg":12,"day":"2021-03-02","max":24,"min":0},{"avg":8,"day":"2021-03-03","max":17,"min":6},{"avg":18,"day":"2021-03-04","max":19,"min":18},{"avg":22,"day":"2021-03-05","max":26,"min":18},{"avg":27,"day":"2021-03-06","max":57,"min":0},{"avg":10,"day":"2021-03-07","max":17,"min":2}],"pm25":[{"avg":22,"day":"2021-02-28","max":28,"min":13},{"avg":75,"day":"2021-03-01","max":136,"min":20},{"avg":16,"day":"2021-03-02","max":28,"min":0},{"avg":12,"day":"2021-03-03","max":20,"min":0},{"avg":56,"day":"2021-03-04","max":67,"min":28},{"avg":65,"day":"2021-03-05","max":77,"min":42},{"avg":78,"day":"2021-03-06","max":156,"min":20},{"avg":22,"day":"2021-03-07","max":35,"min":13}],"uvi":[{"avg":0,"day":"2021-02-28","max":0,"min":0},{"avg":1,"day":"2021-03-01","max":4,"min":0},{"avg":1,"day":"2021-03-02","max":3,"min":0},{"avg":1,"day":"2021-03-03","max":5,"min":0},{"avg":1,"day":"2021-03-04","max":5,"min":0},{"avg":1,"day":"2021-03-05","max":3,"min":0}]}},"debug":{"sync":"2021-03-01T18:11:20+09:00"}}}'
+			).data
+		),
+		url:
+			' https://api.waqi.info/feed/geo:35.6828;139.759/?token={AQICN_TOKEN}',
+	},
 ];

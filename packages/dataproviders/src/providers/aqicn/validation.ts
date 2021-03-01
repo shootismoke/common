@@ -94,6 +94,8 @@ const AqicnStationCodecData = t.type({
 		tz: t.union([t.string, t.undefined]),
 		// As timestamp
 		v: t.number,
+		// As ISO string
+		iso: t.string,
 	}),
 });
 

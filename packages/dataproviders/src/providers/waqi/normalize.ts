@@ -1,9 +1,4 @@
-import {
-	convert,
-	getPollutantMeta,
-	isPollutant,
-	Pollutant,
-} from '@shootismoke/convert';
+import { convert, isPollutant, Pollutant, ugm3 } from '@shootismoke/convert';
 import * as E from 'fp-ts/lib/Either';
 import { pipe } from 'fp-ts/lib/pipeable';
 
@@ -34,7 +29,7 @@ export function normalize({
 
 	const aqiUS = +data.v;
 	// Calculate pm25 ugm3 value to get cigarettes value
-	const ugm3 = convert('pm25', 'usaEpa', 'µg/m³', aqiUS);
+	const ugm3Value = convert('pm25', 'usaEpa', ugm3, aqiUS);
 
 	if (!data.u.includes('/')) {
 		return E.left(
@@ -76,8 +71,8 @@ export function normalize({
 				isMobile: false,
 				parameter: data.pol as Pollutant,
 				sourceName: 'waqi',
-				unit: getPollutantMeta(data.pol as Pollutant).preferredUnit,
-				value: ugm3,
+				unit: ugm3, // FIXME Once convert() supports ppm, we should use `getPollutantMeta(data.pol as Pollutant).preferredUnit` here
+				value: ugm3Value,
 			},
 		])
 	);

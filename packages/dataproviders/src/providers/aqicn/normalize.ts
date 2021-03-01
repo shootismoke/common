@@ -2,6 +2,7 @@ import {
 	convert,
 	getPollutantMeta,
 	Pollutant,
+	ugm3,
 	usaEpa,
 } from '@shootismoke/convert';
 import { format, utcToZonedTime } from 'date-fns-tz';
@@ -85,9 +86,9 @@ export function normalize(data: ByStation): E.Either<Error, OpenAQResults> {
 	);
 
 	// Get the timezoned date
-	const utc = new Date(+data.time.v * 1000).toISOString();
+	const utc = new Date(data.time.iso).toISOString();
 	const local = format(
-		utcToZonedTime(+data.time.v * 1000, data.time.tz || 'Z'),
+		utcToZonedTime(utc, data.time.tz || 'Z'),
 		"yyyy-MM-dd'T'HH:mm:ss.SSSxxx"
 	);
 
@@ -125,7 +126,7 @@ export function normalize(data: ByStation): E.Either<Error, OpenAQResults> {
 						parameter: pollutant,
 						sourceName: 'aqicn',
 						entity: 'other',
-						value: convert(pollutant, 'usaEpa', 'µg/m³', v),
+						value: convert(pollutant, 'usaEpa', ugm3, v),
 						unit: getPollutantMeta(pollutant).preferredUnit,
 					};
 				}) as OpenAQResults

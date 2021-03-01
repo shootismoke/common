@@ -7,6 +7,10 @@ describe('getAQI', () => {
 			...testCasesBase[0],
 			expected: 166,
 		},
+		{
+			...testCasesBase[1],
+			expected: 12,
+		},
 	];
 
 	it('should work with testCases', () => {
