@@ -2,8 +2,8 @@ import {
 	convert,
 	getPollutantMeta,
 	Pollutant,
-	usaEpa,
 	ugm3,
+	usaEpa,
 } from '@shootismoke/convert';
 import { format, utcToZonedTime } from 'date-fns-tz';
 import * as E from 'fp-ts/lib/Either';
