@@ -14,6 +14,7 @@
 // You should have received a copy of the GNU General Public License
 // along with Sh**t! I Smoke.  If not, see <http://www.gnu.org/licenses/>.
 
+import { ugm3 } from '@shootismoke/convert';
 import type {
 	AqicnOptions,
 	LatLng,
@@ -88,8 +89,11 @@ const RESULTS_WITHIN_HOURS = 6;
  *
  * @param results - The results results data to process
  */
-export function createApi(gps: LatLng, results: OpenAQResults): Api {
-	const now = new Date();
+export function createApi(
+	gps: LatLng,
+	results: OpenAQResults,
+	now = new Date()
+): Api {
 	const sanitizedResults = results
 		// From the results results, remove the entries that are too old.
 		.filter(
@@ -101,7 +105,7 @@ export function createApi(gps: LatLng, results: OpenAQResults): Api {
 		.filter(({ value }) => value >= 0);
 	// Filter pm25 pollutants with the correct unit.
 	const pm25 = sanitizedResults.filter(
-		({ parameter, unit }) => parameter === 'pm25' && unit === 'µg/m³'
+		({ parameter, unit }) => parameter === 'pm25' && unit === ugm3
 	);
 
 	// TODO We can also sort the pm25 array by closest to `gps`.

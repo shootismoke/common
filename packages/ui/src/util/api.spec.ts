@@ -21,11 +21,20 @@ describe('createApi', () => {
 			},
 			gps: { latitude: 339.9289, longitude: 116.3883 },
 		},
+		{
+			...testCasesBase[1],
+			expected: {
+				dailyCigarettes: 0.009090909090909092,
+				distanceToStation: 12200,
+				isAccurate: false,
+			},
+			gps: { latitude: 339.9289, longitude: 116.3883 },
+		},
 	];
 
 	it('should work with testCases', () => {
 		testCases.forEach((tc) => {
-			const api = createApi(tc.gps, tc.results);
+			const api = createApi(tc.gps, tc.results, new Date(tc.date));
 
 			expect(api.shootismoke).toMatchObject(tc.expected);
 		});
