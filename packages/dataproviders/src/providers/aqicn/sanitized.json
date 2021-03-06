@@ -5,6 +5,7 @@
 	"liege": "belgium",
 
 	"british-columbia": "canada",
+	"toronto": "canada",
 
 	"anhui": "china",
 	"fujian": "china",
@@ -63,6 +64,9 @@
 
 	"madrid": "spain",
 
+	"bangkok": "thailand",
+	"mueang-chiang-rai": "thailand",
+
 	"london": "uk",
 
 	"alabama": "usa",
@@ -103,6 +107,7 @@
 	"new jersey": "usa",
 	"new mexico": "usa",
 	"new york": "usa",
+	"newyork": "usa",
 	"north carolina": "usa",
 	"north dakota": "usa",
 	"northern mariana islands": "usa",

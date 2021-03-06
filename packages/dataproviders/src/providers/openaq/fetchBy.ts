@@ -100,7 +100,9 @@ export function fetchByGps(
 	gps: LatLng,
 	options?: OpenAQOptions
 ): TE.TaskEither<Error, OpenAQMeasurements> {
-	const { latitude, longitude } = gps;
+	// OpenAQ doesn't allow arbitrary number of decimals, we round to 3.
+	const latitude = Math.round(gps.latitude * 1000) / 1000;
+	const longitude = Math.round(gps.longitude * 1000) / 1000;
 
 	return fetchAndDecode(
 		`${OPENAQ_MEASUREMENTS_V2}?coordinates=${latitude},${longitude}&radius=${ACCURATE_RADIUS}${additionalOptions(
