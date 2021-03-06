@@ -1,10 +1,9 @@
 import { pipe } from 'fp-ts/lib/pipeable';
 import * as TE from 'fp-ts/lib/TaskEither';
-import { TypeOf } from 'io-ts';
 
 import { LatLng } from '../../types';
 import { fetchAndDecode } from '../../util';
-import { ByStation, ByStationCodec } from './validation';
+import { AqicnStaton, ByStation, ByStationCodec } from './validation';
 
 /**
  * Check if the response we get from aqicn is `{"status": "error", "msg": "..."}`,
@@ -14,9 +13,9 @@ function checkError({
 	status,
 	data,
 	msg,
-}: TypeOf<typeof ByStationCodec>): TE.TaskEither<Error, ByStation> {
+}: ByStation): TE.TaskEither<Error, AqicnStaton> {
 	return status === 'ok'
-		? TE.right(data as ByStation)
+		? TE.right(data)
 		: TE.left(new Error(msg || (data as string)));
 }
 
@@ -48,7 +47,7 @@ function checkToken(options?: AqicnOptions): TE.TaskEither<Error, undefined> {
 export function fetchByGps(
 	gps: LatLng,
 	options: AqicnOptions
-): TE.TaskEither<Error, ByStation> {
+): TE.TaskEither<Error, AqicnStaton> {
 	const { latitude, longitude } = gps;
 
 	return pipe(
@@ -71,7 +70,7 @@ export function fetchByGps(
 export function fetchByStation(
 	stationId: string,
 	options: AqicnOptions
-): TE.TaskEither<Error, ByStation> {
+): TE.TaskEither<Error, AqicnStaton> {
 	return pipe(
 		checkToken(options),
 		TE.chain(() =>
