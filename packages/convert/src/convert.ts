@@ -1,6 +1,7 @@
 import * as aqiCodes from './aqi';
 import { AqiCode } from './types';
-import { Pollutant, ugm3 } from './util';
+import { Pollutant } from './util/pollutant';
+import { ugm3 } from './util/unit';
 
 /**
  * For any pollutant, convert an AQI to its ugm3 concentration, or vice versa,

@@ -1,4 +1,5 @@
-import { getPollutantMeta, isPollutant, ugm3 } from './pollutant';
+import { getPollutantMeta, isPollutant } from './pollutant';
+import { ugm3 } from './unit';
 
 describe('isPollutant', () => {
 	it('should return true for pm25', () => {

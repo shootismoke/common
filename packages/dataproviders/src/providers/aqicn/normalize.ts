@@ -20,6 +20,8 @@ import type { AqicnStaton } from './validation';
  * Chinese privince, e.g. 'jiangsu'. In this case, we map directly to China.
  * See sanitized.json for some other sanitazations, these are empirical, so
  * we add them as we discover them.
+ *
+ * FIXME This is hacky.
  */
 function sanitizeCountry(input: string): string {
 	if (sanitized[input.toLowerCase() as keyof typeof sanitized]) {
@@ -27,9 +29,6 @@ function sanitizeCountry(input: string): string {
 	}
 
 	return input;
-
-	// FIXME The above castings seems hacky, should we just use an external
-	// service to get country from lat/lng?
 }
 
 /**

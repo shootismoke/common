@@ -35,11 +35,10 @@ const pollutantData: Partial<Record<Pollutant, PollutantData>> = {
 			'Hydrocarbons are the primary pollutants that produce photochemical smog.',
 		name: 'Hydrocarbons',
 	},
-	// FIXME Add ch4
-	// ch4: {
-	// 	effects: 'Partly responsible for the atmospheric greenhouse effect.',
-	// 	name: 'Methane',
-	// },
+	ch4: {
+		effects: 'Partly responsible for the atmospheric greenhouse effect.',
+		name: 'Methane',
+	},
 	co: {
 		effects:
 			'Carbon monoxide reduces the oxygen-carrying capacity of the blood by combining with haemoglobin, thus deprives tissues of O2.',
