@@ -1,6 +1,6 @@
 {
 	"name": "@shootismoke/ui",
-	"version": "0.8.8",
+	"version": "0.8.9",
 	"author": "Amaury <amaurym10@protonmail.com>",
 	"description": "UI components shared across Web & React Native projects",
 	"files": [
@@ -19,7 +19,7 @@
 		"docs": "rimraf docs && typedoc src"
 	},
 	"dependencies": {
-		"@shootismoke/dataproviders": "^0.8.8",
+		"@shootismoke/dataproviders": "^0.8.9",
 		"@sindresorhus/slugify": "^1.1.0",
 		"@types/async-retry": "^1.4.2",
 		"@types/haversine": "^1.1.4",

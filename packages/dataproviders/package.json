@@ -1,6 +1,6 @@
 {
 	"name": "@shootismoke/dataproviders",
-	"version": "0.8.8",
+	"version": "0.8.9",
 	"author": "Amaury <amaurym10@protonmail.com>",
 	"description": "Helpers to fetch data from air quality data providers",
 	"files": [
@@ -18,7 +18,7 @@
 		"docs": "rimraf docs && typedoc src"
 	},
 	"dependencies": {
-		"@shootismoke/convert": "^0.8.7",
+		"@shootismoke/convert": "^0.8.9",
 		"axios": "^0.21.0",
 		"date-fns": "^2.8.1",
 		"date-fns-tz": "^1.0.9",

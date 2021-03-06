@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.9](https://github.com/shootismoke/common/compare/v0.8.8...v0.8.9) (2021-03-06)
+
+
+### Features
+
+* **convert:** Add all parameters from OpenAQ v2 ([#432](https://github.com/shootismoke/common/issues/432)) ([89e9e59](https://github.com/shootismoke/common/commit/89e9e598953d6add9e84759ff7aba93bc574334e))
+
+
+
+
+
 ## [0.8.8](https://github.com/shootismoke/common/compare/v0.8.7...v0.8.8) (2021-03-06)
 
 **Note:** Version bump only for package @shootismoke/ui
