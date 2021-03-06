@@ -12,7 +12,7 @@ import { pipe } from 'fp-ts/lib/pipeable';
 import { OpenAQResults } from '../../types';
 import { getCountryCode, providerError } from '../../util';
 import sanitized from './sanitized.json';
-import { ByStation } from './validation';
+import type { AqicnStaton } from './validation';
 
 /**
  * Sanitize the country we get here from aqicn. For example, for China, the
@@ -37,7 +37,13 @@ function sanitizeCountry(input: string): string {
  *
  * @param data - The data to normalize
  */
-export function normalize(data: ByStation): E.Either<Error, OpenAQResults> {
+export function normalize(data: AqicnStaton): E.Either<Error, OpenAQResults> {
+	if (!data || typeof data === 'string') {
+		return E.left(
+			providerError('aqicn', `Cannot normalized ${data || 'undefined'}`)
+		);
+	}
+
 	const stationId = `aqicn|${data.idx}`;
 
 	// Sometimes we don't get geo
@@ -86,7 +92,9 @@ export function normalize(data: ByStation): E.Either<Error, OpenAQResults> {
 	);
 
 	// Get the timezoned date
-	const utc = new Date(data.time.iso).toISOString();
+	const utc = data.time.iso
+		? new Date(data.time.iso).toISOString()
+		: new Date(+data.time.v * 1000).toISOString(); // FIXME Not sure this works, but iso field being empty is quite rare.
 	const local = format(
 		utcToZonedTime(utc, data.time.tz || 'Z'),
 		"yyyy-MM-dd'T'HH:mm:ss.SSSxxx"
