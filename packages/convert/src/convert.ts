@@ -13,11 +13,18 @@ import { Pollutant, ugm3 } from './util';
  */
 export function convert(
 	pollutant: Pollutant,
-	from: AqiCode | 'µg/m³' | 'ppm' | 'ppb',
-	to: AqiCode | 'µg/m³' | 'ppm' | 'ppb',
+	from: AqiCode | 'µg/m³' | 'ppm' | 'particles/cm³' | 'ppb',
+	to: AqiCode | 'µg/m³' | 'ppm' | 'particles/cm³' | 'ppb',
 	value: number
 ): number {
-	if (from === 'ppb' || from === 'ppm' || to === 'ppb' || to === 'ppm') {
+	if (
+		from === 'ppb' ||
+		from === 'ppm' ||
+		from === 'particles/cm³' ||
+		to === 'ppb' ||
+		to === 'ppm' ||
+		to === 'particles/cm³'
+	) {
 		throw new Error(`Conversion from ${from} to ${to} not supported yet.`);
 	}
 
