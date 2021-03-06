@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.8](https://github.com/shootismoke/common/compare/v0.8.7...v0.8.8) (2021-03-06)
+
+
+### Bug Fixes
+
+* Add some more sanitazation in aqicn ([#431](https://github.com/shootismoke/common/issues/431)) ([ec8b865](https://github.com/shootismoke/common/commit/ec8b86519f1b8f67784654fb5cdf49a20b1628fc))
+
+
+
+
+
 ## [0.8.7](https://github.com/shootismoke/common/compare/v0.8.6...v0.8.7) (2021-03-01)
 
 
