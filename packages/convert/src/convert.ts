@@ -1,6 +1,7 @@
 import * as aqiCodes from './aqi';
 import { AqiCode } from './types';
-import { Pollutant, ugm3 } from './util';
+import { Pollutant } from './util/pollutant';
+import { ugm3 } from './util/unit';
 
 /**
  * For any pollutant, convert an AQI to its ugm3 concentration, or vice versa,
@@ -13,11 +14,18 @@ import { Pollutant, ugm3 } from './util';
  */
 export function convert(
 	pollutant: Pollutant,
-	from: AqiCode | 'µg/m³' | 'ppm' | 'ppb',
-	to: AqiCode | 'µg/m³' | 'ppm' | 'ppb',
+	from: AqiCode | 'µg/m³' | 'ppm' | 'particles/cm³' | 'ppb',
+	to: AqiCode | 'µg/m³' | 'ppm' | 'particles/cm³' | 'ppb',
 	value: number
 ): number {
-	if (from === 'ppb' || from === 'ppm' || to === 'ppb' || to === 'ppm') {
+	if (
+		from === 'ppb' ||
+		from === 'ppm' ||
+		from === 'particles/cm³' ||
+		to === 'ppb' ||
+		to === 'ppm' ||
+		to === 'particles/cm³'
+	) {
 		throw new Error(`Conversion from ${from} to ${to} not supported yet.`);
 	}
 

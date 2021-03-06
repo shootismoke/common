@@ -1,4 +1,4 @@
-import { ppb, ppm, ugm3 } from '@shootismoke/convert';
+import { AllPollutants, AllUnits, Pollutant, Unit } from '@shootismoke/convert';
 import * as t from 'io-ts';
 
 /**
@@ -32,35 +32,20 @@ export const latLngCodec = t.union([
 /**
  * @ignore
  */
-export const pollutantCodec = t.union([
-	// FIXME
-	// Instead of rewriting these, can we use the types and array defined in
-	// import { AllPollutants, Pollutant } from '@shootismoke/convert';
-	t.literal('bc'),
-	t.literal('ch4'),
-	t.literal('co'),
-	t.literal('c6h6'),
-	t.literal('ox'),
-	t.literal('nh3'),
-	t.literal('nmhc'),
-	t.literal('no'),
-	t.literal('nox'),
-	t.literal('no2'),
-	t.literal('o3'),
-	t.literal('pm10'),
-	t.literal('pm25'),
-	t.literal('so2'),
-	t.literal('trs'),
-]);
+export const pollutantCodec = t.union(
+	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+	// @ts-ignore We're sure there's at list one element.
+	AllPollutants.map((pol) => t.literal(pol))
+);
 
 /**
- * @ignore
+ * @ignores
  */
-export const unitCodec = t.union([
-	t.literal(ppb),
-	t.literal(ppm),
-	t.literal(ugm3),
-]);
+export const unitCodec = t.union(
+	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+	// @ts-ignore We're sure there's at list one element.
+	AllUnits.map((u) => t.literal(u))
+);
 
 /**
  * @ignore
@@ -122,13 +107,20 @@ export const OpenAQCodec = t.intersection([
 	OpenAQCodecOptional,
 ]);
 
+type OpenAQResultBase = t.TypeOf<typeof OpenAQCodec>;
+
 /**
  * A TypeScript type to represent the OpenAQ data format.
  *
  * This is empirical! It is gathered from looking at multiple endpoints.
  * @see https://github.com/openaq/openaq-data-format
+ *
+ *
  */
-export type OpenAQResult = t.TypeOf<typeof OpenAQCodec>;
+export interface OpenAQResult extends OpenAQResultBase {
+	parameter: Pollutant; // These two fields are not statically inferred by TS. So we hardcode them.
+	unit: Unit;
+}
 
 /**
  * OpenAQ Error format.

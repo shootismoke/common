@@ -1,5 +1,5 @@
 import * as aqiCodes from './aqi';
-import { Pollutant } from './util';
+import { Pollutant } from './util/pollutant';
 
 /**
  * An interface to represent an AQI

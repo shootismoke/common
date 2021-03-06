@@ -1,4 +1,5 @@
-import { getPollutantMeta, isPollutant, ugm3 } from './pollutant';
+import { getPollutantMeta, isPollutant } from './pollutant';
+import { ugm3 } from './unit';
 
 describe('isPollutant', () => {
 	it('should return true for pm25', () => {
@@ -13,10 +14,14 @@ describe('isPollutant', () => {
 describe('getPollutantMeta', () => {
 	it('should return correct metadata', () => {
 		expect(getPollutantMeta('pm25')).toEqual({
-			id: 'pm25',
-			name: 'PM25',
-			description: 'Fine particulate matter (<2.5µm)',
+			name: 'pm25',
+			displayName: 'PM2.5',
+			description:
+				'Particulate matter less than 2.5 micrometers in diameter mass concentration',
 			preferredUnit: ugm3,
+			id: 2,
+			isCore: true,
+			maxColorValue: 110,
 		});
 	});
 });

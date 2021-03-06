@@ -1,5 +1,5 @@
 import { Aqi } from '../../types';
-import { Breakpoints, createAqiFromBreakpoints } from '../../util';
+import { Breakpoints, createAqiFromBreakpoints } from '../../util/breakpoints';
 import breakpoints from './breakpoints.json';
 
 /**

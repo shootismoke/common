@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU General Public License
 // along with Sh**t! I Smoke.  If not, see <http://www.gnu.org/licenses/>.
 
-import { ugm3 } from '@shootismoke/convert';
+import { round as roundBase, ugm3 } from '@shootismoke/convert';
 import type {
 	AqicnOptions,
 	LatLng,
@@ -74,9 +74,8 @@ export interface Api {
  * @param n - The number to round;
  */
 export function round(n: number): number {
-	return Math.round(n * 10) / 10;
+	return roundBase(n, 1);
 }
-
 /**
  * We show pm25 results within this number of hours. More than this, we
  * consider the results as inaccurate.
