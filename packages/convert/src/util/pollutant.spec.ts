@@ -14,10 +14,13 @@ describe('getPollutantMeta', () => {
 	it('should return correct metadata', () => {
 		expect(getPollutantMeta('pm25')).toEqual({
 			name: 'pm25',
-			displayName: 'PM25',
+			displayName: 'PM2.5',
 			description:
 				'Particulate matter less than 2.5 micrometers in diameter mass concentration',
 			preferredUnit: ugm3,
+			id: 2,
+			isCore: true,
+			maxColorValue: 110,
 		});
 	});
 });
