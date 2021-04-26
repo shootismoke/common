@@ -20,7 +20,7 @@
 	},
 	"dependencies": {
 		"@shootismoke/dataproviders": "^0.8.9",
-		"@sindresorhus/slugify": "^1.1.0",
+		"@sindresorhus/slugify": "^2.0.0",
 		"@types/async-retry": "^1.4.2",
 		"@types/haversine": "^1.1.4",
 		"@types/p-any": "^1.1.3",
