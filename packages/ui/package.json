@@ -30,7 +30,7 @@
 		"lottie-react-native": "^3.4.0",
 		"mongoose": "^5.11.18",
 		"p-any": "^3.0.0",
-		"react-native-web": "^0.16.1",
+		"react-native-web": "^0.17.0",
 		"retry-ts": "^0.1.2"
 	},
 	"devDependencies": {
