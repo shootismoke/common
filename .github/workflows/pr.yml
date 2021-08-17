@@ -30,6 +30,9 @@ jobs:
 
   test-e2e:
     runs-on: ubuntu-latest
+    # Dependabot can't access repo secrets, so this job always fails when
+    # created by Dependabot. We just skip it.
+    if: ${{ github.actor != 'dependabot[bot]' }}
     steps:
       - uses: actions/checkout@v1
       - run: yarn install
