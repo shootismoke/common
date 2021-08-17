@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.10](https://github.com/shootismoke/common/compare/v0.8.9...v0.8.10) (2021-08-17)
+
+
+### Bug Fixes
+
+* Fix british columbia type from AQICN ([#519](https://github.com/shootismoke/common/issues/519)) ([06bf7a8](https://github.com/shootismoke/common/commit/06bf7a8fca65fadbffdf2f59f247be5c9bc7b5ed))
+
+
+
+
+
 ## [0.8.9](https://github.com/shootismoke/common/compare/v0.8.8...v0.8.9) (2021-03-06)
 
 
