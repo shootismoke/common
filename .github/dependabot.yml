@@ -7,22 +7,3 @@ updates:
     time: "02:00"
     timezone: Europe/Berlin
   open-pull-requests-limit: 10
-  ignore:
-  - dependency-name: typedoc
-    versions:
-    - 0.20.20
-    - 0.20.28
-  - dependency-name: typedoc-plugin-markdown
-    versions:
-    - 3.4.3
-    - 3.6.0
-  - dependency-name: "@types/react-native"
-    versions:
-    - 0.63.48
-  - dependency-name: react-native-web
-    versions:
-    - 0.14.11
-    - 0.14.13
-  - dependency-name: "@graphql-codegen/typescript"
-    versions:
-    - 1.20.2
