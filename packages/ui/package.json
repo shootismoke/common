@@ -28,7 +28,7 @@
 		"expo-server-sdk": "^3.6.0",
 		"haversine": "^1.1.1",
 		"lottie-react-native": "^4.0.3",
-		"mongoose": "^5.11.18",
+		"mongoose": "^6.2.10",
 		"p-any": "^3.0.0",
 		"react-native-web": "^0.17.1",
 		"retry-ts": "^0.1.2"
