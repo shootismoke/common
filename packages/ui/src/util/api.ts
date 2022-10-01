@@ -172,7 +172,7 @@ export function raceApiPromise(
 		}).then((results) => createApi(gps, results)),
 	];
 
-	return promiseAny(tasks).catch((errors: AggregateError) => {
+	return promiseAny(tasks).catch(({ errors }: AggregateError) => {
 		// Transform an AggregateError into a JS native Error
 		const aggregateMessage = [...errors]
 			.map(({ message }, index) => `${index + 1}. ${message}`)

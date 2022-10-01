@@ -9,7 +9,7 @@ const options = {
 describe('raceApiPromise', () => {
 	beforeAll(() => jest.setTimeout(30000));
 
-	it('should return data for paris', async (done) => {
+	it('should return data for paris', async () => {
 		const api = await raceApiPromise(
 			{ latitude: 48.8546, longitude: 2.34771 },
 			options
@@ -17,8 +17,6 @@ describe('raceApiPromise', () => {
 
 		// We expect paris to always return some response.
 		expect(api.shootismoke.dailyCigarettes).toBeTruthy();
-
-		done();
 	});
 
 	afterAll(() => jest.setTimeout(5000));

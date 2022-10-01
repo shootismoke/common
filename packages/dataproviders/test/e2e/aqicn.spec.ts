@@ -10,12 +10,10 @@ const options = {
 describe('aqicn e2e', () => {
 	beforeAll(() => jest.setTimeout(30000));
 
-	it('should return an error with an unknown station', async (done) => {
+	it('should return an error with an unknown station', async () => {
 		expect(await aqicn.fetchByStation('foo', options)()).toEqual(
 			E.left(new Error('Unknown station'))
 		);
-
-		done();
 	});
 
 	describe('fetchByGps sanitize.json mapping', () => {

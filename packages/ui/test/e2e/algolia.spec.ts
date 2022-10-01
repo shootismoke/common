@@ -16,7 +16,6 @@ describe('algolia', () => {
 							return T.of(undefined);
 						},
 						() => {
-							done();
 							return T.of(undefined);
 						}
 					)

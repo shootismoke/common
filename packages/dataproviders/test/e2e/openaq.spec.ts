@@ -25,8 +25,6 @@ describe('openaq e2e', () => {
 				({ results }) => {
 					expect(results.length).toBeGreaterThanOrEqual(1);
 
-					done();
-
 					return T.of(void undefined);
 				}
 			)
@@ -71,8 +69,6 @@ describe('openaq e2e', () => {
 						expect(result.entity).toBeTruthy();
 						expect(result.sourceName).toBeTruthy();
 					});
-
-					done();
 
 					return T.of(void undefined);
 				}

@@ -72,8 +72,6 @@ export function testTE<T>(
 						error.message.includes(msg)
 					)
 				) {
-					done();
-
 					return T.of(void undefined);
 				}
 
@@ -81,7 +79,6 @@ export function testTE<T>(
 				return T.of(void undefined);
 			},
 			() => {
-				done();
 				return T.of(void undefined);
 			}
 		)

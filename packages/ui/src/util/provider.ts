@@ -1,5 +1,5 @@
 import { AllProviders, aqicn, openaq, waqi } from '@shootismoke/dataproviders';
-import retry from 'async-retry';
+import retry, { Options } from 'async-retry';
 
 import type { Api } from './api';
 import { createApi } from './api';
@@ -50,11 +50,14 @@ function assertKnownProvider(
  *
  * @param stationId - The stationId of the station
  */
-export function fetchStationId(stationId: string): Promise<Api> {
+export function fetchStationId(
+	stationId: string,
+	options?: Options
+): Promise<Api> {
 	const [provider, station] = stationId.split('|');
 	assertKnownProvider(provider, stationId);
 
 	// Find the cigarettes at the user's last known station (stationId)
 	// If anything throws, we retry, up to 5 times.
-	return retry(async () => providerFetch(provider, station), { retries: 5 });
+	return retry(async () => providerFetch(provider, station), options);
 }

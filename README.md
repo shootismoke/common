@@ -5,7 +5,7 @@
 
 # `@shootismoke/common`
 
-Useful packages for manipulating air quality data. Shared between [Sh\*\*t! I Smoke](https://shootismoke.github.io) projects.
+Useful packages for manipulating air quality data. Shared between [Sh\*\*t! I Smoke](https://shootismoke.app) projects.
 
 ## Packages
 
@@ -14,7 +14,7 @@ Useful packages for manipulating air quality data. Shared between [Sh\*\*t! I Sm
 | [`@shootismoke/convert`](./packages/convert)             | [![npm (scoped)](https://img.shields.io/npm/v/@shootismoke/convert.svg)](https://www.npmjs.com/package/@shootismoke/convert)             | Easily convert between AQIs (US, CN...) and raw concentration values (ug/m3, ppm)                                                                                             |
 | [`@shootismoke/dataproviders`](./packages/dataproviders) | [![npm (scoped)](https://img.shields.io/npm/v/@shootismoke/dataproviders.svg)](https://www.npmjs.com/package/@shootismoke/dataproviders) | A library to fetch air quality data from various providers (AqiCN, OpenAQ...) and normalizing data into one common format: the [openaq-data-format](#normalized-data-format). |
 
-The below packages are used internally in [Sh\*\*t! I Smoke](https://shootismoke.github.io) projects, but if you're interested, feel free to use them.
+The below packages are used internally in [Sh\*\*t! I Smoke](https://shootismoke.app) projects, but if you're interested, feel free to use them.
 
 | Packages                           | NPM                                                                                                                | Description                                                         |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------- |

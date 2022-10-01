@@ -4,7 +4,7 @@ import { ByStationCodec } from '../providers/aqicn/validation';
 import { decodeWith } from './codec';
 
 describe('codec decode', () => {
-	it('should return left when decode fails', async (done) => {
+	it('should return left when decode fails', async () => {
 		expect(await decodeWith(ByStationCodec)('foo')()).toEqual(
 			E.left(
 				new Error(
@@ -12,6 +12,5 @@ describe('codec decode', () => {
 				)
 			)
 		);
-		done();
 	});
 });
