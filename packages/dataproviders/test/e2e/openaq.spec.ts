@@ -63,7 +63,6 @@ describe('openaq e2e', () => {
 						// Check includeFields.
 						expect(result.isMobile).not.toBeUndefined();
 						expect(result.entity).toBeTruthy();
-						console.log(result);
 						expect(result.sensorType).toBeTruthy();
 					});
 
