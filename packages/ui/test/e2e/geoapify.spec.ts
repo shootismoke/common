@@ -8,7 +8,7 @@ describe('geoapify', () => {
 	['paris', 'beijing', 'dsfewrwea', '123', '!?#'].forEach((searchString) => {
 		it(`should search for ${searchString}`, () => {
 			return pipe(
-				geoapify(searchString),
+				geoapify(searchString, process.env.GEOAPIFY_API_KEY as string),
 				TE.fold(
 					(err) => {
 						throw err;

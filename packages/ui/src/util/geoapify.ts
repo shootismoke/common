@@ -66,22 +66,16 @@ const AxiosResponseT = t.partial({
 
 export function geoapify(
 	search: string,
+	apiKey: string,
 	gps?: LatLng
 ): TE.TaskEither<Error, GeoapifyRes[]> {
 	return retry(
 		() =>
 			pipe(
 				promiseToTE(() =>
-					axios.get(
-						getEndpoint(
-							search,
-							process.env.GEOAPIFY_API_KEY as string,
-							gps
-						),
-						{
-							timeout: 10000,
-						}
-					)
+					axios.get(getEndpoint(search, apiKey, gps), {
+						timeout: 10000,
+					})
 				),
 				TE.chain((response) =>
 					T.of(
