@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/shootismoke/common/compare/v0.8.10...v0.9.0) (2022-10-03)
+
+
+* feat(ui)!: Remove usage of Algolia, use geoapify instead (#669) ([a593a9f](https://github.com/shootismoke/common/commit/a593a9f7678a5d85fbd5bff530312e3cd83594ca)), closes [#669](https://github.com/shootismoke/common/issues/669)
+
+
+### BREAKING CHANGES
+
+* The `fetchAlgolia` function has been removed from `@shootismoke/ui`, because Algolia Places reached end of life: https://www.algolia.com/ref/places/. Please use `geoapify` instead, which needs an API key: https://www.geoapify.com/.
+
+
+
+
+
 ## [0.8.9](https://github.com/shootismoke/common/compare/v0.8.8...v0.8.9) (2021-03-06)
 
 
