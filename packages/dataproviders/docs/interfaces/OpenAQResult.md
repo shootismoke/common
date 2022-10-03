@@ -48,7 +48,7 @@ OpenAQResultBase.attribution
 
 #### Defined in
 
-[packages/dataproviders/src/util/openaq.ts:86](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/util/openaq.ts#L86)
+[packages/dataproviders/src/util/openaq.ts:86](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/util/openaq.ts#L86)
 
 ___
 
@@ -62,7 +62,7 @@ OpenAQResultBase.averagingPeriod
 
 #### Defined in
 
-[packages/dataproviders/src/util/openaq.ts:87](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/util/openaq.ts#L87)
+[packages/dataproviders/src/util/openaq.ts:87](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/util/openaq.ts#L87)
 
 ___
 
@@ -76,7 +76,7 @@ OpenAQResultBase.city
 
 #### Defined in
 
-[packages/dataproviders/src/util/openaq.ts:91](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/util/openaq.ts#L91)
+[packages/dataproviders/src/util/openaq.ts:91](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/util/openaq.ts#L91)
 
 ___
 
@@ -90,7 +90,7 @@ OpenAQResultBase.coordinates
 
 #### Defined in
 
-[packages/dataproviders/src/util/openaq.ts:92](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/util/openaq.ts#L92)
+[packages/dataproviders/src/util/openaq.ts:92](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/util/openaq.ts#L92)
 
 ___
 
@@ -104,7 +104,7 @@ OpenAQResultBase.country
 
 #### Defined in
 
-[packages/dataproviders/src/util/openaq.ts:67](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/util/openaq.ts#L67)
+[packages/dataproviders/src/util/openaq.ts:67](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/util/openaq.ts#L67)
 
 ___
 
@@ -125,7 +125,7 @@ OpenAQResultBase.date
 
 #### Defined in
 
-[packages/dataproviders/src/util/openaq.ts:68](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/util/openaq.ts#L68)
+[packages/dataproviders/src/util/openaq.ts:68](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/util/openaq.ts#L68)
 
 ___
 
@@ -139,7 +139,7 @@ OpenAQResultBase.entity
 
 #### Defined in
 
-[packages/dataproviders/src/util/openaq.ts:93](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/util/openaq.ts#L93)
+[packages/dataproviders/src/util/openaq.ts:93](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/util/openaq.ts#L93)
 
 ___
 
@@ -153,7 +153,7 @@ OpenAQResultBase.isAnalysis
 
 #### Defined in
 
-[packages/dataproviders/src/util/openaq.ts:94](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/util/openaq.ts#L94)
+[packages/dataproviders/src/util/openaq.ts:94](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/util/openaq.ts#L94)
 
 ___
 
@@ -167,7 +167,7 @@ OpenAQResultBase.isMobile
 
 #### Defined in
 
-[packages/dataproviders/src/util/openaq.ts:95](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/util/openaq.ts#L95)
+[packages/dataproviders/src/util/openaq.ts:95](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/util/openaq.ts#L95)
 
 ___
 
@@ -181,7 +181,7 @@ OpenAQResultBase.location
 
 #### Defined in
 
-[packages/dataproviders/src/util/openaq.ts:72](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/util/openaq.ts#L72)
+[packages/dataproviders/src/util/openaq.ts:72](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/util/openaq.ts#L72)
 
 ___
 
@@ -195,7 +195,7 @@ OpenAQResultBase.parameter
 
 #### Defined in
 
-[packages/dataproviders/src/util/openaq.ts:122](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/util/openaq.ts#L122)
+[packages/dataproviders/src/util/openaq.ts:122](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/util/openaq.ts#L122)
 
 ___
 
@@ -209,7 +209,7 @@ OpenAQResultBase.sensorType
 
 #### Defined in
 
-[packages/dataproviders/src/util/openaq.ts:97](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/util/openaq.ts#L97)
+[packages/dataproviders/src/util/openaq.ts:97](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/util/openaq.ts#L97)
 
 ___
 
@@ -223,7 +223,7 @@ OpenAQResultBase.sourceName
 
 #### Defined in
 
-[packages/dataproviders/src/util/openaq.ts:96](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/util/openaq.ts#L96)
+[packages/dataproviders/src/util/openaq.ts:96](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/util/openaq.ts#L96)
 
 ___
 
@@ -237,7 +237,7 @@ OpenAQResultBase.unit
 
 #### Defined in
 
-[packages/dataproviders/src/util/openaq.ts:123](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/util/openaq.ts#L123)
+[packages/dataproviders/src/util/openaq.ts:123](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/util/openaq.ts#L123)
 
 ___
 
@@ -251,4 +251,4 @@ OpenAQResultBase.value
 
 #### Defined in
 
-[packages/dataproviders/src/util/openaq.ts:74](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/util/openaq.ts#L74)
+[packages/dataproviders/src/util/openaq.ts:74](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/util/openaq.ts#L74)

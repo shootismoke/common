@@ -19,7 +19,7 @@ Latitude and longitude object.
 
 #### Defined in
 
-[packages/dataproviders/src/types.ts:7](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/types.ts#L7)
+[packages/dataproviders/src/types.ts:7](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/types.ts#L7)
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 #### Defined in
 
-[packages/dataproviders/src/types.ts:8](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/types.ts#L8)
+[packages/dataproviders/src/types.ts:8](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/types.ts#L8)

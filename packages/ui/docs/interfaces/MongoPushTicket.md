@@ -158,7 +158,7 @@ Document.\_id
 
 #### Defined in
 
-[packages/ui/src/util/types.ts:57](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/types.ts#L57)
+[packages/ui/src/util/types.ts:57](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/types.ts#L57)
 
 ___
 
@@ -284,7 +284,7 @@ IPushTicket.receiptId
 
 #### Defined in
 
-[packages/ui/src/util/types.ts:50](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/types.ts#L50)
+[packages/ui/src/util/types.ts:50](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/types.ts#L50)
 
 ___
 
@@ -330,7 +330,7 @@ IPushTicket.userId
 
 #### Defined in
 
-[packages/ui/src/util/types.ts:51](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/types.ts#L51)
+[packages/ui/src/util/types.ts:51](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/types.ts#L51)
 
 ## Methods
 
