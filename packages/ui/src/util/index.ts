@@ -15,7 +15,7 @@
 // along with Sh**t! I Smoke.  If not, see <http://www.gnu.org/licenses/>.
 
 export * from './api';
-export * from './fetchAlgolia';
+export * from './geoapify';
 export * from './frequency';
 export * from './fp';
 export * from './noop';
