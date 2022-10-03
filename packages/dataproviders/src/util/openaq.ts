@@ -94,6 +94,7 @@ export const OpenAQCodecOptional = t.partial({
 	isAnalysis: t.boolean,
 	isMobile: t.boolean,
 	sourceName: t.string,
+	sensorType: t.string,
 });
 
 /**

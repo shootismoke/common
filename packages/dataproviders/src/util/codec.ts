@@ -52,7 +52,7 @@ export function fetchAndDecode<A, E, O, I>(
 			axios
 				.get(url)
 				.then(({ data }) => data as I)
-				.catch((error) => {
+				.catch((error: E) => {
 					throw options.onError ? options.onError(error) : error;
 				})
 		),

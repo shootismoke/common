@@ -23,7 +23,7 @@ import type { AqicnStaton } from './validation';
  *
  * FIXME This is hacky.
  */
-function sanitizeCountry(input: string): string {
+export function sanitizeCountry(input: string): string {
 	if (sanitized[input.toLowerCase() as keyof typeof sanitized]) {
 		return sanitized[input.toLowerCase() as keyof typeof sanitized];
 	}
