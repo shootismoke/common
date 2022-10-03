@@ -60,6 +60,9 @@ const AxiosResponseT = t.partial({
 	}),
 });
 
+/**
+ * @deprecated Algolia Places has reached End of Life. See https://www.algolia.com/ref/places/.
+ */
 export function fetchAlgolia(
 	search: string,
 	gps?: LatLng

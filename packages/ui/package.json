@@ -29,7 +29,7 @@
 		"haversine": "^1.1.1",
 		"lottie-react-native": "^5.1.4",
 		"mongoose": "^6.6.3",
-		"p-any": "^4.0.0",
+		"p-any": "^3.0.0",
 		"react-native-web": "^0.18.9",
 		"retry-ts": "^0.1.4"
 	},

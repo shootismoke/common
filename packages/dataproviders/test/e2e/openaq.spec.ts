@@ -13,14 +13,12 @@ describe('openaq e2e', () => {
 		skip: ['fetchByStation'],
 	});
 
-	it('should fetch station Beijing', (done) => {
-		pipe(
+	it('should fetch station Beijing', () => {
+		return pipe(
 			openaq.fetchByStation('Beijing'),
 			TE.fold(
 				(error) => {
-					done.fail(error);
-
-					return T.of(void undefined);
+					throw error;
 				},
 				({ results }) => {
 					expect(results.length).toBeGreaterThanOrEqual(1);
@@ -28,14 +26,14 @@ describe('openaq e2e', () => {
 					return T.of(void undefined);
 				}
 			)
-		)().catch(console.error);
+		)();
 	});
 
-	it('should fetch correctly with options', (done) => {
+	it('should fetch correctly with options', () => {
 		const dateFrom = subDays(new Date(), 9000);
 		const dateTo = subDays(new Date(), 7);
 
-		pipe(
+		return pipe(
 			openaq.fetchByStation('Beijing', {
 				dateFrom,
 				dateTo,
@@ -45,9 +43,7 @@ describe('openaq e2e', () => {
 			}),
 			TE.fold(
 				(error) => {
-					done.fail(error);
-
-					return T.of(void undefined);
+					throw error;
 				},
 				({ results }) => {
 					// Check limit.
@@ -67,13 +63,14 @@ describe('openaq e2e', () => {
 						// Check includeFields.
 						expect(result.isMobile).not.toBeUndefined();
 						expect(result.entity).toBeTruthy();
-						expect(result.sourceName).toBeTruthy();
+						console.log(result);
+						expect(result.sensorType).toBeTruthy();
 					});
 
 					return T.of(void undefined);
 				}
 			)
-		)().catch(console.error);
+		)();
 	});
 
 	afterAll(() => jest.setTimeout(5000));

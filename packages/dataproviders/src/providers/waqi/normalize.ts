@@ -4,6 +4,7 @@ import { pipe } from 'fp-ts/lib/pipeable';
 
 import { OpenAQResults } from '../../types';
 import { getCountryCode, providerError } from '../../util';
+import { sanitizeCountry } from '../aqicn/normalize';
 import { ByStation } from './validation';
 
 /**
@@ -39,15 +40,16 @@ export function normalize({
 			)
 		);
 	}
-	const [countryUgm3, city] = data.u.split('/');
+	const [country, city] = data.u.split('/');
+	const countryRaw = sanitizeCountry(country);
 
 	// Get UTC time
 	const utc = new Date(+data.t * 1000).toISOString();
 
 	return pipe(
-		getCountryCode(countryUgm3),
+		getCountryCode(countryRaw),
 		E.fromOption(() =>
-			providerError('waqi', `Cannot get code from country ${countryUgm3}`)
+			providerError('waqi', `Cannot get code from country ${country}`)
 		),
 		E.map((country) => [
 			{

@@ -40,10 +40,9 @@ export function testOpenAQResults(results: OpenAQResults): void {
  */
 export function testTE<T>(
 	te: TE.TaskEither<Error, T>,
-	normalize: (data: T) => E.Either<Error, OpenAQResults>,
-	done: jest.DoneCallback
-): void {
-	pipe(
+	normalize: (data: T) => E.Either<Error, OpenAQResults>
+): Promise<void> {
+	return pipe(
 		te,
 		TE.map((response) => {
 			expect(response).toBeDefined();
@@ -75,14 +74,13 @@ export function testTE<T>(
 					return T.of(void undefined);
 				}
 
-				done.fail(error);
-				return T.of(void undefined);
+				throw error;
 			},
 			() => {
 				return T.of(void undefined);
 			}
 		)
-	)().catch(console.error);
+	)();
 }
 
 interface TestProviderE2EOptions<Options> {
@@ -104,11 +102,13 @@ export function testProviderE2E<DataByGps, DataByStation, Options>(
 			[0, 0].map(generateRandomLatLng).forEach((gps) => {
 				it(`should fetch ${providerFP.id} by gps: ${JSON.stringify(
 					gps
-				)}`, (done) =>
+				)}`, () =>
 					testTE(
-						providerFP.fetchByGps(gps, options),
-						(d) => providerFP.normalizeByGps(d),
-						done
+						providerFP.fetchByGps(
+							{ latitude: 78.7, longitude: 55.69 },
+							options
+						),
+						(d) => providerFP.normalizeByGps(d)
 					));
 			});
 		});
@@ -117,11 +117,9 @@ export function testProviderE2E<DataByGps, DataByStation, Options>(
 	if (!skip.includes('fetchByStation')) {
 		describe('fetchByStation', () => {
 			[0, 0].map(generateRandomStationId).forEach((stationId) => {
-				it(`should fetch ${providerFP.id} by station: ${stationId}`, (done) =>
-					testTE(
-						providerFP.fetchByStation(stationId, options),
-						(d) => providerFP.normalizeByStation(d),
-						done
+				it(`should fetch ${providerFP.id} by station: ${stationId}`, () =>
+					testTE(providerFP.fetchByStation(stationId, options), (d) =>
+						providerFP.normalizeByStation(d)
 					));
 			});
 		});

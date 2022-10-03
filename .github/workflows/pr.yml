@@ -41,6 +41,7 @@ jobs:
         uses: paambaati/codeclimate-action@v2.3.0
         env:
           AQICN_TOKEN: ${{ secrets.AQICN_TOKEN }}
+          GEOAPIFY_API_KEY: ${{ secrets.GEOAPIFY_API_KEY }}
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
           coverageCommand: yarn test --coverage
