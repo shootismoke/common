@@ -40,7 +40,7 @@ Type of the v2 OpenAQ error format.
 
 #### Defined in
 
-[packages/dataproviders/src/util/openaq.ts:155](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/util/openaq.ts#L155)
+[packages/dataproviders/src/util/openaq.ts:155](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/util/openaq.ts#L155)
 
 ___
 
@@ -53,7 +53,7 @@ results have at least one element, in the openaq-data-format.
 
 #### Defined in
 
-[packages/dataproviders/src/types.ts:19](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/types.ts#L19)
+[packages/dataproviders/src/types.ts:19](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/types.ts#L19)
 
 ## Variables
 
@@ -71,7 +71,7 @@ https://github.com/openaq/openaq-data-format
 
 #### Defined in
 
-[packages/dataproviders/src/util/openaq.ts:106](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/util/openaq.ts#L106)
+[packages/dataproviders/src/util/openaq.ts:106](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/util/openaq.ts#L106)
 
 ___
 
@@ -83,7 +83,7 @@ An io-ts codec to validate the v2 OpenAQ error format.
 
 #### Defined in
 
-[packages/dataproviders/src/util/openaq.ts:145](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/util/openaq.ts#L145)
+[packages/dataproviders/src/util/openaq.ts:145](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/util/openaq.ts#L145)
 
 ___
 
@@ -93,7 +93,7 @@ ___
 
 #### Defined in
 
-[packages/dataproviders/src/promise.ts:48](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/promise.ts#L48)
+[packages/dataproviders/src/promise.ts:48](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/promise.ts#L48)
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 #### Defined in
 
-[packages/dataproviders/src/promise.ts:49](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/promise.ts#L49)
+[packages/dataproviders/src/promise.ts:49](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/promise.ts#L49)
 
 ___
 
@@ -115,7 +115,7 @@ ___
 
 #### Defined in
 
-[packages/dataproviders/src/util/openaq.ts:44](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/util/openaq.ts#L44)
+[packages/dataproviders/src/util/openaq.ts:44](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/util/openaq.ts#L44)
 
 ___
 
@@ -125,7 +125,7 @@ ___
 
 #### Defined in
 
-[packages/dataproviders/src/promise.ts:50](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/promise.ts#L50)
+[packages/dataproviders/src/promise.ts:50](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/promise.ts#L50)
 
 ## Functions
 
@@ -153,7 +153,7 @@ Convert an Either<Error, A> into a A, or throw if error
 
 #### Defined in
 
-[packages/dataproviders/src/util/fp.ts:53](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/util/fp.ts#L53)
+[packages/dataproviders/src/util/fp.ts:53](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/util/fp.ts#L53)
 
 ___
 
@@ -181,7 +181,7 @@ Convert a Promise<A> into a TaskEither<Error, A>
 
 #### Defined in
 
-[packages/dataproviders/src/util/fp.ts:16](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/util/fp.ts#L16)
+[packages/dataproviders/src/util/fp.ts:16](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/util/fp.ts#L16)
 
 ___
 
@@ -209,4 +209,4 @@ Convert a TaskEither<Error, A> into a Promise<A>
 
 #### Defined in
 
-[packages/dataproviders/src/util/fp.ts:30](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/util/fp.ts#L30)
+[packages/dataproviders/src/util/fp.ts:30](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/util/fp.ts#L30)

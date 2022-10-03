@@ -64,7 +64,6 @@
 - [retry](modules.md#retry)
 - [round](modules.md#round)
 - [sideEffect](modules.md#sideeffect)
-- [slugify](modules.md#slugify)
 
 ## Type Aliases
 
@@ -76,7 +75,7 @@ We can show distances in these two units.
 
 #### Defined in
 
-[packages/ui/src/util/station.ts:36](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/station.ts#L36)
+[packages/ui/src/util/station.ts:36](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/station.ts#L36)
 
 ___
 
@@ -86,7 +85,7 @@ ___
 
 #### Defined in
 
-[packages/ui/src/util/types.ts:21](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/types.ts#L21)
+[packages/ui/src/util/types.ts:21](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/types.ts#L21)
 
 ___
 
@@ -96,7 +95,7 @@ ___
 
 #### Defined in
 
-[packages/ui/src/util/geoapify.ts:59](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/geoapify.ts#L59)
+[packages/ui/src/util/geoapify.ts:59](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/geoapify.ts#L59)
 
 ___
 
@@ -106,7 +105,7 @@ ___
 
 #### Defined in
 
-[packages/ui/src/util/types.ts:48](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/types.ts#L48)
+[packages/ui/src/util/types.ts:48](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/types.ts#L48)
 
 ___
 
@@ -116,7 +115,7 @@ ___
 
 #### Defined in
 
-[packages/ui/src/util/theme.ts:19](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/theme.ts#L19)
+[packages/ui/src/util/theme.ts:19](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/theme.ts#L19)
 
 ## Variables
 
@@ -126,7 +125,7 @@ ___
 
 #### Defined in
 
-[packages/ui/src/context/Frequency.tsx:27](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/context/Frequency.tsx#L27)
+[packages/ui/src/context/Frequency.tsx:27](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/context/Frequency.tsx#L27)
 
 ___
 
@@ -138,7 +137,7 @@ Above this distance (km), we consider the station too far from the user
 
 #### Defined in
 
-[packages/ui/src/util/station.ts:41](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/station.ts#L41)
+[packages/ui/src/util/station.ts:41](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/station.ts#L41)
 
 ___
 
@@ -148,7 +147,7 @@ ___
 
 #### Defined in
 
-[packages/ui/src/util/theme.ts:21](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/theme.ts#L21)
+[packages/ui/src/util/theme.ts:21](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/theme.ts#L21)
 
 ___
 
@@ -160,7 +159,7 @@ Opacity for views that are disabled.
 
 #### Defined in
 
-[packages/ui/src/util/theme.ts:37](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/theme.ts#L37)
+[packages/ui/src/util/theme.ts:37](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/theme.ts#L37)
 
 ___
 
@@ -170,7 +169,7 @@ ___
 
 #### Defined in
 
-[packages/ui/src/util/theme.ts:22](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/theme.ts#L22)
+[packages/ui/src/util/theme.ts:22](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/theme.ts#L22)
 
 ___
 
@@ -187,7 +186,7 @@ ___
 
 #### Defined in
 
-[packages/ui/src/util/theme.ts:59](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/theme.ts#L59)
+[packages/ui/src/util/theme.ts:59](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/theme.ts#L59)
 
 ___
 
@@ -197,7 +196,7 @@ ___
 
 #### Defined in
 
-[packages/ui/src/util/theme.ts:23](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/theme.ts#L23)
+[packages/ui/src/util/theme.ts:23](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/theme.ts#L23)
 
 ___
 
@@ -207,7 +206,7 @@ ___
 
 #### Defined in
 
-[packages/ui/src/util/theme.ts:25](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/theme.ts#L25)
+[packages/ui/src/util/theme.ts:25](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/theme.ts#L25)
 
 ___
 
@@ -229,7 +228,7 @@ Big text with "Sh*t! I smoked...""
 
 #### Defined in
 
-[packages/ui/src/util/theme.ts:67](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/theme.ts#L67)
+[packages/ui/src/util/theme.ts:67](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/theme.ts#L67)
 
 ___
 
@@ -249,7 +248,7 @@ ___
 
 #### Defined in
 
-[packages/ui/src/util/theme.ts:26](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/theme.ts#L26)
+[packages/ui/src/util/theme.ts:26](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/theme.ts#L26)
 
 ___
 
@@ -270,7 +269,7 @@ Normal text
 
 #### Defined in
 
-[packages/ui/src/util/theme.ts:78](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/theme.ts#L78)
+[packages/ui/src/util/theme.ts:78](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/theme.ts#L78)
 
 ___
 
@@ -280,7 +279,7 @@ ___
 
 #### Defined in
 
-[packages/ui/src/util/theme.ts:24](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/theme.ts#L24)
+[packages/ui/src/util/theme.ts:24](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/theme.ts#L24)
 
 ___
 
@@ -300,7 +299,7 @@ ___
 
 #### Defined in
 
-[packages/ui/src/util/theme.ts:85](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/theme.ts#L85)
+[packages/ui/src/util/theme.ts:85](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/theme.ts#L85)
 
 ___
 
@@ -316,7 +315,7 @@ ___
 
 #### Defined in
 
-[packages/ui/src/util/theme.ts:93](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/theme.ts#L93)
+[packages/ui/src/util/theme.ts:93](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/theme.ts#L93)
 
 ___
 
@@ -332,7 +331,7 @@ ___
 
 #### Defined in
 
-[packages/ui/src/util/theme.ts:97](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/theme.ts#L97)
+[packages/ui/src/util/theme.ts:97](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/theme.ts#L97)
 
 ## Functions
 
@@ -353,7 +352,7 @@ ___
 
 #### Defined in
 
-[packages/ui/src/context/Frequency.tsx:32](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/context/Frequency.tsx#L32)
+[packages/ui/src/context/Frequency.tsx:32](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/context/Frequency.tsx#L32)
 
 ___
 
@@ -375,7 +374,7 @@ Capitalize a string.
 
 #### Defined in
 
-[packages/ui/src/util/station.ts:29](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/station.ts#L29)
+[packages/ui/src/util/station.ts:29](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/station.ts#L29)
 
 ___
 
@@ -400,7 +399,7 @@ object with sanitized data.
 
 #### Defined in
 
-[packages/ui/src/util/api.ts:91](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/api.ts#L91)
+[packages/ui/src/util/api.ts:91](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/api.ts#L91)
 
 ___
 
@@ -424,7 +423,7 @@ Get distance from current location to station.
 
 #### Defined in
 
-[packages/ui/src/util/station.ts:81](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/station.ts#L81)
+[packages/ui/src/util/station.ts:81](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/station.ts#L81)
 
 ___
 
@@ -451,7 +450,7 @@ https://stenbeck.io/styling-shadows-in-react-native-ios-and-android/
 
 #### Defined in
 
-[packages/ui/src/util/theme.ts:43](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/theme.ts#L43)
+[packages/ui/src/util/theme.ts:43](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/theme.ts#L43)
 
 ___
 
@@ -474,7 +473,7 @@ Fetch data from correct provider, based on stationId.
 
 #### Defined in
 
-[packages/ui/src/util/provider.ts:53](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/provider.ts#L53)
+[packages/ui/src/util/provider.ts:53](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/provider.ts#L53)
 
 ___
 
@@ -496,7 +495,7 @@ Convert a frequency to its equivalent period.
 
 #### Defined in
 
-[packages/ui/src/util/frequency.ts:24](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/frequency.ts#L24)
+[packages/ui/src/util/frequency.ts:24](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/frequency.ts#L24)
 
 ___
 
@@ -517,7 +516,7 @@ ___
 
 #### Defined in
 
-[packages/ui/src/util/geoapify.ts:67](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/geoapify.ts#L67)
+[packages/ui/src/util/geoapify.ts:67](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/geoapify.ts#L67)
 
 ___
 
@@ -540,7 +539,7 @@ the primary pollutant.
 
 #### Defined in
 
-[packages/ui/src/util/pollutant.ts:130](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/pollutant.ts#L130)
+[packages/ui/src/util/pollutant.ts:130](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/pollutant.ts#L130)
 
 ___
 
@@ -566,7 +565,7 @@ We check here with the user's real currentLocation coordinates, and take the
 
 #### Defined in
 
-[packages/ui/src/util/station.ts:54](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/station.ts#L54)
+[packages/ui/src/util/station.ts:54](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/station.ts#L54)
 
 ___
 
@@ -588,7 +587,7 @@ Get metadata about a pollutant.
 
 #### Defined in
 
-[packages/ui/src/util/pollutant.ts:88](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/pollutant.ts#L88)
+[packages/ui/src/util/pollutant.ts:88](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/pollutant.ts#L88)
 
 ___
 
@@ -610,7 +609,7 @@ Return a random swear word, untranslated.
 
 #### Defined in
 
-[packages/ui/src/util/swearWords.ts:36](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/swearWords.ts#L36)
+[packages/ui/src/util/swearWords.ts:36](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/swearWords.ts#L36)
 
 ___
 
@@ -634,7 +633,7 @@ kilometers away from the current location.
 
 #### Defined in
 
-[packages/ui/src/util/station.ts:110](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/station.ts#L110)
+[packages/ui/src/util/station.ts:110](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/station.ts#L110)
 
 ___
 
@@ -650,7 +649,7 @@ A function that does nothing.
 
 #### Defined in
 
-[packages/ui/src/util/noop.ts:20](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/noop.ts#L20)
+[packages/ui/src/util/noop.ts:20](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/noop.ts#L20)
 
 ___
 
@@ -677,7 +676,7 @@ https://berkeleyearth.org/air-pollution-and-cigarette-equivalence/
 
 #### Defined in
 
-[packages/ui/src/util/secretSauce.ts:24](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/secretSauce.ts#L24)
+[packages/ui/src/util/secretSauce.ts:24](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/secretSauce.ts#L24)
 
 ___
 
@@ -699,7 +698,7 @@ From a set of OpenAQResults pollutant data, find the primary pollutant.
 
 #### Defined in
 
-[packages/ui/src/util/pollutant.ts:154](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/pollutant.ts#L154)
+[packages/ui/src/util/pollutant.ts:154](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/pollutant.ts#L154)
 
 ___
 
@@ -727,7 +726,7 @@ Convert a Promise<A> into a TaskEither<Error, A>
 
 #### Defined in
 
-[packages/dataproviders/src/util/fp.ts:16](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/util/fp.ts#L16)
+[packages/dataproviders/src/util/fp.ts:16](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/util/fp.ts#L16)
 
 ___
 
@@ -751,7 +750,7 @@ response as an [Api](interfaces/Api.md) format.
 
 #### Defined in
 
-[packages/ui/src/util/api.ts:158](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/api.ts#L158)
+[packages/ui/src/util/api.ts:158](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/api.ts#L158)
 
 ___
 
@@ -780,7 +779,7 @@ Retry a TaskEither.
 
 #### Defined in
 
-[packages/ui/src/util/fp.ts:76](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/fp.ts#L76)
+[packages/ui/src/util/fp.ts:76](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/fp.ts#L76)
 
 ___
 
@@ -802,7 +801,7 @@ Round a number to 1 decimal. Useful for showing cigarettes on the home page.
 
 #### Defined in
 
-[packages/ui/src/util/api.ts:76](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/api.ts#L76)
+[packages/ui/src/util/api.ts:76](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/api.ts#L76)
 
 ___
 
@@ -855,45 +854,4 @@ pipe(
 
 #### Defined in
 
-[packages/ui/src/util/fp.ts:47](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/fp.ts#L47)
-
-___
-
-### slugify
-
-▸ **slugify**(`string`, `options?`): `string`
-
-Slugify a string.
-
-**`Example`**
-
-```
-import slugify from '@sindresorhus/slugify';
-
-slugify('I ♥ Dogs');
-//=> 'i-love-dogs'
-
-slugify('  Déjà Vu!  ');
-//=> 'deja-vu'
-
-slugify('fooBar 123 $#%');
-//=> 'foo-bar-123'
-
-slugify('я люблю единорогов');
-//=> 'ya-lyublyu-edinorogov'
-```
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `string` | `string` | String to slugify. |
-| `options?` | `Options` | - |
-
-#### Returns
-
-`string`
-
-#### Defined in
-
-node_modules/@sindresorhus/slugify/index.d.ts:159
+[packages/ui/src/util/fp.ts:47](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/fp.ts#L47)

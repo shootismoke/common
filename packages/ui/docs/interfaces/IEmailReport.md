@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[packages/ui/src/util/types.ts:28](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/types.ts#L28)
+[packages/ui/src/util/types.ts:28](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/types.ts#L28)
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 #### Defined in
 
-[packages/ui/src/util/types.ts:29](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/types.ts#L29)
+[packages/ui/src/util/types.ts:29](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/types.ts#L29)

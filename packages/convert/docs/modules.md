@@ -42,7 +42,7 @@ List of AQI codes
 
 #### Defined in
 
-[types.ts:18](https://github.com/shootismoke/common//blob/a593a9f/packages/convert/src/types.ts#L18)
+[types.ts:18](https://github.com/shootismoke/common//blob/dff4dfe/packages/convert/src/types.ts#L18)
 
 ___
 
@@ -54,7 +54,7 @@ All the pollutants tracked by @shootismoke.
 
 #### Defined in
 
-[util/pollutant.ts:7](https://github.com/shootismoke/common//blob/a593a9f/packages/convert/src/util/pollutant.ts#L7)
+[util/pollutant.ts:7](https://github.com/shootismoke/common//blob/dff4dfe/packages/convert/src/util/pollutant.ts#L7)
 
 ___
 
@@ -66,7 +66,7 @@ Pollutant concentration units.
 
 #### Defined in
 
-[util/unit.ts:26](https://github.com/shootismoke/common//blob/a593a9f/packages/convert/src/util/unit.ts#L26)
+[util/unit.ts:26](https://github.com/shootismoke/common//blob/dff4dfe/packages/convert/src/util/unit.ts#L26)
 
 ## Variables
 
@@ -79,7 +79,7 @@ https://docs.openaq.org/v2/parameters
 
 #### Defined in
 
-[util/pollutant.ts:94](https://github.com/shootismoke/common//blob/a593a9f/packages/convert/src/util/pollutant.ts#L94)
+[util/pollutant.ts:94](https://github.com/shootismoke/common//blob/dff4dfe/packages/convert/src/util/pollutant.ts#L94)
 
 ___
 
@@ -91,7 +91,7 @@ Array of pollutant concentration units.
 
 #### Defined in
 
-[util/unit.ts:21](https://github.com/shootismoke/common//blob/a593a9f/packages/convert/src/util/unit.ts#L21)
+[util/unit.ts:21](https://github.com/shootismoke/common//blob/dff4dfe/packages/convert/src/util/unit.ts#L21)
 
 ___
 
@@ -107,7 +107,7 @@ https://kjs.mep.gov.cn/hjbhbz/bzwb/dqhjbh/jcgfffbz/201203/t20120302_224166.htm
 
 #### Defined in
 
-[aqi/chnMep/chnMep.ts:9](https://github.com/shootismoke/common//blob/a593a9f/packages/convert/src/aqi/chnMep/chnMep.ts#L9)
+[aqi/chnMep/chnMep.ts:9](https://github.com/shootismoke/common//blob/dff4dfe/packages/convert/src/aqi/chnMep/chnMep.ts#L9)
 
 ___
 
@@ -119,7 +119,7 @@ Parts per billion.
 
 #### Defined in
 
-[util/unit.ts:4](https://github.com/shootismoke/common//blob/a593a9f/packages/convert/src/util/unit.ts#L4)
+[util/unit.ts:4](https://github.com/shootismoke/common//blob/dff4dfe/packages/convert/src/util/unit.ts#L4)
 
 ___
 
@@ -131,7 +131,7 @@ Particles per cubic centermeter.
 
 #### Defined in
 
-[util/unit.ts:16](https://github.com/shootismoke/common//blob/a593a9f/packages/convert/src/util/unit.ts#L16)
+[util/unit.ts:16](https://github.com/shootismoke/common//blob/dff4dfe/packages/convert/src/util/unit.ts#L16)
 
 ___
 
@@ -143,7 +143,7 @@ Parts per million.
 
 #### Defined in
 
-[util/unit.ts:8](https://github.com/shootismoke/common//blob/a593a9f/packages/convert/src/util/unit.ts#L8)
+[util/unit.ts:8](https://github.com/shootismoke/common//blob/dff4dfe/packages/convert/src/util/unit.ts#L8)
 
 ___
 
@@ -155,7 +155,7 @@ Microgram per cubic meter.
 
 #### Defined in
 
-[util/unit.ts:12](https://github.com/shootismoke/common//blob/a593a9f/packages/convert/src/util/unit.ts#L12)
+[util/unit.ts:12](https://github.com/shootismoke/common//blob/dff4dfe/packages/convert/src/util/unit.ts#L12)
 
 ___
 
@@ -171,7 +171,7 @@ https://www3.epa.gov/airnow/aqi-technical-assistance-document-sept2018.pdf
 
 #### Defined in
 
-[aqi/usaEpa/usaEpa.ts:9](https://github.com/shootismoke/common//blob/a593a9f/packages/convert/src/aqi/usaEpa/usaEpa.ts#L9)
+[aqi/usaEpa/usaEpa.ts:9](https://github.com/shootismoke/common//blob/dff4dfe/packages/convert/src/aqi/usaEpa/usaEpa.ts#L9)
 
 ## Functions
 
@@ -197,7 +197,7 @@ or convert an AQI to another AQI
 
 #### Defined in
 
-[convert.ts:15](https://github.com/shootismoke/common//blob/a593a9f/packages/convert/src/convert.ts#L15)
+[convert.ts:15](https://github.com/shootismoke/common//blob/dff4dfe/packages/convert/src/convert.ts#L15)
 
 ___
 
@@ -220,7 +220,7 @@ https://docs.openaq.org/v2/parameters
 
 #### Defined in
 
-[util/pollutant.ts:102](https://github.com/shootismoke/common//blob/a593a9f/packages/convert/src/util/pollutant.ts#L102)
+[util/pollutant.ts:102](https://github.com/shootismoke/common//blob/dff4dfe/packages/convert/src/util/pollutant.ts#L102)
 
 ___
 
@@ -244,4 +244,4 @@ pollutant is Pollutant
 
 #### Defined in
 
-[util/pollutant.ts:113](https://github.com/shootismoke/common//blob/a593a9f/packages/convert/src/util/pollutant.ts#L113)
+[util/pollutant.ts:113](https://github.com/shootismoke/common//blob/dff4dfe/packages/convert/src/util/pollutant.ts#L113)

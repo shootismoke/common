@@ -24,7 +24,7 @@ Raw data corresponding to the PM2.5 pollutant.
 
 #### Defined in
 
-[packages/ui/src/util/api.ts:49](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/api.ts#L49)
+[packages/ui/src/util/api.ts:49](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/api.ts#L49)
 
 ___
 
@@ -36,7 +36,7 @@ All results (normalized) returned by the provider.
 
 #### Defined in
 
-[packages/ui/src/util/api.ts:45](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/api.ts#L45)
+[packages/ui/src/util/api.ts:45](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/api.ts#L45)
 
 ___
 
@@ -56,4 +56,4 @@ Data used by shootismoke frontends.
 
 #### Defined in
 
-[packages/ui/src/util/api.ts:53](https://github.com/shootismoke/common//blob/a593a9f/packages/ui/src/util/api.ts#L53)
+[packages/ui/src/util/api.ts:53](https://github.com/shootismoke/common//blob/dff4dfe/packages/ui/src/util/api.ts#L53)

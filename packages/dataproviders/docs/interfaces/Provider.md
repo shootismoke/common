@@ -34,7 +34,7 @@ An interface representing an air quality data Provider (Promise version).
 
 #### Defined in
 
-[packages/dataproviders/src/promise.ts:19](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/promise.ts#L19)
+[packages/dataproviders/src/promise.ts:19](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/promise.ts#L19)
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 #### Defined in
 
-[packages/dataproviders/src/promise.ts:20](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/promise.ts#L20)
+[packages/dataproviders/src/promise.ts:20](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/promise.ts#L20)
 
 ## Methods
 
@@ -65,7 +65,7 @@ ___
 
 #### Defined in
 
-[packages/dataproviders/src/promise.ts:14](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/promise.ts#L14)
+[packages/dataproviders/src/promise.ts:14](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/promise.ts#L14)
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 #### Defined in
 
-[packages/dataproviders/src/promise.ts:15](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/promise.ts#L15)
+[packages/dataproviders/src/promise.ts:15](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/promise.ts#L15)
 
 ___
 
@@ -106,7 +106,7 @@ ___
 
 #### Defined in
 
-[packages/dataproviders/src/promise.ts:21](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/promise.ts#L21)
+[packages/dataproviders/src/promise.ts:21](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/promise.ts#L21)
 
 ___
 
@@ -126,4 +126,4 @@ ___
 
 #### Defined in
 
-[packages/dataproviders/src/promise.ts:22](https://github.com/shootismoke/common//blob/a593a9f/packages/dataproviders/src/promise.ts#L22)
+[packages/dataproviders/src/promise.ts:22](https://github.com/shootismoke/common//blob/dff4dfe/packages/dataproviders/src/promise.ts#L22)

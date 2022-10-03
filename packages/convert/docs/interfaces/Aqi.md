@@ -25,7 +25,7 @@ An interface to represent an AQI
 
 #### Defined in
 
-[types.ts:8](https://github.com/shootismoke/common//blob/a593a9f/packages/convert/src/types.ts#L8)
+[types.ts:8](https://github.com/shootismoke/common//blob/dff4dfe/packages/convert/src/types.ts#L8)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 #### Defined in
 
-[types.ts:10](https://github.com/shootismoke/common//blob/a593a9f/packages/convert/src/types.ts#L10)
+[types.ts:10](https://github.com/shootismoke/common//blob/dff4dfe/packages/convert/src/types.ts#L10)
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 #### Defined in
 
-[types.ts:11](https://github.com/shootismoke/common//blob/a593a9f/packages/convert/src/types.ts#L11)
+[types.ts:11](https://github.com/shootismoke/common//blob/dff4dfe/packages/convert/src/types.ts#L11)
 
 ## Methods
 
@@ -66,7 +66,7 @@ ___
 
 #### Defined in
 
-[types.ts:9](https://github.com/shootismoke/common//blob/a593a9f/packages/convert/src/types.ts#L9)
+[types.ts:9](https://github.com/shootismoke/common//blob/dff4dfe/packages/convert/src/types.ts#L9)
 
 ___
 
@@ -87,4 +87,4 @@ ___
 
 #### Defined in
 
-[types.ts:12](https://github.com/shootismoke/common//blob/a593a9f/packages/convert/src/types.ts#L12)
+[types.ts:12](https://github.com/shootismoke/common//blob/dff4dfe/packages/convert/src/types.ts#L12)
