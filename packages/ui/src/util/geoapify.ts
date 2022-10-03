@@ -32,7 +32,7 @@ import { promiseToTE, retry } from './fp';
 function getEndpoint(search: string, apiKey: string, gps?: LatLng): string {
 	const base = `https://api.geoapify.com/v1/geocode/search?text=${encodeURIComponent(
 		search
-	)}&limit=1&format=json&apiKey=${apiKey}`;
+	)}&limit=10&format=json&apiKey=${apiKey}`;
 
 	if (gps) {
 		return base + `&bias=proximity:${gps.longitude},${gps.latitude}`;
