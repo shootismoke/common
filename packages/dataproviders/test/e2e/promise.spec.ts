@@ -1,4 +1,4 @@
-import { aqicn, openaq } from '../../src/promise';
+import { aqicn, openaq } from '../../src';
 
 describe('promise', () => {
 	beforeAll(() => jest.setTimeout(30000));
@@ -7,7 +7,7 @@ describe('promise', () => {
 		const data = await openaq.fetchByStation('Coyhaique');
 		expect(data.results.length).toBeGreaterThanOrEqual(1);
 
-		const results = openaq.normalizeByStation(data);
+		const results = await openaq.normalize(data);
 		expect(results[0].value).toBeDefined();
 	});
 

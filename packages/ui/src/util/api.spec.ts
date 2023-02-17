@@ -33,8 +33,8 @@ describe('createApi', () => {
 	];
 
 	it('should work with testCases', () => {
-		testCases.forEach((tc) => {
-			const api = createApi(tc.gps, tc.results, new Date(tc.date));
+		testCases.forEach(async (tc) => {
+			const api = createApi(tc.gps, await tc.results, new Date(tc.date));
 
 			expect(api.shootismoke).toMatchObject(tc.expected);
 		});

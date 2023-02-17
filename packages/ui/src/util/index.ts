@@ -17,7 +17,6 @@
 export * from './api';
 export * from './geoapify';
 export * from './frequency';
-export * from './fp';
 export * from './noop';
 export * from './pollutant';
 export * from './provider';

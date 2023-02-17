@@ -15,15 +15,17 @@
 // along with Sh**t! I Smoke.  If not, see <http://www.gnu.org/licenses/>.
 
 import { LatLng } from '@shootismoke/dataproviders';
+import retry from 'async-retry';
 import axios from 'axios';
-import * as E from 'fp-ts/lib/Either';
-import { pipe } from 'fp-ts/lib/pipeable';
-import * as T from 'fp-ts/lib/Task';
-import * as TE from 'fp-ts/lib/TaskEither';
-import * as t from 'io-ts';
-import { failure } from 'io-ts/lib/PathReporter';
 
-import { promiseToTE, retry } from './fp';
+export interface GeoapifyRes {
+	city?: string;
+	country?: string;
+	formatted: string;
+	lat: number;
+	lon: number;
+	state?: string;
+}
 
 /**
  * For docs, see https://apidocs.geoapify.com/playground/geocoding and
@@ -41,58 +43,24 @@ function getEndpoint(search: string, apiKey: string, gps?: LatLng): string {
 	return base;
 }
 
-const GeoapifyResT = t.exact(
-	t.intersection([
-		t.type({
-			lat: t.number,
-			lon: t.number,
-			formatted: t.string,
-		}),
-		t.partial({
-			city: t.string,
-			country: t.string,
-			state: t.string,
-		}),
-	])
-);
-
-export type GeoapifyRes = t.TypeOf<typeof GeoapifyResT>;
-
-const AxiosResponseT = t.partial({
-	data: t.type({
-		results: t.array(GeoapifyResT),
-	}),
-});
-
-export function geoapify(
+export async function geoapify(
 	search: string,
 	apiKey: string,
 	gps?: LatLng
-): TE.TaskEither<Error, GeoapifyRes[]> {
+): Promise<GeoapifyRes[]> {
 	return retry(
-		() =>
-			pipe(
-				promiseToTE(() =>
-					axios.get(getEndpoint(search, apiKey, gps), {
-						timeout: 10000,
-					})
-				),
-				TE.chain((response) =>
-					T.of(
-						pipe(
-							AxiosResponseT.decode(response),
-							E.mapLeft(failure),
-							E.mapLeft((errs) => errs[0]), // Only show 1st error
-							E.mapLeft(Error)
-						)
-					)
-				),
-				TE.chain((response) =>
-					response.data?.results
-						? TE.right(response.data.results)
-						: TE.left(new Error('No data returned by geoapify'))
-				)
-			),
+		async () => {
+			const {
+				data: { results },
+			} = await axios.get<{ results: GeoapifyRes[] }>(
+				getEndpoint(search, apiKey, gps),
+				{
+					timeout: 5000,
+				}
+			);
+
+			return results;
+		},
 		{
 			retries: 2,
 		}

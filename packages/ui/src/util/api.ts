@@ -129,13 +129,13 @@ export function createApi(
 /**
  * Helper function to fetch & normalize data for 1 provider.
  */
-async function fetchForProvider<DataByGps, DataByStation, Options>(
+async function fetchForProvider<Response, Options>(
 	gps: LatLng,
-	provider: Provider<DataByGps, DataByStation, Options>,
+	provider: Provider<Response, Options>,
 	options?: Options
 ): Promise<OpenAQResults> {
 	const data = await provider.fetchByGps(gps, options);
-	const results = provider.normalizeByGps(data);
+	const results = provider.normalize(data);
 	l(`Got data from ${provider.id}: ${JSON.stringify(results)}`);
 
 	return results;

@@ -1,7 +1,3 @@
-import * as t from 'io-ts';
-
-import { attributionsCodec } from '../../util';
-
 // Example response
 // Object {
 //   "data": Object {
@@ -58,61 +54,33 @@ import { attributionsCodec } from '../../util';
 //   "status": "ok",
 // }
 
-const pollutantValue = t.type({
-	v: t.number,
-});
+export type AqicnData = {
+	attributions?: {
+		name?: string;
+		url?: string;
+	}[];
+	city: {
+		geo?: [string | number, string | number];
+		name?: string;
+		url?: string;
+	};
+	dominentpol?: string;
+	iaqi?: {
+		[key: string]: {
+			v: number;
+		};
+	};
+	idx: number;
+	time: {
+		s?: string;
+		tz?: string;
+		v: number;
+		iso?: string;
+	};
+};
 
-// Ideally, we should have a list of all pollutants tracked by AqiCN, but I
-// didn't finy any. Putting string for now.
-const pollutants = t.record(t.string, pollutantValue);
-
-const AqicnStationCodecData = t.union([
-	t.type({
-		attributions: attributionsCodec,
-		city: t.type({
-			geo: t.union([
-				t.tuple([
-					// Somehow, we also sometimes get strings as geo lat/lng
-					t.union([t.string, t.number]),
-					t.union([t.string, t.number]),
-				]),
-				// We also could get null
-				t.null,
-			]),
-			name: t.union([t.string, t.undefined]),
-			url: t.union([t.string, t.undefined]),
-		}),
-		// Should be `t.keyof(pollutants.props)`, but sometimes we do get "" or undefined
-		dominentpol: t.union([t.string, t.undefined]),
-		// All pollutants
-		iaqi: t.union([pollutants, t.undefined]),
-		// Station ID
-		idx: t.number,
-		time: t.type({
-			// As string
-			s: t.union([t.string, t.undefined]),
-			// Timezone
-			tz: t.union([t.string, t.undefined]),
-			// As timestamp
-			v: t.number,
-			// As ISO string
-			iso: t.union([t.undefined, t.string]),
-		}),
-	}),
-	t.string,
-	t.undefined,
-]);
-
-export const ByStationCodec = t.type({
-	status: t.keyof({
-		ok: null,
-		error: null,
-		nope: null, // http://api.waqi.info/feed/geo:31.54;84.3/?token=
-	}),
-	data: AqicnStationCodecData,
-	msg: t.union([t.string, t.undefined]),
-});
-
-export type ByStation = t.TypeOf<typeof ByStationCodec>;
-
-export type AqicnStaton = t.TypeOf<typeof AqicnStationCodecData>;
+export type AqicnResponse = {
+	data?: AqicnData | string;
+	msg?: string;
+	status: 'ok' | 'error' | 'nope';
+};

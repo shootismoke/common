@@ -14,8 +14,8 @@ describe('getAQI', () => {
 	];
 
 	it('should work with testCases', () => {
-		testCases.forEach((tc) => {
-			const aqi = getAQI(tc.results);
+		testCases.forEach(async (tc) => {
+			const aqi = getAQI(await tc.results);
 
 			expect(aqi).toBe(tc.expected);
 		});
