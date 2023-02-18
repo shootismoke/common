@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/shootismoke/common/compare/v0.9.3...v0.10.0) (2023-02-18)
+
+
+* refactor!: Remove fp-ts (#729) ([ce170c2](https://github.com/shootismoke/common/commit/ce170c2ceed85c58bc52af1f4c2ffb5c793f2f46)), closes [#729](https://github.com/shootismoke/common/issues/729)
+
+
+### BREAKING CHANGES
+
+* Usage of `fp-ts` has been removed across all packaged. Functions that
+used to return a `TaskEither` now return a simple `Promise`.
+
+
+
+
+
 ## [0.9.1](https://github.com/shootismoke/common/compare/v0.9.0...v0.9.1) (2022-10-03)
 
 **Note:** Version bump only for package @shootismoke/ui
