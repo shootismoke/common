@@ -9,7 +9,7 @@ describe('aqicn e2e', () => {
 	beforeAll(() => jest.setTimeout(30000));
 
 	it('should return an error with an unknown station', async () => {
-		expect(await aqicn.fetchByStation('foo', options)).toThrowError(
+		await expect(aqicn.fetchByStation('foo', options)).rejects.toThrowError(
 			new Error('Unknown station')
 		);
 	});
