@@ -3,13 +3,11 @@ import { providerError } from '../../util';
 import { OpenAQMeasurements } from './types';
 
 /**
- * Normalize aqicn byGps data
+ * Normalize aqicn byGps data. Throws an error if the data cannot be normalized.
  *
  * @param data - The data to normalize
  */
-export async function normalize(
-	data: OpenAQMeasurements
-): Promise<OpenAQResults> {
+export function normalize(data: OpenAQMeasurements): OpenAQResults {
 	const { results } = data;
 
 	if (!results.length) {

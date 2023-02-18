@@ -30,18 +30,11 @@ export function sanitizeCountry(input: string): string {
 }
 
 /**
- * Normalize aqicn byGps data
+ * Normalize aqicn byGps data. Throws an error if the data cannot be normalized.
  *
  * @param data - The data to normalize
  */
-export async function normalize(data: AqicnData): Promise<OpenAQResults> {
-	if (!data || typeof data === 'string') {
-		throw providerError(
-			'aqicn',
-			`Cannot normalized ${data || 'undefined'}`
-		);
-	}
-
+export function normalize(data: AqicnData): OpenAQResults {
 	const stationId = `aqicn|${data.idx}`;
 
 	// Sometimes we don't get geo

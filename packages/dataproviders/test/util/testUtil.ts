@@ -36,13 +36,13 @@ export function testOpenAQResults(results: OpenAQResults): void {
  */
 export async function testPromise<T>(
 	p: Promise<T>,
-	normalize: (data: T) => Promise<OpenAQResults>
+	normalize: (data: T) => OpenAQResults
 ): Promise<void> {
 	const res = await p;
 	expect(res).toBeDefined();
 
 	try {
-		const normalized = await normalize(res);
+		normalize(res);
 	} catch (error) {
 		// We don't fail the test if one of the following errors occur
 		const skippedErrorMessages = [

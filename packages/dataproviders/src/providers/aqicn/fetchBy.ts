@@ -6,11 +6,7 @@ import { AqicnData, AqicnResponse } from './validation';
  * Check if the response we get from aqicn is `{"status": "error", "msg": "..."}`,
  * if yes, return an error.
  */
-async function checkError({
-	status,
-	data,
-	msg,
-}: AqicnResponse): Promise<AqicnData> {
+function checkError({ status, data, msg }: AqicnResponse): AqicnData {
 	if (status === 'ok' && typeof data === 'object') {
 		return data;
 	} else {

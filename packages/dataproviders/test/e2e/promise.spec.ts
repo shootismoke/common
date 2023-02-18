@@ -7,7 +7,7 @@ describe('promise', () => {
 		const data = await openaq.fetchByStation('Coyhaique');
 		expect(data.results.length).toBeGreaterThanOrEqual(1);
 
-		const results = await openaq.normalize(data);
+		const results = openaq.normalize(data);
 		expect(results[0].value).toBeDefined();
 	});
 

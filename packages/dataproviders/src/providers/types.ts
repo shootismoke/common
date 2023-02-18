@@ -8,5 +8,5 @@ export interface Provider<Response, Options> {
 	fetchByStation(stationId: string, options?: Options): Promise<Response>;
 	id: string;
 	name: string;
-	normalize: (d: Response) => Promise<OpenAQResults>;
+	normalize: (d: Response) => OpenAQResults;
 }

@@ -33,5 +33,5 @@ export type WaqiResponse = {
 		v: string;
 		x: string;
 	}[];
-	g: any;
+	g: unknown;
 };

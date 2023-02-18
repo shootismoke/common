@@ -19,14 +19,14 @@ async function providerFetch(
 ): Promise<Api> {
 	const results =
 		provider === 'aqicn'
-			? await aqicn.normalize(
+			? aqicn.normalize(
 					await aqicn.fetchByStation(station, {
 						token: process.env.BACKEND_AQICN_TOKEN as string,
 					})
 			  )
 			: provider === 'waqi'
-			? await waqi.normalize(await waqi.fetchByStation(station))
-			: await openaq.normalize(
+			? waqi.normalize(await waqi.fetchByStation(station))
+			: openaq.normalize(
 					await openaq.fetchByStation(station, {
 						limit: 1,
 						parameter: ['pm25'],

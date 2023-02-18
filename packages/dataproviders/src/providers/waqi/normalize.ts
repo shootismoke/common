@@ -1,4 +1,4 @@
-import { convert, isPollutant, Pollutant, ugm3 } from '@shootismoke/convert';
+import { convert, isPollutant, ugm3 } from '@shootismoke/convert';
 
 import { OpenAQResults } from '../../types';
 import { getCountryCode, providerError } from '../../util';
@@ -10,9 +10,7 @@ import { WaqiResponse } from './types';
  *
  * @param data - The data to normalize
  */
-export async function normalize({
-	d: [data],
-}: WaqiResponse): Promise<OpenAQResults> {
+export function normalize({ d: [data] }: WaqiResponse): OpenAQResults {
 	const stationId = `waqi|${data.x}`;
 
 	if (!isPollutant(data.pol)) {
