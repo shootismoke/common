@@ -8,9 +8,7 @@ import { WaqiResponse } from './types';
  */
 export const waqi: Provider<WaqiResponse, unknown> = {
 	fetchByGps,
-	fetchByStation: async () => {
-		throw new Error('Unimplemented');
-	},
+	fetchByStation: () => Promise.reject(new Error('Not implemented')),
 	id: 'waqi',
 	name: 'WAQI',
 	normalize,
