@@ -47,7 +47,7 @@ export function fetchByGps(
  *
  * @param stationId - The station ID to search
  */
-export function fetchByStation(
+export async function fetchByStation(
 	stationId: string,
 	options: AqicnOptions
 ): Promise<AqicnData> {
