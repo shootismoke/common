@@ -1,10 +1,6 @@
 import { AllPollutants } from '@shootismoke/convert';
-import * as E from 'fp-ts/lib/Either';
-import { pipe } from 'fp-ts/lib/pipeable';
-import * as T from 'fp-ts/lib/Task';
-import * as TE from 'fp-ts/lib/TaskEither';
 
-import type { ProviderFP } from '../../src/providers/types';
+import type { Provider } from '../../src/providers/types';
 import type { LatLng, OpenAQResults } from '../../src/types';
 
 function generateRandomLatLng(): LatLng {
@@ -36,51 +32,38 @@ export function testOpenAQResults(results: OpenAQResults): void {
 }
 
 /**
- * Test that a TE is resolving correctly.
+ * Test that a Promise is resolving correctly.
  */
-export function testTE<T>(
-	te: TE.TaskEither<Error, T>,
-	normalize: (data: T) => E.Either<Error, OpenAQResults>
+export async function testPromise<T>(
+	p: Promise<T>,
+	normalize: (data: T) => OpenAQResults
 ): Promise<void> {
-	return pipe(
-		te,
-		TE.map((response) => {
-			expect(response).toBeDefined();
+	const res = await p;
+	expect(res).toBeDefined();
 
-			return response;
-		}),
-		TE.chain((response) => TE.fromEither(normalize(response))),
-		TE.fold(
-			(error) => {
-				// We don't fail the test if one of the following errors occur
-				const skippedErrorMessages = [
-					// Skip if the random stationId is an unknown station
-					'Unknown ID',
-					// Skip if we somehow couldn't connect
-					'can not connect',
-					// Skip if openaq doesn't return results
-					'[openaq] Cannot normalize, got 0 result',
-					// Skip if aqicn doesn't track pollutants that don't interest us
-					'no pollutants currently tracked',
-					// Skip if aqicn doesn't expose city
-					'no city',
-				];
+	try {
+		normalize(res);
+	} catch (error) {
+		// We don't fail the test if one of the following errors occur
+		const skippedErrorMessages = [
+			// Skip if the random stationId is an unknown station
+			'Unknown ID',
+			// Skip if we somehow couldn't connect
+			'can not connect',
+			// Skip if openaq doesn't return results
+			'[openaq] Cannot normalize, got 0 result',
+			// Skip if aqicn doesn't track pollutants that don't interest us
+			'no pollutants currently tracked',
+			// Skip if aqicn doesn't expose city
+			'no city',
+		];
 
-				if (
-					skippedErrorMessages.some((msg) =>
-						error.message.includes(msg)
-					)
-				) {
-					return T.of(void undefined);
-				}
-
-				throw error;
-			},
-			() => {
-				return T.of(void undefined);
-			}
-		)
-	)();
+		expect(
+			skippedErrorMessages.some((msg) =>
+				(error as Error).message.includes(msg)
+			)
+		).toBe(true);
+	}
 }
 
 interface TestProviderE2EOptions<Options> {
@@ -89,10 +72,10 @@ interface TestProviderE2EOptions<Options> {
 }
 
 /**
- * Test helper to test a providerFP
+ * Test helper to test a provider
  */
-export function testProviderE2E<DataByGps, DataByStation, Options>(
-	providerFP: ProviderFP<DataByGps, DataByStation, Options>,
+export function testProviderE2E<Response, Options>(
+	provider: Provider<Response, Options>,
 	{ options, skip = [] }: TestProviderE2EOptions<Options>
 ): void {
 	jest.setTimeout(30000);
@@ -100,15 +83,15 @@ export function testProviderE2E<DataByGps, DataByStation, Options>(
 	if (!skip.includes('fetchByGps')) {
 		describe('fetchByGps', () => {
 			[0, 0].map(generateRandomLatLng).forEach((gps) => {
-				it(`should fetch ${providerFP.id} by gps: ${JSON.stringify(
+				it(`should fetch ${provider.id} by gps: ${JSON.stringify(
 					gps
 				)}`, () =>
-					testTE(
-						providerFP.fetchByGps(
+					testPromise(
+						provider.fetchByGps(
 							{ latitude: 78.7, longitude: 55.69 },
 							options
 						),
-						(d) => providerFP.normalizeByGps(d)
+						(d) => provider.normalize(d)
 					));
 			});
 		});
@@ -117,9 +100,10 @@ export function testProviderE2E<DataByGps, DataByStation, Options>(
 	if (!skip.includes('fetchByStation')) {
 		describe('fetchByStation', () => {
 			[0, 0].map(generateRandomStationId).forEach((stationId) => {
-				it(`should fetch ${providerFP.id} by station: ${stationId}`, () =>
-					testTE(providerFP.fetchByStation(stationId, options), (d) =>
-						providerFP.normalizeByStation(d)
+				it(`should fetch ${provider.id} by station: ${stationId}`, () =>
+					testPromise(
+						provider.fetchByStation(stationId, options),
+						(d) => provider.normalize(d)
 					));
 			});
 		});

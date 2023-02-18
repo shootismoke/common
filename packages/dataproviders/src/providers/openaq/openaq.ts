@@ -1,17 +1,12 @@
-import { ProviderFP } from '../types';
+import { Provider } from '../types';
 import { fetchByGps, fetchByStation, OpenAQOptions } from './fetchBy';
 import { normalize } from './normalize';
-import { OpenAQMeasurements } from './validation';
+import { OpenAQMeasurements } from './types';
 
-export const openaq: ProviderFP<
-	OpenAQMeasurements,
-	OpenAQMeasurements,
-	OpenAQOptions
-> = {
+export const openaq: Provider<OpenAQMeasurements, OpenAQOptions> = {
 	fetchByGps,
 	fetchByStation,
 	id: 'openaq',
 	name: 'Open AQ',
-	normalizeByGps: normalize,
-	normalizeByStation: normalize,
+	normalize,
 };
