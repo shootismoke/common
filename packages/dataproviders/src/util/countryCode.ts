@@ -1,6 +1,3 @@
-import * as O from 'fp-ts/lib/Option';
-import { pipe } from 'fp-ts/lib/pipeable';
-
 import countries from './countries.json';
 
 interface Country {
@@ -35,23 +32,18 @@ function sanitize(input: string): string {
  * getCountryCode('united   States'); // 'US'
  * ```
  */
-export function getCountryCode(input: string): O.Option<string> {
-	return pipe(
-		O.fromNullable(
-			(countries as Country[]).find(({ code, name, others }) => {
-				const sName = sanitize(name);
-				const sInput = sanitize(input);
+export function getCountryCode(input: string): string | undefined {
+	return (countries as Country[]).find(({ code, name, others }) => {
+		const sName = sanitize(name);
+		const sInput = sanitize(input);
 
-				return (
-					sName === sInput ||
-					code === sInput ||
-					sInput.includes(sName) ||
-					others.includes(sInput)
-				);
-			})
-		),
-		O.map(({ code }) => code)
-	);
+		return (
+			sName === sInput ||
+			code === sInput ||
+			sInput.includes(sName) ||
+			others.includes(sInput)
+		);
+	})?.code;
 }
 
 /**

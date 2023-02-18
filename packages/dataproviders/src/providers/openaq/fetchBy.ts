@@ -1,15 +1,10 @@
 import { Pollutant } from '@shootismoke/convert';
 import type { AxiosError } from 'axios';
-import * as TE from 'fp-ts/lib/TaskEither';
 
 import { LatLng } from '../../types';
-import {
-	ACCURATE_RADIUS,
-	fetchAndDecode,
-	OpenAQError,
-	OpenAQErrorObject,
-} from '../../util';
-import { OpenAQMeasurements, OpenAQMeasurementsCodec } from './validation';
+import { ACCURATE_RADIUS, OpenAQError, OpenAQErrorObject } from '../../util';
+import { fetchAndDecode } from '../../util/fetch';
+import { OpenAQMeasurements } from './types';
 
 const RESULT_LIMIT = 10;
 const OPENAQ_MEASUREMENTS_V2 = `https://api.openaq.org/v2/measurements`;
@@ -73,7 +68,7 @@ function additionalOptions(options: OpenAQOptions = {}): string {
 /**
  * Handle error from OpenAQ response
  */
-function onError(err: AxiosError<OpenAQError>): Error {
+function formatError(err: AxiosError<OpenAQError>): Error {
 	// We had occasions from OpenAQ where the error had an empty response field
 	// so we check that the data is populated first.
 	if (err?.response?.data) {
@@ -99,7 +94,7 @@ function onError(err: AxiosError<OpenAQError>): Error {
 export function fetchByGps(
 	gps: LatLng,
 	options?: OpenAQOptions
-): TE.TaskEither<Error, OpenAQMeasurements> {
+): Promise<OpenAQMeasurements> {
 	// OpenAQ doesn't allow arbitrary number of decimals, we round to 3.
 	const latitude = Math.round(gps.latitude * 1000) / 1000;
 	const longitude = Math.round(gps.longitude * 1000) / 1000;
@@ -108,10 +103,7 @@ export function fetchByGps(
 		`${OPENAQ_MEASUREMENTS_V2}?coordinates=${latitude},${longitude}&radius=${ACCURATE_RADIUS}${additionalOptions(
 			options
 		)}`,
-		OpenAQMeasurementsCodec,
-		{
-			onError,
-		}
+		{ formatError }
 	);
 }
 
@@ -123,14 +115,11 @@ export function fetchByGps(
 export function fetchByStation(
 	stationId: string,
 	options?: OpenAQOptions
-): TE.TaskEither<Error, OpenAQMeasurements> {
+): Promise<OpenAQMeasurements> {
 	return fetchAndDecode(
 		`${OPENAQ_MEASUREMENTS_V2}?location=${stationId}${additionalOptions(
 			options
 		)}`,
-		OpenAQMeasurementsCodec,
-		{
-			onError,
-		}
+		{ formatError }
 	);
 }

@@ -1,5 +1,3 @@
-import * as t from 'io-ts';
-
 // Example response:
 // Object {
 //   "d": Array [
@@ -22,22 +20,18 @@ import * as t from 'io-ts';
 //   "g": null,
 // }
 
-export const ByStationCodec = t.type({
-	d: t.array(
-		t.type({
-			d: t.number,
-			geo: t.tuple([t.number, t.number]),
-			key: t.string,
-			nlo: t.string,
-			nna: t.string,
-			pol: t.string,
-			t: t.number,
-			u: t.string,
-			v: t.string,
-			x: t.string,
-		})
-	),
-	g: t.any,
-});
-
-export type ByStation = t.TypeOf<typeof ByStationCodec>;
+export type WaqiResponse = {
+	d: {
+		d: number;
+		geo: [number, number];
+		key: string;
+		nlo: string;
+		nna: string;
+		pol: string;
+		t: number;
+		u: string;
+		v: string;
+		x: string;
+	}[];
+	g: unknown;
+};

@@ -1,9 +1,10 @@
-import { AllProviders, aqicn, openaq, waqi } from '@shootismoke/dataproviders';
+import { aqicn, openaq, waqi } from '@shootismoke/dataproviders';
 import retry, { Options } from 'async-retry';
 
 import type { Api } from './api';
 import { createApi } from './api';
 
+const AllProviders = ['aqicn', 'openaq', 'waqi'] as const;
 type AllProviders = 'aqicn' | 'openaq' | 'waqi';
 
 /**
@@ -18,14 +19,14 @@ async function providerFetch(
 ): Promise<Api> {
 	const results =
 		provider === 'aqicn'
-			? aqicn.normalizeByStation(
+			? aqicn.normalize(
 					await aqicn.fetchByStation(station, {
 						token: process.env.BACKEND_AQICN_TOKEN as string,
 					})
 			  )
 			: provider === 'waqi'
-			? waqi.normalizeByStation(await waqi.fetchByStation(station))
-			: openaq.normalizeByStation(
+			? waqi.normalize(await waqi.fetchByStation(station))
+			: openaq.normalize(
 					await openaq.fetchByStation(station, {
 						limit: 1,
 						parameter: ['pm25'],
@@ -40,7 +41,7 @@ function assertKnownProvider(
 	provider: string,
 	stationId: string
 ): asserts provider is AllProviders {
-	if (!AllProviders.includes(provider)) {
+	if (!AllProviders.includes(provider as AllProviders)) {
 		throw new Error(`Unrecognized stationId "${stationId}".`);
 	}
 }
