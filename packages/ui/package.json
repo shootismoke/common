@@ -28,7 +28,7 @@
 		"haversine": "^1.1.1",
 		"lottie-react-native": "^5.1.5",
 		"mongoose": "^6.9.2",
-		"p-any": "^3.0.0"
+		"p-any": "^4.0.0"
 	},
 	"devDependencies": {
 		"@types/react": "^18.0.28",
